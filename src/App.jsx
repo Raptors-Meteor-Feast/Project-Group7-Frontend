@@ -7,7 +7,7 @@ import Register from './pages/auth/Register'
 const App = () => {
   return (
     <div>
-      {/* <Login /> */}
+      <Login />
       <Register />
     </div>
   )

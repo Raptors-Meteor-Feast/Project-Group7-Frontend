@@ -3,6 +3,7 @@ import { Input } from "@nextui-org/input";
 import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { Button } from "@nextui-org/react";
+import {MailIcon} from '../../assets/LogoLogin/Maillcon';
 import "./login.css"
 
 const Login = () => {
@@ -10,8 +11,8 @@ const Login = () => {
     const toggleVisibility = () => setIsVisible(!isVisible);
 
     return (
-        <div className='flex justify-center items-center bg-stone-800 h-screen'>
-            <div className="flex flex-col items-center gap-4 p-8 rounded-sm text-white bg-stone-900 w-full max-w-sm sm:w-[30%]">
+        <div className='flex justify-center items-center bg-neutral-950 h-screen'>
+            <div className="flex flex-col items-center gap-4 p-8 rounded-sm text-white bg-neutral-900 w-full max-w-sm sm:w-[30%]">
                 <div className='flex justify-center items-center'>
                     <img className='w-2/3 sm:w-[60%]' src="src/assets/ProjectLogo/Logo-7.svg" alt="logo" />
                 </div>
@@ -26,6 +27,9 @@ const Login = () => {
                     placeholder="Email Address"
                     defaultValue=""
                     className="w-full max-w-xs"
+                    endContent={
+                        <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    }
                 />
 
                 <Input
