@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      ddd 95959
+      sunday
     </>
   )
 }
