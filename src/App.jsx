@@ -11,11 +11,9 @@ function App() {
       tenn
 Fronk
 sunday99 hello
-
+kljl;klj;
     </>
   )
-
-  return <>sunday99 fronk Am</>;
 
 }
 
