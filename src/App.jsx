@@ -6,16 +6,7 @@ function App() {
 
   return (
     <>
-      sunday99
-      fronk
-      tenn
-Fronk
-sunday99 hello
-
-    </>
-  )
-
-  return <>sunday99 fronk Am</>;
+    <>
 
 }
 
