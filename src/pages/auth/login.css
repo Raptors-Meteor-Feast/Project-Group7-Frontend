@@ -3,7 +3,7 @@
     border-color: hsl(240deg 8.57% 25.37% / 54%);
 }
 
-.focus-visible\:outline-none:focus-visible {
-    outline: 2px solid #ef0e0e;
-    outline-offset: 2px;
+.group[data-focus="true"] .group-data-\[focus\=true\]\:border-default-foreground {
+    --tw-border-opacity: 1;
+    border-color: hsl(0, 91%, 71%);
 }

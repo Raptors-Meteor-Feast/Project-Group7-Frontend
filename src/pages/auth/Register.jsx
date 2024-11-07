@@ -16,7 +16,7 @@ const Login = () => {
                     <img className='w-2/3 sm:w-[60%]' src="src/assets/ProjectLogo/Logo-7.svg" alt="logo" />
                 </div>
 
-                <h1 className="text-xl sm:text-2xl">Sign In</h1>
+                <h1 className="text-xl sm:text-2xl">Create Account</h1>
 
                 <Input
                     type="email"
@@ -50,23 +50,17 @@ const Login = () => {
                     className="w-full max-w-xs"
                 />
 
-                <div className='flex justify-between w-full'>
-                    <a href="#" className='underline text-sm'>
-                        Forgot password?
-                    </a>
-                </div>
-
+            
                 <Button color="primary" className="w-full sm:w-[20rem]">
-                    Sign in
+                    Continues
                 </Button>
 
-                <div className='flex items-center gap-1 w-full'>
-                    <div className='border-t flex-grow border-white'></div>
-                    <p className='text-sm'>or sign in with</p>
-                    <div className='border-t flex-grow border-white'></div>
+                <div className='flex gap-2 items-center justify-center'>
+                <p className=''>Already have and acoount?</p>
+                <a href="#" className='underline text-sm'>Sign in</a>
                 </div>
 
-                <a href="#" className='underline text-sm'>Create account</a>
+                <a href="#" className='underline text-sm'>Privacy Policy</a>
             </div>
         </div>
     );
