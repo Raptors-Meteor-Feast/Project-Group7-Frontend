@@ -73,49 +73,30 @@ const Login = () => {
                     }
                 />
 
-                <Input
-                    label=""
-                    variant="bordered"
-                    placeholder="Password"
-                    endContent={
-                        <button
-                            className="focus:outline-none"
-                            type="button"
-                            onClick={toggleVisibility}
-                            aria-label="toggle password visibility"
-                        >
-                            {isVisible ? (
-                                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                            ) : (
-                                <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                            )}
-                        </button>
-                    }
-                    type={isVisible ? "text" : "password"}
-                    className="w-full"
-                />
-
-                <Input
-                    label=""
-                    variant="bordered"
-                    placeholder="Confirm Password"
-                    endContent={
-                        <button
-                            className="focus:outline-none"
-                            type="button"
-                            onClick={toggleVisibility}
-                            aria-label="toggle password visibility"
-                        >
-                            {isVisible ? (
-                                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                            ) : (
-                                <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                            )}
-                        </button>
-                    }
-                    type={isVisible ? "text" : "password"}
-                    className="w-full"
-                />
+                { ["Password", "Confirm Password"].map((placeholder,index) => ( 
+                    <Input
+                        key={index}
+                        label=""
+                        variant="bordered"
+                        placeholder={placeholder}
+                        endContent={
+                            <button
+                                className="focus:outline-none"
+                                type="button"
+                                onClick={toggleVisibility}
+                                aria-label="toggle password visibility">
+                                    {isVisible ? (
+                                        <EyeFilledIcon  className="text-2xl text-default-400 pointer-events-none" />
+                                    
+                                ) : (
+                                        <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" /> 
+                                )}
+                                </button>
+                        }
+                        type={setIsVisible ? "text" : "password"}
+                        className="w-full"
+                        />
+                ))}
 
                 <div className='flex gap-2 w-full sm:w-[20rem] text-sm'>
 
@@ -132,7 +113,7 @@ const Login = () => {
             
             
                 <Button color="primary" className="w-full sm:w-[20rem]">
-                    Continues
+                Confirm
                 </Button>
 
                 <div className='flex gap-2 items-center justify-center'>
@@ -141,6 +122,9 @@ const Login = () => {
                 </div>
 
                 <a href="#" className='underline text-sm'>Privacy Policy</a>
+
+
+
             </div>
         </div>
     );
