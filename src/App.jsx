@@ -1,17 +1,10 @@
-import "./App.css";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import CheckOut from "./pages/Checkout";
+import React from "react";
 
-
-export default function App()  {
-    return (
+const App = () => {
+  return (
     <div>
-        <Nav />
-        <CheckOut />
-        {/* <Footer /> */}
     </div>
-    )
-}
+  );
+};
 
-
+export default App;
