@@ -54,8 +54,8 @@ function CaroselIamge({ slides }) {
                   width={160}
                   height={108}
                   className={`rounded-lg ${
-                    i == current ? "bg-white" : "contrast-50"
-                  } hover: hover:bg-gray-300`}
+                    i == current ? "bg-white" : "opacity-60"
+                  }`}
                 />
               </div>
             );

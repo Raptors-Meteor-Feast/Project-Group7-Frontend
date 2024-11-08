@@ -9,6 +9,11 @@ const App = () => {
   return (
     <div>
       <DetailGame />
+      <br />
+      <br />
+      <br />
+      <br />
+      <CarouselBanner />
     </div>
   );
 };
