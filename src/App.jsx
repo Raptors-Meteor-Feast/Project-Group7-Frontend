@@ -1,13 +1,15 @@
-import React from 'react'
 import "./App.css";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
-const App = () => {
+
+export default function App()  {
   return (
     <div>
-      
+      <Nav />
+      <Footer />
     </div>
   )
 }
 
-export default App
 
