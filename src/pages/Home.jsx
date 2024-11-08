@@ -1,7 +1,7 @@
 import React from 'react'
-import BoxFiveCard from '../components/BoxFiveCard'
-import BoxThreeContainer from '../components/BoxThreeContainer'
-import Hero from '../components/Hero'
+import BoxFiveCard from '../components/Card-Home/BoxFiveCard'
+import BoxThreeContainer from '../components/Container-Home/BoxThreeContainer'
+import Hero from '../components/Hero-Home/Hero'
 
 const Home = () => {
     return (

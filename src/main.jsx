@@ -7,11 +7,17 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Home from './pages/Home';
+import CardComponent from './components/Card-Home/CardComponent';
+import CardDetail from './components/CardDetail';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />
+  },
+  {
+    path: "/card/:id",
+    element: <CardDetail />
   },
 ]);
 

@@ -1,5 +1,7 @@
 import React from 'react'
 import {Card, CardBody, Image, CardFooter} from "@nextui-org/react";
+import { useNavigate } from 'react-router-dom';
+
 
 
 const mockData = [
@@ -48,10 +50,20 @@ const mockData = [
 ];
 
 const CardComponent = () => {
+
+    const navigate = useNavigate(); // useNavigate hook from react-router-dom
+
+    const handleCardClick = (id) => {
+        navigate(`/card/${id}`); // Navigate to the card detail page
+    };
+
     return (
     <>
         {mockData.map(items => (
-        <Card shadow="sm" key={items.id} isPressable onPress={() => console.log("item pressed")}>
+        <Card 
+            shadow="sm" key={items.id} 
+            isPressable 
+            onPress={() => handleCardClick(items.id)} >
             <CardBody className="overflow-visible p-0">
                 <Image
                     shadow="sm"
@@ -74,4 +86,3 @@ const CardComponent = () => {
 }
 
 export default CardComponent
-
