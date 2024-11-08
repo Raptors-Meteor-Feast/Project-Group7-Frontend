@@ -1,6 +1,6 @@
 import { div } from "framer-motion/client";
 import React from "react";
-import CaroselIamge from "../components/CaroselIamge";
+import CaroselIamge from "../components/Card-Detail/CaroselIamge";
 
 function DetailGame() {
   const Images = [

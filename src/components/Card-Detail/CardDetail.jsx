@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import {Button, ButtonGroup} from "@nextui-org/button";
+import { Button } from "@nextui-org/button";
 
 const mockData = [
     {

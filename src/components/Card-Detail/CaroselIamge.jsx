@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 

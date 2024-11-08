@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonBanner } from "./BaseButton";
+import { ButtonBanner } from "../BaseButton";
 
 function CarouselBanner({
   title = "Defult: Raptors Meteor Feast Ecommerce",
