@@ -1,0 +1,14 @@
+.border-default-200 {
+    --tw-border-opacity: 1;
+    border-color: hsl(240deg 8.57% 25.37% / 54%);
+}
+
+.group[data-focus="true"] .group-data-\[focus\=true\]\:border-default-foreground {
+    --tw-border-opacity: 1;
+    border-color: hsl(0, 91%, 71%);
+}
+
+.text-foreground {
+    --tw-text-opacity: 1;
+    color: hsl(0deg 0% 100%);
+}
