@@ -9,11 +9,35 @@ import "./login.css"
 const Login = () => {
     const [isVisible, setIsVisible] = React.useState(false);
     const toggleVisibility = () => setIsVisible(!isVisible);
-
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [value, setValue] = React.useState("");
 
+    const validateEmail = (value) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+    const isInvalid = React.useMemo(() => {
+        if (value === "") return false;
+        return !validateEmail(value);
+    }, [value]);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        // Check for empty fields
+        if (email && password) {
+            alert(
+                `Successfully!\n` +
+                `Email: ${value}\n` +
+                `Password: ${password}`
+            );
+
+            // Clear the form after submission
+            setEmail("");
+            setPassword("");
+            setValue("");
+        } else {
+            alert("Error: Please fill in all fields.")
+        }
+    }
 
     return (
         <div className='flex justify-center items-center bg-neutral-950 h-screen'>
@@ -24,11 +48,14 @@ const Login = () => {
 
                 <h1 className="text-xl sm:text-2xl">Sign In</h1>
 
-            <form className='flex flex-col items-center gap-4 p-8 max-w-sm'>
+            <form onSubmit={handleSubmit}
+            className='flex flex-col items-center gap-4 p-8 max-w-sm'>
             <Input
+                    value={value}
                     type="email"
                     label=""
                     variant="bordered"
+                    isInvalid={isInvalid}
                     color='default-500'
                     placeholder="Email Address"
                     defaultValue=""
@@ -36,7 +63,11 @@ const Login = () => {
                     endContent={
                         <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                     }
-                    onChage={(e) => setEmail(e.target.value)}
+                    errorMessage="Please enter a valid email"
+                    onChange={(e) => {
+                        setValue(e.target.value)
+                        setEmail(e.target.value)
+                    }}
                     
                 />
 
@@ -60,7 +91,7 @@ const Login = () => {
                     }
                     type={isVisible ? "text" : "password"}
                     className="w-full max-w-xs"
-                    onChage={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
 
                 <div className='flex justify-between w-full'>
@@ -69,7 +100,9 @@ const Login = () => {
                     </a>
                 </div>
 
-                <Button color="primary" className="w-full sm:w-[20rem]">
+                <Button 
+                type='submit'
+                color="primary" className="w-full sm:w-[20rem]">
                     Sign in
                 </Button>
 
@@ -83,6 +116,7 @@ const Login = () => {
                 </div>
 
                 <a href="#" className='underline text-sm'>Create account</a>
+
             </div>
         </div>
     );

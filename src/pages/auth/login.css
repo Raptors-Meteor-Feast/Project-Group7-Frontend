@@ -12,3 +12,9 @@
     --tw-text-opacity: 1;
     color: hsl(0deg 0% 100%);
 }
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    -webkit-text-fill-color: white; /* เปลี่ยนสีข้อความ */
+}
+
