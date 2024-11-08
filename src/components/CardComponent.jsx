@@ -58,7 +58,7 @@ const CardComponent = () => {
                     radius="lg"
                     width="100%"
                     alt={items.name}
-                    className="w-full object-cover h-[140px]"
+                    className="w-full object-cover h-[230px]"
                     src={items.src}
                 />
             </CardBody>
