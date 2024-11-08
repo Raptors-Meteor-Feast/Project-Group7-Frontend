@@ -9,22 +9,22 @@ const mockData = [
         id: 1,
         categorie: 'openworld',
         name: "Outlaws",
-        price: 200,
+        price: 200.00,
         src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080'
     },
     {
         id: 2,
         categorie: 'openworld',
-        name: "Outlaws",
-        price: 200,
-        src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080'
+        name: "God of War Ragnarök",
+        price: 2000.00,
+        src: 'https://c4.wallpaperflare.com/wallpaper/835/36/912/god-of-war-ragnarok-god-of-war-kratos-video-games-artwork-hd-wallpaper-preview.jpg'
     },
     {
         id: 3,
         categorie: 'openworld',
-        name: "Outlaws",
-        price: 200,
-        src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080'
+        name: "Monster Hunter Wilds",
+        price: 1400.00,
+        src: 'https://blog.playstation.com/uploads/2024/06/a6f2f4429dadcad43c092af0fe340f80af1c2c92.jpg'
     },
     {
         id: 4,
@@ -51,10 +51,10 @@ const mockData = [
 
 const CardComponent = () => {
 
-    const navigate = useNavigate(); // useNavigate hook from react-router-dom
+    const navigate = useNavigate();
 
     const handleCardClick = (id) => {
-        navigate(`/card/${id}`); // Navigate to the card detail page
+        navigate(`/card/${id}`);
     };
 
     return (

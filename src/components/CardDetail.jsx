@@ -18,16 +18,26 @@ const mockData = [
     {
         id: 2,
         categorie: 'openworld',
-        name: 'Outlaws',
-        price: 200,
-        src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080',
+        categorie2: 'fantasy',
+        categorie3: 'online',
+        name: 'God of War Ragnarök',
+        price: 2000.00,
+        src: 'https://c4.wallpaperflare.com/wallpaper/835/36/912/god-of-war-ragnarok-god-of-war-kratos-video-games-artwork-hd-wallpaper-preview.jpg',
+        gamesubdis: "Lorem ipsum dolor sit amet consectetur. Odio nunc dolor tempor in urna egestas sed praesent. Tellus mauris egestas ac amet tellus ut. Est duis ornare arcu cras congue ornare at id convallis. Sed tellus consectetur quam luctus viverra duis id ultrices iaculis.",
+        gamedis: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
+        gamedis2: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
     },
     {
         id: 3,
         categorie: 'openworld',
-        name: 'Outlaws',
-        price: 200,
-        src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080',
+        categorie2: 'fantasy',
+        categorie3: 'online',
+        name: 'Monster Hunter Wilds',
+        price: 1400.00,
+        src: 'https://blog.playstation.com/uploads/2024/06/a6f2f4429dadcad43c092af0fe340f80af1c2c92.jpg',
+        gamesubdis: "Lorem ipsum dolor sit amet consectetur. Odio nunc dolor tempor in urna egestas sed praesent. Tellus mauris egestas ac amet tellus ut. Est duis ornare arcu cras congue ornare at id convallis. Sed tellus consectetur quam luctus viverra duis id ultrices iaculis.",
+        gamedis: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
+        gamedis2: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
     },
     {
         id: 4,
@@ -176,9 +186,8 @@ const mockData = [
     ]
 
 const CardDetail = () => {
-  const { id } = useParams(); // Get the 'id' from the URL
+  const { id } = useParams();
 
-  // Find the card with the corresponding 'id'
   const card = mockData.find((item) => item.id === parseInt(id));
   const cardsystem = mockDataSystem.find((item) => item.id === parseInt(id));
 
