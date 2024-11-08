@@ -1,6 +1,6 @@
 import React from "react";
 
-const CrouselThumbnail = ({
+const CarouselThumbnail = ({
   title = "Defult: Raptors Meteor Feast Ecommerce",
   handleClick,
   price = "",
@@ -29,4 +29,4 @@ const CrouselThumbnail = ({
   );
 };
 
-export default CrouselThumbnail;
+export default CarouselThumbnail;

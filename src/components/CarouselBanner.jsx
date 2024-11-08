@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonBanner } from "./BaseButton";
 
-function CrouselBanner({
+function CarouselBanner({
   title = "Defult: Raptors Meteor Feast Ecommerce",
   message = "Lorem ipsum dolor Voluptates pariatur dignissimos suscipit architecto sequi? Aperiam!",
 }) {
@@ -23,4 +23,4 @@ function CrouselBanner({
   );
 }
 
-export default CrouselBanner;
+export default CarouselBanner;

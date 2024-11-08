@@ -26,8 +26,8 @@ export function ButtonBuyNow(handleClick) {
 
 export function ButtonAddToCard(handleClick) {
   return (
-    <Button className="w-32 h-10 text-[#F18650]" onClick={() => handleClick()}>
-      Buy Now
+    <Button color="default" className="w-32 h-10" onClick={() => handleClick()}>
+      Add To Card
     </Button>
   );
 }

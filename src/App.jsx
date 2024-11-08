@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
-import Thumbnail from "./components/CrouselThumbnail";
+import Thumbnail from "./components/CarouselThumbnail";
 import SearchThumbnail from "./components/SearchThumbnail";
-import CrouselBanner from "./components/CrouselBanner";
+import CarouselBanner from "./components/CarouselBanner";
+import DetailGame from "./pages/DetailGame";
 
 const App = () => {
   return (
     <div>
-      <CrouselBanner />
+      <DetailGame />
     </div>
   );
 };
