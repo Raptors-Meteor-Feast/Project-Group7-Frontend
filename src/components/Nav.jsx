@@ -1,5 +1,5 @@
 import { Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
-import { SearchIcon } from "../assets/NavIcon/SearchIcon.jsx";
+import { SearchIcon } from "../Images/NavIcon/SearchIcon.jsx";
 import { useState } from "react";
 
 export default function Nav() {
@@ -16,7 +16,7 @@ export default function Nav() {
                 {/* Logo and Brand Name */}
                 <div className="flex items-center ml-36">
                     <img
-                    src="src/assets/NavIcon/Gr-Logo-7.svg"
+                    src="src/Images/NavIcon/Gr-Logo-7.svg"
                     alt="Raptor-Logo"
                     className="w-[55px] h-auto object-cover mr-2 "
                     />
@@ -76,7 +76,7 @@ export default function Nav() {
                             color="secondary"
                             name="Guest"
                             size="md"
-                            src="src/assets/NavIcon/user.png"
+                            src="src/Images/NavIcon/user.png"
                             aria-label="Sign In"
                         />
                         </DropdownTrigger>
@@ -99,7 +99,7 @@ export default function Nav() {
                             color="secondary"
                             name="Jason Hughes"
                             size="md"
-                            src="src/assets/NavIcon/Gr-Logo-7.svg"
+                            src="src/Images/NavIcon/Gr-Logo-7.svg"
                             aria-label="User Profile"
                         />
                         </DropdownTrigger>

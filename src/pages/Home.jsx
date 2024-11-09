@@ -4,6 +4,11 @@ import BoxThreeContainer from '../components/Container-Home/BoxThreeContainer'
 import Hero from '../components/Hero-Home/Hero'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer/Footer'
+import BoxContainer from '../components/Container-Home/BoxContainer'
+
+
+
+
 
 const Home = () => {
     return (
@@ -14,6 +19,7 @@ const Home = () => {
             <BoxFiveCard name="Most Popular"/>
             <BoxThreeContainer/>
             <Footer/>
+
         </div>
     )
 }
