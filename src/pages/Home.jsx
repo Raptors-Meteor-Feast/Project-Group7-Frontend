@@ -6,6 +6,7 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer/Footer'
 import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
+import CheckOut from './CheckOut'
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
             <Footer/> */}
             <Login />
             <Register />
+            <CheckOut />
         </div>
     )
 }
