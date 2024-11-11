@@ -17,12 +17,13 @@ const Container = () => {
     return (
         <>
             {randomData.map(items => (
-                <Card shadow="sm" key={items.id} isPressable onPress={() => handleCardClick(items.id)}>
+                <Card shadow="sm" key={items.id} isPressable onPress={() => handleCardClick(items.id)} className='drop-shadow-md hover:bg-gray-300'>
                     <CardBody className="overflow-visible p-3 text-small flex flex-row justify-start items-center">
                         <Image
                             shadow="sm"
                             radius="lg"
                             width="100%"
+                            isBlurred
                             alt={items.title}
                             className="object-cover h-[80px] w-[80px]"
                             src={items.pictureaddress}
