@@ -1,0 +1,954 @@
+[
+  {
+    "id": 1,
+    "title": "The Witcher 3: Wild Hunt",
+    "categories": ["Action RPG", "Open World", "Fantasy", "Single Player", ""],
+    "price": 1299.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f",
+    "exampicture": [
+      "https://images4.alphacoders.com/667/667676.png",
+      "https://www.wallpaperflare.com/static/609/954/369/the-witcher-the-witcher-3-wild-hunt-witcher-wild-wallpaper.jpg",
+      "https://www.pixelstalk.net/wp-content/uploads/images6/Gaming-Witcher-3-Wallpaper-HD.jpg",
+      "https://images2.alphacoders.com/520/thumb-1920-520246.jpg",
+      "https://i.pinimg.com/originals/01/83/e6/0183e6b27db71f427152171d8e0c9bbe.jpg"
+    ],
+    "short_description": "A story-driven RPG set in a vast open world, following the adventures of Geralt of Rivia.",
+    "full_description": "The Witcher 3: Wild Hunt is a critically acclaimed RPG featuring a deep narrative, immersive world, and fast-paced combat. Players take on the role of Geralt of Rivia, a monster hunter searching for his adopted daughter while facing various dangers in the world of The Continent. With a branching storyline and countless side quests, the game offers rich content for players to explore.\n\nWith beautiful visuals, memorable characters, and a haunting soundtrack, the game is considered one of the best RPGs of all time. Players can engage in combat, exploration, and use magic as they journey through forests, villages, and cities.",
+    "rating": 9
+  },
+  {
+    "id": 2,
+    "title": "Fortnite",
+    "categories": [
+      "Battle Royale",
+      "Multiplayer",
+      "Survival",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb",
+    "exampicture": [
+      "https://wallpapercat.com/w/full/e/0/3/88436-1920x1080-desktop-full-hd-fortnite-wallpaper-photo.jpg",
+      "https://wallpapercave.com/wp/wp2558665.jpg",
+      "https://wallpapers-hub.art/wallpaper-images/113153.png",
+      "https://www.hdwallpapers.in/download/mega_city_fortnite_hd_fortnite-1920x1080.jpg",
+      "https://wallpapers.com/images/hd/fortnite-characters-showcase-73ddz5o04ddfxzcu.jpg"
+    ],
+    "short_description": "A fast-paced battle royale game where 100 players fight to be the last one standing.",
+    "full_description": "Fortnite is an online multiplayer battle royale game that has taken the world by storm. Players are dropped onto an island where they must gather resources, build structures, and eliminate other players in order to survive. With frequent updates, new weapons, skins, and events, Fortnite remains one of the most popular games in the world.\n\nThe game features a unique building mechanic where players can construct defensive structures, giving it a creative twist on the traditional battle royale formula. Free-to-play with in-game purchases, Fortnite offers an engaging experience for both casual and competitive players.",
+    "rating": 8
+  },
+  {
+    "id": 3,
+    "title": "Cyberpunk 2077",
+    "categories": ["Action RPG", "Open World", "Sci-Fi", "Single Player", ""],
+    "price": 2499.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7",
+    "exampicture": [
+      "https://images.axios.com/cMBKByC0n-FfbL6r4V34ibvpLfE=/0x0:1920x1080/1920x1080/2021/03/29/1617062389341.jpg",
+      "https://cdn.wallpaper.tn/large/Cyberpunk-2077-Wallpaper-4K-15610.jpg",
+      "https://i.pcmag.com/imagery/articles/00hYjpCCgBH5VFYPsZrBqmf-1..v1600444074.jpg",
+      "https://images.wallpapersden.com/image/download/cyberpunk-2077-hd-gaming-22_bWhnZW2UmZqaraWkpJRnamtlrWZpaWU.jpg",
+      "https://gameranx.com/wp-content/uploads/2017/03/Cyberpunk-2077-1080P-Wallpaper.jpg"
+    ],
+    "short_description": "A dystopian open-world RPG where you control a mercenary navigating the dark future of Night City.",
+    "full_description": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics. With a high degree of customization, deep storylines, and action-packed combat, it provides a unique futuristic experience.\n\nThe game features immersive visuals, robust character progression, and multiple pathways in the story, allowing for different outcomes based on your decisions. Despite a rocky launch, recent updates have improved the game significantly, making it one of the most talked-about RPGs.",
+    "rating": 7
+  },
+  {
+    "id": 4,
+    "title": "Grand Theft Auto V",
+    "categories": ["Action", "Open World", "Multiplayer", "Crime", ""],
+    "price": 1399.0,
+    "pictureaddress": "https://www.gamingdose.com/wp-content/uploads/2014/12/GTA-V-Wallpaper-Full-HD-Background-Pictures.jpg",
+    "exampicture": [
+      "https://images8.alphacoders.com/543/543379.jpg",
+      "https://wallpapercat.com/w/full/2/8/5/130792-2880x1800-desktop-hd-grand-theft-auto-5-background-image.jpg",
+      "https://wallpapers.com/images/high/gta-5-trevor-and-michael-vywcwu2ie0pk3vr9.webp",
+      "https://บทสรุป.com/wp-content/uploads/2016/06/GTA-V.jpg",
+      "https://img.gta5-mods.com/q95/images/save-game-44/a82937-v_trunk_1920x1080.jpg"
+    ],
+    "short_description": "An open-world action game with a dynamic story and extensive multiplayer mode.",
+    "full_description": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events. The game's story revolves around three protagonists, each with their unique backgrounds and motives. Additionally, GTA Online offers multiplayer action with other players in a variety of activities ranging from street racing to cooperative missions.\n\nWith breathtaking graphics, endless possibilities, and a compelling narrative, GTAV continues to be one of the most popular games, even years after its release. It's a must-play for fans of open-world games.",
+    "rating": 10
+  },
+  {
+    "id": 5,
+    "title": "Apex Legends",
+    "categories": [
+      "Battle Royale",
+      "Multiplayer",
+      "Shooter",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://images6.alphacoders.com/992/992033.jpg",
+    "exampicture": [
+      "https://www.playulti.com/static/thumb/2019/1/6/attach-1549388951171.jpg",
+      "https://cdn1.epicgames.com/spt-assets/5dcd88f4e2094a698ebffa43438edc33/apex-legends-teipz.jpg",
+      "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2022-07/apex%201-220728-165439.jpg?versionId=.64gSYdAeRXLOs3NcGmGZBEDDeiy61Wk",
+      "https://4kwallpapers.com/images/wallpapers/apex-legends-video-1920x1200-12712.jpg",
+      "https://cdn.wccftech.com/wp-content/uploads/2024/02/WCCFapexlegends98.jpg"
+    ],
+    "short_description": "A fast-paced battle royale shooter with unique characters and abilities.",
+    "full_description": "Apex Legends is a free-to-play battle royale game that features a variety of Legends, each with unique abilities. Players team up in squads and fight to be the last team standing, while utilizing the game's unique mechanics, including respawning teammates and fast movement. The game includes frequent updates with new characters, skins, and limited-time events.\n\nWith tactical gameplay, a focus on team coordination, and a growing esports community, Apex Legends has become one of the most exciting battle royales in the competitive gaming world.",
+    "rating": 8
+  },
+  {
+    "id": 6,
+    "title": "Minecraft",
+    "categories": ["Survival", "Sandbox", "Multiplayer", "Creative", ""],
+    "price": 690.0,
+    "pictureaddress": "https://wallpapers.com/images/featured/minecraft-s2kxfahyg30sob8q.jpg",
+    "exampicture": [
+      "https://images3.alphacoders.com/132/thumb-1920-1321959.png",
+      "https://i.redd.it/xi14z2xtqx691.png",
+      "https://wallpapers.com/images/featured/beautiful-minecraft-on7hyl1nq96xum8d.jpg",
+      "https://i.pinimg.com/originals/2f/db/80/2fdb80a1219c99ea0c59d82aede974e9.jpg",
+      "https://wallpapercave.com/wp/wp2998911.jpg"
+    ],
+    "short_description": "A sandbox game where you can build, explore, and survive in a blocky world.",
+    "full_description": "Minecraft is a sandbox game that allows players to build and explore in a procedurally generated world made up of blocks. You can mine for resources, craft tools, and construct complex structures. The game includes various modes such as Creative, Survival, and Adventure, offering diverse experiences. With modding support, multiplayer servers, and regular updates, Minecraft has remained one of the most played games worldwide.\n\nWhether you're building elaborate cities, surviving against monsters, or exploring endless landscapes, Minecraft's simple yet deep gameplay appeals to players of all ages.",
+    "rating": 9
+  },
+  {
+    "id": 7,
+    "title": "Valorant",
+    "categories": ["Shooter", "Multiplayer", "Tactical", "Free-to-Play", ""],
+    "price": 0.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S1_2560x1440-6608fb6c4c56c07b9a7caa34c6e6ee37",
+    "exampicture": [
+      "https://media.wired.com/photos/5ea0840cb0490300086261e3/master/pass/Cul-Reveal_ReactorA_VALORANT.jpg",
+      "https://cdn.mos.cms.futurecdn.net/YHdtAs36hSJUL56Lq2nxFi-1200-80.jpg",
+      "https://d.newsweek.com/en/full/1570653/valorant-project-gameplay-reveal-trailer.jpg",
+      "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19755320/FirstLook_Smoke_VALORANT.jpg?quality=90&strip=all&crop=0,0,100,100",
+      "https://media.assettype.com/afkgaming/2021-09/bd195fe1-3608-477b-8418-c784dd4b5dc2/All_the_regional_qualifiers_wrap_up_in_August___11_.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max"
+    ],
+    "short_description": "A tactical shooter with a focus on character abilities and team coordination.",
+    "full_description": "Valorant is a tactical first-person shooter that combines precise gunplay with hero-based abilities. Teams of five compete to either plant a bomb or defend a location. Each character, called an Agent, has unique powers that enhance strategy and team dynamics. The game is known for its precise shooting mechanics and competitive, team-based gameplay.\n\nValorant is heavily focused on teamwork and communication, making it a favorite for esports and competitive gaming. With regular updates and a growing community, it remains one of the top free-to-play tactical shooters.",
+    "rating": 8
+  },
+  {
+    "id": 8,
+    "title": "Rocket League",
+    "categories": ["Sports", "Multiplayer", "Action", "Free-to-Play", ""],
+    "price": 0.0,
+    "pictureaddress": "https://www.rocketleague.com/images/keyart/rl_evergreen.jpg",
+    "exampicture": [
+      "https://aiptcomics.com/wp-content/uploads/2020/07/rocket-league.jpg",
+      "https://images.prismic.io/play-vs/fd0954bae7fc056ecda5ef8350bad0e8fb8e6ae4_playvs-rl-heroimage.jpg?auto=compress,format",
+      "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/rocket-league-gameplay.jpg",
+      "https://britishesports.org/wp-content/uploads/2022/04/rl-terms-1200x800-1.jpg",
+      "https://lutris.net/media/games/screenshots/rocket-league-screenshot-010-ps4-us-7jul15.jpg"
+    ],
+    "short_description": "A unique fusion of soccer and vehicles, where players control cars to score goals.",
+    "full_description": "Rocket League is a fast-paced game where players drive cars to hit a giant ball into their opponent's goal. With simple mechanics but complex strategies, the game combines soccer with physics-based gameplay. It includes solo, multiplayer, and competitive modes, allowing for various ways to play and compete.\n\nRegular updates, seasonal events, and esports tournaments have kept Rocket League fresh, making it a popular game in both casual and professional gaming communities.",
+    "rating": 9
+  },
+  {
+    "id": 9,
+    "title": "Among Us",
+    "categories": [
+      "Multiplayer",
+      "Party",
+      "Social Deduction",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://www.internetsafeeducation.com/wp-content/uploads/2021/12/3902312.jpg",
+    "exampicture": [
+      "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2667,w_4000,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1200/Shutterstock-by-Vistin-aeo_composite_1835067190-_Converted__yctaqg.png",
+      "https://m.media-amazon.com/images/I/61VLV93FzXL.jpg",
+      "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2024-03/Among-Us-240329-003453.png?versionId=JYTELHCjp4QIUs5UKsdDUSElQHcv7t62",
+      "https://i.pcmag.com/imagery/reviews/00eaJ8Sf2suWy4yfi1iz7F8-1..v1603813544.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ZfT3yUjLwX_WpCT4kWnUoyWHuaVCqjxdmkw4MvxqXYTTDasOJ6FKa58HDaRbyZLlXh4&usqp=CAU"
+    ],
+    "short_description": "A social deduction game where players must figure out who the Impostor is.",
+    "full_description": "Among Us is a multiplayer party game where players take on the roles of Crewmates or Impostors aboard a spaceship. The Crewmates must complete tasks around the ship while the Impostors secretly sabotage their efforts and eliminate them. The game encourages communication and strategy as players try to identify the Impostors before it's too late.\n\nWith simple gameplay mechanics and hilarious moments, Among Us became a massive hit, especially during the COVID-19 pandemic. Its success has led to frequent updates, new maps, and even themed events.",
+    "rating": 8
+  },
+  {
+    "id": 10,
+    "title": "Call of Duty: Warzone",
+    "categories": [
+      "Battle Royale",
+      "Shooter",
+      "Multiplayer",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://blog.ttt-website.com/wp-content/uploads/2023/12/Call-Of-Duty-Warzone-1.jpg",
+    "exampicture": [
+      "https://assets-prd.ignimgs.com/2022/11/18/warzone-mobile-stadium-keyart-1668769729454.png?fit=bounds&width=1280&height=720",
+      "https://i.ytimg.com/vi/DVjCUkrHHcY/maxresdefault.jpg",
+      "https://d.newsweek.com/en/full/1572737/call-duty-warzone-how-download.png",
+      "https://codmwstore.com/wp-content/uploads/2023/10/COD-NEXT-013.jpg",
+      "https://www.drivereasy.com/wp-content/uploads/2020/09/cover2.jpg"
+    ],
+    "short_description": "A fast-paced battle royale set in the Call of Duty universe.",
+    "full_description": "Call of Duty: Warzone is a free-to-play battle royale game that combines fast-paced action with the signature Call of Duty gameplay. Players drop into a massive map, scavenging for weapons and eliminating other players while the play zone shrinks. It also features a unique Gulag mechanic, where eliminated players can fight for a chance to respawn.\n\nWarzone remains one of the most popular battle royale games, offering high-intensity action, a variety of weapons, and constant updates that keep the experience fresh.",
+    "rating": 9
+  },
+  {
+    "id": 11,
+    "title": "The Sims™ 4",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 0.0,
+    "pictureaddress": "https://gmedia.playstation.com/is/image/SIEPDC/the-sims-4-huge-hero-mobile-01-ps4-en-28oct18?$4000px$",
+    "exampicture": [
+      "https://cdn2.unrealengine.com/egs-thesims4-electronicarts-g1a-00-1920x1080-acc697b40374.jpg",
+      "https://cdn2.unrealengine.com/egs-thesims4-electronicarts-g1a-01-1920x1080-b3d100d2f962.jpg",
+      "https://cdn2.unrealengine.com/egs-thesims4-electronicarts-g1a-02-1920x1080-808aa26370f4.jpg",
+      "https://gmedia.playstation.com/is/image/SIEPDC/the-sims-4-screen-04-ps4-en-17mar20?$100px--t$",
+      "https://gmedia.playstation.com/is/image/SIEPDC/the-sims-4-screen-02-ps4-en-17mar20?$100px--t$",
+      "https://gmedia.playstation.com/is/image/SIEPDC/the-sims-4-screen-03-ps4-en-17mar20?$100px--t$"
+    ],
+    "short_description": "A story-driven RPG set in a vast open world, following the adventures of Geralt of Rivia.",
+    "full_description": "A variety of Sims are yours to shape and mold, each with distinct appearances, dynamic personalities and inspiring aspirations. Use powerful customization features to bring your imagination to life. Create yourself, your favorite celebrities, your fantasy or your friends! Change your Sims’ clothing to reflect your mood. Give your Sims depth and purpose with quirky traits and great ambitions. Design the ideal homes for your Sims using Build Mode. Construct the home of your dreams by planning the layout, choosing furnishings and altering the landscape and terrain. You can even add a pool, basement and garden. Hate what you’ve done with the place? Scrap it and rebuild effortlessly with new ideas and designs. Your Sims can visit new communities to expand their social circle, hang out with friends or throw unforgettable parties. Your choices shape every aspect of your Sims’ lives, from birth to adulthood. Along the way, develop skills, pursue hobbies, find your Sims’ calling, start new families and much more. Use the Gallery to find inspiration from a network of players just like you, where you can add content to your game or share your own creations. Download, like and comment on your favorite Sims, homes and fully designed rooms. Join the community and join the fun!",
+    "rating": 4.6
+  },
+  {
+    "id": 12,
+    "title": "The Sims™ 4 Cottage Living",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://xbox-store-checker.com/assets/upload/game/2021/06/optimize/9nb66d6krrl3-background.jpg",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP11TheSims4CottageLiving_Maxis_DLC_G1A_00_1920x1080-405374f8e69a3928fc6ecbf1ca2921b7",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP11TheSims4CottageLiving_Maxis_DLC_G1A_01_1920x1080-3b3bb9ab949e4c687a4aaf8e9bfc76df",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP11TheSims4CottageLiving_Maxis_DLC_G1A_02_1920x1080-c217f9b58faeffebb52c57e3a7b47682",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP11TheSims4CottageLiving_Maxis_DLC_G1A_03_1920x1080-e94df9f67f946bd1d36652c5c25c162a"
+    ],
+    "short_description": "Delight in the quaint charm of The Sims™ 4 Cottage Living Expansion Pack with animal friends, garden-to-table meals, and a close-knit community.",
+    "full_description": "Delight in the quaint charm of The Sims™ 4 Cottage Living Expansion Pack with animal friends, garden-to-table meals, and a close-knit community. At home, cook with the family using the freshest ingredients.Explore the forest to befriend woodland creatures or forage for food, or head to town to meet the locals. Whether Sims are hugging a cow, making friends (or enemies) with their chickens, or growing the biggest vegetables around, the countryside is abundant with new experiences and ways to connect with the world around them. Henford-on-Bagley is a cozy village where everyone knows everyone. So pack a picnic basket and cross-stitch hoop, and head down to The Gnome's Arms pub to kick back with the locals after a long day. Earn unique gifts and learn about the town’s lore from neighbors, or participate in the Finchwick Fair to show off your most prized cow or chicken. Requires The Sims 4 & all game updates. See minimum system requirements for the pack.",
+    "rating": 7.5
+  },
+  {
+    "id": 13,
+    "title": "The Sims™ 4 Cats & Dogs",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://i.ytimg.com/vi/OFWb3lgRpcE/maxresdefault.jpg",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP04TheSims4CatsDogs_ElectronicArts_DLC_G1A_01_1920x1080-70334d21f01225a1239ecf64d8a55314",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP04TheSims4CatsDogs_ElectronicArts_DLC_G1A_02_1920x1080-28b0538804c2f80cf3ccce97ed076c80",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP04TheSims4CatsDogs_ElectronicArts_DLC_G1A_03_1920x1080-9d7a415d7453e97d3a9f9cf5a13e4ce6",
+      "https://drop-assets.ea.com/images/6Pcd9S2MpNfNcD8jIlxxlI/b1b9dbf811d84736b5977bea1b68873e/TS4-Cats-and-Dogs-Media-Hero-Tile-16x9-01.jpg?im=AspectCrop=(16,9),xPosition=0.5,yPosition=0.5&w=517",
+      "https://drop-assets.ea.com/images/4pzxyDhbPu5gkRtffuQb1O/f4bfef4d5044d7c46d5c30d00667fbda/TS4-Cats-and-Dogs-Media-Hero-Tile-16x9-03.jpg?im=AspectCrop=(16,9),xPosition=0.5,yPosition=0.5&w=517"
+    ],
+    "short_description": "Create a variety of cats and dogs, add them to your Sims’ homes to forever change their lives, and care for neighborhood pets as a veterinarian with The Sims™ 4 Cats & Dogs.",
+    "full_description": "Use the powerful Create A Pet tool to customise your Sims’ perfect cats, dogs, puppies and kittens. Choose from a variety of breeds, give them distinct personalities and directly manipulate their features. Easily personalise their coats with unique patterns to create your real-life pets, dream pets or something more fanciful. For the first time, complete their looks with expressive outfits and accessories. Experience the companionship and fun that furry friends bring to your Sims’ lives. Cats and dogs have minds of their own and form special relationships with Sims based on their daily interactions. Your Sims care for, train and play games with their pets who all exhibit distinct and sometimes bizarre animal behaviours. Discover the coastal shores of Brindleton Bay, a new world where your Sims and their pets can live and enjoy outdoor activities. Play fetch near the harbour docks, take a walk to the lighthouse or visit a park to setup an obstacle course and meet other pet-loving locals. Be on the lookout for stray pets that your Sims can take in as their own.",
+    "rating": 7.5
+  },
+  {
+    "id": 14,
+    "title": "The Sims™ 4 My Wedding Stories",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://i.ytimg.com/vi/xr_5WU_nWrA/maxresdefault.jpg",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP11TheSims4MyWeddingStoriesGamePack_Maxis_DLC_G1A_00_1920x1080-d9c7a3e56967f05d5e780250e498ee7a",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP11TheSims4MyWeddingStoriesGamePack_Maxis_DLC_G1A_02_1920x1080-9c19d3f78e678c037f004220ca68ae1d",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP11TheSims4MyWeddingStoriesGamePack_Maxis_DLC_G1A_03_1920x1080-4c7159d173ae4972c48b9d649ce71be8"
+    ],
+    "short_description": "Take a trip down the aisle in The Sims 4 My Wedding Stories Game Pack. Make your Sim’s journey to their big day special, then plan the perfect ceremony.",
+    "full_description": "Take a trip down the aisle in The Sims 4 My Wedding Stories Game Pack. Make your Sim’s journey to their big day special, then plan the perfect ceremony. From the proposal to the reception, customize each aspect to celebrate every Sim’s love story in a way that truly feels unique to them. In the world of Tartosa, (almost) anything can be romantic. Before the main event, celebrate with family at a rehearsal dinner. When it’s finally time, feel the love and live out every fantasy. Exchange vows, rings and kisses at the altar before the real celebration starts. Kick it off by serving tea for the family, or head right to the reception. Newlyweds and guests alike can dance with loved ones while the new spouses cut the cake, give toasts, and receive well wishes. Requires The Sims 4 & all game updates. See minimum system requirements for the pack.",
+    "rating": 7.5
+  },
+  {
+    "id": 15,
+    "title": "The Sims™ 4 Outdoor Retreat",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP01TheSims4OutdoorRetreat_Maxis_DLC_G1A_00_1920x1080-24389134fbe11dab563994997c78bfdc",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP01TheSims4OutdoorRetreat_Maxis_DLC_G1A_01_1920x1080-1bc8d2865a0138661c27d06e66ab7519",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP01TheSims4OutdoorRetreat_Maxis_DLC_G1A_02_1920x1080-79f34be61c1d66eddf6ab859039c1771",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP01TheSims4OutdoorRetreat_Maxis_DLC_G1A_03_1920x1080-46edd0c80203898321e1db02e6b49b05",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP01TheSims4OutdoorRetreat_Maxis_DLC_G1A_04_1920x1080-b5c43d775d3c37f755a3aee1dca2f2c9",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP01TheSims4OutdoorRetreat_Maxis_DLC_G1A_05_1920x1080-dab9e8302e6e8c0102e5922f07b00269"
+    ],
+    "short_description": "Take your Sims camping and explore the all-new destination of Granite Falls in The Sims 4 Outdoor Retreat!",
+    "full_description": "Venture into the deep woods to discover new surprises, including dangerous and wondrous herbs, new species of fish, creepy insects, and…bears? Hang out by the campfire before trying to find the hermit rumored to live in the deepest parts of the forest. Build your Sim’s herbalism skill to create a variety of useful potions, from insect repellent to a concoction that can help soothe a tense Sim. This new skill will be useful to help Sims identify which wild plants are edible or poisonous. Requires The Sims 4 & all game updates. See minimum system requirements for the pack.",
+    "rating": 7.5
+  },
+  {
+    "id": 16,
+    "title": "The Sims™ 4 Realm of Magic",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP08TheSims4RealmofMagic_Maxis_DLC_S1_2560x1440-d1d791b265fed1aab9fdb93d4be61d86",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP08TheSims4RealmofMagic_Maxis_DLC_G1A_00_1920x1080-9fd5952a59ebb7b59e5185166a758fec",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP08TheSims4RealmofMagic_Maxis_DLC_G1A_01_1920x1080-5b7ba41032f01069dd23bfb8aeb19af1",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP08TheSims4RealmofMagic_Maxis_DLC_G1A_02_1920x1080-3039d8e03c47b7b9a490bb2edde78171",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP08TheSims4RealmofMagic_Maxis_DLC_G1A_03_1920x1080-e0e0d33360081f5f7b66541f8b15dc45",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP08TheSims4RealmofMagic_Maxis_DLC_G1A_04_1920x1080-4cfca7363963100e9fa2e6259453c5fa"
+    ],
+    "short_description": "Explore a supernatural world and master the art of wizardry in The Sims™ 4 Realm of Magic.",
+    "full_description": "Explore a supernatural world and master the art of wizardry in The Sims™ 4 Realm of Magic.* This countryside town may look and feel like other neighborhoods, but once the secret portal is unlocked, the true magic begins. Potions, wands, and even a floating world will charm your Sim, but beware of spells gone wrong! Learn the craft of wizardry, summon a familiar for protection, and immerse yourself in this spellbinding realm.Get in the spirit of sorcery with outfits that suit your Sim. Over-the-top attire is cauldron-ready, while a subdued ensemble is perfect for casting new spells. Collect wands and brooms to finish the look, then decorate rooms with enchanting objects.Requires The Sims 4 & all game updates. See minimum system requirements for the pack.",
+    "rating": 7.5
+  },
+  {
+    "id": 17,
+    "title": "The Sims™ 4 Snowy Escape",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://i.ytimg.com/vi/M5VfDtqNMTQ/maxresdefault.jpg",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP10TheSims4SnowyEscape_Maxis_DLC_G1A_00_1920x1080-a9341334658d9343bde84af6f6fe8f81",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP10TheSims4SnowyEscape_Maxis_DLC_G1A_01_1920x1080-66f4cacc1c81a2f7f89c26999c7ef218",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP10TheSims4SnowyEscape_Maxis_DLC_G1A_02_1920x1080-ac9bba4b397bef30d7439ab3600396cd",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP10TheSims4SnowyEscape_Maxis_DLC_G1A_03_1920x1080-8303a74be2d332d45ebcf76cb7e49310"
+    ],
+    "short_description": "Gear up for thrilling snow sports, relax in natural hot springs, and design your Japanese-inspired home in The Sims™ 4 Snowy Escape Expansion Pack!",
+    "full_description": "Gear up for thrilling snow sports, relax in natural hot springs, and design your Japanese-inspired home in The Sims™ 4 Snowy Escape Expansion Pack. Discover new ways to adventure — challenge your Sims to climb to the peak and bond with others in the world of Mt. Komorebi. From sledding and snowboarding to hot pot around the kotatsu table, there’s something to match every lifestyle. Unlock new personality and relationship effects with the introduction of Lifestyles and Sentiments. Lifestyles manifest in response to your Sim’s actions and habits, changing their behaviors appropriately. Similarly, shared experiences inspire Sentiments and have a lasting impact on Sims’ relationships to each other, affecting their social interactions.Requires The Sims 4 & all game updates. See minimum system requirements for the pack.",
+    "rating": 7.5
+  },
+  {
+    "id": 18,
+    "title": "The Sims™ 4 Werewolves",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://i.ytimg.com/vi/OGmEEtpXXpM/maxresdefault.jpg",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP12TheSims4WerewolvesGamePack_Maxis_DLC_G1A_00_1920x1080-8dda48e4e7d571dace70adf2c773f828",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP12TheSims4WerewolvesGamePack_Maxis_DLC_G1A_01_1920x1080-e3908df578e49c156b9502f3f0debcea",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP12TheSims4WerewolvesGamePack_Maxis_DLC_G1A_02_1920x1080-43ad33fcdca5fd4612ffb7cd22fd093a",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_GP12TheSims4WerewolvesGamePack_Maxis_DLC_G1A_03_1920x1080-1a8945fbba8f5c7aa0d2a69a2092e06f"
+    ],
+    "short_description": "Howl the night away in The Sims™ 4 Werewolves Game Pack! Your Sims will transform, join packs, and run wild under the light of the full moon.",
+    "full_description": "Howl the night away in The Sims 4 Werewolves Game Pack. Your Sims will transform, join packs, and run wild under the light of the full moon. Explore the world of Moonwood Mill and discover the secrets of the werewolves as you navigate your new lycanthrope life. Sims will unlock new skills, manage new temperaments, and maybe even meet their fated mates. here’s a lot to learn about werewolves and their origins. Unravel werewolf, vampire, and spellcaster lore as you read books, discover secret tunnels, grow your collection, and interact with denizens of Moonwood Mill.Requires The Sims 4 & all game updates. See minimum system requirements for the pack.",
+    "rating": 7.5
+  },
+  {
+    "id": 19,
+    "title": "The Sims™ 4 Growing Together",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1904392/capsule_616x353.jpg?t=1711660625",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP13TheSims4GrowingTogetherExpansionPack_Maxis_DLC_G1A_01_1920x1080-8e93f5949b0bf28a6240b812a2d69d67",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP13TheSims4GrowingTogetherExpansionPack_Maxis_DLC_G1A_02_1920x1080-12e143e97bf90b8a026494fab33a50a1",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP13TheSims4GrowingTogetherExpansionPack_Maxis_DLC_G1A_03_1920x1080-2b75abc39ad79f5e1a46663082cbac62",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_EP13TheSims4GrowingTogetherExpansionPack_Maxis_DLC_G1A_04_1920x1080-1d20c82f88a4e5970e14f907ee8ccb21"
+    ],
+    "short_description": "Strengthen family bonds, make friends or enemies, and discover your Sims’ truest selves with The Sims™ 4 Growing Together Expansion Pack*!",
+    "full_description": "Strengthen family bonds, make friends or enemies, and discover your Sims’ truest selves with The Sims™ 4 Growing Together Expansion Pack*! The ways your Sims relate to those around them – from family members to Sims they’ve just met – are evolving. Both planned events like sleepovers and unexpected milestones like having a midlife crisis will shape your Sims and their relationships.",
+    "rating": 7.5
+  },
+  {
+    "id": 20,
+    "title": "The Sims™ 4 Tiny Living Stuff",
+    "categories": ["Simulation", "Single Player", ""],
+    "price": 999.0,
+    "pictureaddress": "https://i.ytimg.com/vi/LcB8QyWRk7g/maxresdefault.jpg",
+    "exampicture": [
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_SP16TheSims4TinyLivingStuffPack_Maxis_DLC_G1A_02_1920x1080-53cf3cacf028b9ebba7c8acb018ccfdc",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_SP16TheSims4TinyLivingStuffPack_Maxis_DLC_G1A_03_1920x1080-bcfd8ba2ecc55ce56b3ef015ddda74ef",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_SP16TheSims4TinyLivingStuffPack_Maxis_DLC_G1A_04_1920x1080-6757a61e0afc9b0a07990094dadd4cb0",
+      "https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/EGS_SP16TheSims4TinyLivingStuffPack_Maxis_DLC_G1A_05_1920x1080-672639e90e46bf47294ef64ffb70f926"
+    ],
+    "short_description": "Think big, build small. Create the tiny, comfy home of your Sims’ dreams with The Sims™ 4 Tiny Living Stuff Pack!",
+    "full_description": "Think big, build small. Get The Sims™ 4 Tiny Living Stuff Pack to create the tiny, comfy home of your Sims’ dreams, with a never-before-created residential lot type for tiny homes and stylish, space-saving furniture. Embrace comfort culture with CAS items that highlight your Sims’ cozy lifestyle, like comfy PJ’s and oversized cashmere sweaters.Outfit your Sims in comfy new CAS items, like a dress shirt or turtleneck that represents their low-key lifestyle.Requires The Sims 4 & all game updates. See minimum system requirements for the pack.",
+    "rating": 7.5
+  },
+  {
+    "id": 21,
+    "title": "The Witcher 3: Wild Hunt",
+    "categories": ["Action RPG", "Open World", "Fantasy", "Single Player", ""],
+    "price": 1299.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f",
+    "exampicture": [
+      "https://images4.alphacoders.com/667/667676.png",
+      "https://www.wallpaperflare.com/static/609/954/369/the-witcher-the-witcher-3-wild-hunt-witcher-wild-wallpaper.jpg",
+      "https://www.pixelstalk.net/wp-content/uploads/images6/Gaming-Witcher-3-Wallpaper-HD.jpg",
+      "https://images2.alphacoders.com/520/thumb-1920-520246.jpg",
+      "https://i.pinimg.com/originals/01/83/e6/0183e6b27db71f427152171d8e0c9bbe.jpg"
+    ],
+    "short_description": "A story-driven RPG set in a vast open world, following the adventures of Geralt of Rivia.",
+    "full_description": "The Witcher 3: Wild Hunt is a critically acclaimed RPG featuring a deep narrative, immersive world, and fast-paced combat. Players take on the role of Geralt of Rivia, a monster hunter searching for his adopted daughter while facing various dangers in the world of The Continent. With a branching storyline and countless side quests, the game offers rich content for players to explore.\n\nWith beautiful visuals, memorable characters, and a haunting soundtrack, the game is considered one of the best RPGs of all time. Players can engage in combat, exploration, and use magic as they journey through forests, villages, and cities.",
+    "rating": 9
+  },
+  {
+    "id": 22,
+    "title": "Fortnite",
+    "categories": [
+      "Battle Royale",
+      "Multiplayer",
+      "Survival",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb",
+    "exampicture": [
+      "https://wallpapercat.com/w/full/e/0/3/88436-1920x1080-desktop-full-hd-fortnite-wallpaper-photo.jpg",
+      "https://wallpapercave.com/wp/wp2558665.jpg",
+      "https://wallpapers-hub.art/wallpaper-images/113153.png",
+      "https://www.hdwallpapers.in/download/mega_city_fortnite_hd_fortnite-1920x1080.jpg",
+      "https://wallpapers.com/images/hd/fortnite-characters-showcase-73ddz5o04ddfxzcu.jpg"
+    ],
+    "short_description": "A fast-paced battle royale game where 100 players fight to be the last one standing.",
+    "full_description": "Fortnite is an online multiplayer battle royale game that has taken the world by storm. Players are dropped onto an island where they must gather resources, build structures, and eliminate other players in order to survive. With frequent updates, new weapons, skins, and events, Fortnite remains one of the most popular games in the world.\n\nThe game features a unique building mechanic where players can construct defensive structures, giving it a creative twist on the traditional battle royale formula. Free-to-play with in-game purchases, Fortnite offers an engaging experience for both casual and competitive players.",
+    "rating": 8
+  },
+  {
+    "id": 23,
+    "title": "Cyberpunk 2077",
+    "categories": ["Action RPG", "Open World", "Sci-Fi", "Single Player", ""],
+    "price": 2499.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7",
+    "exampicture": [
+      "https://images.axios.com/cMBKByC0n-FfbL6r4V34ibvpLfE=/0x0:1920x1080/1920x1080/2021/03/29/1617062389341.jpg",
+      "https://cdn.wallpaper.tn/large/Cyberpunk-2077-Wallpaper-4K-15610.jpg",
+      "https://i.pcmag.com/imagery/articles/00hYjpCCgBH5VFYPsZrBqmf-1..v1600444074.jpg",
+      "https://images.wallpapersden.com/image/download/cyberpunk-2077-hd-gaming-22_bWhnZW2UmZqaraWkpJRnamtlrWZpaWU.jpg",
+      "https://gameranx.com/wp-content/uploads/2017/03/Cyberpunk-2077-1080P-Wallpaper.jpg"
+    ],
+    "short_description": "A dystopian open-world RPG where you control a mercenary navigating the dark future of Night City.",
+    "full_description": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics. With a high degree of customization, deep storylines, and action-packed combat, it provides a unique futuristic experience.\n\nThe game features immersive visuals, robust character progression, and multiple pathways in the story, allowing for different outcomes based on your decisions. Despite a rocky launch, recent updates have improved the game significantly, making it one of the most talked-about RPGs.",
+    "rating": 7
+  },
+  {
+    "id": 24,
+    "title": "Grand Theft Auto V",
+    "categories": ["Action", "Open World", "Multiplayer", "Crime", ""],
+    "price": 1399.0,
+    "pictureaddress": "https://www.gamingdose.com/wp-content/uploads/2014/12/GTA-V-Wallpaper-Full-HD-Background-Pictures.jpg",
+    "exampicture": [
+      "https://images8.alphacoders.com/543/543379.jpg",
+      "https://wallpapercat.com/w/full/2/8/5/130792-2880x1800-desktop-hd-grand-theft-auto-5-background-image.jpg",
+      "https://wallpapers.com/images/high/gta-5-trevor-and-michael-vywcwu2ie0pk3vr9.webp",
+      "https://บทสรุป.com/wp-content/uploads/2016/06/GTA-V.jpg",
+      "https://img.gta5-mods.com/q95/images/save-game-44/a82937-v_trunk_1920x1080.jpg"
+    ],
+    "short_description": "An open-world action game with a dynamic story and extensive multiplayer mode.",
+    "full_description": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events. The game's story revolves around three protagonists, each with their unique backgrounds and motives. Additionally, GTA Online offers multiplayer action with other players in a variety of activities ranging from street racing to cooperative missions.\n\nWith breathtaking graphics, endless possibilities, and a compelling narrative, GTAV continues to be one of the most popular games, even years after its release. It's a must-play for fans of open-world games.",
+    "rating": 10
+  },
+  {
+    "id": 25,
+    "title": "Apex Legends",
+    "categories": [
+      "Battle Royale",
+      "Multiplayer",
+      "Shooter",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://images6.alphacoders.com/992/992033.jpg",
+    "exampicture": [
+      "https://www.playulti.com/static/thumb/2019/1/6/attach-1549388951171.jpg",
+      "https://cdn1.epicgames.com/spt-assets/5dcd88f4e2094a698ebffa43438edc33/apex-legends-teipz.jpg",
+      "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2022-07/apex%201-220728-165439.jpg?versionId=.64gSYdAeRXLOs3NcGmGZBEDDeiy61Wk",
+      "https://4kwallpapers.com/images/wallpapers/apex-legends-video-1920x1200-12712.jpg",
+      "https://cdn.wccftech.com/wp-content/uploads/2024/02/WCCFapexlegends98.jpg"
+    ],
+    "short_description": "A fast-paced battle royale shooter with unique characters and abilities.",
+    "full_description": "Apex Legends is a free-to-play battle royale game that features a variety of Legends, each with unique abilities. Players team up in squads and fight to be the last team standing, while utilizing the game's unique mechanics, including respawning teammates and fast movement. The game includes frequent updates with new characters, skins, and limited-time events.\n\nWith tactical gameplay, a focus on team coordination, and a growing esports community, Apex Legends has become one of the most exciting battle royales in the competitive gaming world.",
+    "rating": 8
+  },
+  {
+    "id": 26,
+    "title": "Minecraft",
+    "categories": ["Survival", "Sandbox", "Multiplayer", "Creative", ""],
+    "price": 690.0,
+    "pictureaddress": "https://wallpapers.com/images/featured/minecraft-s2kxfahyg30sob8q.jpg",
+    "exampicture": [
+      "https://images3.alphacoders.com/132/thumb-1920-1321959.png",
+      "https://i.redd.it/xi14z2xtqx691.png",
+      "https://wallpapers.com/images/featured/beautiful-minecraft-on7hyl1nq96xum8d.jpg",
+      "https://i.pinimg.com/originals/2f/db/80/2fdb80a1219c99ea0c59d82aede974e9.jpg",
+      "https://wallpapercave.com/wp/wp2998911.jpg"
+    ],
+    "short_description": "A sandbox game where you can build, explore, and survive in a blocky world.",
+    "full_description": "Minecraft is a sandbox game that allows players to build and explore in a procedurally generated world made up of blocks. You can mine for resources, craft tools, and construct complex structures. The game includes various modes such as Creative, Survival, and Adventure, offering diverse experiences. With modding support, multiplayer servers, and regular updates, Minecraft has remained one of the most played games worldwide.\n\nWhether you're building elaborate cities, surviving against monsters, or exploring endless landscapes, Minecraft's simple yet deep gameplay appeals to players of all ages.",
+    "rating": 9
+  },
+  {
+    "id": 27,
+    "title": "Valorant",
+    "categories": ["Shooter", "Multiplayer", "Tactical", "Free-to-Play", ""],
+    "price": 0.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S1_2560x1440-6608fb6c4c56c07b9a7caa34c6e6ee37",
+    "exampicture": [
+      "https://media.wired.com/photos/5ea0840cb0490300086261e3/master/pass/Cul-Reveal_ReactorA_VALORANT.jpg",
+      "https://cdn.mos.cms.futurecdn.net/YHdtAs36hSJUL56Lq2nxFi-1200-80.jpg",
+      "https://d.newsweek.com/en/full/1570653/valorant-project-gameplay-reveal-trailer.jpg",
+      "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19755320/FirstLook_Smoke_VALORANT.jpg?quality=90&strip=all&crop=0,0,100,100",
+      "https://media.assettype.com/afkgaming/2021-09/bd195fe1-3608-477b-8418-c784dd4b5dc2/All_the_regional_qualifiers_wrap_up_in_August___11_.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max"
+    ],
+    "short_description": "A tactical shooter with a focus on character abilities and team coordination.",
+    "full_description": "Valorant is a tactical first-person shooter that combines precise gunplay with hero-based abilities. Teams of five compete to either plant a bomb or defend a location. Each character, called an Agent, has unique powers that enhance strategy and team dynamics. The game is known for its precise shooting mechanics and competitive, team-based gameplay.\n\nValorant is heavily focused on teamwork and communication, making it a favorite for esports and competitive gaming. With regular updates and a growing community, it remains one of the top free-to-play tactical shooters.",
+    "rating": 8
+  },
+  {
+    "id": 28,
+    "title": "Rocket League",
+    "categories": ["Sports", "Multiplayer", "Action", "Free-to-Play", ""],
+    "price": 0.0,
+    "pictureaddress": "https://www.rocketleague.com/images/keyart/rl_evergreen.jpg",
+    "exampicture": [
+      "https://aiptcomics.com/wp-content/uploads/2020/07/rocket-league.jpg",
+      "https://images.prismic.io/play-vs/fd0954bae7fc056ecda5ef8350bad0e8fb8e6ae4_playvs-rl-heroimage.jpg?auto=compress,format",
+      "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/rocket-league-gameplay.jpg",
+      "https://britishesports.org/wp-content/uploads/2022/04/rl-terms-1200x800-1.jpg",
+      "https://lutris.net/media/games/screenshots/rocket-league-screenshot-010-ps4-us-7jul15.jpg"
+    ],
+    "short_description": "A unique fusion of soccer and vehicles, where players control cars to score goals.",
+    "full_description": "Rocket League is a fast-paced game where players drive cars to hit a giant ball into their opponent's goal. With simple mechanics but complex strategies, the game combines soccer with physics-based gameplay. It includes solo, multiplayer, and competitive modes, allowing for various ways to play and compete.\n\nRegular updates, seasonal events, and esports tournaments have kept Rocket League fresh, making it a popular game in both casual and professional gaming communities.",
+    "rating": 9
+  },
+  {
+    "id": 29,
+    "title": "Among Us",
+    "categories": [
+      "Multiplayer",
+      "Party",
+      "Social Deduction",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://www.internetsafeeducation.com/wp-content/uploads/2021/12/3902312.jpg",
+    "exampicture": [
+      "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2667,w_4000,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1200/Shutterstock-by-Vistin-aeo_composite_1835067190-_Converted__yctaqg.png",
+      "https://m.media-amazon.com/images/I/61VLV93FzXL.jpg",
+      "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2024-03/Among-Us-240329-003453.png?versionId=JYTELHCjp4QIUs5UKsdDUSElQHcv7t62",
+      "https://i.pcmag.com/imagery/reviews/00eaJ8Sf2suWy4yfi1iz7F8-1..v1603813544.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ZfT3yUjLwX_WpCT4kWnUoyWHuaVCqjxdmkw4MvxqXYTTDasOJ6FKa58HDaRbyZLlXh4&usqp=CAU"
+    ],
+    "short_description": "A social deduction game where players must figure out who the Impostor is.",
+    "full_description": "Among Us is a multiplayer party game where players take on the roles of Crewmates or Impostors aboard a spaceship. The Crewmates must complete tasks around the ship while the Impostors secretly sabotage their efforts and eliminate them. The game encourages communication and strategy as players try to identify the Impostors before it's too late.\n\nWith simple gameplay mechanics and hilarious moments, Among Us became a massive hit, especially during the COVID-19 pandemic. Its success has led to frequent updates, new maps, and even themed events.",
+    "rating": 8
+  },
+  {
+    "id": 30,
+    "title": "Call of Duty: Warzone",
+    "categories": [
+      "Battle Royale",
+      "Shooter",
+      "Multiplayer",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://blog.ttt-website.com/wp-content/uploads/2023/12/Call-Of-Duty-Warzone-1.jpg",
+    "exampicture": [
+      "https://assets-prd.ignimgs.com/2022/11/18/warzone-mobile-stadium-keyart-1668769729454.png?fit=bounds&width=1280&height=720",
+      "https://i.ytimg.com/vi/DVjCUkrHHcY/maxresdefault.jpg",
+      "https://d.newsweek.com/en/full/1572737/call-duty-warzone-how-download.png",
+      "https://codmwstore.com/wp-content/uploads/2023/10/COD-NEXT-013.jpg",
+      "https://www.drivereasy.com/wp-content/uploads/2020/09/cover2.jpg"
+    ],
+    "short_description": "A fast-paced battle royale set in the Call of Duty universe.",
+    "full_description": "Call of Duty: Warzone is a free-to-play battle royale game that combines fast-paced action with the signature Call of Duty gameplay. Players drop into a massive map, scavenging for weapons and eliminating other players while the play zone shrinks. It also features a unique Gulag mechanic, where eliminated players can fight for a chance to respawn.\n\nWarzone remains one of the most popular battle royale games, offering high-intensity action, a variety of weapons, and constant updates that keep the experience fresh.",
+    "rating": 9
+  },
+  {
+    "id": 31,
+    "title": "The Witcher 3: Wild Hunt",
+    "categories": ["Action RPG", "Open World", "Fantasy", "Single Player", ""],
+    "price": 1299.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f",
+    "exampicture": [
+      "https://images4.alphacoders.com/667/667676.png",
+      "https://www.wallpaperflare.com/static/609/954/369/the-witcher-the-witcher-3-wild-hunt-witcher-wild-wallpaper.jpg",
+      "https://www.pixelstalk.net/wp-content/uploads/images6/Gaming-Witcher-3-Wallpaper-HD.jpg",
+      "https://images2.alphacoders.com/520/thumb-1920-520246.jpg",
+      "https://i.pinimg.com/originals/01/83/e6/0183e6b27db71f427152171d8e0c9bbe.jpg"
+    ],
+    "short_description": "A story-driven RPG set in a vast open world, following the adventures of Geralt of Rivia.",
+    "full_description": "The Witcher 3: Wild Hunt is a critically acclaimed RPG featuring a deep narrative, immersive world, and fast-paced combat. Players take on the role of Geralt of Rivia, a monster hunter searching for his adopted daughter while facing various dangers in the world of The Continent. With a branching storyline and countless side quests, the game offers rich content for players to explore.\n\nWith beautiful visuals, memorable characters, and a haunting soundtrack, the game is considered one of the best RPGs of all time. Players can engage in combat, exploration, and use magic as they journey through forests, villages, and cities.",
+    "rating": 9
+  },
+  {
+    "id": 32,
+    "title": "Fortnite",
+    "categories": [
+      "Battle Royale",
+      "Multiplayer",
+      "Survival",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb",
+    "exampicture": [
+      "https://wallpapercat.com/w/full/e/0/3/88436-1920x1080-desktop-full-hd-fortnite-wallpaper-photo.jpg",
+      "https://wallpapercave.com/wp/wp2558665.jpg",
+      "https://wallpapers-hub.art/wallpaper-images/113153.png",
+      "https://www.hdwallpapers.in/download/mega_city_fortnite_hd_fortnite-1920x1080.jpg",
+      "https://wallpapers.com/images/hd/fortnite-characters-showcase-73ddz5o04ddfxzcu.jpg"
+    ],
+    "short_description": "A fast-paced battle royale game where 100 players fight to be the last one standing.",
+    "full_description": "Fortnite is an online multiplayer battle royale game that has taken the world by storm. Players are dropped onto an island where they must gather resources, build structures, and eliminate other players in order to survive. With frequent updates, new weapons, skins, and events, Fortnite remains one of the most popular games in the world.\n\nThe game features a unique building mechanic where players can construct defensive structures, giving it a creative twist on the traditional battle royale formula. Free-to-play with in-game purchases, Fortnite offers an engaging experience for both casual and competitive players.",
+    "rating": 8
+  },
+  {
+    "id": 33,
+    "title": "Cyberpunk 2077",
+    "categories": ["Action RPG", "Open World", "Sci-Fi", "Single Player", ""],
+    "price": 2499.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7",
+    "exampicture": [
+      "https://images.axios.com/cMBKByC0n-FfbL6r4V34ibvpLfE=/0x0:1920x1080/1920x1080/2021/03/29/1617062389341.jpg",
+      "https://cdn.wallpaper.tn/large/Cyberpunk-2077-Wallpaper-4K-15610.jpg",
+      "https://i.pcmag.com/imagery/articles/00hYjpCCgBH5VFYPsZrBqmf-1..v1600444074.jpg",
+      "https://images.wallpapersden.com/image/download/cyberpunk-2077-hd-gaming-22_bWhnZW2UmZqaraWkpJRnamtlrWZpaWU.jpg",
+      "https://gameranx.com/wp-content/uploads/2017/03/Cyberpunk-2077-1080P-Wallpaper.jpg"
+    ],
+    "short_description": "A dystopian open-world RPG where you control a mercenary navigating the dark future of Night City.",
+    "full_description": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics. With a high degree of customization, deep storylines, and action-packed combat, it provides a unique futuristic experience.\n\nThe game features immersive visuals, robust character progression, and multiple pathways in the story, allowing for different outcomes based on your decisions. Despite a rocky launch, recent updates have improved the game significantly, making it one of the most talked-about RPGs.",
+    "rating": 7
+  },
+  {
+    "id": 34,
+    "title": "Grand Theft Auto V",
+    "categories": ["Action", "Open World", "Multiplayer", "Crime", ""],
+    "price": 1399.0,
+    "pictureaddress": "https://www.gamingdose.com/wp-content/uploads/2014/12/GTA-V-Wallpaper-Full-HD-Background-Pictures.jpg",
+    "exampicture": [
+      "https://images8.alphacoders.com/543/543379.jpg",
+      "https://wallpapercat.com/w/full/2/8/5/130792-2880x1800-desktop-hd-grand-theft-auto-5-background-image.jpg",
+      "https://wallpapers.com/images/high/gta-5-trevor-and-michael-vywcwu2ie0pk3vr9.webp",
+      "https://บทสรุป.com/wp-content/uploads/2016/06/GTA-V.jpg",
+      "https://img.gta5-mods.com/q95/images/save-game-44/a82937-v_trunk_1920x1080.jpg"
+    ],
+    "short_description": "An open-world action game with a dynamic story and extensive multiplayer mode.",
+    "full_description": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events. The game's story revolves around three protagonists, each with their unique backgrounds and motives. Additionally, GTA Online offers multiplayer action with other players in a variety of activities ranging from street racing to cooperative missions.\n\nWith breathtaking graphics, endless possibilities, and a compelling narrative, GTAV continues to be one of the most popular games, even years after its release. It's a must-play for fans of open-world games.",
+    "rating": 10
+  },
+  {
+    "id": 35,
+    "title": "Apex Legends",
+    "categories": [
+      "Battle Royale",
+      "Multiplayer",
+      "Shooter",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://images6.alphacoders.com/992/992033.jpg",
+    "exampicture": [
+      "https://www.playulti.com/static/thumb/2019/1/6/attach-1549388951171.jpg",
+      "https://cdn1.epicgames.com/spt-assets/5dcd88f4e2094a698ebffa43438edc33/apex-legends-teipz.jpg",
+      "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2022-07/apex%201-220728-165439.jpg?versionId=.64gSYdAeRXLOs3NcGmGZBEDDeiy61Wk",
+      "https://4kwallpapers.com/images/wallpapers/apex-legends-video-1920x1200-12712.jpg",
+      "https://cdn.wccftech.com/wp-content/uploads/2024/02/WCCFapexlegends98.jpg"
+    ],
+    "short_description": "A fast-paced battle royale shooter with unique characters and abilities.",
+    "full_description": "Apex Legends is a free-to-play battle royale game that features a variety of Legends, each with unique abilities. Players team up in squads and fight to be the last team standing, while utilizing the game's unique mechanics, including respawning teammates and fast movement. The game includes frequent updates with new characters, skins, and limited-time events.\n\nWith tactical gameplay, a focus on team coordination, and a growing esports community, Apex Legends has become one of the most exciting battle royales in the competitive gaming world.",
+    "rating": 8
+  },
+  {
+    "id": 36,
+    "title": "Minecraft",
+    "categories": ["Survival", "Sandbox", "Multiplayer", "Creative", ""],
+    "price": 690.0,
+    "pictureaddress": "https://wallpapers.com/images/featured/minecraft-s2kxfahyg30sob8q.jpg",
+    "exampicture": [
+      "https://images3.alphacoders.com/132/thumb-1920-1321959.png",
+      "https://i.redd.it/xi14z2xtqx691.png",
+      "https://wallpapers.com/images/featured/beautiful-minecraft-on7hyl1nq96xum8d.jpg",
+      "https://i.pinimg.com/originals/2f/db/80/2fdb80a1219c99ea0c59d82aede974e9.jpg",
+      "https://wallpapercave.com/wp/wp2998911.jpg"
+    ],
+    "short_description": "A sandbox game where you can build, explore, and survive in a blocky world.",
+    "full_description": "Minecraft is a sandbox game that allows players to build and explore in a procedurally generated world made up of blocks. You can mine for resources, craft tools, and construct complex structures. The game includes various modes such as Creative, Survival, and Adventure, offering diverse experiences. With modding support, multiplayer servers, and regular updates, Minecraft has remained one of the most played games worldwide.\n\nWhether you're building elaborate cities, surviving against monsters, or exploring endless landscapes, Minecraft's simple yet deep gameplay appeals to players of all ages.",
+    "rating": 9
+  },
+  {
+    "id": 37,
+    "title": "Valorant",
+    "categories": ["Shooter", "Multiplayer", "Tactical", "Free-to-Play", ""],
+    "price": 0.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S1_2560x1440-6608fb6c4c56c07b9a7caa34c6e6ee37",
+    "exampicture": [
+      "https://media.wired.com/photos/5ea0840cb0490300086261e3/master/pass/Cul-Reveal_ReactorA_VALORANT.jpg",
+      "https://cdn.mos.cms.futurecdn.net/YHdtAs36hSJUL56Lq2nxFi-1200-80.jpg",
+      "https://d.newsweek.com/en/full/1570653/valorant-project-gameplay-reveal-trailer.jpg",
+      "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19755320/FirstLook_Smoke_VALORANT.jpg?quality=90&strip=all&crop=0,0,100,100",
+      "https://media.assettype.com/afkgaming/2021-09/bd195fe1-3608-477b-8418-c784dd4b5dc2/All_the_regional_qualifiers_wrap_up_in_August___11_.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max"
+    ],
+    "short_description": "A tactical shooter with a focus on character abilities and team coordination.",
+    "full_description": "Valorant is a tactical first-person shooter that combines precise gunplay with hero-based abilities. Teams of five compete to either plant a bomb or defend a location. Each character, called an Agent, has unique powers that enhance strategy and team dynamics. The game is known for its precise shooting mechanics and competitive, team-based gameplay.\n\nValorant is heavily focused on teamwork and communication, making it a favorite for esports and competitive gaming. With regular updates and a growing community, it remains one of the top free-to-play tactical shooters.",
+    "rating": 8
+  },
+  {
+    "id": 38,
+    "title": "Rocket League",
+    "categories": ["Sports", "Multiplayer", "Action", "Free-to-Play", ""],
+    "price": 0.0,
+    "pictureaddress": "https://www.rocketleague.com/images/keyart/rl_evergreen.jpg",
+    "exampicture": [
+      "https://aiptcomics.com/wp-content/uploads/2020/07/rocket-league.jpg",
+      "https://images.prismic.io/play-vs/fd0954bae7fc056ecda5ef8350bad0e8fb8e6ae4_playvs-rl-heroimage.jpg?auto=compress,format",
+      "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/rocket-league-gameplay.jpg",
+      "https://britishesports.org/wp-content/uploads/2022/04/rl-terms-1200x800-1.jpg",
+      "https://lutris.net/media/games/screenshots/rocket-league-screenshot-010-ps4-us-7jul15.jpg"
+    ],
+    "short_description": "A unique fusion of soccer and vehicles, where players control cars to score goals.",
+    "full_description": "Rocket League is a fast-paced game where players drive cars to hit a giant ball into their opponent's goal. With simple mechanics but complex strategies, the game combines soccer with physics-based gameplay. It includes solo, multiplayer, and competitive modes, allowing for various ways to play and compete.\n\nRegular updates, seasonal events, and esports tournaments have kept Rocket League fresh, making it a popular game in both casual and professional gaming communities.",
+    "rating": 9
+  },
+  {
+    "id": 39,
+    "title": "Among Us",
+    "categories": [
+      "Multiplayer",
+      "Party",
+      "Social Deduction",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://www.internetsafeeducation.com/wp-content/uploads/2021/12/3902312.jpg",
+    "exampicture": [
+      "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2667,w_4000,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1200/Shutterstock-by-Vistin-aeo_composite_1835067190-_Converted__yctaqg.png",
+      "https://m.media-amazon.com/images/I/61VLV93FzXL.jpg",
+      "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2024-03/Among-Us-240329-003453.png?versionId=JYTELHCjp4QIUs5UKsdDUSElQHcv7t62",
+      "https://i.pcmag.com/imagery/reviews/00eaJ8Sf2suWy4yfi1iz7F8-1..v1603813544.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ZfT3yUjLwX_WpCT4kWnUoyWHuaVCqjxdmkw4MvxqXYTTDasOJ6FKa58HDaRbyZLlXh4&usqp=CAU"
+    ],
+    "short_description": "A social deduction game where players must figure out who the Impostor is.",
+    "full_description": "Among Us is a multiplayer party game where players take on the roles of Crewmates or Impostors aboard a spaceship. The Crewmates must complete tasks around the ship while the Impostors secretly sabotage their efforts and eliminate them. The game encourages communication and strategy as players try to identify the Impostors before it's too late.\n\nWith simple gameplay mechanics and hilarious moments, Among Us became a massive hit, especially during the COVID-19 pandemic. Its success has led to frequent updates, new maps, and even themed events.",
+    "rating": 8
+  },
+  {
+    "id": 40,
+    "title": "Call of Duty: Warzone",
+    "categories": [
+      "Battle Royale",
+      "Shooter",
+      "Multiplayer",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://blog.ttt-website.com/wp-content/uploads/2023/12/Call-Of-Duty-Warzone-1.jpg",
+    "exampicture": [
+      "https://assets-prd.ignimgs.com/2022/11/18/warzone-mobile-stadium-keyart-1668769729454.png?fit=bounds&width=1280&height=720",
+      "https://i.ytimg.com/vi/DVjCUkrHHcY/maxresdefault.jpg",
+      "https://d.newsweek.com/en/full/1572737/call-duty-warzone-how-download.png",
+      "https://codmwstore.com/wp-content/uploads/2023/10/COD-NEXT-013.jpg",
+      "https://www.drivereasy.com/wp-content/uploads/2020/09/cover2.jpg"
+    ],
+    "short_description": "A fast-paced battle royale set in the Call of Duty universe.",
+    "full_description": "Call of Duty: Warzone is a free-to-play battle royale game that combines fast-paced action with the signature Call of Duty gameplay. Players drop into a massive map, scavenging for weapons and eliminating other players while the play zone shrinks. It also features a unique Gulag mechanic, where eliminated players can fight for a chance to respawn.\n\nWarzone remains one of the most popular battle royale games, offering high-intensity action, a variety of weapons, and constant updates that keep the experience fresh.",
+    "rating": 9
+  },
+  {
+    "id": 41,
+    "title": "The Witcher 3: Wild Hunt",
+    "categories": ["Action RPG", "Open World", "Fantasy", "Single Player", ""],
+    "price": 1299.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f",
+    "exampicture": [
+      "https://images4.alphacoders.com/667/667676.png",
+      "https://www.wallpaperflare.com/static/609/954/369/the-witcher-the-witcher-3-wild-hunt-witcher-wild-wallpaper.jpg",
+      "https://www.pixelstalk.net/wp-content/uploads/images6/Gaming-Witcher-3-Wallpaper-HD.jpg",
+      "https://images2.alphacoders.com/520/thumb-1920-520246.jpg",
+      "https://i.pinimg.com/originals/01/83/e6/0183e6b27db71f427152171d8e0c9bbe.jpg"
+    ],
+    "short_description": "A story-driven RPG set in a vast open world, following the adventures of Geralt of Rivia.",
+    "full_description": "The Witcher 3: Wild Hunt is a critically acclaimed RPG featuring a deep narrative, immersive world, and fast-paced combat. Players take on the role of Geralt of Rivia, a monster hunter searching for his adopted daughter while facing various dangers in the world of The Continent. With a branching storyline and countless side quests, the game offers rich content for players to explore.\n\nWith beautiful visuals, memorable characters, and a haunting soundtrack, the game is considered one of the best RPGs of all time. Players can engage in combat, exploration, and use magic as they journey through forests, villages, and cities.",
+    "rating": 9
+  },
+  {
+    "id": 42,
+    "title": "Fortnite",
+    "categories": [
+      "Battle Royale",
+      "Multiplayer",
+      "Survival",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb",
+    "exampicture": [
+      "https://wallpapercat.com/w/full/e/0/3/88436-1920x1080-desktop-full-hd-fortnite-wallpaper-photo.jpg",
+      "https://wallpapercave.com/wp/wp2558665.jpg",
+      "https://wallpapers-hub.art/wallpaper-images/113153.png",
+      "https://www.hdwallpapers.in/download/mega_city_fortnite_hd_fortnite-1920x1080.jpg",
+      "https://wallpapers.com/images/hd/fortnite-characters-showcase-73ddz5o04ddfxzcu.jpg"
+    ],
+    "short_description": "A fast-paced battle royale game where 100 players fight to be the last one standing.",
+    "full_description": "Fortnite is an online multiplayer battle royale game that has taken the world by storm. Players are dropped onto an island where they must gather resources, build structures, and eliminate other players in order to survive. With frequent updates, new weapons, skins, and events, Fortnite remains one of the most popular games in the world.\n\nThe game features a unique building mechanic where players can construct defensive structures, giving it a creative twist on the traditional battle royale formula. Free-to-play with in-game purchases, Fortnite offers an engaging experience for both casual and competitive players.",
+    "rating": 8
+  },
+  {
+    "id": 43,
+    "title": "Cyberpunk 2077",
+    "categories": ["Action RPG", "Open World", "Sci-Fi", "Single Player", ""],
+    "price": 2499.0,
+    "pictureaddress": "https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7",
+    "exampicture": [
+      "https://images.axios.com/cMBKByC0n-FfbL6r4V34ibvpLfE=/0x0:1920x1080/1920x1080/2021/03/29/1617062389341.jpg",
+      "https://cdn.wallpaper.tn/large/Cyberpunk-2077-Wallpaper-4K-15610.jpg",
+      "https://i.pcmag.com/imagery/articles/00hYjpCCgBH5VFYPsZrBqmf-1..v1600444074.jpg",
+      "https://images.wallpapersden.com/image/download/cyberpunk-2077-hd-gaming-22_bWhnZW2UmZqaraWkpJRnamtlrWZpaWU.jpg",
+      "https://gameranx.com/wp-content/uploads/2017/03/Cyberpunk-2077-1080P-Wallpaper.jpg"
+    ],
+    "short_description": "A dystopian open-world RPG where you control a mercenary navigating the dark future of Night City.",
+    "full_description": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics. With a high degree of customization, deep storylines, and action-packed combat, it provides a unique futuristic experience.\n\nThe game features immersive visuals, robust character progression, and multiple pathways in the story, allowing for different outcomes based on your decisions. Despite a rocky launch, recent updates have improved the game significantly, making it one of the most talked-about RPGs.",
+    "rating": 7
+  },
+  {
+    "id": 44,
+    "title": "Grand Theft Auto V",
+    "categories": ["Action", "Open World", "Multiplayer", "Crime", ""],
+    "price": 1399.0,
+    "pictureaddress": "https://www.gamingdose.com/wp-content/uploads/2014/12/GTA-V-Wallpaper-Full-HD-Background-Pictures.jpg",
+    "exampicture": [
+      "https://images8.alphacoders.com/543/543379.jpg",
+      "https://wallpapercat.com/w/full/2/8/5/130792-2880x1800-desktop-hd-grand-theft-auto-5-background-image.jpg",
+      "https://wallpapers.com/images/high/gta-5-trevor-and-michael-vywcwu2ie0pk3vr9.webp",
+      "https://บทสรุป.com/wp-content/uploads/2016/06/GTA-V.jpg",
+      "https://img.gta5-mods.com/q95/images/save-game-44/a82937-v_trunk_1920x1080.jpg"
+    ],
+    "short_description": "An open-world action game with a dynamic story and extensive multiplayer mode.",
+    "full_description": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events. The game's story revolves around three protagonists, each with their unique backgrounds and motives. Additionally, GTA Online offers multiplayer action with other players in a variety of activities ranging from street racing to cooperative missions.\n\nWith breathtaking graphics, endless possibilities, and a compelling narrative, GTAV continues to be one of the most popular games, even years after its release. It's a must-play for fans of open-world games.",
+    "rating": 10
+  },
+  {
+    "id": 45,
+    "title": "Apex Legends",
+    "categories": [
+      "Battle Royale",
+      "Multiplayer",
+      "Shooter",
+      "Free-to-Play",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://images6.alphacoders.com/992/992033.jpg",
+    "exampicture": [
+      "https://www.playulti.com/static/thumb/2019/1/6/attach-1549388951171.jpg",
+      "https://cdn1.epicgames.com/spt-assets/5dcd88f4e2094a698ebffa43438edc33/apex-legends-teipz.jpg",
+      "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2022-07/apex%201-220728-165439.jpg?versionId=.64gSYdAeRXLOs3NcGmGZBEDDeiy61Wk",
+      "https://4kwallpapers.com/images/wallpapers/apex-legends-video-1920x1200-12712.jpg",
+      "https://cdn.wccftech.com/wp-content/uploads/2024/02/WCCFapexlegends98.jpg"
+    ],
+    "short_description": "A fast-paced battle royale shooter with unique characters and abilities.",
+    "full_description": "Apex Legends is a free-to-play battle royale game that features a variety of Legends, each with unique abilities. Players team up in squads and fight to be the last team standing, while utilizing the game's unique mechanics, including respawning teammates and fast movement. The game includes frequent updates with new characters, skins, and limited-time events.\n\nWith tactical gameplay, a focus on team coordination, and a growing esports community, Apex Legends has become one of the most exciting battle royales in the competitive gaming world.",
+    "rating": 8
+  },
+  {
+    "id": 46,
+    "title": "Foxyball",
+    "categories": [
+      "Indie",
+      "Puzzle",
+      "Sports",
+      "Controller Support",
+      "Cross Platform",
+      "Local Multiplayer",
+      "Single Player",
+      ""
+    ],
+    "price": 320.0,
+    "pictureaddress": "https://cdn1.epicgames.com/spt-assets/1302df3ff28e4d0eb8809ed831047476/foxyball-1muql.png",
+    "exampicture": [
+      "https://cdn1.epicgames.com/spt-assets/1302df3ff28e4d0eb8809ed831047476/foxyball-1a7mw.png",
+      "https://cdn1.epicgames.com/spt-assets/1302df3ff28e4d0eb8809ed831047476/foxyball-39iox.png",
+      "https://cdn1.epicgames.com/spt-assets/1302df3ff28e4d0eb8809ed831047476/foxyball-x0yl1.png",
+      "https://cdn1.epicgames.com/spt-assets/1302df3ff28e4d0eb8809ed831047476/foxyball-1ub4i.png"
+    ],
+    "short_description": "FOXYBALL isn't only a football penalty simulator, In the game, player is challenging a tricky goal, demanding luck, skill, and smart decision-making. It includes 4 play modes to fit various occasions: for your leisure time, gaming with your loved one, family day, and party.",
+    "full_description": "FOXYBALL is a fun and easy-to-play game inspired by Football Penalty. Instead of playing against a goalkeeper, the goal is divided into 24 blocks, with a new random configuration for players each attempt. To score, players will need a combination of luck, skill, and smart decision-making.We’re not only creators but also players ourselves, and like many, we work hard everyday, striving to achieve our dreams and build our lives. We believe the true value of games is to offer relief and escape from exhaustion and pressures, not to burden players with repetitive, time-wasting tasks.That’s why we created FOXYBALL to be a simple, relaxing experience—quick to learn, easy to play, and perfect for unwinding. It recaptures the charm and joy of the games we grew up with back in the 1990s and early 2000s, where players could jump right in and start having fun.. ",
+    "rating": 7.5
+  },
+  {
+    "id": 47,
+    "title": "Teenage Mutant Ninja Turtles: Splintered Fate",
+    "categories": [
+      "Action",
+      "Action+-Adventure",
+      "Rogue-Lite",
+      "Cloud Savex",
+      "Co-op",
+      "Online Multiplayer",
+      "Single Player",
+      ""
+    ],
+    "price": 599.0,
+    "pictureaddress": "https://cdn2.unrealengine.com/egs-tmnt-splintered-fate-carousel-desktop-1920x1080-29e9859f3f4c.jpg?resize=1&w=1280&h=720&quality=medium",
+    "exampicture": [
+      "https://cdn1.epicgames.com/spt-assets/52faf491358e43ebaae61101562486f5/teenage-mutant-ninja-turtles-splintered-fate-qa7z6.jpg",
+      "https://cdn1.epicgames.com/spt-assets/52faf491358e43ebaae61101562486f5/teenage-mutant-ninja-turtles-splintered-fate-evnzl.jpg",
+      "https://cdn1.epicgames.com/spt-assets/52faf491358e43ebaae61101562486f5/teenage-mutant-ninja-turtles-splintered-fate-17o5q.jpg",
+      "https://cdn1.epicgames.com/spt-assets/52faf491358e43ebaae61101562486f5/teenage-mutant-ninja-turtles-splintered-fate-xcx13.jpg"
+    ],
+    "short_description": "Unleash the Turtles in a rogue-like quest to rescue Splinter from the Foot Clan! Master ninja skills, unite in bodacious co-op gameplay, and conquer iconic NYC locales.",
+    "full_description": "Grab your friends, pick your favorite Turtle and jump into a roguelike adventure to save Master Splinter from the foot clan! Master ninja skills, unite in bodacious online and local co-op gameplay, and conquer iconic NYC locales. With additional settings, balance and tuning enhancements for PC, Splintered Fate promises to keep you engaged in the FIGHT, ADAPT, REPEAT portal loop. Be ready to restore peace to the city!",
+    "rating": 8
+  },
+  {
+    "id": 48,
+    "title": "Marvel's Midnight Suns",
+    "categories": ["Sports", "Multiplayer", "Action", "Free-to-Play", ""],
+    "price": 1499.0,
+    "pictureaddress": "https://cdn2.unrealengine.com/egs-marvelsmidnightsuns-firaxisgames-s1-2560x1440-dd16b075e2d7.jpg",
+    "exampicture": [
+      "https://cdn2.unrealengine.com/egs-marvelsmidnightsuns-firaxisgames-g1a-00-1920x1080-15a676e8e28e.jpg",
+      "https://cdn2.unrealengine.com/egs-marvelsmidnightsuns-firaxisgames-g1a-01-1920x1080-0e5c6a53d0db.jpg",
+      "https://cdn2.unrealengine.com/egs-marvelsmidnightsuns-firaxisgames-g1a-02-1920x1080-45893082d4cb.jpg",
+      "https://cdn2.unrealengine.com/egs-marvelsmidnightsuns-firaxisgames-g1a-04-1920x1080-66d71d1ae802.jpg",
+      "https://cdn2.unrealengine.com/egs-marvelsmidnightsuns-firaxisgames-g1a-03-1920x1080-a58cfb07cd29.jpg"
+    ],
+    "short_description": "Confront the darker side of the Marvel universe in an all-new Tactical RPG featuring Iron Man, Wolverine, Captain America, Ghost Rider, Blade, and more.",
+    "full_description": "Marvel’s Midnight Suns is the ultimate crossover event combining the rich story, character relationships, customization and progression of an RPG with the tactical strategy and combat mechanics of a revolutionary new card-based tactics game. Set in the darker side of the Marvel Universe, you will forge unbreakable bonds with legendary Marvel Super Heroes and dangerous supernatural warriors in the fight against the world’s greatest threat yet…the demonic forces of Lilith and the elder god Chthon. Spend time exploring what Super Heroes do in their off hours. Explore The Abbey—your very own mystical secret base—to discover powerful hidden items and secrets to aid you in the conflict against Lilith and her minions. Befriend and get to really know some of your favorite Marvel heroes as you interact with them in ways beyond the comics or the films.",
+    "rating": 4.4
+  },
+  {
+    "id": 49,
+    "title": "Tiny Tina's Assault on Dragon Keep: A Wonderlands One-shot Adventure",
+    "categories": [
+      "Action-Adventure",
+      "Adventure",
+      "RPG",
+      "Multiplayer",
+      "Single Player",
+      "Co-op",
+      ""
+    ],
+    "price": 0.0,
+    "pictureaddress": "https://cdn2.unrealengine.com/egs-tinytinasassaultondragonkeepawonderlandsoneshotadventure-gearboxsoftwarestraykitestudios-g1a-00-1920x1080-4b5d0d491cf7.jpg",
+    "exampicture": [
+      "https://cdn2.unrealengine.com/epic-dragonkeep-shot-torgue-1920x1080-1920x1080-c13c8e737a89.jpg",
+      "https://cdn2.unrealengine.com/epic-dragonkeep-shot-axton-1920x1080-1920x1080-a310558c65ee.jpg",
+      "https://cdn2.unrealengine.com/epic-dragonkeep-shot-ambush-1920x1080-1920x1080-4bc01f0a6467.jpg",
+      "https://cdn2.unrealengine.com/epic-dragonkeep-shot-cosmetics-1920x1080-1920x1080-9389c93bb541.jpg",
+      "https://cdn2.unrealengine.com/epic-dragonkeep-screens-zer0-salvador-1920x1080-1920x1080-b57984efafc0.jpg"
+    ],
+    "short_description": "Smash skeletons, defeat dragons, and battle giant golems in Tiny Tina's Assault on Dragon Keep: A Wonderlands One-Shot Adventure. Experience the acclaimed 2013 quest jam-packed with fantasy, fun, and mountains of magical loot!",
+    "full_description": "Play Tiny Tina's Assault on Dragon Keep, then wishlist its full-size follow-up Tiny Tina's Wonderlands! Smash skeletons, defeat dragons, and battle giant golems in Tiny Tina's Assault on Dragon Keep: A Wonderlands One-Shot Adventure. Experience the acclaimed 2013 quest that started it all in this standalone campaign jam-packed with fantasy, fun, and mountains of magical loot! The Queen's been captured and her kingdom is in peril; only you and your friends have any chance of restoring peace to this eccentric, enchanted land. Blast your way through treacherous forests, spooky crypts, and fearsome fortresses, but beware—your journey can change in an instant on account of Tina's gleefully chaotic whims. Dive into this epic tabletop romp and get ready for the fantasy fight of your life! Vanquish any villains who get in your way using a huge assortment of souped-up firearms, all while firing Lightning Bolts and Fireballs from your fingertips with spellcast-style grenade mods",
+    "rating": 4.5
+  },
+  {
+    "id": 50,
+    "title": "Horizon Zero Dawn™ Remastered",
+    "categories": ["Action", "Adventure", "Open World", "Single Player", ""],
+    "price": 1690.0,
+    "pictureaddress": "https://cdn2.unrealengine.com/egs-horizonzerodawnremastered-guerrillagames-g1a-00-1920x1080-c0d45f881715.jpg",
+    "exampicture": [
+      "https://cdn2.unrealengine.com/egs-horizonzerodawnremastered-guerrillagames-g1a-01-1920x1080-6d17c228c981.jpg",
+      "https://cdn2.unrealengine.com/egs-horizonzerodawnremastered-guerrillagames-g1a-02-1920x1080-8e18f76e7119.jpg",
+      "https://cdn2.unrealengine.com/egs-horizonzerodawnremastered-guerrillagames-g1a-03-1920x1080-ba9c304c1ff2.jpg",
+      "https://cdn2.unrealengine.com/egs-horizonzerodawnremastered-guerrillagames-g1a-04-1920x1080-3321973ddb53.jpg",
+      "https://cdn2.unrealengine.com/egs-horizonzerodawnremastered-guerrillagames-g1a-07-1920x1080-9e434245def1.jpg"
+    ],
+    "short_description": "Experience the critically acclaimed Horizon Zero Dawn™ with stunning new visuals and upgraded features. In a far future where machines roam the Earth, humanity survives in unique tribes among the ruins of our long-lost civilization.",
+    "full_description": "Explore a vast, vibrant world filled with fearsome machines and the mysterious ruins of a long-lost civilization, remastered with stunning visuals and new features for PC. Take up bow and spear as Aloy, a young machine hunter and outcast of her tribe, as she discovers her origins, the truth of this mysterious world, and her own destiny to save it from impending doom. On her journey, Aloy will come across unique tribes, lively settlements, and compelling characters and companions. But this open world is also teeming with wildlife and danger. Awe-inspiring yet deadly hostile machines patrol the majestic landscape, corrupted by an unknown force. In combat, you will unleash devastating, tactical attacks utilizing an exciting arsenal of weapons against fearsome machines and nefarious rival factions.Horizon Zero Dawn™ is a multi-award-winning action role-playing game and this Remastered Edition brings to life the beloved wilds of Aloy’s world in even higher fidelity with the power and potential of PC gaming. It also includes The Frozen Wilds, a vast expansion featuring new lands, skills, weapons, and machines.",
+    "rating": 4.7
+  }
+]

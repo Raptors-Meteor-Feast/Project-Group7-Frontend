@@ -1,0 +1,1002 @@
+[
+    {
+        "id": 1,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7",
+            "cpu": "Intel Core i5-2500K",
+            "memory": 6,
+            "gpu": "NVIDIA GeForce GTX 660",
+            "storage": "35 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-3770",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 1070",
+            "storage": "35 GB"
+        },
+        "language": "Audio: English, French, German, Italian, Polish, Spanish\n Text: English, French, German, Italian, Polish, Spanish",
+        "text": "The Witcher 3: Wild Hunt is a fantasy RPG set in an open world, featuring a branching narrative and deep character progression. Players must explore vast landscapes, fight monstrous enemies, and make difficult choices that affect the fate of the world. The game includes expansive DLCs, offering hours of additional content."
+    },
+    {
+        "id": 2,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Core i3 2.4 GHz",
+            "memory": 4,
+            "gpu": "Intel HD 4000",
+            "storage": "15 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Core i5 2.8 GHz",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "15 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Fortnite is a dynamic multiplayer game where players engage in fast-paced combat, gathering resources to build structures while fighting other players. The game is constantly evolving with new content, including skins, limited-time events, and seasonal updates."
+    },
+    {
+        "id": 3,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Intel Core i5-3570K",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 780",
+            "storage": "70 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4790",
+            "memory": 12,
+            "gpu": "NVIDIA GeForce GTX 1060",
+            "storage": "70 GB"
+        },
+        "language": "Audio: English, French, Italian, Polish, Russian\nText: English, French, Italian, Polish, Russian",
+        "text": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics."
+    },
+    {
+        "id": 4,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 5,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 6,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 7,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 8,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 9,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 10,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 11,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7",
+            "cpu": "Intel Core i5-2500K",
+            "memory": 6,
+            "gpu": "NVIDIA GeForce GTX 660",
+            "storage": "35 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-3770",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 1070",
+            "storage": "35 GB"
+        },
+        "language": "Audio: English, French, German, Italian, Polish, Spanish\nText: English, French, German, Italian, Polish, Spanish",
+        "text": "The Witcher 3: Wild Hunt is a fantasy RPG set in an open world, featuring a branching narrative and deep character progression. Players must explore vast landscapes, fight monstrous enemies, and make difficult choices that affect the fate of the world. The game includes expansive DLCs, offering hours of additional content."
+    },
+    {
+        "id": 12,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Core i3 2.4 GHz",
+            "memory": 4,
+            "gpu": "Intel HD 4000",
+            "storage": "15 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Core i5 2.8 GHz",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "15 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Fortnite is a dynamic multiplayer game where players engage in fast-paced combat, gathering resources to build structures while fighting other players. The game is constantly evolving with new content, including skins, limited-time events, and seasonal updates."
+    },
+    {
+        "id": 13,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Intel Core i5-3570K",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 780",
+            "storage": "70 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4790",
+            "memory": 12,
+            "gpu": "NVIDIA GeForce GTX 1060",
+            "storage": "70 GB"
+        },
+        "language": "Audio: English, French, Italian, Polish, Russian\nText: English, French, Italian, Polish, Russian",
+        "text": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics."
+    },
+    {
+        "id": 14,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 15,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 16,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 17,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 18,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 19,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 20,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 21,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7",
+            "cpu": "Intel Core i5-2500K",
+            "memory": 6,
+            "gpu": "NVIDIA GeForce GTX 660",
+            "storage": "35 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-3770",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 1070",
+            "storage": "35 GB"
+        },
+        "language": "Audio: English, French, German, Italian, Polish, Spanish\nText: English, French, German, Italian, Polish, Spanish",
+        "text": "The Witcher 3: Wild Hunt is a fantasy RPG set in an open world, featuring a branching narrative and deep character progression. Players must explore vast landscapes, fight monstrous enemies, and make difficult choices that affect the fate of the world. The game includes expansive DLCs, offering hours of additional content."
+    },
+    {
+        "id": 22,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Core i3 2.4 GHz",
+            "memory": 4,
+            "gpu": "Intel HD 4000",
+            "storage": "15 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Core i5 2.8 GHz",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "15 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Fortnite is a dynamic multiplayer game where players engage in fast-paced combat, gathering resources to build structures while fighting other players. The game is constantly evolving with new content, including skins, limited-time events, and seasonal updates."
+    },
+    {
+        "id": 23,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Intel Core i5-3570K",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 780",
+            "storage": "70 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4790",
+            "memory": 12,
+            "gpu": "NVIDIA GeForce GTX 1060",
+            "storage": "70 GB"
+        },
+        "language": "Audio: English, French, Italian, Polish, Russian\nText: English, French, Italian, Polish, Russian",
+        "text": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics."
+    },
+    {
+        "id": 24,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 25,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 26,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 27,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 28,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 29,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 30,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 31,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7",
+            "cpu": "Intel Core i5-2500K",
+            "memory": 6,
+            "gpu": "NVIDIA GeForce GTX 660",
+            "storage": "35 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-3770",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 1070",
+            "storage": "35 GB"
+        },
+        "language": "Audio: English, French, German, Italian, Polish, Spanish\nText: English, French, German, Italian, Polish, Spanish",
+        "text": "The Witcher 3: Wild Hunt is a fantasy RPG set in an open world, featuring a branching narrative and deep character progression. Players must explore vast landscapes, fight monstrous enemies, and make difficult choices that affect the fate of the world. The game includes expansive DLCs, offering hours of additional content."
+    },
+    {
+        "id": 32,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Core i3 2.4 GHz",
+            "memory": 4,
+            "gpu": "Intel HD 4000",
+            "storage": "15 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Core i5 2.8 GHz",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "15 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Fortnite is a dynamic multiplayer game where players engage in fast-paced combat, gathering resources to build structures while fighting other players. The game is constantly evolving with new content, including skins, limited-time events, and seasonal updates."
+    },
+    {
+        "id": 33,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Intel Core i5-3570K",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 780",
+            "storage": "70 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4790",
+            "memory": 12,
+            "gpu": "NVIDIA GeForce GTX 1060",
+            "storage": "70 GB"
+        },
+        "language": "Audio: English, French, Italian, Polish, Russian\nText: English, French, Italian, Polish, Russian",
+        "text": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics."
+    },
+    {
+        "id": 34,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 35,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 36,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 37,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 38,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 39,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 40,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 41,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7",
+            "cpu": "Intel Core i5-2500K",
+            "memory": 6,
+            "gpu": "NVIDIA GeForce GTX 660",
+            "storage": "35 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-3770",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 1070",
+            "storage": "35 GB"
+        },
+        "language": "Audio: English, French, German, Italian, Polish, Spanish\nText: English, French, German, Italian, Polish, Spanish",
+        "text": "The Witcher 3: Wild Hunt is a fantasy RPG set in an open world, featuring a branching narrative and deep character progression. Players must explore vast landscapes, fight monstrous enemies, and make difficult choices that affect the fate of the world. The game includes expansive DLCs, offering hours of additional content."
+    },
+    {
+        "id": 42,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Core i3 2.4 GHz",
+            "memory": 4,
+            "gpu": "Intel HD 4000",
+            "storage": "15 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Core i5 2.8 GHz",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "15 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Fortnite is a dynamic multiplayer game where players engage in fast-paced combat, gathering resources to build structures while fighting other players. The game is constantly evolving with new content, including skins, limited-time events, and seasonal updates."
+    },
+    {
+        "id": 43,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 7/8/10",
+            "cpu": "Intel Core i5-3570K",
+            "memory": 8,
+            "gpu": "NVIDIA GeForce GTX 780",
+            "storage": "70 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4790",
+            "memory": 12,
+            "gpu": "NVIDIA GeForce GTX 1060",
+            "storage": "70 GB"
+        },
+        "language": "Audio: English, French, Italian, Polish, Russian\nText: English, French, Italian, Polish, Russian",
+        "text": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics."
+    },
+    {
+        "id": 44,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 45,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 46,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 47,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 48,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 49,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    },
+    {
+        "id": 50,
+        "operater": "Windows",
+        "minimum": {
+            "osversion": "Windows 8/10",
+            "cpu": "Intel Core i5-3470",
+            "memory": 8,
+            "gpu": "NVIDIA GTX 660",
+            "storage": "65 GB"
+        },
+        "recomend": {
+            "osversion": "Windows 10",
+            "cpu": "Intel Core i7-4770",
+            "memory": 16,
+            "gpu": "NVIDIA GTX 1070",
+            "storage": "65 GB"
+        },
+        "language": "Audio: English, French, German, Spanish\nText: English, French, German, Spanish",
+        "text": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events."
+    }
+]
