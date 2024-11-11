@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": 21,
         "title": "The Witcher 3: Wild Hunt",
         "categories": [
             "Action RPG",
@@ -23,7 +23,7 @@
         "rating": 9
     },
     {
-        "id": 2,
+        "id": 22,
         "title": "Fortnite",
         "categories": [
             "Battle Royale",
@@ -46,7 +46,7 @@
         "rating": 8
     },
     {
-        "id": 3,
+        "id": 23,
         "title": "Cyberpunk 2077",
         "categories": [
             "Action RPG",
@@ -69,7 +69,7 @@
         "rating": 7
     },
     {
-        "id": 4,
+        "id": 24,
         "title": "Grand Theft Auto V",
         "categories": [
             "Action",
@@ -92,7 +92,7 @@
         "rating": 10
     },
     {
-        "id": 5,
+        "id": 25,
         "title": "Apex Legends",
         "categories": [
             "Battle Royale",
@@ -115,7 +115,7 @@
         "rating": 8
     },
     {
-        "id": 6,
+        "id": 26,
         "title": "Minecraft",
         "categories": [
             "Survival",
@@ -138,7 +138,7 @@
         "rating": 9
     },
     {
-        "id": 7,
+        "id": 27,
         "title": "Valorant",
         "categories": [
             "Shooter",
@@ -161,7 +161,7 @@
         "rating": 8
     },
     {
-        "id": 8,
+        "id": 28,
         "title": "Rocket League",
         "categories": [
             "Sports",
@@ -184,7 +184,7 @@
         "rating": 9
     },
     {
-        "id": 9,
+        "id": 29,
         "title": "Among Us",
         "categories": [
             "Multiplayer",
@@ -207,7 +207,7 @@
         "rating": 8
     },
     {
-        "id": 10,
+        "id": 30,
         "title": "Call of Duty: Warzone",
         "categories": [
             "Battle Royale",
@@ -228,5 +228,5 @@
         "short_description": "A fast-paced battle royale set in the Call of Duty universe.",
         "full_description": "Call of Duty: Warzone is a free-to-play battle royale game that combines fast-paced action with the signature Call of Duty gameplay. Players drop into a massive map, scavenging for weapons and eliminating other players while the play zone shrinks. It also features a unique Gulag mechanic, where eliminated players can fight for a chance to respawn.\n\nWarzone remains one of the most popular battle royale games, offering high-intensity action, a variety of weapons, and constant updates that keep the experience fresh.",
         "rating": 9
-    },
+    }
 ]
