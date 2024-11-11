@@ -6,20 +6,23 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer/Footer'
 import BoxContainer from '../components/Container-Home/BoxContainer'
 
-
+import SearchBarTest from '../components/SearchBarTest'
+import SearchBox from '../components/SearchBox'
 
 
 
 const Home = () => {
     return (
         <div>
-            <Nav/>
+            {/* <Nav/>
             <Hero />
             <BoxFiveCard name="Promotion"/>
             <BoxFiveCard name="Most Popular"/>
             <BoxThreeContainer/>
-            <Footer/>
+            <Footer/> */}
 
+            <SearchBarTest />
+            <SearchBox />
         </div>
     )
 }

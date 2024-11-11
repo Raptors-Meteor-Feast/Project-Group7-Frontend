@@ -1,7 +1,6 @@
 import { Input } from "@nextui-org/react";
 import { SearchIcon } from "../Images/NavIcon/SearchIcon.jsx";
 import { useEffect, useState } from "react";
-import gamesDetails from "../gamesDetails.json"
 
 
 export default function SearchBarTest() {
@@ -30,16 +29,15 @@ export default function SearchBarTest() {
 
     useEffect(() => {
         if(search !== "") {
-            const newFilterData = gamesDetails.filter(items => {
-                return items.name.includes(search)
-            })
-            setSearchData(newFilterData)
-            
+            fetch(`http://api.tvmaze.com/search/shows?q=${search}`)
+            .then((res) => res.json())
+            .then((data) => setSearchData(data));
         }
     }, [search])
+
   return (
     <div>
-        <div>
+        <div className="flex justify-center bg-gray-500 p-4">
         <Input
         classNames={{
             base: "max-w-full mr-6 sm:max-w-[20rem] h-10",
@@ -57,13 +55,13 @@ export default function SearchBarTest() {
         onKeyDown={handleKeyDown}
         />
         </div>
-            
-        <div>
-            { searchData.map((gamesDetails, id) => {
-                    return <a href="#" key={id}>{gamesDetails.name}</a>
-                } )
-            }
-            
+        
+        <div className="flex justify-center">
+        <div className="overflow-auto w-[300px] h-[200px]">
+            { searchData.map((data, id) => {
+            return <a href={data.show.url} key={id} className="flex flexcol" target="_blank">{data.show.name}</a>
+            })}
+        </div>
         </div>
     </div>
   )
