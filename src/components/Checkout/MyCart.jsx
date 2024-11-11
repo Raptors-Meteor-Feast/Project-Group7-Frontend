@@ -3,7 +3,7 @@ import { IoTrashOutline } from "react-icons/io5";
 export default function MyCart({name, category, edition, image, price}) {
   return (
     <div>
-        <div className="flex justify-between w-[873px] h-[196px] p-[24px] bg-slate-300 rounded-lg mb-8">
+        <div className="flex justify-between w-[873px] h-[196px] p-[24px] bg-neutral-900 rounded-lg mb-8">
             <div className="flex gap-5">
                 <div>
                     <img
@@ -11,7 +11,8 @@ export default function MyCart({name, category, edition, image, price}) {
                     src={image} alt={name} />
                 </div>
                 <div>
-                    <p className="bg-slate-200 rounded-full w-[100px] mb-3 text-center">{category}</p>
+
+                    <p className="bg-blue-800 rounded-full w-[100px] mb-3 text-center">{category}</p>
                     <p className="font-semibold">{name}</p>
                     <p className="font-semibold">{edition} Edition</p>
                 </div>
