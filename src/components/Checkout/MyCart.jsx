@@ -7,7 +7,7 @@ export default function MyCart({name, category, edition, image, price}) {
             <div className="flex gap-5">
                 <div>
                     <img
-                    className="w-[100px] h-auto object-cover"
+                    className="w-[100px] h-auto object-cover rounded-lg"
                     src={image} alt={name} />
                 </div>
                 <div>

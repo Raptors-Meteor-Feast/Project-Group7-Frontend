@@ -1,6 +1,7 @@
-import { Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
 import { useState } from "react";
 import SearchBox from "./SearchBox";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
     const [logIn, setLogIn] = useState(false);
@@ -10,7 +11,7 @@ export default function Nav() {
     };
 
     return (
-        <div className="bg-[#06070a]">
+        <div className="bg-[#06070a] sticky top-0 w-full z-50">
             <div className="flex justify-between items-center py-[24px]">
 
                 {/* Logo and Brand Name */}
@@ -36,10 +37,10 @@ export default function Nav() {
                             <Link to="/" className="text-[#F18650] cursor-pointer text-[18px]">Home</Link>
                         </li>
                         <li>
-                            <Link to="/browse" className="text-[#F18650] cursor-pointer text-[18px]">Browse</Link>
+                            <Link to="#" className="text-[#F18650] cursor-pointer text-[18px]">Browse</Link>
                         </li>
                         <li>
-                            <Link to="/news" className="text-[#F18650] cursor-pointer text-[18px]">News</Link>
+                            <Link to="#" className="text-[#F18650] cursor-pointer text-[18px]">News</Link>
                         </li>
                     </ul>
                 </div>
@@ -48,8 +49,8 @@ export default function Nav() {
                 <div className="flex items-center justify-between">
                 {/* Cart Section */}
                 <div className="flex items-center gap-4 w-[] mr-8">
-                    <Link to="/cart" className="text-[#F18650] font-bold cursor-pointer text-[18px]">Cart</Link>
-                    <button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">0</button>
+                    <Link to="/checkout" className="text-[#F18650] font-bold cursor-pointer text-[18px]">Cart</Link>
+                    <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">0</button></Link>
                 </div>
 
                 {/* Login / Logout Dropdown */}
