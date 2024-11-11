@@ -43,7 +43,7 @@ export default function CheckOut() {
     const totalPrice = mockGameData.reduce((sum, item) => sum + item.price , 0)
 
     return (
-    <div className="bg-neutral-950 h-screen text-white p-2">
+    <div className="bg-neutral-950 h-[100hv] text-white p-2 ">
         <h1 className="mb-5 text-[24px] font-bold mx-48 ">My Cart</h1>
         <div className="flex justify-evenly">
             {/* My cart */}

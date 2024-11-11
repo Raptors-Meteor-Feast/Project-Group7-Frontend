@@ -27,7 +27,7 @@ const MostPopularCard = ({ name }) => {
     };
 
     return (
-        <div className='w-full px-[135px] py-10 bg-gray-800'>
+        <div className='w-full px-[135px] py-10 bg-neutral-950'>
             <div className='flex justify-between'>
                 <h2 className='mb-5 text-[28px] font-bold text-white'>{name}</h2>
                 <div className="flex justify-end mb-4">

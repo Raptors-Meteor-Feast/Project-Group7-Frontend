@@ -1,6 +1,5 @@
 
 import React from 'react'
-import BoxFiveCard from '../components/Card-Home/BoxFiveCard'
 import BoxThreeContainer from '../components/Container-Home/BoxThreeContainer'
 import Hero from '../components/Hero-Home/Hero'
 import Footer from '../components/Footer/Footer'
