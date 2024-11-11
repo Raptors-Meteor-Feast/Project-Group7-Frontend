@@ -1,195 +1,20 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from "@nextui-org/button";
+import gamedata from "../../Data/gamedata.json"
+import gamesystem from "../../Data/gamesystem.json"
 
-const mockData = [
-    {
-        id: 1,
-        categorie: 'openworld',
-        categorie2: 'fantasy',
-        categorie3: '',
-        name: 'Outlaws',
-        price: 200.00,
-        src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080',
-        gamesubdis: "Lorem ipsum dolor sit amet consectetur. Odio nunc dolor tempor in urna egestas sed praesent. Tellus mauris egestas ac amet tellus ut. Est duis ornare arcu cras congue ornare at id convallis. Sed tellus consectetur quam luctus viverra duis id ultrices iaculis.",
-        gamedis: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
-        gamedis2: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
-    },
-    {
-        id: 2,
-        categorie: 'openworld',
-        categorie2: 'fantasy',
-        categorie3: 'online',
-        name: 'God of War Ragnarök',
-        price: 2000.00,
-        src: 'https://c4.wallpaperflare.com/wallpaper/835/36/912/god-of-war-ragnarok-god-of-war-kratos-video-games-artwork-hd-wallpaper-preview.jpg',
-        gamesubdis: "Lorem ipsum dolor sit amet consectetur. Odio nunc dolor tempor in urna egestas sed praesent. Tellus mauris egestas ac amet tellus ut. Est duis ornare arcu cras congue ornare at id convallis. Sed tellus consectetur quam luctus viverra duis id ultrices iaculis.",
-        gamedis: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
-        gamedis2: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
-    },
-    {
-        id: 3,
-        categorie: 'openworld',
-        categorie2: 'fantasy',
-        categorie3: 'online',
-        name: 'Monster Hunter Wilds',
-        price: 1400.00,
-        src: 'https://blog.playstation.com/uploads/2024/06/a6f2f4429dadcad43c092af0fe340f80af1c2c92.jpg',
-        gamesubdis: "Lorem ipsum dolor sit amet consectetur. Odio nunc dolor tempor in urna egestas sed praesent. Tellus mauris egestas ac amet tellus ut. Est duis ornare arcu cras congue ornare at id convallis. Sed tellus consectetur quam luctus viverra duis id ultrices iaculis.",
-        gamedis: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
-        gamedis2: "Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis.",
-    },
-    {
-        id: 4,
-        categorie: 'openworld',
-        name: 'Outlaws',
-        price: 200,
-        src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080',
-    },
-    {
-        id: 5,
-        categorie: 'openworld',
-        name: 'Outlaws',
-        price: 200,
-        src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080',
-    },
-    {
-        id: 6,
-        categorie: 'openworld',
-        name: 'Outlaws',
-        price: 200,
-        src: 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art-square_b893fc9e.jpeg?region=0%2C0%2C1080%2C1080',
-    },
-    ];
+const data = gamedata;
+const system = gamesystem;
 
-    const mockDataSystem = [
-      {
-        id: 1,
-        operater: "Windows",
-        mimimum: {
-          osversion: "Window 8",
-          cpu: "Intel i3-61000U",
-          memory: 2,
-          gpu: "Intel UHD Graphics 620",
-          storage: "250 MB"
-        },
-        recomend: {
-          osversion: "Window 10",
-          cpu: "Intel i5",
-          memory: 4,
-          gpu: "GEForce GTX970",
-          storage: "250 MB"
-        },
-        language : "Audio: N/A",
-        text: "Text: Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis."
-      },
-      {
-        id: 2,
-        operater: "Windows",
-        mimimum: {
-          osversion: "Window 8",
-          cpu: "Intel i3-61000U",
-          memory: 2,
-          gpu: "Intel UHD Graphics 620",
-          storage: "250 MB"
-        },
-        recomend: {
-          osversion: "Window 10",
-          cpu: "Intel i5",
-          memory: 4,
-          gpu: "GEForce GTX970",
-          storage: "250 MB"
-        },
-        language : "Audio: N/A",
-        text: "Text: Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis."
-      },
-      {
-        id: 3,
-        operater: "Windows",
-        mimimum: {
-          osversion: "Window 8",
-          cpu: "Intel i3-61000U",
-          memory: 2,
-          gpu: "Intel UHD Graphics 620",
-          storage: "250 MB"
-        },
-        recomend: {
-          osversion: "Window 10",
-          cpu: "Intel i5",
-          memory: 4,
-          gpu: "GEForce GTX970",
-          storage: "250 MB"
-        },
-        language : "Audio: N/A",
-        text: "Text: Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis."
-      },
-      {
-        id: 4,
-        operater: "Windows",
-        mimimum: {
-          osversion: "Window 8",
-          cpu: "Intel i3-61000U",
-          memory: 2,
-          gpu: "Intel UHD Graphics 620",
-          storage: "250 MB"
-        },
-        recomend: {
-          osversion: "Window 10",
-          cpu: "Intel i5",
-          memory: 4,
-          gpu: "GEForce GTX970",
-          storage: "250 MB"
-        },
-        language : "Audio: N/A",
-        text: "Text: Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis."
-      },
-      {
-        id: 5,
-        operater: "Windows",
-        mimimum: {
-          osversion: "Window 8",
-          cpu: "Intel i3-61000U",
-          memory: 2,
-          gpu: "Intel UHD Graphics 620",
-          storage: "250 MB"
-        },
-        recomend: {
-          osversion: "Window 10",
-          cpu: "Intel i5",
-          memory: 4,
-          gpu: "GEForce GTX970",
-          storage: "250 MB"
-        },
-        language : "Audio: N/A",
-        text: "Text: Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis."
-      },
-      {
-        id: 6,
-        operater: "Windows",
-        mimimum: {
-          osversion: "Window 8",
-          cpu: "Intel i3-61000U",
-          memory: 2,
-          gpu: "Intel UHD Graphics 620",
-          storage: "250 MB"
-        },
-        recomend: {
-          osversion: "Window 10",
-          cpu: "Intel i5",
-          memory: 4,
-          gpu: "GEForce GTX970",
-          storage: "250 MB"
-        },
-        language : "Audio: N/A",
-        text: "Text: Lorem ipsum dolor sit amet consectetur. Nam libero a mauris lectus sed. Tortor ornare maecenas malesuada diam porta lobortis arcu consectetur. In varius maecenas non tortor nibh. Sit euismod praesent tristique tellus pellentesque et nisi odio maecenas. Habitasse commodo sed pharetra ac pellentesque dui habitant orci elementum. Neque dui pellentesque adipiscing aliquam. Molestie vel sed ullamcorper est in nibh eu risus quis."
-      },
-    ]
+console.log(system);
+
 
 const CardDetail = () => {
   const { id } = useParams();
 
-  const card = mockData.find((item) => item.id === parseInt(id));
-  const cardsystem = mockDataSystem.find((item) => item.id === parseInt(id));
+  const card = data.find((item) => item.id === parseInt(id));
+  const cardsystem = system.find((item) => item.id === parseInt(id));
 
   if (!card) {
     return <p>Card not found</p>;
@@ -198,10 +23,10 @@ const CardDetail = () => {
   return (
     <div className=' bg-slate-300 px-[300px] pt-[60px] pb-[120px]'>
       <div className='pb-[40px]'>
-      <h1 className='font-bold text-[28px]'>{card.name}</h1>
+      <h1 className='font-bold text-[28px]'>{card.title}</h1>
         <div className='py-5'>
-          <img className='h-[800px] w-full rounded-xl ' src={card.src} alt={card.name} />
-          <p className='pt-4'>{card.gamesubdis}</p>
+          <img className='h-[800px] w-full rounded-xl ' src={card.pictureaddress} alt={card.title} />
+          <p className='pt-4'>{card.short_description}</p>
         </div>
         <div className='flex justify-end gap-3'>
           <Button className='py-3 px-7 bg-slate-100 text-xl'>THB {card.price}</Button>
@@ -211,17 +36,18 @@ const CardDetail = () => {
       </div>
       <div>
         <div className='pb-10'>
-          <h2 className='font-bold text-[28px]'>{card.name}</h2>
-          <p>{card.gamedis}</p>
-          <p>{card.gamedis2}</p>
+          <h2 className='font-bold text-[28px]'>{card.title}</h2>
+          <p>{card.full_description}</p>
           <div className='flex justify-start gap-3 pt-5'>
-            <a className='underline cursor-pointer'>{card.categorie}</a>
-            <a className='underline cursor-pointer'>{card.categorie2}</a>
-            <a className='underline cursor-pointer'>{card.categorie3}</a>
+            <a className='underline cursor-pointer'>{card.categories[0]}</a>
+            <a className='underline cursor-pointer'>{card.categories[1]}</a>
+            <a className='underline cursor-pointer'>{card.categories[2]}</a>
+            <a className='underline cursor-pointer'>{card.categories[3]}</a>
+            <a className='underline cursor-pointer'>{card.categories[4]}</a>
           </div>
         </div>
         <div>
-        <h2 className='font-bold text-[28px] pb-8'>{card.name} System Requirement</h2>
+        <h2 className='font-bold text-[28px] pb-8'>{card.title} System Requirement</h2>
         <div className='flex flex-col p-11 gap-5 bg-white rounded-xl'>
           <p className='font-bold text-xl'>{cardsystem.operater}</p>
           <div className='flex w-full'>
@@ -229,23 +55,23 @@ const CardDetail = () => {
               <p className='font-bold'>Minimum</p>
                 <div>
                   <p className='text-default-400'>Os Version</p>
-                  <p className='font-semibold'>{cardsystem.mimimum.osversion}</p>
+                  <p className='font-semibold'>{cardsystem.minimum.osversion}</p>
                 </div>
                 <div>
                   <p className='text-default-400'>CPU</p>
-                  <p className='font-semibold'>{cardsystem.mimimum.cpu}</p>
+                  <p className='font-semibold'>{cardsystem.minimum.cpu}</p>
                 </div>
                 <div>
                   <p className='text-default-400'>Memory</p>
-                  <p className='font-semibold'>{cardsystem.mimimum.memory}</p>
+                  <p className='font-semibold'>{cardsystem.minimum.memory}</p>
                 </div>
                 <div>
                   <p className='text-default-400'>GPU</p>
-                  <p className='font-semibold'>{cardsystem.mimimum.gpu}</p>
+                  <p className='font-semibold'>{cardsystem.minimum.gpu}</p>
                 </div>
                 <div>
                   <p className='text-default-400'>Storage</p>
-                  <p className='font-semibold'>{cardsystem.mimimum.storage}</p>
+                  <p className='font-semibold'>{cardsystem.minimum.storage}</p>
                 </div>
             </div>
             <div className='flex flex-col gap-3 w-[50%]'>
