@@ -11,12 +11,12 @@ import CheckOut from './CheckOut'
 const Home = () => {
     return (
         <div>
-            {/* <Nav/>
+            <Nav/>
             <Hero />
             <BoxFiveCard name="Promotion"/>
             <BoxFiveCard name="Most Popular"/>
             <BoxThreeContainer/>
-            <Footer/> */}
+            <Footer/>
             <Login />
             <Register />
             <CheckOut />

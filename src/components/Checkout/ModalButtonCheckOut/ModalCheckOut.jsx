@@ -37,14 +37,12 @@ const ModalCheckOut = () => {
                                     label="Select your favorite city"
                                     color="warning"
                                     >
-                                        <div className='border border-red-600 bg-slate-500'>
-                                        <Radio value="buenos-aires" description="The capital of Argentina">
+                                    <div className='border border-red-600 bg-slate-500'>
+                                    <Radio value="buenos-aires" description="The capital of Argentina">
                                     Promptpay
                                     </Radio>
-                                        </div>
-                                    <Radio value="buenos-aires" description="The capital of Argentina">
-                                    Buenos Aires
-                                    </Radio>
+                                    </div>
+
                                     <Radio value="canberra" description="The capital of Australia">
                                         Canberra
                                     </Radio>

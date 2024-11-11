@@ -21,29 +21,28 @@ const ModalCheckOutSucceed = () => {
 
                     
                 <div className='flex flex-col items-center p-3'>
-                    <div className ="flex flex-col gap-1 justify-start items-start">
-                    <ModalHeader className='flex'>Modal Title</ModalHeader>
+
+                    <div className='flex justify-center items-center'>
+                    <img className='w-2/3 sm:w-[40%]' src="src/assets/ProjectLogo/Logo-7.svg" alt="logo" />
                     </div>
 
-                    <ModalBody>
-                    <p> 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam pulvinar risus non risus hendrerit venenatis.
-                        Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                    <div className ="flex flex-col gap-1 justify-start items-start">
+                    <ModalHeader className='flex'>Raptors Meteor Feast</ModalHeader>
+                    </div>
+
+                    <div>
+                    <ModalBody className='flex flex-col items-center justify-center'>
+                    <h1 className='text-3xl'>
+                        Thank you!
+                    </h1>
+                    <p>
+                        Code sent to your email
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam pulvinar risus non risus hendrerit venenatis.
-                        Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                    </p>
-                    <p>
-                        Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
-                        dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. 
-                        Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. 
-                        Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur 
-                        proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                        Please do not close the window until we confirm your purchase is complete.
                     </p>
                     </ModalBody>
+                    </div>
 
                 <div>
                 <a href="/"><Button onPress={onClose} color="primary" className=''>OK</Button></a>
