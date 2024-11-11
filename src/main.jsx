@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Home from './pages/Home';
-import CardComponent from './components/Card-Home/CardComponent';
 import CardDetail from './components/Card-Detail/CardDetail';
 
 const router = createBrowserRouter([
