@@ -3,7 +3,7 @@ import { IoTrashOutline } from "react-icons/io5";
 export default function MyCart() {
   return (
     <div>
-        <div className="flex justify-between w-[873px] h-[196px] p-[24px] bg-slate-300 rounded-lg mb-8">
+        <div className="flex justify-between w-[873px] h-[196px] p-[24px] bg-neutral-900 rounded-lg mb-8">
             <div className="flex gap-5">
                 <div>
                     <img
@@ -11,7 +11,7 @@ export default function MyCart() {
                     src="src/assets/GameCoverImg/God of war cover.jpg" alt="god of war" />
                 </div>
                 <div>
-                    <p className="bg-slate-200 rounded-full px-7 w-[100px] mb-3">Action</p>
+                    <p className="bg-blue-800 rounded-full px-7 w-[100px] mb-3">Action</p>
                     <p className="font-semibold">God of War Ragnarok</p>
                     <p className="font-semibold">Standard Edition</p>
                 </div>

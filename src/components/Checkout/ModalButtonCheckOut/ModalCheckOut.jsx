@@ -9,8 +9,7 @@ const ModalCheckOut = () => {
         return (
         <>
         <div>
-        <Button onPress={onOpen} color="primary" className='w-full'>Check Out</Button>
-        <hr />
+        <Button onPress={onOpen} color="primary" className='w-full' >Check Out</Button>
         </div>
         
 
