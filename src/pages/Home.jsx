@@ -5,6 +5,7 @@ import Hero from '../components/Hero-Home/Hero'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer/Footer'
 import Login from '../pages/auth/Login'
+import Register from '../pages/auth/Register'
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <BoxThreeContainer/>
             <Footer/> */}
             <Login />
+            <Register />
         </div>
     )
 }

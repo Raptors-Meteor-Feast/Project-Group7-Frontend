@@ -3,24 +3,31 @@ import { Input } from "@nextui-org/input";
 import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { Button } from "@nextui-org/react";
-import {MailIcon} from '../../assets/LogoLogin/Maillcon';
+import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import "./login.css"
 
 const Login = () => {
+    // State to toggle password visibility
     const [isVisible, setIsVisible] = React.useState(false);
+    // Toggle function for password visibility
     const toggleVisibility = () => setIsVisible(!isVisible);
+
+    // State variables to store email and password values
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [value, setValue] = React.useState("");
+    const [value, setValue] = React.useState(""); // Email input field value
 
+    // Function to validate email format
     const validateEmail = (value) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+    // Memoized value to check if the email is invalid, recalculated only when 'value' changes
     const isInvalid = React.useMemo(() => {
-        if (value === "") return false;
-        return !validateEmail(value);
+        return value !== "" && !validateEmail(value);
     }, [value]);
 
+
+    // Form submit handler
     function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault();// Prevents default form submission
 
         // Check for empty fields
         if (email && password) {
@@ -63,7 +70,7 @@ const Login = () => {
                     endContent={
                         <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                     }
-                    errorMessage="Please enter a valid email"
+                    errorMessage={isInvalid ? "Please enter a valid email." : ""}
                     onChange={(e) => {
                         setValue(e.target.value)
                         setEmail(e.target.value)
