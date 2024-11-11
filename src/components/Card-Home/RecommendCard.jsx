@@ -21,7 +21,7 @@ const RecommendCard = ({name}) => {
     };
 
     return (
-    <div className='w-full px-[135px] py-10 bg-gray-800'>
+    <div className='w-full px-[135px] py-10 bg-gray-900'>
             <div className='flex justify-between'>
                 <h2 className='mb-5 text-[28px] font-bold text-white'>{name}</h2>
                 <div className="flex justify-end mb-4">
@@ -32,14 +32,16 @@ const RecommendCard = ({name}) => {
             <div className='gap-[22px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5'>
             {randomData.map(items => (
                 <Card 
-                    shadow="sm" key={items.id} 
-                    isPressable 
-                    onPress={() => handleCardClick(items.id)} >
+                    shadow="md" key={items.id} 
+                    isPressable
+                    onPress={() => handleCardClick(items.id)}
+                    className='drop-shadow-md hover:bg-gray-300 '>
                     <CardBody className="overflow-visible p-0">
                         <Image
                             shadow="sm"
                             radius="lg"
                             width="100%"
+                            isBlurred
                             alt={items.title}
                             className="w-full object-cover h-[230px]"
                             src={items.pictureaddress}
@@ -47,16 +49,16 @@ const RecommendCard = ({name}) => {
                     </CardBody>
                     <CardFooter className="text-small flex flex-col justify-start items-start">
                         <div className='flex justify-start gap-2'>
-                            <p className="text-[12px] text-default-400">{items.categories[0]}</p>
-                            <p className="text-[12px] text-default-400">{items.categories[1]}</p>
+                            <p className="text-[12px] text-default-700">{items.categories[0]}</p>
+                            <p className="text-[12px] text-default-700">{items.categories[1]}</p>
                         </div>
                         {items.title.length >= 25 ? 
                             (<b className='text-[15px]'>{items.title}</b>) :
                             (<b className='text-[16px]'>{items.title}</b>)
                         }
                         {items.price === 0 ? 
-                            (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :
-                            (<p className="text-[12px] text-default-500">THB <span>{items.price}</span></p>)
+                            (<p className="text-[12px] text-default-800"><span>Free to Play</span></p>) :
+                            (<p className="text-[12px] text-default-800">THB <span>{items.price}</span></p>)
                         }
                     </CardFooter>
                 </Card>

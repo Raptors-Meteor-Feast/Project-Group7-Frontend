@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonBanner } from "../BaseButton";
+import { Image } from "@nextui-org/react";
 
 function CarouselBanner({
   title = "Defult: Raptors Meteor Feast Ecommerce",
