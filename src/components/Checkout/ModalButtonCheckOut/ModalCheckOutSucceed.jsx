@@ -46,7 +46,7 @@ const ModalCheckOutSucceed = () => {
                     </ModalBody>
 
                 <div>
-                <Button onPress={onClose} color="primary" className=''>OK</Button>
+                <a href="/"><Button onPress={onClose} color="primary" className=''>OK</Button></a>
                 </div>
             
                 </div>
