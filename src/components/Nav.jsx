@@ -1,6 +1,6 @@
-import { Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
-import { SearchIcon } from "../Images/NavIcon/SearchIcon.jsx";
+import { Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
 import { useState } from "react";
+import SearchBox from "./SearchBox";
 
 export default function Nav() {
     const [logIn, setLogIn] = useState(false);
@@ -26,19 +26,7 @@ export default function Nav() {
                 <div className="flex items-center gap-5">
                 {/* Search Input */}
                 <div>
-                    <Input
-                    classNames={{
-                        base: "max-w-full mr-6 sm:max-w-[20rem] h-10",
-                        mainWrapper: "h-full",
-                        input: "text-small",
-                        inputWrapper:
-                        "h-full w-[300px] font-normal text-default-500 bg-default-100/70 dark:bg-default-500/20 rounded-3xl",
-                    }}
-                    placeholder="Type to search..."
-                    size="sm"
-                    startContent={<SearchIcon size={18} />}
-                    type="search"
-                    />
+                    <SearchBox />
                 </div>
 
                 {/* Navigation Links */}
