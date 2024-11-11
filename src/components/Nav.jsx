@@ -20,7 +20,7 @@ export default function Nav() {
                     alt="Raptor-Logo"
                     className="w-[55px] h-auto object-cover mr-2 "
                     />
-                    <p className="hidden sm:block font-bold text-[#F18650] text-[18px]">Raptors Meteor Feast</p>
+                    <p className="hidden sm:block font-bold text-[#F18651] text-[18px]">Raptors Meteor Feast</p>
                 </div>
 
                 <div className="flex items-center gap-5">

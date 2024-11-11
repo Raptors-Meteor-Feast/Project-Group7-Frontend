@@ -1,7 +1,7 @@
 import { Input } from "@nextui-org/react";
 import { SearchIcon } from "../Images/NavIcon/SearchIcon.jsx";
 import { useEffect, useState } from "react";
-import data from "../Data/gamedata.json";
+import gamedata from '../Data/gamedata.json'
 
 
 export default function SearchBox() {
@@ -16,7 +16,7 @@ export default function SearchBox() {
 
     useEffect(() => {
         if(search !== "") {
-            const newData = data.filter(data => {
+            const newData = gamedata.filter(data => {
                 return data.title.toLowerCase().includes(search.toLowerCase())
             })
             setSearchData(newData)
@@ -25,7 +25,7 @@ export default function SearchBox() {
         }
     }, [search])
 
-  return (
+return (
     <div>
         <div className="flex justify-center">
         <Input
@@ -48,12 +48,11 @@ export default function SearchBox() {
         <div className="flex justify-center relative">
         <div className="overflow-auto w-[400px] h-[200px] absolute top-1 left-[48%] -translate-x-1/2 z-10 ">
             { searchData.slice(0,5).map((data, id) => {
-                const randomIndex = Math.floor(Math.random() * data.exampicture.length);
-            return <a href={data.exampicture[randomIndex]} key={id} className="flex flex-row items-center bg-gray-200 gap-2 hover:bg-gray-300 active:bg-gray-400" target="_blank"> 
+            return <a href={`card/${data.id}`} key={id} className="flex flex-row items-center bg-gray-200 gap-2 hover:bg-gray-300 active:bg-gray-400" target="_blank"> 
             <img src={data.pictureaddress} alt={data.title} className="w-[50px] h-[60px] object-cover p-1 ml-2" />{data.title}</a>
             })}
         </div>
         </div>
     </div>
-  )
+)
 }
