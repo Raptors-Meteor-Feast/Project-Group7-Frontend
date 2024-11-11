@@ -1,232 +1,352 @@
 [
     {
         "id": 21,
-        "title": "The Witcher 3: Wild Hunt",
+        "title": "The Last of Us Part I",
         "categories": [
             "Action RPG",
-            "Open World",
-            "Fantasy",
+            "Adventure",
+            "Shooter",
             "Single Player",
             ""
         ],
-        "price": 1299.00,
-        "pictureaddress": "https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f",
+        "price": 1290.00,
+        "pictureaddress": "https://cdn2.unrealengine.com/everything-we-know-about-the-last-of-us-1920x1080-68e49d522a73.jpg",
         "exampicture": [
-            "https://images4.alphacoders.com/667/667676.png",
-            "https://www.wallpaperflare.com/static/609/954/369/the-witcher-the-witcher-3-wild-hunt-witcher-wild-wallpaper.jpg",
-            "https://www.pixelstalk.net/wp-content/uploads/images6/Gaming-Witcher-3-Wallpaper-HD.jpg",
-            "https://images2.alphacoders.com/520/thumb-1920-520246.jpg",
-            "https://i.pinimg.com/originals/01/83/e6/0183e6b27db71f427152171d8e0c9bbe.jpg"
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-i-screenshot-02-en-17may22?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-i-screenshot-05-en-17may22?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-i-screenshot-03-en-17may22?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-i-screenshot-11-en-17may22?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-i-screenshot-06-en-17may22?$1600px$g"
         ],
-        "short_description": "A story-driven RPG set in a vast open world, following the adventures of Geralt of Rivia.",
-        "full_description": "The Witcher 3: Wild Hunt is a critically acclaimed RPG featuring a deep narrative, immersive world, and fast-paced combat. Players take on the role of Geralt of Rivia, a monster hunter searching for his adopted daughter while facing various dangers in the world of The Continent. With a branching storyline and countless side quests, the game offers rich content for players to explore.\n\nWith beautiful visuals, memorable characters, and a haunting soundtrack, the game is considered one of the best RPGs of all time. Players can engage in combat, exploration, and use magic as they journey through forests, villages, and cities.",
-        "rating": 9
-    },
-    {
-        "id": 22,
-        "title": "Fortnite",
-        "categories": [
-            "Battle Royale",
-            "Multiplayer",
-            "Survival",
-            "Free-to-Play",
-            ""
-        ],
-        "price": 0.00,
-        "pictureaddress": "https://cdn1.epicgames.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb",
-        "exampicture": [
-            "https://wallpapercat.com/w/full/e/0/3/88436-1920x1080-desktop-full-hd-fortnite-wallpaper-photo.jpg",
-            "https://wallpapercave.com/wp/wp2558665.jpg",
-            "https://wallpapers-hub.art/wallpaper-images/113153.png",
-            "https://www.hdwallpapers.in/download/mega_city_fortnite_hd_fortnite-1920x1080.jpg",
-            "https://wallpapers.com/images/hd/fortnite-characters-showcase-73ddz5o04ddfxzcu.jpg"
-        ],
-        "short_description": "A fast-paced battle royale game where 100 players fight to be the last one standing.",
-        "full_description": "Fortnite is an online multiplayer battle royale game that has taken the world by storm. Players are dropped onto an island where they must gather resources, build structures, and eliminate other players in order to survive. With frequent updates, new weapons, skins, and events, Fortnite remains one of the most popular games in the world.\n\nThe game features a unique building mechanic where players can construct defensive structures, giving it a creative twist on the traditional battle royale formula. Free-to-play with in-game purchases, Fortnite offers an engaging experience for both casual and competitive players.",
+        "short_description": "Is a visually enhanced remake of the original, featuring improved graphics, gameplay, and accessibility. It follows Joel and Ellie as they survive in a post-apocalyptic world filled with infected and hostile humans.",
+        "full_description": "Is a third-person action adventure game. Players largely control Joel as he leads Ellie through the post-apocalyptic US. It’s a long and dangerous journey. The Infected are aggressive to uninfected humans and animals, attacking on sight with no regard to their own safety.",
         "rating": 8
     },
     {
-        "id": 23,
-        "title": "Cyberpunk 2077",
+        "id": 22,
+        "title": "The Last of Us Part II",
         "categories": [
             "Action RPG",
-            "Open World",
-            "Sci-Fi",
+            "Adventure",
+            "Shooter",
             "Single Player",
             ""
         ],
-        "price": 2499.00,
-        "pictureaddress": "https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7",
+        "price": 1890.00,
+        "pictureaddress": "https://image.api.playstation.com/vulcan/ap/rnd/202312/0117/315718bce7eed62e3cf3fb02d61b81ff1782d6b6cf850fa4.png",
         "exampicture": [
-            "https://images.axios.com/cMBKByC0n-FfbL6r4V34ibvpLfE=/0x0:1920x1080/1920x1080/2021/03/29/1617062389341.jpg",
-            "https://cdn.wallpaper.tn/large/Cyberpunk-2077-Wallpaper-4K-15610.jpg",
-            "https://i.pcmag.com/imagery/articles/00hYjpCCgBH5VFYPsZrBqmf-1..v1600444074.jpg",
-            "https://images.wallpapersden.com/image/download/cyberpunk-2077-hd-gaming-22_bWhnZW2UmZqaraWkpJRnamtlrWZpaWU.jpg",
-            "https://gameranx.com/wp-content/uploads/2017/03/Cyberpunk-2077-1080P-Wallpaper.jpg"
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-state-of-play-screen-03-ps4-us-24sep19?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-state-of-play-screen-06-ps4-us-24sep19?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-state-of-play-screen-05-ps4-us-24sep19?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-ii-screen-us-11jun18-10?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/the-last-of-us-part-ii-screen-03-ps4-us-05dec16?$1600px$"
         ],
-        "short_description": "A dystopian open-world RPG where you control a mercenary navigating the dark future of Night City.",
-        "full_description": "Cyberpunk 2077 is an open-world, action RPG set in a dystopian future in the city of Night City. Players control V, a mercenary whose journey takes them through the underworld of cyber-enhanced criminals, corporations, and shady politics. With a high degree of customization, deep storylines, and action-packed combat, it provides a unique futuristic experience.\n\nThe game features immersive visuals, robust character progression, and multiple pathways in the story, allowing for different outcomes based on your decisions. Despite a rocky launch, recent updates have improved the game significantly, making it one of the most talked-about RPGs.",
+        "short_description": "When a violent event disrupts that peace, Ellie embarks on a relentless journey to carry out justice and find closure.",
+        "full_description": "Five years after their dangerous journey across the post-pandemic United States, Ellie and Joel have settled down in Jackson, Wyoming. Living amongst a thriving community of survivors has allowed them peace and stability, despite the constant threat of the infected and other, more desperate survivors.",
+        "rating": 9
+    },
+    {
+        "id": 23,
+        "title": "Horizon Zero Dawn Complete Edition",
+        "categories": [
+            "Action RPG",
+            "Adventure",
+            "Single Player",
+            ""
+        ],
+        "price": 1690.00,
+        "pictureaddress": "https://cdn1.epicgames.com/3328b08ac1c14540aa265a1a85c07839/offer/hzd_wide-2560x1440-bd312be05c49cf339097777c493cb899.jpg",
+        "exampicture": [
+            "https://gmedia.playstation.com/is/image/SIEPDC/horizon-zero-dawn-remastered-screenshot-06-en-30sep24?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/horizon-zero-dawn-remastered-screenshot-02-en-30sep24?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/horizon-zero-dawn-remastered-screenshot-01-en-30sep24?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/horizon-zero-dawn-remastered-screenshot-07-en-30sep24?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/horizon-zero-dawn-remastered-screenshot-04-en-30sep24?$1600px$"
+        ],
+        "short_description": "An outcast from her tribe, the young hunter fights to uncover her past, discover her destiny… and stop a catastrophic threat to the future.",
+        "full_description": "Experience Aloy’s entire legendary quest to unravel the mysteries of a world ruled by deadly Machines. Unleash devastating, tactical attacks against unique Machines and rival tribes as you explore an open world teeming with wildlife and danger.",
         "rating": 7
     },
     {
         "id": 24,
-        "title": "Grand Theft Auto V",
+        "title": "Horizon Forbidden West Complete Edition",
         "categories": [
-            "Action",
-            "Open World",
-            "Multiplayer",
-            "Crime",
+            "Action RPG",
+            "Adventure",
+            "Single Player",
             ""
         ],
-        "price": 1399.00,
-        "pictureaddress": "https://www.gamingdose.com/wp-content/uploads/2014/12/GTA-V-Wallpaper-Full-HD-Background-Pictures.jpg",
+        "price": 1690.00,
+        "pictureaddress": "https://www.nixxes.com/wp-content/uploads/2024/03/featured-img-hfw.jpg",
         "exampicture": [
-            "https://images8.alphacoders.com/543/543379.jpg",
-            "https://wallpapercat.com/w/full/2/8/5/130792-2880x1800-desktop-hd-grand-theft-auto-5-background-image.jpg",
-            "https://wallpapers.com/images/high/gta-5-trevor-and-michael-vywcwu2ie0pk3vr9.webp",
-            "https://บทสรุป.com/wp-content/uploads/2016/06/GTA-V.jpg",
-            "https://img.gta5-mods.com/q95/images/save-game-44/a82937-v_trunk_1920x1080.jpg"
+            "https://gmedia.playstation.com/is/image/SIEPDC/horizon-forbidden-west-screenshot-18-en-02feb22?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/horizon-forbidden-west-screenshot-19-en-02feb22?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/horizon-forbidden-west-screenshot-16-en-02feb22?$1600px$",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2420110/ss_87750b2dbc34d82d1ffef7aaab40a9f46d970d99.1920x1080.jpg?t=1725653368",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2420110/ss_b7d25b4a328003d340913377793e83c961f2d7ab.1920x1080.jpg?t=1725653368"
         ],
-        "short_description": "An open-world action game with a dynamic story and extensive multiplayer mode.",
-        "full_description": "Grand Theft Auto V takes players to the sprawling city of Los Santos, where they engage in criminal activities, complete heists, and interact with a massive world filled with NPCs and dynamic events. The game's story revolves around three protagonists, each with their unique backgrounds and motives. Additionally, GTA Online offers multiplayer action with other players in a variety of activities ranging from street racing to cooperative missions.\n\nWith breathtaking graphics, endless possibilities, and a compelling narrative, GTAV continues to be one of the most popular games, even years after its release. It's a must-play for fans of open-world games.",
-        "rating": 10
+        "short_description": "Horizon Forbidden West continues the story of Aloy half a year after the events of the Zero Dawn, a young huntress of the Nora tribe sent on a quest to a mysterious frontier spanning Utah to the Pacific coast to find the source of a mysterious plague that kills all it infects.",
+        "full_description": "Join Aloy as she braves a majestic but dangerous new frontier that holds mysterious new threats. This Complete Edition allows you to enjoy the critically acclaimed Horizon Forbidden West on PC in its entirety with bonus content, including the Burning Shores story expansion that picks up after the main game.",
+        "rating": 8
     },
     {
         "id": 25,
-        "title": "Apex Legends",
+        "title": "NieR: Automata",
         "categories": [
-            "Battle Royale",
-            "Multiplayer",
-            "Shooter",
-            "Free-to-Play",
+            "Action RPG",
+            "Adventure",
+            "Single Player",
             ""
         ],
-        "price": 0.00,
-        "pictureaddress": "https://images6.alphacoders.com/992/992033.jpg",
+        "price": 1390.00,
+        "pictureaddress": "https://image.api.playstation.com/cdn/HP0082/CUSA06592_00/O9k8kwZ1hbPiFTXYN2DJ2G5XxLik6gJEBd19vNPN1jSAJIVyD9fgxrkdkUIiErJw.png",
         "exampicture": [
-            "https://www.playulti.com/static/thumb/2019/1/6/attach-1549388951171.jpg",
-            "https://cdn1.epicgames.com/spt-assets/5dcd88f4e2094a698ebffa43438edc33/apex-legends-teipz.jpg",
-            "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2022-07/apex%201-220728-165439.jpg?versionId=.64gSYdAeRXLOs3NcGmGZBEDDeiy61Wk",
-            "https://4kwallpapers.com/images/wallpapers/apex-legends-video-1920x1200-12712.jpg",
-            "https://cdn.wccftech.com/wp-content/uploads/2024/02/WCCFapexlegends98.jpg"
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/ss_8b29f7e1ce9a8b9313dc3eb50dbe76a4cf94eef9.1920x1080.jpg?t=1727790045",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/ss_2c265df38c3d2d393d74ee8e74d79bdafa16b143.1920x1080.jpg?t=1727790045",
+            "hhttps://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/ss_a6d164452c1aa00a0d7b7ca31aa76d787853b39e.1920x1080.jpg?t=1727790045",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/ss_02d2f3f2b7b7add8e6ad50d6b9325d05fa1d7bc7.1920x1080.jpg?t=1727790045",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/ss_c538e630c5cc224124104cc42ec6220ab90b5852.1920x1080.jpg?t=1727790045"
         ],
-        "short_description": "A fast-paced battle royale shooter with unique characters and abilities.",
-        "full_description": "Apex Legends is a free-to-play battle royale game that features a variety of Legends, each with unique abilities. Players team up in squads and fight to be the last team standing, while utilizing the game's unique mechanics, including respawning teammates and fast movement. The game includes frequent updates with new characters, skins, and limited-time events.\n\nWith tactical gameplay, a focus on team coordination, and a growing esports community, Apex Legends has become one of the most exciting battle royales in the competitive gaming world.",
-        "rating": 8
+        "short_description": "NieR: Automata tells the story of androids 2B, 9S and A2 and their battle to reclaim the machine-driven dystopia overrun by powerful machines.",
+        "full_description": "Humanity has been driven from the Earth by mechanical beings from another world. In a final effort to take back the planet, the human resistance sends a force of android soldiers to destroy the invaders. Now, a war between machines and androids rages on... A war that could soon unveil a long-forgotten truth of the world.",
+        "rating": 10
     },
     {
         "id": 26,
-        "title": "Minecraft",
+        "title": "Resident Evil Village",
         "categories": [
             "Survival",
-            "Sandbox",
-            "Multiplayer",
-            "Creative",
+            "Horror",
+            "Shooter",
+            "Adventure",
+            "Single Player",
             ""
         ],
-        "price": 690.00,
-        "pictureaddress": "https://wallpapers.com/images/featured/minecraft-s2kxfahyg30sob8q.jpg",
+        "price": 1290.00,
+        "pictureaddress": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1196590/capsule_616x353.jpg?t=1728438212",
         "exampicture": [
-            "https://images3.alphacoders.com/132/thumb-1920-1321959.png",
-            "https://i.redd.it/xi14z2xtqx691.png",
-            "https://wallpapers.com/images/featured/beautiful-minecraft-on7hyl1nq96xum8d.jpg",
-            "https://i.pinimg.com/originals/2f/db/80/2fdb80a1219c99ea0c59d82aede974e9.jpg",
-            "https://wallpapercave.com/wp/wp2998911.jpg"
+            "https://gmedia.playstation.com/is/image/SIEPDC/resident-evil-village-ps5-screenshot-03-24jul20?$1600px$",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1196590/ss_363d9c05ee0a974b766938610a3352e7a89b9c92.1920x1080.jpg?t=1728438212",
+            "https://gmedia.playstation.com/is/image/SIEPDC/resident-evil-village-ps5-screenshot-01-24jul20?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/resident-evil-village-ps5-screenshot-12-24jul20?$1600px$",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1196590/ss_d6c5bfb48d7fda343ed583750372b0d3e513ae17.1920x1080.jpg?t=1728438212"
         ],
-        "short_description": "A sandbox game where you can build, explore, and survive in a blocky world.",
-        "full_description": "Minecraft is a sandbox game that allows players to build and explore in a procedurally generated world made up of blocks. You can mine for resources, craft tools, and construct complex structures. The game includes various modes such as Creative, Survival, and Adventure, offering diverse experiences. With modding support, multiplayer servers, and regular updates, Minecraft has remained one of the most played games worldwide.\n\nWhether you're building elaborate cities, surviving against monsters, or exploring endless landscapes, Minecraft's simple yet deep gameplay appeals to players of all ages.",
-        "rating": 9
+        "short_description": "Experience survival horror like never before in the eighth major installment in the storied Resident Evil franchise.",
+        "full_description": "Set a few years after the horrifying events in the critically acclaimed Resident Evil 7 biohazard, the all-new storyline begins with Ethan Winters and his wife Mia living peacefully in a new location, free from their past nightmares. Just as they are building their new life together, tragedy befalls them once again.",
+        "rating": 10
     },
     {
         "id": 27,
-        "title": "Valorant",
+        "title": "Resident Evil 7 Biohazard",
         "categories": [
+            "Survival",
+            "Horror",
             "Shooter",
-            "Multiplayer",
-            "Tactical",
-            "Free-to-Play",
+            "Adventure",
+            "Single Player",
             ""
         ],
-        "price": 0.00,
-        "pictureaddress": "https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S1_2560x1440-6608fb6c4c56c07b9a7caa34c6e6ee37",
+        "price": 600.00,
+        "pictureaddress": "https://miro.medium.com/v2/resize:fit:6500/1*tTDi7Q6rrQvUTGPV0XCljg.jpeg",
         "exampicture": [
-            "https://media.wired.com/photos/5ea0840cb0490300086261e3/master/pass/Cul-Reveal_ReactorA_VALORANT.jpg",
-            "https://cdn.mos.cms.futurecdn.net/YHdtAs36hSJUL56Lq2nxFi-1200-80.jpg",
-            "https://d.newsweek.com/en/full/1570653/valorant-project-gameplay-reveal-trailer.jpg",
-            "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19755320/FirstLook_Smoke_VALORANT.jpg?quality=90&strip=all&crop=0,0,100,100",
-            "https://media.assettype.com/afkgaming/2021-09/bd195fe1-3608-477b-8418-c784dd4b5dc2/All_the_regional_qualifiers_wrap_up_in_August___11_.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max"
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418370/ss_d07fd9fca3644350782356667ce78d436c574680.1920x1080.jpg?t=1728436752",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418370/ss_4ba2efde83e86ad41dd962b6802c45029efbe75d.1920x1080.jpg?t=1728436752",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418370/ss_4f42f8bb0c4eda5b0911a25a18b4812cb25d8e34.1920x1080.jpg?t=1728436752",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418370/ss_26cee827684c0b0ba39764add124c764979022d3.1920x1080.jpg?t=1728436752",
+            "https://i.ytimg.com/vi/viyqPAziAaw/maxresdefault.jpg"
         ],
-        "short_description": "A tactical shooter with a focus on character abilities and team coordination.",
-        "full_description": "Valorant is a tactical first-person shooter that combines precise gunplay with hero-based abilities. Teams of five compete to either plant a bomb or defend a location. Each character, called an Agent, has unique powers that enhance strategy and team dynamics. The game is known for its precise shooting mechanics and competitive, team-based gameplay.\n\nValorant is heavily focused on teamwork and communication, making it a favorite for esports and competitive gaming. With regular updates and a growing community, it remains one of the top free-to-play tactical shooters.",
-        "rating": 8
+        "short_description": "Resident Evil 7 biohazard is the next major entry in the renowned Resident Evil series and sets a new course for the franchise as it leverages its roots and opens the door to a truly terrifying horror experience.",
+        "full_description": "Set in modern day rural America and taking place after the dramatic events of Resident Evil® 6, players experience the terror directly from the first person perspective. Resident Evil 7 embodies the series’ signature gameplay elements of exploration and tense atmosphere that first coined “survival horror” some twenty years ago; meanwhile, a complete refresh of gameplay systems simultaneously propels the survival horror experience to the next level.",
+        "rating": 10
     },
     {
         "id": 28,
-        "title": "Rocket League",
+        "title": "Hogwarts Legacy",
         "categories": [
-            "Sports",
-            "Multiplayer",
-            "Action",
-            "Free-to-Play",
+            "Action RPG",
+            "Fantasy",
+            "Puzzle",
+            "Adventure",
+            "Single Player",
             ""
         ],
-        "price": 0.00,
-        "pictureaddress": "https://www.rocketleague.com/images/keyart/rl_evergreen.jpg",
+        "price": 1890.00,
+        "pictureaddress": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1716/tw8UCwGRiKfUF7l7DSu8xaIa.jpg",
         "exampicture": [
-            "https://aiptcomics.com/wp-content/uploads/2020/07/rocket-league.jpg",
-            "https://images.prismic.io/play-vs/fd0954bae7fc056ecda5ef8350bad0e8fb8e6ae4_playvs-rl-heroimage.jpg?auto=compress,format",
-            "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/rocket-league-gameplay.jpg",
-            "https://britishesports.org/wp-content/uploads/2022/04/rl-terms-1200x800-1.jpg",
-            "https://lutris.net/media/games/screenshots/rocket-league-screenshot-010-ps4-us-7jul15.jpg"
+            "https://gmedia.playstation.com/is/image/SIEPDC/hogwarts-legacy-screen-02-ps5-en-02oct20?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/hogwarts-legacy-screen-01-ps5-en-02oct20?$1600px$",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/ss_df93b5e8a183f7232d68be94ae78920a90de1443.1920x1080.jpg?t=1717689083",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/ss_94058497bf0f8fabdde17ee8d59bece609a60663.1920x1080.jpg?t=1717689083",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/ss_d4930d675af053dc1e61a876a34fc003e85e261f.1920x1080.jpg?t=1717689083"
         ],
-        "short_description": "A unique fusion of soccer and vehicles, where players control cars to score goals.",
-        "full_description": "Rocket League is a fast-paced game where players drive cars to hit a giant ball into their opponent's goal. With simple mechanics but complex strategies, the game combines soccer with physics-based gameplay. It includes solo, multiplayer, and competitive modes, allowing for various ways to play and compete.\n\nRegular updates, seasonal events, and esports tournaments have kept Rocket League fresh, making it a popular game in both casual and professional gaming communities.",
-        "rating": 9
-    },
-    {
-        "id": 29,
-        "title": "Among Us",
-        "categories": [
-            "Multiplayer",
-            "Party",
-            "Social Deduction",
-            "Free-to-Play",
-            ""
-        ],
-        "price": 0.00,
-        "pictureaddress": "https://www.internetsafeeducation.com/wp-content/uploads/2021/12/3902312.jpg",
-        "exampicture": [
-            "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2667,w_4000,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1200/Shutterstock-by-Vistin-aeo_composite_1835067190-_Converted__yctaqg.png",
-            "https://m.media-amazon.com/images/I/61VLV93FzXL.jpg",
-            "https://img.4gamers.com.tw/ckfinder-th/image2/auto/2024-03/Among-Us-240329-003453.png?versionId=JYTELHCjp4QIUs5UKsdDUSElQHcv7t62",
-            "https://i.pcmag.com/imagery/reviews/00eaJ8Sf2suWy4yfi1iz7F8-1..v1603813544.png",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ZfT3yUjLwX_WpCT4kWnUoyWHuaVCqjxdmkw4MvxqXYTTDasOJ6FKa58HDaRbyZLlXh4&usqp=CAU"
-        ],
-        "short_description": "A social deduction game where players must figure out who the Impostor is.",
-        "full_description": "Among Us is a multiplayer party game where players take on the roles of Crewmates or Impostors aboard a spaceship. The Crewmates must complete tasks around the ship while the Impostors secretly sabotage their efforts and eliminate them. The game encourages communication and strategy as players try to identify the Impostors before it's too late.\n\nWith simple gameplay mechanics and hilarious moments, Among Us became a massive hit, especially during the COVID-19 pandemic. Its success has led to frequent updates, new maps, and even themed events.",
+        "short_description": "In the world first introduced in the Harry Potter books. Embark on a journey through familiar and new locations as you explore and discover magical beasts, customize your character and craft potions, master spell casting, upgrade talents and become the wizard you want to be.",
+        "full_description": "Experience Hogwarts in the 1800s. Your character is a student who holds the key to an ancient secret that threatens to tear the wizarding world apart. Make allies, battle Dark wizards, and ultimately decide the fate of the wizarding world. Your legacy is what you make of it. Live the Unwritten.",
         "rating": 8
     },
     {
-        "id": 30,
-        "title": "Call of Duty: Warzone",
+        "id": 29,
+        "title": "A Plague Tale: Innocence",
         "categories": [
-            "Battle Royale",
-            "Shooter",
-            "Multiplayer",
-            "Free-to-Play",
+            "Survival",
+            "Horror",
+            "Action",
+            "Adventure",
+            "Single Player",
             ""
         ],
-        "price": 0.00,
-        "pictureaddress": "https://blog.ttt-website.com/wp-content/uploads/2023/12/Call-Of-Duty-Warzone-1.jpg",
+        "price": 990.00,
+        "pictureaddress": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/752590/ss_8775c109d7303faf8aa94c532905107b75064d48.1920x1080.jpg?t=1727793332",
         "exampicture": [
-            "https://assets-prd.ignimgs.com/2022/11/18/warzone-mobile-stadium-keyart-1668769729454.png?fit=bounds&width=1280&height=720",
-            "https://i.ytimg.com/vi/DVjCUkrHHcY/maxresdefault.jpg",
-            "https://d.newsweek.com/en/full/1572737/call-duty-warzone-how-download.png",
-            "https://codmwstore.com/wp-content/uploads/2023/10/COD-NEXT-013.jpg",
-            "https://www.drivereasy.com/wp-content/uploads/2020/09/cover2.jpg"
+            "https://gmedia.playstation.com/is/image/SIEPDC/APTI-screenshot-01-en-18jun21?$1600px$g",
+            "https://gmedia.playstation.com/is/image/SIEPDC/APTI-screenshot-12-en-18jun21?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/APTI-screenshot-05-en-18jun21?$1600px$",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/752590/ss_6e407c3124bcd9ae87efc096a0073de8972aa73d.1920x1080.jpg?t=1727793332",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/752590/ss_b3eee5fa907fe897c650f4720629931db65b4dbb.1920x1080.jpg?t=1727793332"
         ],
-        "short_description": "A fast-paced battle royale set in the Call of Duty universe.",
-        "full_description": "Call of Duty: Warzone is a free-to-play battle royale game that combines fast-paced action with the signature Call of Duty gameplay. Players drop into a massive map, scavenging for weapons and eliminating other players while the play zone shrinks. It also features a unique Gulag mechanic, where eliminated players can fight for a chance to respawn.\n\nWarzone remains one of the most popular battle royale games, offering high-intensity action, a variety of weapons, and constant updates that keep the experience fresh.",
+        "short_description": "Follow the grim tale of young Amicia and her little brother Hugo, in a heartrending journey through the darkest hours of history. Hunted by Inquisition soldiers and surrounded by unstoppable swarms of rats, Amicia and Hugo will come to know and trust each other. As they struggle to survive against overwhelming odds, they will fight to find purpose in this brutal, unforgiving world.",
+        "full_description": "1348. The plague ravages the Kingdom of France. Amicia and her younger brother Hugo are pursued by the Inquisition through villages devastated by the disease. On their way, they will have to join forces with other children, and evade swarms of rats using fire and light. Aided only by the link that binds their fates together, they will face untold horrors in their struggle to survive. As their adventure begins… the time of innocence ends.",
+        "rating": 10
+    },
+    {
+        "id": 30,
+        "title": "A Plague Tale: Requiem",
+        "categories": [
+            "Survival",
+            "Horror",
+            "Action",
+            "Adventure",
+            "Single Player",
+            ""
+        ],
+        "price": 1190.00,
+        "pictureaddress": "https://cdn1.epicgames.com/salesEvent/salesEvent/PlagueTale2_2560x1440-f5840bd8286204cb20ae573e160c29f3",
+        "exampicture": [
+            "https://gmedia.playstation.com/is/image/SIEPDC/a-plague-tale-requiem-screenshot-02-en-7sep22?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/a-plague-tale-requiem-screenshot-06-en-7sep22?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/a-plague-tale-requiem-screenshot-09-en-7sep22?$1600px$",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1182900/ss_a8ce48e34efa5b0bbb4fbe6efa601ed7a33f6c23.1920x1080.jpg?t=1728650613",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1182900/ss_fa576728d10fa09f16aa129dcad8b46e8b743ec4.1920x1080.jpg?t=1728650613"
+        ],
+        "short_description": "After escaping their devastated homeland, Amicia and Hugo travel far south, to new regions and vibrant cities. There, they attempt to start a new life and control Hugo’s curse.",
+        "full_description": "Discover the cost of saving those you love in a desperate struggle for survival. Strike from the shadows or unleash hell, overcoming foes and challenges with a variety of weapons, tools and unearthly powers.",
         "rating": 9
+    },
+    {
+        "id": 41,
+        "title": "Ghost of Tsushima DIRECTOR'S CUT",
+        "categories": [
+            "Action RPG",
+            "Stealth",
+            "Fighting",
+            "Adventure",
+            "Single Player",
+            ""
+        ],
+        "price": 1690.00,
+        "pictureaddress": "https://cdn1.epicgames.com/offer/6e6aa039c73347b885803de65ac5d3db/EGS_GhostofTsushima_SuckerPunchProductions_S1_2560x1440-c33a63e5da4518de6e32299bedf7efab",
+        "exampicture": [
+            "https://gmedia.playstation.com/is/image/SIEPDC/ghost-of-tsushima-directors-cut-screenshot-01-en-22jun21?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/ghost-of-tsushima-directors-cut-screenshot-02-en-22jun21?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/ghost-of-tsushima-directors-cut-screenshot-04-en-22jun21?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/ghost-of-tsushima-directors-cut-screenshot-07-en-22jun21?$1600px$",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/ss_461f13ee2717ddf401e2c0c2320d8e847935e65b.1920x1080.jpg?t=1717622497"
+        ],
+        "short_description": "In the late 13th century, the Mongol empire has laid waste to entire nations along their campaign to conquer the East. Tsushima Island is all that stands between mainland Japan and a massive Mongol invasion fleet led by the ruthless and cunning general, Khotun Khan.",
+        "full_description": "As the island burns in the wake of the first wave of the Mongol assault, courageous samurai warrior Jin Sakai stands resolute. As one of the last surviving members of his clan, Jin is resolved to do whatever it takes, at any cost, to protect his people and reclaim his home. He must set aside the traditions that have shaped him as a warrior to forge a new path, the path of the Ghost, and wage an unconventional war for the freedom of Tsushima.",
+        "rating": 10
+    },
+    {
+        "id": 42,
+        "title": "Persona 5 Royal",
+        "categories": [
+            "Japanese RPG",
+            "Adventure",
+            "Single Player",
+            ""
+        ],
+        "price": 1920.00,
+        "pictureaddress": "https://i0.wp.com/thethirstymage.com/wp-content/uploads/2020/06/persona5royal.jpg?fit=1024%2C576&ssl=1",
+        "exampicture": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/ss_663171dc3afce8fe987e57e8659f91b69faa39bc.1920x1080.jpg?t=1722428154",
+            "hhttps://gmedia.playstation.com/is/image/SIEPDC/persona-5-royal-screen-02-ps4-en-10feb20?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/persona-5-royal-screen-03-ps4-en-10feb20?$1600px$",
+            "https://gmedia.playstation.com/is/image/SIEPDC/persona-5-royal-screen-05-ps4-en-10feb20?$1600px$",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/ss_56f354736174fdb01b7b295b587ca72ca9254df7.1920x1080.jpg?t=1722428154"
+        ],
+        "short_description": "A group of nine high school students and a mysterious cat-like creature who secretly call themselves the Phantom Thieves and have the power to change people's hearts must stop a conspiracy that threatens not only Tokyo, but the entire world.",
+        "full_description": "After discovering the ability to change the hearts of the corrupt, a group of rowdy teenagers form a team called 'The Phantom Thieves'. As they gain fame across Japan, they are abruptly pinned against multiple politically powerful people who will do everything in their capabilities to put an end to them.",
+        "rating": 9
+    },
+    {
+        "id": 43,
+        "title": "Metaphor: ReFantazio",
+        "categories": [
+            "RPG",
+            "Adventure",
+            "Action",
+            "Fighting",
+            "Single Player",
+            ""
+        ],
+        "price": 1890.00,
+        "pictureaddress": "https://gaming-cdn.com/images/products/14352/orig/metaphor-refantazio-pc-game-steam-europe-cover.jpg?v=1728921586",
+        "exampicture": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2679460/ss_ec0825cd3ecfa6c74e3041c5842bcb3453e7cb45.1920x1080.jpg?t=1730283977",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2679460/ss_de16693b88cfb65a20157ddd41925b3ce80e96f1.1920x1080.jpg?t=1730283977",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2679460/ss_dea9ff5f1572b5d4efb4d33b4d1d3decb1e8ce48.1920x1080.jpg?t=1730283977",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2679460/ss_dd1158073d02bf6afcbbac46dc8378bdf80f5fa4.1920x1080.jpg?t=1730283977",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2679460/ss_bfa3b19d302ec11f4d6c50af7797ef91e4f3dc32.1920x1080.jpg?t=1730283977"
+        ],
+        "short_description": "From the creative minds behind Persona 3, 4, and 5 comes Metaphor: ReFantazio, a unique fantasy world, where your protagonist will journey alongside his fairy companion, Gallica, to lift the curse from the kingdom’s lost prince.",
+        "full_description": "Control your destiny, face your fears and awaken magical Archetype powers that lie dormant in your heart. By awakening to an “Archetype,” you will unlock the power to channel and combine the abilities of unique job classes. Strengthen your bonds and build your party to take down powerful foes and discover the kingdom’s true nature.",
+        "rating": 10
+    },
+    {
+        "id": 44,
+        "title": "FINAL FANTASY VII REMAKE INTERGRADE",
+        "categories": [
+            "RPG",
+            "Fanatsy",
+            "Action",
+            "Adventure",
+            "Single Player",
+            ""
+        ],
+        "price": 2450.00,
+        "pictureaddress": "https://cdn1.epicgames.com/offer/6f43ab8025ad42d18510aa91e9eb688b/EGS_FINALFANTASYVIIREMAKEINTERGRADE_SquareEnix_S1_2560x1440-85f829541a833442eaace75d02e0f07d",
+        "exampicture": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/ss_20a352a2c20dd4bfb08fa131dc4c2e763510f584.1920x1080.jpg?t=1725001967",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/ss_55903e74751601e42fb7f858d5c07ec048386ce2.1920x1080.jpg?t=1725001967",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/ss_ac55306d00923f2902de20bb5ade7f9cc190e8cf.1920x1080.jpg?t=1725001967",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/ss_6e30290a5de36f3274a11bd6c78f077c9e489115.1920x1080.jpg?t=1725001967",
+            "https://gmedia.playstation.com/is/image/SIEPDC/final-fantasy-vii-intergrade-screenshot-01-en-08mar21?$1600px$"
+        ],
+        "short_description": "By exploiting mako, the life-blood of the planet, through their mako reactors, the Shinra Electric Power Company has all but seized control of the entire world. A ragtag group of idealists, known as Avalanche, are one of the last bastions of resistance.",
+        "full_description": "Cloud, an elite SOLDIER operative-turned-mercenary takes part in an Avalanche operation to destroy Mako Reactor 1 in the city of Midgar. The bombing plunges the city into fiery chaos, and Cloud is tormented by visions of a bitter enemy long thought dead.",
+        "rating": 10
+    },
+    {
+        "id": 45,
+        "title": "FINAL FANTASY XV WINDOWS EDITION",
+        "categories": [
+            "Action RPG",
+            "Open World",
+            "Fantasy",
+            "Adventure",
+            "Single Player",
+            ""
+        ],
+        "price": 1690.00,
+        "pictureaddress": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/637650/ss_031800eb49e2c1da5d8a31f8fe0bbb64544c2d0a.1920x1080.jpg?t=1727790557",
+        "exampicture": [
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/637650/ss_999e73c2cb361d41451d1a84d85f3ff59aa30110.1920x1080.jpg?t=1727790557",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/637650/ss_a0b73e5c079a92658622b3fa05c5a6c151907baa.1920x1080.jpg?t=1727790557",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/637650/ss_b535c6bffcee569e9040dfc5a786b10f006cfb1a.1920x1080.jpg?t=1727790557",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/637650/ss_fa9005ba8b7747af7235fa9e7b6a326b77c123e1.1920x1080.jpg?t=1727790557",
+            "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/637650/ss_246a43b1fdf8c140842a38c2f96e788ea77cfd12.1920x1080.jpg?t=1727790557"
+        ],
+        "short_description": "Joined by your closest friends on the roadtrip of a lifetime through a breathtaking open world, witness stunning landscapes and encounter larger-than-life beasts on your journey to reclaim your homeland from an unimaginable foe.",
+        "full_description": "In an action-packed battle system, channel the power of your ancestors to warp effortlessly through the air in thrilling combat, and together with your comrades, master the skills of weaponry, magic and team-based attacks.",
+        "rating": 7
     }
 ]
