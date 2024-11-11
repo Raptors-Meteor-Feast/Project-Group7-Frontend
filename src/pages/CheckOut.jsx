@@ -1,3 +1,4 @@
+
 import Nav from "../components/Nav"
 import MyCart from "../components/Checkout/MyCart";
 import CheckOutMyCart from "../components/Checkout/CheckOutMyCart";
@@ -63,6 +64,3 @@ export default function CheckOut() {
     </div>
     )
 }
-
-
-
