@@ -1,7 +1,8 @@
+import ModalCheckOut from "./ModalButtonCheckOut/ModalCheckOut"
 
-
-export default function CheckOutMyCart() {
-
+export default function CheckOutMyCart( {totalPrice} ) {
+    // const totalPrice = mockGameData.reduce((sum, item) => sum + item.price, 0);
+    
     return (
     <div>
         <div className="flex flex-col w-[265px] h-auto gap-3">
@@ -9,7 +10,7 @@ export default function CheckOutMyCart() {
 
             <div className="flex justify-between">
             <p className="font-semibold">Price:</p>
-            <p>THB 2,290</p>
+            <p>THB {totalPrice}</p>
             </div>
 
             <div className="flex justify-between">
@@ -21,9 +22,11 @@ export default function CheckOutMyCart() {
 
             <div className="flex justify-between">
             <p className="font-semibold">Subtotal:</p>
-            <p>THB 2,290</p>
+            <p>THB {totalPrice}</p>
             </div> 
-            <button className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-2 rounded-xl w-[265px]">Check Out</button>
+            
+            <ModalCheckOut />
+            {/* <button className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-2 rounded-xl w-[265px]">Check Out</button> */}
         </div>
     </div>
     )

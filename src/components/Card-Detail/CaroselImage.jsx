@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import GameData from "../../assets/Data/GameData.json";
 
-function CaroselIamge({ slides }) {
+function CaroselImage() {
   const [current, setCurrent] = useState(0);
+  const slides = GameData;
 
   let previousSlide = () => {
     if (current === 0) setCurrent(slides.length - 1);
@@ -23,8 +25,10 @@ function CaroselIamge({ slides }) {
             transform: `translateX(-${current * 100}%)`,
           }}
         >
-          {slides.map((s) => {
-            return <img src={s} />;
+          {slides.map((item) => {
+            return (
+              <img key={item.id} src={item.pictureaddress} alt={item.title} />
+            );
           })}
         </div>
 
@@ -39,22 +43,23 @@ function CaroselIamge({ slides }) {
       </div>
       <div className="overflow-hidden ">
         <div className="flex transition ease-out duration-400 pt-6 gap-4 justify-center">
-          {slides.map((s, i) => {
+          {slides[current].exampicture.map((item, index) => {
             return (
               <div
-                key={"image" + i}
+                key={index}
                 onClick={() => {
-                  setCurrent(i);
+                  setCurrent(index);
                 }}
                 className="hover:cursor-pointer"
               >
                 <img
-                  src={s}
+                  src={item}
                   width={160}
                   height={108}
-                  className={`rounded-lg ${
-                    i == current ? "bg-white" : "opacity-60"
+                  className={`rounded-lg h-full ${
+                    index == current ? "bg-white" : "opacity-60"
                   }`}
+                  alt={`Thumbnail ${index + 1}`}
                 />
               </div>
             );
@@ -65,4 +70,4 @@ function CaroselIamge({ slides }) {
   );
 }
 
-export default CaroselIamge;
+export default CaroselImage;

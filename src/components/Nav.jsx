@@ -1,6 +1,6 @@
-import { Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
-import { SearchIcon } from "../assets/NavIcon/SearchIcon.jsx";
+import { Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
 import { useState } from "react";
+import SearchBox from "./SearchBox";
 
 export default function Nav() {
     const [logIn, setLogIn] = useState(false);
@@ -10,35 +10,23 @@ export default function Nav() {
     };
 
     return (
-        <div className="bg-[#1A1E30]">
+        <div className="bg-[#06070a]">
             <div className="flex justify-between items-center py-[24px]">
 
                 {/* Logo and Brand Name */}
                 <div className="flex items-center ml-36">
                     <img
-                    src="src/assets/NavIcon/Gr-Logo-7.svg"
+                    src="src/Images/NavIcon/Gr-Logo-7.svg"
                     alt="Raptor-Logo"
                     className="w-[55px] h-auto object-cover mr-2 "
                     />
-                    <p className="hidden sm:block font-bold text-[#F18650] text-[18px]">Raptors Meteor Feast</p>
+                    <p className="hidden sm:block font-bold text-[#F18651] text-[18px]">Raptors Meteor Feast</p>
                 </div>
 
                 <div className="flex items-center gap-5">
                 {/* Search Input */}
                 <div>
-                    <Input
-                    classNames={{
-                        base: "max-w-full mr-6 sm:max-w-[20rem] h-10",
-                        mainWrapper: "h-full",
-                        input: "text-small",
-                        inputWrapper:
-                        "h-full w-[300px] font-normal text-default-500 bg-default-100/70 dark:bg-default-500/20 rounded-3xl",
-                    }}
-                    placeholder="Type to search..."
-                    size="sm"
-                    startContent={<SearchIcon size={18} />}
-                    type="search"
-                    />
+                    <SearchBox />
                 </div>
 
                 {/* Navigation Links */}
@@ -76,7 +64,7 @@ export default function Nav() {
                             color="secondary"
                             name="Guest"
                             size="md"
-                            src="src/assets/NavIcon/user.png"
+                            src="src/Images/NavIcon/user.png"
                             aria-label="Sign In"
                         />
                         </DropdownTrigger>
@@ -99,7 +87,7 @@ export default function Nav() {
                             color="secondary"
                             name="Jason Hughes"
                             size="md"
-                            src="src/assets/NavIcon/Gr-Logo-7.svg"
+                            src="src/Images/NavIcon/Gr-Logo-7.svg"
                             aria-label="User Profile"
                         />
                         </DropdownTrigger>
