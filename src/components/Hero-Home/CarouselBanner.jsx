@@ -1,24 +1,43 @@
-import React from "react";
-import { ButtonBanner } from "../BaseButton";
-import { Image } from "@nextui-org/react";
+import React, { useState, useEffect } from "react";
+import gamedata from "../../Data/gamedata.json";
+import { Button } from "@nextui-org/button";
+import { useNavigate } from "react-router-dom";
 
-function CarouselBanner({
-  title = "Defult: Raptors Meteor Feast Ecommerce",
-  message = "Lorem ipsum dolor Voluptates pariatur dignissimos suscipit architecto sequi? Aperiam!",
-}) {
+function CarouselBanner({ selectedId, initialData }) {
+  const navigate = useNavigate();
+  const [selectedData, setSelectedData] = useState(initialData || null);
+
+  useEffect(() => {
+    if (selectedId) {
+      const data = gamedata.find((item) => item.id === selectedId);
+      setSelectedData(data || initialData);
+    }
+  }, [selectedId, initialData]);
+
+  const handleCardClick = (id) => {
+    navigate(`/card/${id}`);
+};
+
+  if (!selectedData) {
+    return null;
+  }
+
   return (
-    <div className="relative w-auto h-auto">
+    <div className="relative w-auto h-[570px]">
       <img
-        src="https://cdn2.unrealengine.com/egs-tmnt-splintered-fate-carousel-desktop-1920x1080-29e9859f3f4c.jpg?resize=1&w=1280&h=720&quality=medium"
-        alt=""
-        className="bg-auto bg-no-repeat rounded-xl w-auto h-auto"
+        src={selectedData.pictureaddress}
+        alt={selectedData.title}
+        className="bg-auto bg-no-repeat rounded-xl w-full h-full object-cover transition-opacity duration-300 hover:opacity-70" // Added hover effect
       />
-      <div className="text-start w-[300px] absolute bottom-24 left-10">
-        <div className="font-bold text-2xl text-white">{title}</div>
-        <div className="text-lg text-white">{message}</div>
-      </div>
-      <div className="absolute bottom-10 left-10">
-        <ButtonBanner />
+      
+      <div className="absolute bottom-5 left-5 p-5 bg-black opacity-80 rounded-xl z-10 w-[450px]">
+        <div className="text-start text-white">
+          <div className="font-bold text-2xl pb-2">{selectedData.title}</div>
+          <div className="text-lg">{selectedData.short_description || "No description available."}</div>
+        </div>
+        <div className="mt-4">
+          <Button color="primary" flat={false} size="large" className="px-7 z-30" key={selectedData.id} onClick={() => handleCardClick(selectedData.id)}>Buy Now</Button>
+        </div>
       </div>
     </div>
   );
