@@ -10,7 +10,7 @@ export default function Nav() {
     };
 
     return (
-        <div className="bg-[#1A1E30]">
+        <div className="bg-[#06070a]">
             <div className="flex justify-between items-center py-[24px]">
 
                 {/* Logo and Brand Name */}

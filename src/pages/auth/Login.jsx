@@ -3,17 +3,48 @@ import { Input } from "@nextui-org/input";
 import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { Button } from "@nextui-org/react";
-import {MailIcon} from '../../assets/LogoLogin/Maillcon';
+import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import "./login.css"
 
 const Login = () => {
+    // State to toggle password visibility
     const [isVisible, setIsVisible] = React.useState(false);
+    // Toggle function for password visibility
     const toggleVisibility = () => setIsVisible(!isVisible);
 
-
+    // State variables to store email and password values
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [value, setValue] = React.useState(""); // Email input field value
 
+    // Function to validate email format
+    const validateEmail = (value) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+    // Memoized value to check if the email is invalid, recalculated only when 'value' changes
+    const isInvalid = React.useMemo(() => {
+        return value !== "" && !validateEmail(value);
+    }, [value]);
+
+
+    // Form submit handler
+    function handleSubmit(e) {
+        e.preventDefault();// Prevents default form submission
+
+        // Check for empty fields
+        if (email && password) {
+            alert(
+                `Successfully!\n` +
+                `Email: ${value}\n` +
+                `Password: ${password}`
+            );
+
+            // Clear the form after submission
+            setEmail("");
+            setPassword("");
+            setValue("");
+        } else {
+            alert("Error: Please fill in all fields.")
+        }
+    }
 
     return (
         <div className='flex justify-center items-center bg-neutral-950 h-screen'>
@@ -24,11 +55,14 @@ const Login = () => {
 
                 <h1 className="text-xl sm:text-2xl">Sign In</h1>
 
-            <form className='flex flex-col items-center gap-4 p-8 max-w-sm'>
+            <form onSubmit={handleSubmit}
+            className='flex flex-col items-center gap-4 p-8 max-w-sm'>
             <Input
+                    value={value}
                     type="email"
                     label=""
                     variant="bordered"
+                    isInvalid={isInvalid}
                     color='default-500'
                     placeholder="Email Address"
                     defaultValue=""
@@ -36,7 +70,11 @@ const Login = () => {
                     endContent={
                         <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                     }
-                    onChage={(e) => setEmail(e.target.value)}
+                    errorMessage={isInvalid ? "Please enter a valid email." : ""}
+                    onChange={(e) => {
+                        setValue(e.target.value)
+                        setEmail(e.target.value)
+                    }}
                     
                 />
 
@@ -60,7 +98,7 @@ const Login = () => {
                     }
                     type={isVisible ? "text" : "password"}
                     className="w-full max-w-xs"
-                    onChage={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
 
                 <div className='flex justify-between w-full'>
@@ -69,7 +107,9 @@ const Login = () => {
                     </a>
                 </div>
 
-                <Button color="primary" className="w-full sm:w-[20rem]">
+                <Button 
+                type='submit'
+                color="primary" className="w-full sm:w-[20rem]">
                     Sign in
                 </Button>
 
@@ -83,6 +123,7 @@ const Login = () => {
                 </div>
 
                 <a href="#" className='underline text-sm'>Create account</a>
+
             </div>
         </div>
     );

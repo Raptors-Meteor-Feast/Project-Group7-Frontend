@@ -39,13 +39,15 @@ const MostPopularCard = ({ name }) => {
                 {currentData.map(items => (
                     <Card 
                         shadow="sm" key={items.id} 
-                        isPressable 
-                        onPress={() => handleCardClick(items.id)} >
+                        isPressable
+                        onPress={() => handleCardClick(items.id)} 
+                        className='drop-shadow-md hover:bg-gray-300 '>
                         <CardBody className="overflow-visible p-0">
                             <Image
                                 shadow="sm"
                                 radius="lg"
                                 width="100%"
+                                isBlurred
                                 alt={items.title}
                                 className="w-full object-cover h-[230px]"
                                 src={items.pictureaddress}
@@ -53,12 +55,12 @@ const MostPopularCard = ({ name }) => {
                         </CardBody>
                         <CardFooter className="text-small flex flex-col justify-start items-start">
                             <div className='flex justify-start gap-2'>
-                                <p className="text-[12px] text-default-400">{items.categories[0]}</p>
-                                <p className="text-[12px] text-default-400">{items.categories[1]}</p>
+                                <p className="text-[12px] text-default-700">{items.categories[0]}</p>
+                                <p className="text-[12px] text-default-700">{items.categories[1]}</p>
                             </div>
                             {items.title.length >= 25 ? 
-                                (<b className='text-[15px]'>{items.title}</b>) :
-                                (<b className='text-[16px]'>{items.title}</b>)
+                                (<b className='text-[15px] text-gray-800'>{items.title}</b>) :
+                                (<b className='text-[16px] text-gray-800'>{items.title}</b>)
                             }
                             {items.price === 0 ? 
                                 (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :

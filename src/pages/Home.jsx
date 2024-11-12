@@ -15,6 +15,7 @@ const Home = () => {
             <MostPopularCard name="Most Popular"/>
             <BoxThreeContainer/>
             <Footer/>
+
         </div>
     )
 }
