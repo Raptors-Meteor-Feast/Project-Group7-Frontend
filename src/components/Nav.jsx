@@ -64,7 +64,7 @@ export default function Nav() {
                             color="secondary"
                             name="Guest"
                             size="md"
-                            src="src/Images/NavIcon/user.png"
+                            src="../Images/NavIcon/user.png"
                             aria-label="Sign In"
                         />
                         </DropdownTrigger>
