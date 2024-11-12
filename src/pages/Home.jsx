@@ -18,9 +18,9 @@ const Home = () => {
             <MostPopularCard name="Most Popular"/>
             <BoxThreeContainer/>
             <Footer/>
-            <Login />
+            {/* <Login />
             <Register />
-            <CheckOut />
+            <CheckOut /> */}
         </div>
     )
 }

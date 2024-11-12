@@ -27,7 +27,7 @@ const MostPopularCard = ({ name }) => {
     };
 
     return (
-        <div className='w-full px-[135px] py-10 bg-neutral-950'>
+        <div className='w-full px-[135px] py-10 bg-neutral-900'>
             <div className='flex justify-between'>
                 <h2 className='mb-5 text-[28px] font-bold text-white'>{name}</h2>
                 <div className="flex justify-end mb-4">
@@ -59,8 +59,8 @@ const MostPopularCard = ({ name }) => {
                                 <p className="text-[12px] text-default-700">{items.categories[1]}</p>
                             </div>
                             {items.title.length >= 25 ? 
-                                (<b className='text-[15px]'>{items.title}</b>) :
-                                (<b className='text-[16px]'>{items.title}</b>)
+                                (<b className='text-[15px] text-gray-800'>{items.title}</b>) :
+                                (<b className='text-[16px] text-gray-800'>{items.title}</b>)
                             }
                             {items.price === 0 ? 
                                 (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :
