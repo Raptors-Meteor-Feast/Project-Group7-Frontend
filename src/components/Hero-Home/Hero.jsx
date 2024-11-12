@@ -1,6 +1,6 @@
 import { React, useState, useMemo } from 'react';
-import HeroRightContainer from "./HeroRightContainer";
-import CarouselBanner from './CarouselBanner';
+import HeroRightContainer from "./Sub-component/HeroRightContainer";
+import CarouselBanner from './Sub-component/CarouselBanner';
 import gamedata from "../../Data/gamedata.json";
 
 const Hero = () => {
