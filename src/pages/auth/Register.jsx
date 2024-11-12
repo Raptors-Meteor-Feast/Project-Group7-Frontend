@@ -175,7 +175,7 @@ const Login = () => {
                                 </button>
                             }
                             type={isVisible ? "text" : "password"}
-                            className="w-full max-w-xs text-red-500"
+                            className="w-full max-w-xs text-white"
                             onChange={(e) => {
                                 if (placeholder === "Password") {
                                     setPassword(e.target.value);

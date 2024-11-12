@@ -2,12 +2,12 @@ import React from 'react';
 import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
 import { Link } from 'react-router-dom'; // ใช้ Link จาก react-router-dom
 
-const ModalCheckOutSucceed = () => {
+const ModalCheckOutSucceed = ({disabled}) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
         <>
-            <Button onPress={onOpen} color="primary">Purchase</Button>
+            <Button onPress={onOpen} isDisabled={disabled} color="primary">Purchase</Button>
             <Modal
                 isOpen={isOpen}
                 onOpenChange={onOpenChange}
