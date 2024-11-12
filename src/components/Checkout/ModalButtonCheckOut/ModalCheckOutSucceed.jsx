@@ -1,12 +1,13 @@
 import React from 'react';
 import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
+import { Link } from 'react-router-dom'; // ใช้ Link จาก react-router-dom
 
 const ModalCheckOutSucceed = () => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
         <>
-            <Button onPress={onOpen} color="primary">Open Modal</Button>
+            <Button onPress={onOpen} color="primary">Purchase</Button>
             <Modal
                 isOpen={isOpen}
                 onOpenChange={onOpenChange}
@@ -14,7 +15,7 @@ const ModalCheckOutSucceed = () => {
                 classNames={{
                     backdrop: "bg-black"
                 }}
-                className='bg-stone-800 text-white'
+                className='bg-zinc-900 text-white'
             >
                 <ModalContent>
                     {onClose => (
@@ -24,9 +25,11 @@ const ModalCheckOutSucceed = () => {
                             <ModalBody className='flex flex-col items-center justify-center'>
                                 <h1 className='text-3xl'>Thank you!</h1>
                                 <p>Code sent to your email</p>
-                                <p>Please do not close the window until we confirm your purchase is complete.</p>
                             </ModalBody>
-                            <a href="/"><Button onPress={onClose} color="primary">OK</Button></a>
+                        
+                            <Link to="/">
+                            <Button onPress={onClose} color="primary">OK</Button>
+                        </Link>
                         </div>
                     )}
                 </ModalContent>

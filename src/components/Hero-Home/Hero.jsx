@@ -4,7 +4,7 @@ import CarouselBanner from './CarouselBanner'
 
 const Hero = () => {
   return (
-    <div className='w-full px-[135px] flex py-10 bg-red-900'>
+    <div className='w-full px-[135px] flex py-10 bg-neutral-950'>
 
       <div className='w-[70%]'>
         <CarouselBanner />
