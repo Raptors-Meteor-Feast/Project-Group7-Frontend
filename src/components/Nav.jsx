@@ -38,7 +38,7 @@ export default function Nav() {
                             <Link to="/" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Home</Link>
                         </li>
                         <li>
-                            <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
+                            <Link to="/browse" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
                         </li>
                         <li>
                             <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">News</Link>
