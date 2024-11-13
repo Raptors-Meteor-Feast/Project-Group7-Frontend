@@ -58,7 +58,7 @@ return (
             {searchData.length > 5 && (
                 <div className="bg-gray-200">
                     <p className="font-semibold p-1 ml-2 underline hover:text-blue-500 active:text-blue-700">
-                        <Link to="/browse">View more</Link>
+                        <Link to="#">View more</Link>
                     </p>
                 </div>
             )}

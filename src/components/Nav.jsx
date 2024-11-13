@@ -50,7 +50,7 @@ export default function Nav() {
                 <div className="flex items-center justify-between">
                 {/* Cart Section */}
                 <div className="flex items-center gap-4 w-[] mr-8">
-                    <Link to="/checkout" className="text-orange-500 hover:text-orange-600 active:text-orange-700 font-bold cursor-pointer text-[18px]">Cart</Link>
+                    <p className="text-orange-500 font-bold text-[18px]">Cart</p>
                     <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">0</button></Link>
                 </div>
 
