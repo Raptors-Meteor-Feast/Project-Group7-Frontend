@@ -10,7 +10,7 @@ import './index.css'
 import Home from './pages/Home';
 import CardDetail from './components/Card-Detail/CardDetail';
 import CheckOut from './pages/CheckOut';
-import Browse from './pages/Browse';
+
 
 const router = createBrowserRouter([
   {
@@ -24,11 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/checkout",
     element: <CheckOut />,
-  },
-  {
-    path: "/browse",
-    element: <Browse />,
-  },
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
