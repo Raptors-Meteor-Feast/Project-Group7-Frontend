@@ -1,8 +1,10 @@
 import React from "react";
+import Nav from '../Nav';
 import { useParams } from "react-router-dom";
 import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
+import Footer from '../Footer/Footer';
 
 const data = gamedata;
 const system = gamesystem;
@@ -18,6 +20,8 @@ const CardDetail = () => {
   }
 
   return (
+    <div>
+    <Nav />
     <>
       <div className=" bg-slate-300 px-[300px] pt-[32px] pb-[120px]">
         <div className="pb-[40px]">
@@ -127,6 +131,10 @@ const CardDetail = () => {
           </div>
         </div>
       </div>
+    </div>
+    </div>
+    <Footer />
+    </div>
     </>
   );
 };

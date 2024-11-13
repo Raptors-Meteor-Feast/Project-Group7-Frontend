@@ -1,26 +1,28 @@
-import { Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
 import { useState } from "react";
 import SearchBox from "./SearchBox";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
     const [logIn, setLogIn] = useState(false);
+    
 
     const handleLogIn = () => {
     setLogIn(!logIn);
     };
 
     return (
-        <div className="bg-[#06070a]">
+        <div className="bg-neutral-900 sticky top-0 w-full z-50">
             <div className="flex justify-between items-center py-[24px]">
 
                 {/* Logo and Brand Name */}
                 <div className="flex items-center ml-36">
                     <img
-                    src="src/Images/NavIcon/Gr-Logo-7.svg"
+                    src="../src/Images/NavIcon/Gr-Logo-7.svg"
                     alt="Raptor-Logo"
-                    className="w-[55px] h-auto object-cover mr-2 "
+                    className="w-[55px] h-auto object-cover mr-2"
                     />
-                    <p className="hidden sm:block font-bold text-[#F18651] text-[18px]">Raptors Meteor Feast</p>
+                    <p className="hidden sm:block font-bold text-orange-500 text-[18px]">Raptors Meteor Feast</p>
                 </div>
 
                 <div className="flex items-center gap-5">
@@ -31,15 +33,15 @@ export default function Nav() {
 
                 {/* Navigation Links */}
                 <div>
-                    <ul className="flex gap-7 mr-8 font-bold items-center ">
+                    <ul className="flex gap-7 mr-8 font-bold items-center">
                         <li>
-                            <Link to="/" className="text-[#F18650] cursor-pointer text-[18px]">Home</Link>
+                            <Link to="/" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Home</Link>
                         </li>
                         <li>
-                            <Link to="/browse" className="text-[#F18650] cursor-pointer text-[18px]">Browse</Link>
+                            <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
                         </li>
                         <li>
-                            <Link to="/news" className="text-[#F18650] cursor-pointer text-[18px]">News</Link>
+                            <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">News</Link>
                         </li>
                     </ul>
                 </div>
@@ -48,8 +50,8 @@ export default function Nav() {
                 <div className="flex items-center justify-between">
                 {/* Cart Section */}
                 <div className="flex items-center gap-4 w-[] mr-8">
-                    <Link to="/cart" className="text-[#F18650] font-bold cursor-pointer text-[18px]">Cart</Link>
-                    <button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">0</button>
+                    <Link to="/checkout" className="text-orange-500 hover:text-orange-600 active:text-orange-700 font-bold cursor-pointer text-[18px]">Cart</Link>
+                    <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">0</button></Link>
                 </div>
 
                 {/* Login / Logout Dropdown */}
@@ -64,7 +66,7 @@ export default function Nav() {
                             color="secondary"
                             name="Guest"
                             size="md"
-                            src="src/Images/NavIcon/user.png"
+                            src="../src/Images/NavIcon/user.png"
                             aria-label="Sign In"
                         />
                         </DropdownTrigger>
@@ -87,7 +89,7 @@ export default function Nav() {
                             color="secondary"
                             name="Jason Hughes"
                             size="md"
-                            src="src/Images/NavIcon/Gr-Logo-7.svg"
+                            src="../src/Images/NavIcon/Gr-Logo-7.svg"
                             aria-label="User Profile"
                         />
                         </DropdownTrigger>

@@ -1,4 +1,4 @@
-import Nav from "../components/Nav"
+import Nav from "../components/Nav";
 import MyCart from "../components/Checkout/MyCart";
 import CheckOutMyCart from "../components/Checkout/CheckOutMyCart";
 
@@ -43,24 +43,27 @@ export default function CheckOut() {
     const totalPrice = mockGameData.reduce((sum, item) => sum + item.price , 0)
 
     return (
-    <div className="bg-neutral-950 h-[100hv] text-white p-2 ">
-        <h1 className="mb-5 text-[24px] font-bold mx-48 ">My Cart</h1>
-        <div className="flex justify-evenly">
-            {/* My cart */}
-            <div>
-                {mockGameData.length > 0 ? (
-                    mockGameData.map(items => (
-                        <MyCart key={items.id} name={items.name} category={items.category} edition={items.edition} image={items.src} price={items.price} />
-                    ))
-                ) : (
-                    <p className="text-[20px] font-semibold">Your cart is empty</p>
-                )}
+        <div>
+        <Nav />
+        <div className="bg-neutral-900 h-[100hv] text-white p-2 ">
+            <h1 className="mb-5 text-[24px] font-bold mx-48 ">My Cart</h1>
+            <div className="flex justify-evenly">
+                {/* My cart */}
+                <div>
+                    {mockGameData.length > 0 ? (
+                        mockGameData.map(items => (
+                            <MyCart key={items.id} name={items.name} category={items.category} edition={items.edition} image={items.src} price={items.price} />
+                        ))
+                    ) : (
+                        <p className="text-[20px] font-semibold">Your cart is empty</p>
+                    )}
+                </div>
+                
+                {/* Checkout Summary */}
+                <CheckOutMyCart totalPrice={totalPrice} />
             </div>
-            
-            {/* Checkout Summary */}
-            <CheckOutMyCart totalPrice={totalPrice} />
         </div>
-    </div>
+        </div>
     )
 }
 
