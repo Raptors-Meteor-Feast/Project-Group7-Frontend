@@ -3,6 +3,7 @@ import { useState } from "react";
 import SearchBox from "./SearchBox";
 import { Link } from "react-router-dom";
 
+
 export default function Nav() {
     const [logIn, setLogIn] = useState(false);
     
@@ -19,7 +20,7 @@ export default function Nav() {
                 {/* Logo and Brand Name */}
                 <div className="flex items-center ml-36">
                     <img
-                    src="../src/Images/NavIcon/Gr-Logo-7.svg"
+                    src="../src/Images/NavIcon/Gr7Logo.svg"
                     alt="Raptor-Logo"
                     className="w-[55px] h-auto object-cover mr-2"
                     />
