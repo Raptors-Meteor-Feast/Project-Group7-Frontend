@@ -7,18 +7,23 @@ const ModalCheckOut = ({ totalPrice }) => {
     const [paymentMethod, setPaymentMethod] = useState("");
     const [promptpay, setPromptpay] = useState(false);
     const [kbank, setKbank] = useState(false);
+    const [scb, setScb] = useState(false);
+    const [krungsri, setKrungsri] = useState(false);
+    const [creditcard, setCreditCard] = useState(false);
     const [paypal, setPaypal] = useState(false);
 
     const handlePaymentMethodChange = (event) => {
         setPaymentMethod(event.target.value);
         setPromptpay(event.target.value === "promptpay");
         setKbank(event.target.value === "kbank");
+        setScb(event.target.value === "scb");
+        setKrungsri(event.target.value === "krungsri");
+        setCreditCard(event.target.value === "creditcard");
         setPaypal(event.target.value === "paypal");
     };
 
     console.log(paymentMethod);
     
-
     const isDisabled = paymentMethod === "";
 
     return (
@@ -93,6 +98,10 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                 />
                                                 <p>SCB</p>
                                             </div>
+                                            {scb && 
+                                            <div className="p-2">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
+                                            </div>}
                                         </Radio>
                                     </div>
                                     <div>
@@ -110,6 +119,10 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                 />
                                                 <p>Krungsri</p>
                                             </div>
+                                            {krungsri && 
+                                            <div className="p-2">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
+                                            </div>}
                                         </Radio>
                                     </div>
                                     <div>
@@ -147,10 +160,14 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                     src="src/Images/NavIcon/mastercard.svg"
                                                     width={70}
                                                     height={50}
-                                                    alt="Credit Card"
+                                                    alt="CreditCard"
                                                 />
                                                 <p>Credit Card</p>
                                             </div>
+                                            {creditcard && 
+                                            <div className="p-2">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
+                                            </div>}
                                         </Radio>
                                     </div>
                                     <div>
