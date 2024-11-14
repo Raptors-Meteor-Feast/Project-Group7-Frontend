@@ -51,7 +51,7 @@ return (
         <div className="overflow-auto w-[400px] h-[200px] absolute top-1 left-[48%] -translate-x-1/2 z-10 ">
             { searchData.slice(0,5).map((data, id) => {
             return <div key={id}>
-                    <Link to={`card/${data.id}`} key={id} className="flex flex-row items-center transition ease-in-out bg-gray-200 gap-2 hover:bg-gray-300 active:bg-gray-400 font-semibold"> 
+                    <Link to={`../card/${data.id}`} key={id} className="flex flex-row items-center transition ease-in-out bg-gray-200 gap-2 hover:bg-gray-300 active:bg-gray-400 font-semibold"> 
                     <img src={data.pictureaddress} alt={data.title} className="w-[50px] h-[60px] object-cover p-1 ml-2 rounded-lg " />{data.title}</Link>
                     </div>
             })}

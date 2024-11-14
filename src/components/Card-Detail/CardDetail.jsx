@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
 import Footer from '../Footer/Footer';
+import CarouselImage from "./CaroselImage";
 
 const data = gamedata;
 const system = gamesystem;
@@ -26,11 +27,7 @@ const CardDetail = () => {
       <div className="pb-[40px]">
         <h1 className="font-bold text-[28px]">{card.title}</h1>
         <div className="py-5">
-          <img
-            className="h-[800px] w-full rounded-xl "
-            src={card.pictureaddress}
-            alt={card.title}
-          />
+          <CarouselImage gameId={id} />
           <p className="pt-4">{card.short_description}</p>
         </div>
         <div className="flex justify-end gap-3">
