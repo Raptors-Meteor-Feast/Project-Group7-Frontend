@@ -61,7 +61,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="promptpay"
-                                            className="text-white"
+                                            className=""
                                             checked={paymentMethod === "promptpay"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
@@ -71,11 +71,11 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                     height={50}
                                                     alt="Promptpay"
                                                 />
-                                                <p>Promptpay (QR Code)</p>
+                                                <p className="font-semibold text-white">Promptpay (QR Code)</p>
                                                 
                                             </div>
                                             {promptpay && 
-                                            <div className="p-2">
+                                            <div className="p-2 text-white">
                                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
                                             </div>}
                                         </Radio>
@@ -86,7 +86,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="scb"
-                                            className="text-white"
+                                            className=""
                                             checked={paymentMethod === "scb"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
@@ -96,10 +96,10 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                     height={50}
                                                     alt="SCB"
                                                 />
-                                                <p>SCB</p>
+                                                <p className="font-semibold text-white">SCB</p>
                                             </div>
                                             {scb && 
-                                            <div className="p-2">
+                                            <div className="p-2 text-white">
                                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
                                             </div>}
                                         </Radio>
@@ -107,7 +107,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="krungsri"
-                                            className="text-white"
+                                            className=""
                                             checked={paymentMethod === "krungsri"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
@@ -117,10 +117,10 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                     height={50}
                                                     alt="Krungsri"
                                                 />
-                                                <p>Krungsri</p>
+                                                <p className="font-semibold text-white">Krungsri</p>
                                             </div>
                                             {krungsri && 
-                                            <div className="p-2">
+                                            <div className="p-2 text-white">
                                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
                                             </div>}
                                         </Radio>
@@ -138,10 +138,10 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                     height={50}
                                                     alt="Kbank"
                                                 />
-                                                <p>Kbank</p>
+                                                <p className="font-semibold text-white">Kbank</p>
                                             </div>
                                             {kbank && 
-                                            <div className="p-2">
+                                            <div className="p-2 text-white">
                                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
                                             </div>}
                                         </Radio>
@@ -162,10 +162,10 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                     height={50}
                                                     alt="CreditCard"
                                                 />
-                                                <p>Credit Card</p>
+                                                <p className="font-semibold text-white">Credit Card</p>
                                             </div>
                                             {creditcard && 
-                                            <div className="p-2">
+                                            <div className="p-2 text-white">
                                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
                                             </div>}
                                         </Radio>
@@ -183,10 +183,10 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                     height={50}
                                                     alt="PayPal"
                                                 />
-                                                <p>PayPal</p>
+                                                <p className="font-semibold text-white">PayPal</p>
                                             </div>
                                             {paypal && 
-                                            <div className="p-2">
+                                            <div className="p-2 text-white">
                                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquam unde dolorem, animi rem non nihil exercitationem quas accusamus veniam voluptatem, nesciunt voluptatibus deleniti commodi. Optio molestias mollitia veritatis veniam.    
                                             </div>}
                                         </Radio>
