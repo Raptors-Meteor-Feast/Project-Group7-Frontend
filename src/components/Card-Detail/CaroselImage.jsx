@@ -1,54 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { motion } from "framer-motion";
 import gamedata from "../../Data/gamedata.json";
 
-function CarouselImage() {
+function CarouselImage({ gameId }) {
   const [current, setCurrent] = useState(0);
   const [mainContent, setMainContent] = useState({
     title: "",
     imgUrl: "",
   });
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const thumbnailContainerRef = useRef(null);
 
-  const imagesData = gamedata;
+  const gameData = gamedata.find((game) => game.id === parseInt(gameId));
 
   useEffect(() => {
-    setMainContent(() => ({
-      title: imagesData[current].title,
-      imgUrl: imagesData[current].pictureaddress,
-    }));
-  }, [current]);
+    if (gameData) {
+      setMainContent({
+        title: gameData.title,
+        imgUrl: gameData.pictureaddress,
+      });
+      setSelectedImageIndex(null);
+    }
+  }, [gameData]);
+
+  useEffect(() => {
+    const container = thumbnailContainerRef.current;
+    const selectedThumbnail = container?.children[selectedImageIndex];
+    if (container && selectedThumbnail) {
+      const offsetLeft =
+        selectedThumbnail.offsetLeft - container.offsetWidth / 2 + selectedThumbnail.offsetWidth / 2;
+      container.scrollTo({ left: offsetLeft, behavior: "smooth" });
+    }
+  }, [selectedImageIndex]);
 
   const previousSlide = () => {
-    const newCurrent = current === 0 ? imagesData.length - 1 : current - 1;
+    const newCurrent = current === 0 ? gameData.exampicture.length - 1 : current - 1;
     setCurrent(newCurrent);
-    setSelectedImageIndex(0);
+    setSelectedImageIndex(newCurrent);
+    setMainContent({
+      ...mainContent,
+      imgUrl: gameData.exampicture[newCurrent],
+    });
   };
 
   const nextSlide = () => {
-    const newCurrent = current === imagesData.length - 1 ? 0 : current + 1;
+    const newCurrent = current === gameData.exampicture.length - 1 ? 0 : current + 1;
     setCurrent(newCurrent);
-    setSelectedImageIndex(0);
+    setSelectedImageIndex(newCurrent);
+    setMainContent({
+      ...mainContent,
+      imgUrl: gameData.exampicture[newCurrent],
+    });
   };
 
   const handleThumbnailClick = (index) => {
-    setSelectedImageIndex(index + 1);
-    setMainContent(() => ({
-      title: imagesData[current].title,
-      imgUrl: imagesData[current].pictureaddress,
-    }));
+    setSelectedImageIndex(index);
+    setCurrent(index);
+    setMainContent({
+      ...mainContent,
+      imgUrl: gameData.exampicture[index],
+    });
   };
 
   return (
     <div>
-      <div className="text-2xl font-bold pb-3">{mainContent.title}</div>
       <div className="overflow-hidden relative rounded-xl">
-        <div className="flex transition ease-out duration-400">
+        <motion.div
+          key={mainContent.imgUrl}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 50 }}
+          transition={{ duration: 0.5 }}
+          className="flex transition ease-out duration-400"
+        >
           <img src={mainContent.imgUrl} alt="Main Image" />
-        </div>
+        </motion.div>
 
         <div className="absolute top-0 h-full w-full flex justify-between items-center text-white px-4">
-          <button disabled={current === 0} onClick={previousSlide}>
+          <button onClick={previousSlide}>
             <IoIosArrowBack size={50} />
           </button>
           <button onClick={nextSlide}>
@@ -58,8 +88,11 @@ function CarouselImage() {
       </div>
 
       <div className="overflow-hidden">
-        <div className="flex transition ease-out duration-400 pt-6 gap-4 justify-center">
-          {imagesData[current].exampicture.map((item, index) => (
+        <div
+          ref={thumbnailContainerRef}
+          className="flex overflow-x-auto pt-6 gap-4 justify-center"
+        >
+          {gameData.exampicture.map((item, index) => (
             <div
               key={index}
               onClick={() => handleThumbnailClick(index)}
@@ -70,7 +103,7 @@ function CarouselImage() {
                 width={160}
                 height={108}
                 className={`rounded-lg h-full ${
-                  selectedImageIndex - 1 === index ? "bg-white" : "opacity-60"
+                  selectedImageIndex === index ? "border-2 border-blue-500" : "opacity-60"
                 }`}
                 alt={`Thumbnail ${index + 1}`}
               />
