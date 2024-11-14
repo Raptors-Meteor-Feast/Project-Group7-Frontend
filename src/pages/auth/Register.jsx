@@ -130,7 +130,7 @@ const Login = () => {
             <div className='flex justify-center items-center'>
                 <img 
                     className='w-1/3 sm:w-[60%] hover:animate-spin' 
-                    src="src/assets/ProjectLogo/Logo-7.svg" 
+                    src="Images/ProjectLogo/Logo-7.svg" 
                     alt="logo" />
             </div>
     
