@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
 import Footer from '../Footer/Footer';
+import { useCart } from "../Checkout/CartContext";
 
 const data = gamedata;
 const system = gamesystem;
@@ -12,12 +13,18 @@ const system = gamesystem;
 const CardDetail = () => {
   const { id } = useParams();
 
+  const {addToCart} = useCart();  // Import the addToCart function from context
+
   const card = data.find((item) => item.id === parseInt(id));
   const cardsystem = system.find((item) => item.id === parseInt(id));
 
   if (!card) {
     return <p>Card not found</p>;
   }
+
+  const handleAddToCart = () => {
+    addToCart(card.id);  // ส่ง id ของสินค้าไปยัง CartContext
+  };
 
   return (
     <div>
@@ -40,7 +47,7 @@ const CardDetail = () => {
           <Button className="py-3 px-7 text-xl" color="primary">
             Buy Now
           </Button>
-          <Button className="py-3 px-7 bg-gray-600 text-white text-xl">
+          <Button className="py-3 px-7 bg-gray-600 text-white text-xl" onClick={handleAddToCart}>
             Add To Cart
           </Button>
         </div>

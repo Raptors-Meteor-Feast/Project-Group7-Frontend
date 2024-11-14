@@ -6,6 +6,7 @@ import MostPopularCard from "../components/Card-Home/MostPopularCard"
 import RecommendCard from '../components/Card-Home/RecommendCard'
 import Nav from '../components/Nav'
 
+
 const Home = () => {
     return (
         <div>
@@ -15,7 +16,6 @@ const Home = () => {
             <MostPopularCard name="Most Popular"/>
             <BoxThreeContainer/>
             <Footer/>
-
         </div>
     )
 }

@@ -2,6 +2,7 @@ import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@
 import { useState } from "react";
 import SearchBox from "./SearchBox";
 import { Link } from "react-router-dom";
+import { useCart } from "../components/Checkout/CartContext";
 
 
 export default function Nav() {
@@ -11,6 +12,9 @@ export default function Nav() {
     const handleLogIn = () => {
     setLogIn(!logIn);
     };
+
+    const { cart } = useCart();
+    const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
 
     return (
 
@@ -47,7 +51,6 @@ export default function Nav() {
                         </li>
                         <li>
                             <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">News</Link>
-
                         </li>
                     </ul>
                 </div>
@@ -58,7 +61,7 @@ export default function Nav() {
                 <div className="flex items-center gap-4 w-[] mr-8">
 
                     <p className="text-orange-500 font-bold text-[18px]">Cart</p>
-                    <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">0</button></Link>
+                    <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link>
 
                 </div>
 
