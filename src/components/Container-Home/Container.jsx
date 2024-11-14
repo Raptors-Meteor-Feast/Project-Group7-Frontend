@@ -33,8 +33,8 @@ const Container = ({name}) => {
                         <div className='flex flex-col justify-start items-start pl-2'>
                             <b className='text-[16px] text-gray-800'>{items.title}</b>
                             {items.price === 0 ? 
-                                (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :
-                                (<p className="text-[12px] text-default-500">THB <span>{items.price}</span></p>)
+                                (<p className="text-[12px] text-default-500 font-semibold"><span>Free to Play</span></p>) :
+                                (<p className="text-[12px] text-default-500 font-semibold">THB <span>{items.price}</span></p>)
                             }                    
                         </div>
                     </CardBody>

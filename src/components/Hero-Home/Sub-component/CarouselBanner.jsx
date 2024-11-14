@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import gamedata from "../../Data/gamedata.json";
+import gamedata from "../../../Data/gamedata.json"
 import { Button } from "@nextui-org/button";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +27,7 @@ function CarouselBanner({ selectedId, initialData }) {
       <img
         src={selectedData.pictureaddress}
         alt={selectedData.title}
-        className="bg-auto bg-no-repeat rounded-xl w-full h-full object-cover transition-opacity duration-300 hover:opacity-70" // Added hover effect
+        className="bg-auto bg-no-repeat rounded-xl w-full h-full object-cover transition-opacity duration-300 hover:opacity-70"
       />
       
       <div className="absolute bottom-5 left-5 p-5 bg-black opacity-80 rounded-xl z-10 w-[450px]">

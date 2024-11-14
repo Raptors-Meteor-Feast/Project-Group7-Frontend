@@ -58,7 +58,7 @@ const RecommendCard = ({name}) => {
                         }
                         {items.price === 0 ? 
                             (<p className="text-[12px] text-default-800"><span>Free to Play</span></p>) :
-                            (<p className="text-[12px] text-default-800">THB <span>{items.price}</span></p>)
+                            (<p className="text-[12px] text-default-800 ">THB <span>{items.price}</span></p>)
                         }
                     </CardFooter>
                 </Card>
