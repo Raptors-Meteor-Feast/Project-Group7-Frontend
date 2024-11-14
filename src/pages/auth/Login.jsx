@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { MailIcon } from '../../assets/LogoLogin/Maillcon';
+import { useNavigate } from 'react-router-dom';
 import "./login.css";
 
 const Login = () => {
+    const navigate = useNavigate(); // Hook for navigation
+    
     // State management for storing input values and controlling display
     const [isVisible, setIsVisible] = useState(false); // State to control password visibility (show/hide)
     const [email, setEmail] = useState(""); // State to store the email input
@@ -74,6 +77,10 @@ const Login = () => {
         // If validation passes
         console.log("Successfully logged in!"); // Log success message to console
         alert(`Successfully logged in!\nEmail: ${email}\nPassword: ${password}`);
+        
+        // Navigate to home page
+        navigate("/");
+        
         // Reset the form
         setEmail("");
         setPassword("");
@@ -160,8 +167,8 @@ const Login = () => {
                         <Button 
                             as={Link} 
                             to="/forgot-password" 
-                            variant="light"
-                            className="p-0 text-primary text-sm hover:underline hover:text-primary"
+                            variant="default"
+                            className="p-0 text-primary text-sm hover:underline hover:text-red-500"
                         >
                             Forgot password?
                         </Button>
@@ -189,7 +196,7 @@ const Login = () => {
                             as={Link}
                             to="/register"
                             variant="default"
-                            className="w-full underline text-sm"
+                            className="w-full underline text-primary text-sm hover:underline hover:text-red-500"
                         >
                             Create account
                         </Button>
@@ -198,7 +205,7 @@ const Login = () => {
                             as={Link}
                             to="/"
                             variant="default"
-                            className="w-full underline text-sm"
+                            className="w-full underline text-primary text-sm hover:underline hover:text-red-500"
                         >
                             Privacy Policy
                         </Button>
@@ -210,3 +217,4 @@ const Login = () => {
 };
 
 export default Login;
+

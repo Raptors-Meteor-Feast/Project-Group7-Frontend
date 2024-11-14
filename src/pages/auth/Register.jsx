@@ -264,7 +264,7 @@ const Login = () => {
                         className='text-nowrap'
                     />
                     <p className='text-nowrap'>I have read and agree</p>
-                    <Link to="#" className='underline text-sm text-nowrap '>terms of service</Link>
+                    <Link to="#" className='underline text-nowrap text-primary text-sm hover:underline hover:text-red-500'>terms of service</Link>
                 </div>
         
                 <Button 
@@ -279,10 +279,10 @@ const Login = () => {
     
             <div className='flex gap-2 items-center justify-center'>
                 <p className='text-sm'>Already have an account?</p>
-                <Link to="/login" className='underline text-sm'>Sign in</Link>
+                <Link to="/login" className='underline text-primary text-sm hover:underline hover:text-red-500'>Sign in</Link>
             </div>
     
-            <Link to="#" className='underline text-sm'>Privacy Policy</Link>
+            <Link to="#" className='underline text-primary text-sm hover:underline hover:text-red-500'>Privacy Policy</Link>
         </div>
     </div>
     
