@@ -5,6 +5,7 @@ import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { Button } from "@nextui-org/react";
 import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import "./login.css"
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     // State to toggle password visibility
@@ -25,6 +26,7 @@ const Login = () => {
     }, [value]);
 
 
+
     // Form submit handler
     function handleSubmit(e) {
         e.preventDefault();// Prevents default form submission
@@ -32,9 +34,7 @@ const Login = () => {
         // Check for empty fields
         if (email && password) {
             alert(
-                `Successfully!\n` +
-                `Email: ${value}\n` +
-                `Password: ${password}`
+                `Successfully!`
             );
 
             // Clear the form after submission
@@ -121,8 +121,8 @@ const Login = () => {
                     <p className='text-sm'>or sign in with</p>
                     <div className='border-t flex-grow border-white'></div>
                 </div>
-
-                <a href="#" className='underline text-sm'>Create account</a>
+                
+                <Link to="/register">Create account</Link>
 
             </div>
         </div>

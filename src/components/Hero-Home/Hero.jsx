@@ -4,6 +4,7 @@ import CarouselBanner from './Sub-component/CarouselBanner';
 import gamedata from "../../Data/gamedata.json";
 
 const Hero = () => {
+
   const randomData = useMemo(() => {
     return [...gamedata]
       .sort(() => 0.5 - Math.random())
