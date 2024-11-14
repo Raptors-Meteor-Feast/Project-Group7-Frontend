@@ -17,6 +17,7 @@ export default function SearchBox() {
 
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         if(search !== "") {
             const newData = gamedata.filter(data => {
                 return data.title.toLowerCase().includes(search.toLowerCase())
