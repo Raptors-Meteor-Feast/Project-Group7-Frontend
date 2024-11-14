@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react";
 import { Checkbox } from "@nextui-org/react";
 import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import { GiDinosaurRex } from "react-icons/gi";
-
+import { Link } from "react-router-dom";
 import "./login.css"
 
 const Login = () => {
@@ -25,9 +25,13 @@ const Login = () => {
     const [displayname , setDisplayName] = useState("");
     const [isAgreed, setIsAgreed] = useState(false);
 
+    // States for error messages
+    const [passwordError, setPasswordError] = useState("");
+    const [confirmPasswordError, setConfirmPasswordError] = useState("");   
+
      // Function to validate email format
     const validateEmail = (value) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
-    
+
     // Memoized check if email is invalid
     const isInvalid = React.useMemo(() => {
         return value !== "" && !validateEmail(value);
@@ -37,11 +41,28 @@ const Login = () => {
     function handleSubmit(e) {
         e.preventDefault();// Prevents default form submission
 
-        //Check for empty fields
+        // Clear previous errors
+        setPasswordError("");
+        setConfirmPasswordError("");
+
+        // Validate password length
+        if (password.length < 8) {
+            setPasswordError("Password must be at least 8 characters long.");
+        }
+
+        // Validate password match
+        if (password !== confirmPassword) {
+            setConfirmPasswordError("Passwords do not match.");
+        }
+
+        
+      // Check if all fields are filled and valid
         if (email && password && firstname && lastname && displayname 
             && password === confirmPassword) {
             alert(
-                `Successfully!`
+                `Successfully!\n` +
+                `Email: ${value}\n` +
+                `Password: ${password}`
             );
 
             //Clear the form after submission
@@ -154,7 +175,7 @@ const Login = () => {
                                 </button>
                             }
                             type={isVisible ? "text" : "password"}
-                            className="w-full max-w-xs"
+                            className="w-full max-w-xs text-white"
                             onChange={(e) => {
                                 if (placeholder === "Password") {
                                     setPassword(e.target.value);
@@ -162,6 +183,7 @@ const Login = () => {
                                     setConfirmPassword(e.target.value); // จัดการกับฟิลด์ยืนยันรหัสผ่าน
                                 }
                             }}
+                         errorMessage={placeholder === "Password" && passwordError ? passwordError : placeholder === "Confirm Password" && confirmPasswordError ? confirmPasswordError : ""}
                         />
                     ))}
 
@@ -177,9 +199,8 @@ const Login = () => {
                 
                     <p className='text-nowrap'>I have read and agree</p>
 
-                    <a href="#" className='underline text-nowrap'>
-                    terms of service</a>
-                
+                    <Link to="#" className='underline text-sm'>terms of service</Link>
+
                 </div>
             
             
@@ -196,10 +217,10 @@ const Login = () => {
 
                 <div className='flex gap-2 items-center justify-center'>
                 <p className=''>Already have and acoount?</p>
-                <a href="#" className='underline text-sm'>Sign in</a>
+                <Link to="/login" className='underline text-sm'>Sign in</Link>
                 </div>
 
-                <a href="#" className='underline text-sm'>Privacy Policy</a>
+                <Link to="#" className='underline text-sm'>Privacy Policy</Link>
 
             </div>
         </div>
