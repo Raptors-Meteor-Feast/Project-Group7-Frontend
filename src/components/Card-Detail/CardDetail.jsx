@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
 import Footer from '../Footer/Footer';
-import CarouselImage from "./CaroselImage";
+import CarouselImage from "./Sub-component/CaroselImage";
 
 const data = gamedata;
 const system = gamesystem;
