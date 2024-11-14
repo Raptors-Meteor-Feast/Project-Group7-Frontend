@@ -5,7 +5,7 @@ export default function CheckOutMyCart( {totalPrice} ) {
     
     return (
     <div>
-        <div className="flex flex-col w-[265px] h-auto gap-3">
+        <div className="flex flex-col w-[400px] h-auto gap-3 bg-neutral-600 rounded-lg p-4">
             <h3 className="text-[20px] font-bold">Games and Apps Summary</h3>
 
             <div className="flex justify-between">
@@ -18,7 +18,7 @@ export default function CheckOutMyCart( {totalPrice} ) {
             <p>Calculated at Checkout</p>
             </div>
 
-            <hr className="w-[265px] border-1 border-black  "/>
+            <hr className="w-[370px] border-1 border-black  "/>
 
             <div className="flex justify-between">
             <p className="font-semibold">Subtotal:</p>

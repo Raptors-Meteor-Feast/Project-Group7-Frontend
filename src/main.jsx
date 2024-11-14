@@ -9,6 +9,8 @@ import {
 import './index.css'
 import Home from './pages/Home';
 import CardDetail from './components/Card-Detail/CardDetail';
+import CheckOut from './pages/CheckOut';
+
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
     path: "/card/:id",
     element: <CardDetail />,
   },
+  {
+    path: "/checkout",
+    element: <CheckOut />,
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
