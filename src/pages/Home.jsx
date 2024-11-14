@@ -5,6 +5,10 @@ import Footer from '../components/Footer/Footer'
 import MostPopularCard from "../components/Card-Home/MostPopularCard"
 import RecommendCard from '../components/Card-Home/RecommendCard'
 import Nav from '../components/Nav'
+import Login from '../pages/auth/Login'
+import Register from '../pages/auth/Register'
+import CheckOut from '../pages/CheckOut'
+
 
 const Home = () => {
     return (
@@ -15,7 +19,9 @@ const Home = () => {
             <MostPopularCard name="Most Popular"/>
             <BoxThreeContainer/>
             <Footer/>
-
+            <Login />
+            <Register />
+            <CheckOut />
         </div>
     )
 }
