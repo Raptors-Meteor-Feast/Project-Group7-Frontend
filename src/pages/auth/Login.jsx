@@ -94,7 +94,7 @@ const Login = () => {
                 <div className="flex justify-center items-center w-full mb-4">
                     <img 
                         className="w-1/2 sm:w-[60%] hover:scale-110 transition duration-300 ease-in-out" 
-                        src="Images/ProjectLogo/Logo-7.svg" 
+                        src="Images/ProjectLogo/WebLogo.svg" 
                         alt="logo" 
                     />
                 </div>
