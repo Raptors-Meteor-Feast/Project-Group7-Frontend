@@ -15,12 +15,10 @@ export default function Nav() {
 
     const { cart } = useCart();
     const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
-
+    
     return (
-
         <div className="bg-neutral-900 sticky top-0 w-full z-50">
             <div className="flex justify-between items-center py-[24px]">
-
                 {/* Logo and Brand Name */}
                 <div className="flex items-center ml-36">
                     <img
@@ -28,22 +26,17 @@ export default function Nav() {
                     alt="Raptor-Logo"
                     className="w-[55px] h-auto object-cover mr-2"
                     />
-
                     <p className="hidden sm:block font-bold text-orange-500 text-[18px]">Raptors Meteor Feast</p>
-
                 </div>
-
                 <div className="flex items-center gap-5">
                 {/* Search Input */}
                 <div>
                     <SearchBox />
                 </div>
-
                 {/* Navigation Links */}
                 <div>
                     <ul className="flex gap-7 mr-8 font-bold items-center">
                         <li>
-
                             <Link to="/" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Home</Link>
                         </li>
                         <li>
@@ -55,16 +48,12 @@ export default function Nav() {
                     </ul>
                 </div>
                 </div>
-
                 <div className="flex items-center justify-between">
                 {/* Cart Section */}
                 <div className="flex items-center gap-4 w-[] mr-8">
-
                     <p className="text-orange-500 font-bold text-[18px]">Cart</p>
                     <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link>
-
                 </div>
-
                 {/* Login / Logout Dropdown */}
                 {!logIn ? (
                     <div className="mr-36">

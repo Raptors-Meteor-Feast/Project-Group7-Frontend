@@ -13,8 +13,6 @@ const system = gamesystem;
 const CardDetail = () => {
   const { id } = useParams();
 
-  const {addToCart} = useCart();  // Import the addToCart function from context
-
   const card = data.find((item) => item.id === parseInt(id));
   const cardsystem = system.find((item) => item.id === parseInt(id));
 
@@ -22,6 +20,7 @@ const CardDetail = () => {
     return <p>Card not found</p>;
   }
 
+  const {addToCart} = useCart();  // Import the addToCart function from context
   const handleAddToCart = () => {
     addToCart(card.id);  // ส่ง id ของสินค้าไปยัง CartContext
   };

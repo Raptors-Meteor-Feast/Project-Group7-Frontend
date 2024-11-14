@@ -1,8 +1,6 @@
 import ModalCheckOut from "./ModalButtonCheckOut/ModalCheckOut"
 
 export default function CheckOutMyCart( {totalPrice} ) {
-    // const totalPrice = mockGameData.reduce((sum, item) => sum + item.price, 0);
-    
     return (
     <div>
         <div className="flex flex-col w-[400px] h-auto gap-3 bg-neutral-600 rounded-lg p-4">
