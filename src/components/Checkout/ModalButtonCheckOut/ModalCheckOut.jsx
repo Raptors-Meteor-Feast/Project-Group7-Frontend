@@ -42,12 +42,12 @@ const ModalCheckOut = ({ totalPrice }) => {
                 size="5xl"
                 className="bg-zinc-900 text-white"
             >
-                <ModalContent className="w-[80vw] h-[80vh] overflow-auto">
+                <ModalContent className="w-full sm:w-[80vw] md:w-[70vw] lg:w-[60vw] h-[80vh] overflow-auto">
                     <ModalHeader className="flex text-[20px] font-bold gap-1">
                         My Cart
                     </ModalHeader>
                     <hr className="w-full border-1 border-black" />
-
+                    
                     <ModalBody>
                         <div className="flex justify-between p-5">
                             <div className="flex flex-col pr-10 gap-5">
