@@ -10,6 +10,8 @@ import './index.css'
 import Home from './pages/Home';
 import CardDetail from './components/Card-Detail/CardDetail';
 import CheckOut from './pages/CheckOut';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
 
 
 const router = createBrowserRouter([
@@ -24,7 +26,15 @@ const router = createBrowserRouter([
   {
     path: "/checkout",
     element: <CheckOut />,
-  }
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

@@ -61,7 +61,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="promptpay"
-                                            className=""
+                                            className="hover:scale-105 transition duration-300 ease-in-out" 
                                             checked={paymentMethod === "promptpay"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
@@ -86,7 +86,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="scb"
-                                            className=""
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "scb"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
@@ -94,7 +94,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                                     src="src/Images/Banklogo/scb.svg"
                                                     width={70}
                                                     height={50}
-                                                    alt="SCB"
+                                                    alt="SCB"    
                                                 />
                                                 <p className="font-semibold text-white">SCB</p>
                                             </div>
@@ -107,7 +107,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="krungsri"
-                                            className=""
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "krungsri"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
@@ -128,7 +128,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="kbank"
-                                            className="text-white"
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "kbank"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
@@ -152,7 +152,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="creditcard"
-                                            className="text-white"
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "creditcard"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
@@ -173,7 +173,7 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="paypal"
-                                            className="text-white"
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "paypal"}
                                         >
                                             <div className="flex justify-center items-center gap-2">

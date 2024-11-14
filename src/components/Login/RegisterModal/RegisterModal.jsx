@@ -1,8 +1,7 @@
-import React from 'react';
 import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; // ใช้ Link จาก react-router-dom
 
-const ModalCheckOutSucceed = ({disabled}) => {
+const RegisterModal = ({disabled}) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
@@ -38,4 +37,4 @@ const ModalCheckOutSucceed = ({disabled}) => {
     );
 };
 
-export default ModalCheckOutSucceed;
+export default RegisterModal
