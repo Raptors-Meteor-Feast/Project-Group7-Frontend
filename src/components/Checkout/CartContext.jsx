@@ -28,8 +28,12 @@ export const CartProvider = ({ children }) => {
         setCart(prevCart => prevCart.filter(item => item.id !== id));
     };
 
+    const buyNow = (item) => {
+        setCart([{ ...item, quantity: 1 }]); // Replace cart with the current item
+    };
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart , buyNow}}>
             {children}
         </CartContext.Provider>
     );

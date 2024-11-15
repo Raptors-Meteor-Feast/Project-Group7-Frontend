@@ -6,6 +6,9 @@ import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
 import Footer from '../Footer/Footer';
 import { useCart } from "../Checkout/CartContext";
+import { useNavigate } from "react-router-dom";
+
+
 
 const data = gamedata;
 const system = gamesystem;
@@ -20,9 +23,16 @@ const CardDetail = () => {
     return <p>Card not found</p>;
   }
 
-  const {addToCart} = useCart();  // Import the addToCart function from context
+  const {addToCart, buyNow} = useCart();  // Import the addToCart function from context
+  const navigate = useNavigate(); // สำหรับเปลี่ยนหน้า
+
   const handleAddToCart = () => {
     addToCart(card.id);  // ส่ง id ของสินค้าไปยัง CartContext
+  };
+
+  const handleBuyNow = () => {
+    buyNow(card); // Replace the cart with the selected item
+    navigate("/checkout"); // Navigate to the checkout page
   };
 
   return (
@@ -43,7 +53,7 @@ const CardDetail = () => {
           <Button className="py-3 px-7 bg-slate-100 text-xl">
             THB {card.price}
           </Button>
-          <Button className="py-3 px-7 text-xl" color="primary">
+          <Button className="py-3 px-7 text-xl" color="primary" onClick={handleBuyNow}>
             Buy Now
           </Button>
           <Button className="py-3 px-7 bg-gray-600 text-white text-xl" onClick={handleAddToCart}>
