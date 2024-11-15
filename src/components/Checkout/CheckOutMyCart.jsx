@@ -11,10 +11,10 @@ export default function CheckOutMyCart( {totalPrice} ) {
             <p>THB {totalPrice}</p>
             </div>
 
-            <div className="flex justify-between">
+            {/* <div className="flex justify-between">
             <p className="font-semibold">Taxes:</p>
             <p>Calculated at Checkout</p>
-            </div>
+            </div> */}
 
             <hr className="w-[370px] border-1 border-black  "/>
 
