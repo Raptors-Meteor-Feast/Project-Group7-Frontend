@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import MyCart from "../components/Checkout/MyCart";
 import { useCart } from "../components/Checkout/CartContext";
 import CheckOutMyCart from "../components/Checkout/CheckOutMyCart";
+import Footer from "../components/Footer/Footer";
 
 
 
@@ -12,7 +13,7 @@ export default function CheckOut() {
     return (
         <div>
             <Nav />
-            <div className="bg-neutral-900 h-[100hv] text-white p-2">
+            <div className="bg-neutral-900 min-h-screen text-white p-2">
                 <h1 className="mb-5 text-[24px] font-bold mx-48">My Cart</h1>
                 <div className="flex justify-evenly">
                     <div>
@@ -36,7 +37,7 @@ export default function CheckOut() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
-
     );
 }

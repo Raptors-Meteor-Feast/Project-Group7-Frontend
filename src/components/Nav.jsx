@@ -3,6 +3,8 @@ import { useState } from "react";
 import SearchBox from "./SearchBox";
 import { Link } from "react-router-dom";
 import { useCart } from "../components/Checkout/CartContext";
+import Gr7Logo from "/NavIcon/Gr7Logo.svg";
+import UserIcon from "/NavIcon/user.png";
 
 
 export default function Nav() {
@@ -22,7 +24,7 @@ export default function Nav() {
                 {/* Logo and Brand Name */}
                 <div className="flex items-center ml-36">
                     <img
-                    src="../src/Images/NavIcon/Gr7Logo.svg"
+                    src={Gr7Logo}
                     alt="Raptor-Logo"
                     className="w-[55px] h-auto object-cover mr-2"
                     />
@@ -66,7 +68,7 @@ export default function Nav() {
                             color="secondary"
                             name="Guest"
                             size="md"
-                            src="../src/Images/NavIcon/user.png"
+                            src={UserIcon}
                             aria-label="Sign In"
                         />
                         </DropdownTrigger>
@@ -89,7 +91,7 @@ export default function Nav() {
                             color="secondary"
                             name="Jason Hughes"
                             size="md"
-                            src="../src/Images/NavIcon/Gr-Logo-7.svg"
+                            src={Gr7Logo}
                             aria-label="User Profile"
                         />
                         </DropdownTrigger>
