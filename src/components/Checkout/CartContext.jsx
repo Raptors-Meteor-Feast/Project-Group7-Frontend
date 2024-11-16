@@ -15,10 +15,7 @@ export const CartProvider = ({ children }) => {
             const existingItem = prevCart.find(cartItem => cartItem.id === id);
             if (existingItem) {
                 return prevCart.map(cartItem =>
-                    cartItem.id === id
-                        ? { ...cartItem, quantity: cartItem.quantity + 1 }
-                        : cartItem
-                );
+                    cartItem.id === id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem);
             }
             return [...prevCart, { ...item, quantity: 1 }];
         });
