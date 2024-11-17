@@ -1,10 +1,10 @@
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
 import { useState } from "react";
 import SearchBox from "./SearchBox";
-import { Link } from "react-router-dom";
-import { useCart } from "../components/Checkout/CartContext";
 import Gr7Logo from "/NavIcon/Gr7Logo.svg";
 import UserIcon from "/NavIcon/user.png";
+import { Link } from "react-router-dom";
+import { useCart } from "../components/Checkout/CartContext";
 
 
 export default function Nav() {
