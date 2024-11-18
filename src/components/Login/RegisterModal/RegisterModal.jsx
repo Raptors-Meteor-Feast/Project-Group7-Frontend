@@ -1,8 +1,7 @@
-import React from 'react';
 import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; // ใช้ Link จาก react-router-dom
 
-const ModalCheckOutSucceed = ({disabled}) => {
+const RegisterModal = ({disabled}) => {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
@@ -20,7 +19,7 @@ const ModalCheckOutSucceed = ({disabled}) => {
                 <ModalContent>
                     {onClose => (
                         <div className='flex flex-col items-center p-3'>
-                            <img className='w-2/3 sm:w-[40%]' src="Images/ProjectLogo/WebLogo.svg" alt="logo" />
+                            <img className='w-2/3 sm:w-[40%]' src="src/assets/ProjectLogo/Logo-7.svg" alt="logo" />
                             <ModalHeader className='flex justify-start'>Raptors Meteor Feast</ModalHeader>
                             <ModalBody className='flex flex-col items-center justify-center'>
                                 <h1 className='text-3xl'>Thank you!</h1>
@@ -38,4 +37,4 @@ const ModalCheckOutSucceed = ({disabled}) => {
     );
 };
 
-export default ModalCheckOutSucceed;
+export default RegisterModal

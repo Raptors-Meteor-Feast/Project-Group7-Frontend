@@ -42,12 +42,12 @@ const ModalCheckOut = ({ totalPrice }) => {
                 size="5xl"
                 className="bg-zinc-900 text-white"
             >
-                <ModalContent className="w-[80vw] h-[80vh] overflow-auto">
+                <ModalContent className="w-full sm:w-[80vw] md:w-[70vw] lg:w-[60vw] h-[80vh] overflow-auto">
                     <ModalHeader className="flex text-[20px] font-bold gap-1">
                         My Cart
                     </ModalHeader>
                     <hr className="w-full border-1 border-black" />
-
+                    
                     <ModalBody>
                         <div className="flex justify-between p-5">
                             <div className="flex flex-col pr-10 gap-5">
@@ -61,12 +61,12 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="promptpay"
-                                            className=""
+                                            className="hover:scale-105 transition duration-300 ease-in-out" 
                                             checked={paymentMethod === "promptpay"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
                                                 <img
-                                                    src="src/Images/Banklogo/promptpay.svg"
+                                                    src="Images/Banklogo/promptpay.svg"
                                                     width={70}
                                                     height={50}
                                                     alt="Promptpay"
@@ -86,15 +86,15 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="scb"
-                                            className=""
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "scb"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
                                                 <img
-                                                    src="src/Images/Banklogo/scb.svg"
+                                                    src="Images/Banklogo/scb.svg"
                                                     width={70}
                                                     height={50}
-                                                    alt="SCB"
+                                                    alt="SCB"    
                                                 />
                                                 <p className="font-semibold text-white">SCB</p>
                                             </div>
@@ -107,12 +107,12 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="krungsri"
-                                            className=""
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "krungsri"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
                                                 <img
-                                                    src="src/Images/Banklogo/bay.svg"
+                                                    src="Images/Banklogo/bay.svg"
                                                     width={70}
                                                     height={50}
                                                     alt="Krungsri"
@@ -128,12 +128,12 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="kbank"
-                                            className="text-white"
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "kbank"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
                                                 <img
-                                                    src="src/Images/Banklogo/kbank.svg"
+                                                    src="Images/Banklogo/kbank.svg"
                                                     width={70}
                                                     height={50}
                                                     alt="Kbank"
@@ -152,12 +152,12 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="creditcard"
-                                            className="text-white"
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "creditcard"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
                                                 <img
-                                                    src="src/Images/NavIcon/mastercard.svg"
+                                                    src="Images/Banklogo/mastercard.svg"
                                                     width={70}
                                                     height={50}
                                                     alt="CreditCard"
@@ -173,12 +173,12 @@ const ModalCheckOut = ({ totalPrice }) => {
                                     <div>
                                         <Radio
                                             value="paypal"
-                                            className="text-white"
+                                            className="hover:scale-105 transition duration-300 ease-in-out"
                                             checked={paymentMethod === "paypal"}
                                         >
                                             <div className="flex justify-center items-center gap-2">
                                                 <img
-                                                    src="src/Images/NavIcon/paypal.png"
+                                                    src="Images/Banklogo/paypal.png"
                                                     width={70}
                                                     height={50}
                                                     alt="PayPal"
