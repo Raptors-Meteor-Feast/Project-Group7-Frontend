@@ -6,6 +6,9 @@ import MostPopularCard from "../components/Card-Home/MostPopularCard"
 import RecommendCard from '../components/Card-Home/RecommendCard'
 import Nav from '../components/Nav'
 
+// import Login from '../pages/auth/Login.jsx'
+// import Register from '../pages/auth/Register.jsx'
+
 
 const Home = () => {
     return (
@@ -16,6 +19,10 @@ const Home = () => {
             <MostPopularCard name="Most Popular"/>
             <BoxThreeContainer/>
             <Footer/>
+
+            {/* <Login />
+            <Register /> */}
+
         </div>
     )
 }
