@@ -66,13 +66,8 @@ const Login = () => {
         e.preventDefault(); // Prevent page reload on form submit
         setFormSubmitted(true); // Mark that the form has been submitted
 
-        if (!email || !password) {
-            // If email or password is empty, stop execution
-            return;
-        }
-
-        if (isEmailInvalid || isPasswordInvalid) {
-            // If email or password is invalid, stop execution
+        if (!email || !password || isEmailInvalid || isPasswordInvalid) {
+            // If any field is invalid, show an error message
             return;
         }
 
@@ -87,19 +82,15 @@ const Login = () => {
                 password,
             });
 
-        if (response.data?.token) {
-            // If login is successful, store the token in local storage
-            localStorage.setItem("token", response.data.token);
+            const token = response.data; // Extract the token from the response
+            localStorage.setItem("authToken", token); // Store the token in local storage
+
 
             // If login is successful, show a success message
             alert("Successfully Logged In!");
 
             // Redirect to home page
             navigate("/");
-        } else {
-            // If login fails, show an error message
-            alert("Login failed. Please try again.");
-        }
 
         } catch (error) {
             console.error(error);
