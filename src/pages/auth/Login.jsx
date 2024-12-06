@@ -5,16 +5,18 @@ import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import "./login.css";
 
 const Login = () => {
     const navigate = useNavigate(); // Hook for navigation
-    
+
     // State management for storing input values and controlling display
     const [isVisible, setIsVisible] = useState(false); // State to control password visibility (show/hide)
     const [email, setEmail] = useState(""); // State to store the email input
     const [password, setPassword] = useState(""); // State to store the password input
     const [formSubmitted, setFormSubmitted] = useState(false); // Tracks whether the form has been submitted
+    const [loading, setLoading] = useState(false); // Tracks whether the form is loading
 
     // Function to toggle password visibility
     const toggleVisibility = () => setIsVisible(!isVisible);
@@ -60,7 +62,7 @@ const Login = () => {
     };
 
     // Function to handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent page reload on form submit
         setFormSubmitted(true); // Mark that the form has been submitted
 
@@ -74,13 +76,31 @@ const Login = () => {
             return;
         }
 
+        // Set loading state to true
+        setLoading(true); // Set loading state to true
+
+        try {
+            const response = await axios.post(
+                "http://localhost:4000/api/user/login", 
+            {
+                email,
+                password,
+            });
+        } catch (error) {
+            console.error(error);
+            alert("Login failed. Please try again."); // If login fails, show an error message
+        } finally {
+            // Set loading state to false
+            setLoading(false); // Set loading state to false
+        }
+
         // If validation passes
-        console.log("Successfully logged in!"); // Log success message to console
-        alert(`Successfully logged in!\nEmail: ${email}\nPassword: ${password}`);
-        
+
+        alert("Successfully logged in!");
+
         // Navigate to home page
         navigate("/");
-        
+
         // Reset the form
         setEmail("");
         setPassword("");
@@ -92,10 +112,10 @@ const Login = () => {
             <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
                 {/* Project logo */}
                 <div className="flex justify-center items-center w-full mb-4">
-                    <img 
-                        className="w-1/2 sm:w-[60%] hover:scale-110 transition duration-300 ease-in-out" 
-                        src="Images/ProjectLogo/WebLogo.svg" 
-                        alt="logo" 
+                    <img
+                        className="w-1/2 sm:w-[60%] hover:scale-110 transition duration-300 ease-in-out"
+                        src="Images/ProjectLogo/WebLogo.svg"
+                        alt="logo"
                     />
                 </div>
 
@@ -164,9 +184,9 @@ const Login = () => {
 
                     {/* Link to reset password */}
                     <div className="flex justify-start w-full">
-                        <Button 
-                            as={Link} 
-                            to="/forgot-password" 
+                        <Button
+                            as={Link}
+                            to="/forgot-password"
                             variant="default"
                             className="p-0 text-primary text-sm hover:underline hover:text-red-500"
                         >
@@ -175,9 +195,9 @@ const Login = () => {
                     </div>
 
                     {/* Submit button */}
-                    <Button 
+                    <Button
                         type="submit"
-                        color="primary" 
+                        color="primary"
                         className="w-full text-sm"
                     >
                         Sign in

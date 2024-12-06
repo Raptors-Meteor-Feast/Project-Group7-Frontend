@@ -6,6 +6,7 @@ import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import { GiDinosaurRex } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 import "./login.css";
 
 const Login = () => {
@@ -16,28 +17,29 @@ const Login = () => {
     const [email, setEmail] = useState("");  // Stores the user's email
     const [password, setPassword] = useState("");  // Stores the user's password
     const [confirmPassword, setConfirmPassword] = useState("");  // Stores the confirmation password
-    const [firstname, setFirstName] = useState("");  // Stores the user's first name
-    const [lastname, setLastName] = useState("");  // Stores the user's last name
-    const [displayname, setDisplayName] = useState("");  // Stores the display name
+    const [firstName, setFirstName] = useState("");  // Stores the user's first name
+    const [lastName, setLastName] = useState("");  // Stores the user's last name
+    const [displayName, setDisplayName] = useState("");  // Stores the display name
     const [isAgreed, setIsAgreed] = useState(false);  // Checks if the user agrees to terms
     const [formSubmitted, setFormSubmitted] = useState(false);  // Tracks if the form has been submitted
+    const [loading, setLoading] = useState(false); // Tracks if the form is loading
 
     // Toggle function to show or hide the password
     const toggleVisibility = () => setIsVisible(!isVisible);
 
     // Error messages for required fields
     const getFisrtNameErrorMessage = () => {
-        if (!firstname && formSubmitted) return "First Name is required";  // If no first name is provided after submit, show error
+        if (!firstName && formSubmitted) return "First Name is required";  // If no first name is provided after submit, show error
         return "";
     };
 
     const getLastNameErrorMessage = () => {
-        if (!lastname && formSubmitted) return "Last Name is required";  // If no last name is provided after submit, show error
+        if (!lastName && formSubmitted) return "Last Name is required";  // If no last name is provided after submit, show error
         return "";
     };
 
     const getDisplayNameErrorMessage = () => {
-        if (!displayname && formSubmitted) return "Display Name is required";  // If no display name is provided after submit, show error
+        if (!displayName && formSubmitted) return "Display Name is required";  // If no display name is provided after submit, show error
         return "";
     };
 
@@ -92,26 +94,37 @@ const Login = () => {
 
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();  // Prevents default form submission behavior
 
         setFormSubmitted(true);  // Mark that the form has been submitted
 
         // Check if all fields are filled and valid
-        if (!email || isEmailInvalid || !password || isPasswordInvalid || password !== confirmPassword || !firstname || !lastname || !displayname || !isAgreed) {
+        if (!email || isEmailInvalid || !password || isPasswordInvalid || password !== confirmPassword || !firstName || !lastName || !displayName || !isAgreed) {
             alert("Error: Please fill in all fields correctly.");  // If any field is invalid, show an error message
             return;
         }
 
-        // If all fields are valid, show a success message with the registered email and password
-        alert(
-            `Successfully Registered!\n` +
-            `Email: ${email}\n` +
-            `Password: ${password}`
-        );
+        setLoading(true); // Set loading state to true
 
-        // Redirect to login page
-        navigate("/login");
+        try {
+            const response = await axios.post(
+                "http://localhost:4000/api/user/register",// Send a POST request to the registration endpoint
+                { firstName, lastName, displayName, email, password }
+            );
+
+            // If all fields are valid, show a success message with the registered email and password
+            alert("Successfully Registered!");
+
+            // Redirect to login page
+            navigate("/login");
+
+        } catch (error) {
+            console.error(error);
+            alert("Registration failed. Please try again.");  // If registration fails, show an error message
+        } finally {
+            setLoading(false); // Set loading state to false
+        }
 
         // Clear the form after submission to reset the fields
         setEmail("");
@@ -126,167 +139,168 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center bg-neutral-950 min-h-screen'>
-        <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
-            <div className='flex justify-center items-center'>
-                <img 
-                    className='w-1/3 sm:w-[60%] hover:animate-spin' 
-                    src="Images/ProjectLogo/WebLogo.svg" 
-                    alt="logo" />
-            </div>
-    
-            <h1 className="text-sm sm:text-base font-bold mb-4 hover:animate-bounce">Create Account</h1>
-        
-            <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
-                
-                <div className='flex gap-4'>
-                <Input
-                    type="text"
-                    variant="bordered"
-                    placeholder="First Name"
-                    isInvalid={formSubmitted && !firstname}
-                    value={firstname}
-                    className="w-full"
-                    onChange={(e) => setFirstName(e.target.value)}
-                    errorMessage={getFisrtNameErrorMessage()}
-                />
-    
-                <Input
-                    type="text"
-                    variant="bordered"
-                    placeholder="Last Name"
-                    isInvalid={formSubmitted && !lastname}
-                    value={lastname}
-                    className="w-full"
-                    onChange={(e) => setLastName(e.target.value)}
-                    errorMessage={getLastNameErrorMessage()}
-                />
-
+            <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
+                <div className='flex justify-center items-center'>
+                    <img
+                        className='w-1/3 sm:w-[60%] hover:animate-spin'
+                        src="Images/ProjectLogo/WebLogo.svg"
+                        alt="logo" />
                 </div>
 
-                <Input
-                    type="text"
-                    variant="bordered"
-                    placeholder="Display Name"
-                    isInvalid={formSubmitted && !displayname}
-                    value={displayname}
-                    className="w-full"
-                    endContent={
-                        <GiDinosaurRex className="text-xl text-default-400 pointer-events-none" />
-                    }
-                    onChange={(e) => setDisplayName(e.target.value)}
-                    errorMessage={getDisplayNameErrorMessage()}
-                />
-    
-                <Input
-                    type="email"
-                    variant="bordered"
-                    isInvalid={isEmailInvalid}
-                    placeholder="Email Address"
-                    value={email}
-                    className="w-full"
-                    endContent={
-                        <MailIcon className="text-2xl text-default-400 pointer-events-none" />
-                    }
-                    errorMessage={isEmailInvalid ? "Please enter a valid email." : ""}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-    
-                <Input
-                    type={isVisible ? "text" : "password"}
-                    variant="bordered"
-                    value={password}
-                    isInvalid={isPasswordInvalid}
-                    errorMessage={getPasswordErrorMessage()}
-                    placeholder="Enter your password"
-                    classNames={{
-                        input: ["bg-transparent"],
-                        innerWrapper: ["bg-transparent"],
-                        inputWrapper: [
-                            "bg-transparent",
-                            "hover:bg-default-100/10",
-                            "group-data-[focused=true]:bg-default-100/10",
-                            "!cursor-text",
-                        ],
-                    }}
-                    endContent={
-                        <button
-                            className="focus:outline-none"
-                            type="button"
-                            onClick={toggleVisibility}
-                        >
-                            {isVisible ? (
-                                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                            ) : (
-                                <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                            )}
-                        </button>
-                    }
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-    
-                <Input
-                    type={isVisible ? "text" : "password"}
-                    variant="bordered"
-                    value={confirmPassword}
-                    isInvalid={confirmPassword !== password && formSubmitted}
-                    errorMessage={getConfirmPasswordErrorMessage()}
-                    placeholder="Confirm your password"
-                    classNames={{
-                        input: ["bg-transparent"],
-                        innerWrapper: ["bg-transparent"],
-                        inputWrapper: [
-                            "bg-transparent",
-                            "hover:bg-default-100/10",
-                            "group-data-[focused=true]:bg-default-100/10",
-                            "!cursor-text",
-                        ],
-                    }}
-                    endContent={
-                        <button
-                            className="focus:outline-none"
-                            type="button"
-                            onClick={toggleVisibility}
-                        >
-                            {isVisible ? (
-                                <EyeSlashFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                            ) : (
-                                <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                            )}
-                        </button>
-                    }
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-    
-                <div className='flex w-full text-sm gap-1'>
-                    <Checkbox 
-                        checked={isAgreed} 
-                        onChange={() => setIsAgreed(!isAgreed)} 
-                        className='text-nowrap'
+                <h1 className="text-sm sm:text-base font-bold mb-4 hover:animate-bounce">Create Account</h1>
+
+                <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
+
+                    <div className='flex gap-4'>
+                        <Input
+                            type="text"
+                            variant="bordered"
+                            placeholder="First Name"
+                            isInvalid={formSubmitted && !firstName}
+                            value={firstName}
+                            className="w-full"
+                            onChange={(e) => setFirstName(e.target.value)}
+                            errorMessage={getFisrtNameErrorMessage()}
+                        />
+
+                        <Input
+                            type="text"
+                            variant="bordered"
+                            placeholder="Last Name"
+                            isInvalid={formSubmitted && !lastName}
+                            value={lastName}
+                            className="w-full"
+                            onChange={(e) => setLastName(e.target.value)}
+                            errorMessage={getLastNameErrorMessage()}
+                        />
+
+                    </div>
+
+                    <Input
+                        type="text"
+                        variant="bordered"
+                        placeholder="Display Name"
+                        isInvalid={formSubmitted && !displayName}
+                        value={displayName}
+                        className="w-full"
+                        endContent={
+                            <GiDinosaurRex className="text-xl text-default-400 pointer-events-none" />
+                        }
+                        onChange={(e) => setDisplayName(e.target.value)}
+                        errorMessage={getDisplayNameErrorMessage()}
                     />
-                    <p className='text-nowrap'>I have read and agree</p>
-                    <Link to="#" className='underline text-nowrap text-primary text-sm hover:underline hover:text-red-500'>terms of service</Link>
+
+                    <Input
+                        type="email"
+                        variant="bordered"
+                        isInvalid={isEmailInvalid}
+                        placeholder="Email Address"
+                        value={email}
+                        className="w-full"
+                        endContent={
+                            <MailIcon className="text-2xl text-default-400 pointer-events-none" />
+                        }
+                        errorMessage={isEmailInvalid ? "Please enter a valid email." : ""}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+
+                    <Input
+                        type={isVisible ? "text" : "password"}
+                        variant="bordered"
+                        value={password}
+                        isInvalid={isPasswordInvalid}
+                        errorMessage={getPasswordErrorMessage()}
+                        placeholder="Enter your password"
+                        classNames={{
+                            input: ["bg-transparent"],
+                            innerWrapper: ["bg-transparent"],
+                            inputWrapper: [
+                                "bg-transparent",
+                                "hover:bg-default-100/10",
+                                "group-data-[focused=true]:bg-default-100/10",
+                                "!cursor-text",
+                            ],
+                        }}
+                        endContent={
+                            <button
+                                className="focus:outline-none"
+                                type="button"
+                                onClick={toggleVisibility}
+                            >
+                                {isVisible ? (
+                                    <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                                ) : (
+                                    <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
+                                )}
+                            </button>
+                        }
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+
+                    <Input
+                        type={isVisible ? "text" : "password"}
+                        variant="bordered"
+                        value={confirmPassword}
+                        isInvalid={confirmPassword !== password && formSubmitted}
+                        errorMessage={getConfirmPasswordErrorMessage()}
+                        placeholder="Confirm your password"
+                        classNames={{
+                            input: ["bg-transparent"],
+                            innerWrapper: ["bg-transparent"],
+                            inputWrapper: [
+                                "bg-transparent",
+                                "hover:bg-default-100/10",
+                                "group-data-[focused=true]:bg-default-100/10",
+                                "!cursor-text",
+                            ],
+                        }}
+                        endContent={
+                            <button
+                                className="focus:outline-none"
+                                type="button"
+                                onClick={toggleVisibility}
+                            >
+                                {isVisible ? (
+                                    <EyeSlashFilledIcon className="text-xl text-default-400 pointer-events-none" />
+                                ) : (
+                                    <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
+                                )}
+                            </button>
+                        }
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                    />
+
+                    <div className='flex w-full text-sm gap-1'>
+                        <Checkbox
+                            checked={isAgreed}
+                            onChange={() => setIsAgreed(!isAgreed)}
+                            className='text-nowrap'
+                        />
+                        <p className='text-nowrap'>I have read and agree</p>
+                        <Link to="#" className='underline text-nowrap text-primary text-sm hover:underline hover:text-red-500'>terms of service</Link>
+                    </div>
+
+                    <Button
+                        type='submit'
+                        color="primary"
+                        className="w-full"
+                        isDisabled={!isAgreed}
+                    >
+                        Confirm
+                    </Button>
+                </form>
+
+                <div className='flex gap-2 items-center justify-center'>
+                    <p className='text-sm'>Already have an account?</p>
+                    <Link to="/login" className='underline text-primary text-sm hover:underline hover:text-red-500'>Sign in</Link>
                 </div>
-        
-                <Button 
-                    type='submit' 
-                    color="primary" 
-                    className="w-full"
-                    isDisabled={!isAgreed}
-                >
-                    Confirm
-                </Button>
-            </form>
-    
-            <div className='flex gap-2 items-center justify-center'>
-                <p className='text-sm'>Already have an account?</p>
-                <Link to="/login" className='underline text-primary text-sm hover:underline hover:text-red-500'>Sign in</Link>
+
+                <Link to="#" className='underline text-primary text-sm hover:underline hover:text-red-500'>Privacy Policy</Link>
             </div>
-    
-            <Link to="#" className='underline text-primary text-sm hover:underline hover:text-red-500'>Privacy Policy</Link>
         </div>
-    </div>
-    
+
     );
 };
 
 export default Login;
+
