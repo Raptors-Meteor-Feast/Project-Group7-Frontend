@@ -86,6 +86,21 @@ const Login = () => {
                 email,
                 password,
             });
+
+        if (response.data?.token) {
+            // If login is successful, store the token in local storage
+            localStorage.setItem("token", response.data.token);
+
+            // If login is successful, show a success message
+            alert("Successfully Logged In!");
+
+            // Redirect to home page
+            navigate("/");
+        } else {
+            // If login fails, show an error message
+            alert("Login failed. Please try again.");
+        }
+
         } catch (error) {
             console.error(error);
             alert("Login failed. Please try again."); // If login fails, show an error message
@@ -93,13 +108,6 @@ const Login = () => {
             // Set loading state to false
             setLoading(false); // Set loading state to false
         }
-
-        // If validation passes
-
-        alert("Successfully logged in!");
-
-        // Navigate to home page
-        navigate("/");
 
         // Reset the form
         setEmail("");

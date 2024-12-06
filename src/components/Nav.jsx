@@ -34,28 +34,14 @@ export default function Nav() {
                     <SearchBox />
                 </div>
 
-                {/* Navigation Links */}
-                <div>
-                    <ul className="flex gap-7 mr-8 font-bold items-center">
-                        <li>
-
-                            <Link to="/" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
-                        </li>
-                        <li>
-                            <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">News</Link>
-
-                        </li>
-                    </ul>
-                </div>
                 </div>
 
                 <div className="flex items-center justify-between">
                 {/* Cart Section */}
                 <div className="flex items-center gap-4 w-[] mr-8">
 
+                    <p className="text-orange-500 font-bold text-[18px]">Browse</p>
+        
                     <p className="text-orange-500 font-bold text-[18px]">Cart</p>
                     <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">0</button></Link>
 
