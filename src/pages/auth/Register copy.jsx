@@ -7,7 +7,6 @@ import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import { GiDinosaurRex } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import "./login.css";
-import axios from 'axios';
 
 const Login = () => {
     const navigate = useNavigate(); // For navigation
@@ -17,29 +16,28 @@ const Login = () => {
     const [email, setEmail] = useState("");  // Stores the user's email
     const [password, setPassword] = useState("");  // Stores the user's password
     const [confirmPassword, setConfirmPassword] = useState("");  // Stores the confirmation password
-    const [firstName, setFirstName] = useState("");  // Stores the user's first name
-    const [lastName, setLastName] = useState("");  // Stores the user's last name
-    const [displayName, setDisplayName] = useState("");  // Stores the display name
+    const [firstname, setFirstName] = useState("");  // Stores the user's first name
+    const [lastname, setLastName] = useState("");  // Stores the user's last name
+    const [displayname, setDisplayName] = useState("");  // Stores the display name
     const [isAgreed, setIsAgreed] = useState(false);  // Checks if the user agrees to terms
     const [formSubmitted, setFormSubmitted] = useState(false);  // Tracks if the form has been submitted
-    const [loading, setLoading] = useState(false); // Tracks if the form is loading
 
     // Toggle function to show or hide the password
     const toggleVisibility = () => setIsVisible(!isVisible);
 
     // Error messages for required fields
     const getFisrtNameErrorMessage = () => {
-        if (!firstName && formSubmitted) return "First Name is required";  // If no first name is provided after submit, show error
+        if (!firstname && formSubmitted) return "First Name is required";  // If no first name is provided after submit, show error
         return "";
     };
 
     const getLastNameErrorMessage = () => {
-        if (!lastName && formSubmitted) return "Last Name is required";  // If no last name is provided after submit, show error
+        if (!lastname && formSubmitted) return "Last Name is required";  // If no last name is provided after submit, show error
         return "";
     };
 
     const getDisplayNameErrorMessage = () => {
-        if (!displayName && formSubmitted) return "Display Name is required";  // If no display name is provided after submit, show error
+        if (!displayname && formSubmitted) return "Display Name is required";  // If no display name is provided after submit, show error
         return "";
     };
 
@@ -94,26 +92,16 @@ const Login = () => {
 
 
     // Handle form submission
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();  // Prevents default form submission behavior
 
         setFormSubmitted(true);  // Mark that the form has been submitted
 
         // Check if all fields are filled and valid
-        if (!email || isEmailInvalid || !password || isPasswordInvalid || password !== confirmPassword || !firstName || !lastName || !displayName || !isAgreed) {
+        if (!email || isEmailInvalid || !password || isPasswordInvalid || password !== confirmPassword || !firstname || !lastname || !displayname || !isAgreed) {
             alert("Error: Please fill in all fields correctly.");  // If any field is invalid, show an error message
             return;
         }
-
-        setLoading(true); // Set loading state to true
-
-        try {
-            const response = await axios.post(
-                "http://localhost:4000/api/user/register",// Send a POST request to the registration endpoint
-                {
-                    firstName,lastName,displayName,email,password
-                }
-            );
 
         // If all fields are valid, show a success message with the registered email and password
         alert(
@@ -124,13 +112,6 @@ const Login = () => {
 
         // Redirect to login page
         navigate("/login");
-
-        } catch (error) {
-            console.error(error);
-            alert("Registration failed. Please try again.");  // If registration fails, show an error message
-        } finally {
-            setLoading(false); // Set loading state to false
-        }
 
         // Clear the form after submission to reset the fields
         setEmail("");
@@ -162,8 +143,8 @@ const Login = () => {
                     type="text"
                     variant="bordered"
                     placeholder="First Name"
-                    isInvalid={formSubmitted && !firstName}
-                    value={firstName}
+                    isInvalid={formSubmitted && !firstname}
+                    value={firstname}
                     className="w-full"
                     onChange={(e) => setFirstName(e.target.value)}
                     errorMessage={getFisrtNameErrorMessage()}
@@ -173,8 +154,8 @@ const Login = () => {
                     type="text"
                     variant="bordered"
                     placeholder="Last Name"
-                    isInvalid={formSubmitted && !lastName}
-                    value={lastName}
+                    isInvalid={formSubmitted && !lastname}
+                    value={lastname}
                     className="w-full"
                     onChange={(e) => setLastName(e.target.value)}
                     errorMessage={getLastNameErrorMessage()}
@@ -186,8 +167,8 @@ const Login = () => {
                     type="text"
                     variant="bordered"
                     placeholder="Display Name"
-                    isInvalid={formSubmitted && !displayName}
-                    value={displayName}
+                    isInvalid={formSubmitted && !displayname}
+                    value={displayname}
                     className="w-full"
                     endContent={
                         <GiDinosaurRex className="text-xl text-default-400 pointer-events-none" />
