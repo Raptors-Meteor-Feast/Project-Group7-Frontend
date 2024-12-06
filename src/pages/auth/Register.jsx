@@ -6,8 +6,8 @@ import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import { GiDinosaurRex } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import "./login.css";
 import axios from 'axios';
+import "./login.css";
 
 const Login = () => {
     const navigate = useNavigate(); // For navigation
@@ -110,20 +110,14 @@ const Login = () => {
         try {
             const response = await axios.post(
                 "http://localhost:4000/api/user/register",// Send a POST request to the registration endpoint
-                {
-                    firstName,lastName,displayName,email,password
-                }
+                { firstName, lastName, displayName, email, password }
             );
 
-        // If all fields are valid, show a success message with the registered email and password
-        alert(
-            `Successfully Registered!\n` +
-            `Email: ${email}\n` +
-            `Password: ${password}`
-        );
+            // If all fields are valid, show a success message with the registered email and password
+            alert("Successfully Registered!");
 
-        // Redirect to login page
-        navigate("/login");
+            // Redirect to login page
+            navigate("/login");
 
         } catch (error) {
             console.error(error);
@@ -145,166 +139,166 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center bg-neutral-950 min-h-screen'>
-        <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
-            <div className='flex justify-center items-center'>
-                <img 
-                    className='w-1/3 sm:w-[60%] hover:animate-spin' 
-                    src="Images/ProjectLogo/WebLogo.svg" 
-                    alt="logo" />
-            </div>
-    
-            <h1 className="text-sm sm:text-base font-bold mb-4 hover:animate-bounce">Create Account</h1>
-        
-            <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
-                
-                <div className='flex gap-4'>
-                <Input
-                    type="text"
-                    variant="bordered"
-                    placeholder="First Name"
-                    isInvalid={formSubmitted && !firstName}
-                    value={firstName}
-                    className="w-full"
-                    onChange={(e) => setFirstName(e.target.value)}
-                    errorMessage={getFisrtNameErrorMessage()}
-                />
-    
-                <Input
-                    type="text"
-                    variant="bordered"
-                    placeholder="Last Name"
-                    isInvalid={formSubmitted && !lastName}
-                    value={lastName}
-                    className="w-full"
-                    onChange={(e) => setLastName(e.target.value)}
-                    errorMessage={getLastNameErrorMessage()}
-                />
-
+            <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
+                <div className='flex justify-center items-center'>
+                    <img
+                        className='w-1/3 sm:w-[60%] hover:animate-spin'
+                        src="Images/ProjectLogo/WebLogo.svg"
+                        alt="logo" />
                 </div>
 
-                <Input
-                    type="text"
-                    variant="bordered"
-                    placeholder="Display Name"
-                    isInvalid={formSubmitted && !displayName}
-                    value={displayName}
-                    className="w-full"
-                    endContent={
-                        <GiDinosaurRex className="text-xl text-default-400 pointer-events-none" />
-                    }
-                    onChange={(e) => setDisplayName(e.target.value)}
-                    errorMessage={getDisplayNameErrorMessage()}
-                />
-    
-                <Input
-                    type="email"
-                    variant="bordered"
-                    isInvalid={isEmailInvalid}
-                    placeholder="Email Address"
-                    value={email}
-                    className="w-full"
-                    endContent={
-                        <MailIcon className="text-2xl text-default-400 pointer-events-none" />
-                    }
-                    errorMessage={isEmailInvalid ? "Please enter a valid email." : ""}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-    
-                <Input
-                    type={isVisible ? "text" : "password"}
-                    variant="bordered"
-                    value={password}
-                    isInvalid={isPasswordInvalid}
-                    errorMessage={getPasswordErrorMessage()}
-                    placeholder="Enter your password"
-                    classNames={{
-                        input: ["bg-transparent"],
-                        innerWrapper: ["bg-transparent"],
-                        inputWrapper: [
-                            "bg-transparent",
-                            "hover:bg-default-100/10",
-                            "group-data-[focused=true]:bg-default-100/10",
-                            "!cursor-text",
-                        ],
-                    }}
-                    endContent={
-                        <button
-                            className="focus:outline-none"
-                            type="button"
-                            onClick={toggleVisibility}
-                        >
-                            {isVisible ? (
-                                <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                            ) : (
-                                <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                            )}
-                        </button>
-                    }
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-    
-                <Input
-                    type={isVisible ? "text" : "password"}
-                    variant="bordered"
-                    value={confirmPassword}
-                    isInvalid={confirmPassword !== password && formSubmitted}
-                    errorMessage={getConfirmPasswordErrorMessage()}
-                    placeholder="Confirm your password"
-                    classNames={{
-                        input: ["bg-transparent"],
-                        innerWrapper: ["bg-transparent"],
-                        inputWrapper: [
-                            "bg-transparent",
-                            "hover:bg-default-100/10",
-                            "group-data-[focused=true]:bg-default-100/10",
-                            "!cursor-text",
-                        ],
-                    }}
-                    endContent={
-                        <button
-                            className="focus:outline-none"
-                            type="button"
-                            onClick={toggleVisibility}
-                        >
-                            {isVisible ? (
-                                <EyeSlashFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                            ) : (
-                                <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                            )}
-                        </button>
-                    }
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-    
-                <div className='flex w-full text-sm gap-1'>
-                    <Checkbox 
-                        checked={isAgreed} 
-                        onChange={() => setIsAgreed(!isAgreed)} 
-                        className='text-nowrap'
+                <h1 className="text-sm sm:text-base font-bold mb-4 hover:animate-bounce">Create Account</h1>
+
+                <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
+
+                    <div className='flex gap-4'>
+                        <Input
+                            type="text"
+                            variant="bordered"
+                            placeholder="First Name"
+                            isInvalid={formSubmitted && !firstName}
+                            value={firstName}
+                            className="w-full"
+                            onChange={(e) => setFirstName(e.target.value)}
+                            errorMessage={getFisrtNameErrorMessage()}
+                        />
+
+                        <Input
+                            type="text"
+                            variant="bordered"
+                            placeholder="Last Name"
+                            isInvalid={formSubmitted && !lastName}
+                            value={lastName}
+                            className="w-full"
+                            onChange={(e) => setLastName(e.target.value)}
+                            errorMessage={getLastNameErrorMessage()}
+                        />
+
+                    </div>
+
+                    <Input
+                        type="text"
+                        variant="bordered"
+                        placeholder="Display Name"
+                        isInvalid={formSubmitted && !displayName}
+                        value={displayName}
+                        className="w-full"
+                        endContent={
+                            <GiDinosaurRex className="text-xl text-default-400 pointer-events-none" />
+                        }
+                        onChange={(e) => setDisplayName(e.target.value)}
+                        errorMessage={getDisplayNameErrorMessage()}
                     />
-                    <p className='text-nowrap'>I have read and agree</p>
-                    <Link to="#" className='underline text-nowrap text-primary text-sm hover:underline hover:text-red-500'>terms of service</Link>
+
+                    <Input
+                        type="email"
+                        variant="bordered"
+                        isInvalid={isEmailInvalid}
+                        placeholder="Email Address"
+                        value={email}
+                        className="w-full"
+                        endContent={
+                            <MailIcon className="text-2xl text-default-400 pointer-events-none" />
+                        }
+                        errorMessage={isEmailInvalid ? "Please enter a valid email." : ""}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+
+                    <Input
+                        type={isVisible ? "text" : "password"}
+                        variant="bordered"
+                        value={password}
+                        isInvalid={isPasswordInvalid}
+                        errorMessage={getPasswordErrorMessage()}
+                        placeholder="Enter your password"
+                        classNames={{
+                            input: ["bg-transparent"],
+                            innerWrapper: ["bg-transparent"],
+                            inputWrapper: [
+                                "bg-transparent",
+                                "hover:bg-default-100/10",
+                                "group-data-[focused=true]:bg-default-100/10",
+                                "!cursor-text",
+                            ],
+                        }}
+                        endContent={
+                            <button
+                                className="focus:outline-none"
+                                type="button"
+                                onClick={toggleVisibility}
+                            >
+                                {isVisible ? (
+                                    <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                                ) : (
+                                    <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
+                                )}
+                            </button>
+                        }
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+
+                    <Input
+                        type={isVisible ? "text" : "password"}
+                        variant="bordered"
+                        value={confirmPassword}
+                        isInvalid={confirmPassword !== password && formSubmitted}
+                        errorMessage={getConfirmPasswordErrorMessage()}
+                        placeholder="Confirm your password"
+                        classNames={{
+                            input: ["bg-transparent"],
+                            innerWrapper: ["bg-transparent"],
+                            inputWrapper: [
+                                "bg-transparent",
+                                "hover:bg-default-100/10",
+                                "group-data-[focused=true]:bg-default-100/10",
+                                "!cursor-text",
+                            ],
+                        }}
+                        endContent={
+                            <button
+                                className="focus:outline-none"
+                                type="button"
+                                onClick={toggleVisibility}
+                            >
+                                {isVisible ? (
+                                    <EyeSlashFilledIcon className="text-xl text-default-400 pointer-events-none" />
+                                ) : (
+                                    <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
+                                )}
+                            </button>
+                        }
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                    />
+
+                    <div className='flex w-full text-sm gap-1'>
+                        <Checkbox
+                            checked={isAgreed}
+                            onChange={() => setIsAgreed(!isAgreed)}
+                            className='text-nowrap'
+                        />
+                        <p className='text-nowrap'>I have read and agree</p>
+                        <Link to="#" className='underline text-nowrap text-primary text-sm hover:underline hover:text-red-500'>terms of service</Link>
+                    </div>
+
+                    <Button
+                        type='submit'
+                        color="primary"
+                        className="w-full"
+                        isDisabled={!isAgreed}
+                    >
+                        Confirm
+                    </Button>
+                </form>
+
+                <div className='flex gap-2 items-center justify-center'>
+                    <p className='text-sm'>Already have an account?</p>
+                    <Link to="/login" className='underline text-primary text-sm hover:underline hover:text-red-500'>Sign in</Link>
                 </div>
-        
-                <Button 
-                    type='submit' 
-                    color="primary" 
-                    className="w-full"
-                    isDisabled={!isAgreed}
-                >
-                    Confirm
-                </Button>
-            </form>
-    
-            <div className='flex gap-2 items-center justify-center'>
-                <p className='text-sm'>Already have an account?</p>
-                <Link to="/login" className='underline text-primary text-sm hover:underline hover:text-red-500'>Sign in</Link>
+
+                <Link to="#" className='underline text-primary text-sm hover:underline hover:text-red-500'>Privacy Policy</Link>
             </div>
-    
-            <Link to="#" className='underline text-primary text-sm hover:underline hover:text-red-500'>Privacy Policy</Link>
         </div>
-    </div>
-    
+
     );
 };
 
