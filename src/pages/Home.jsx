@@ -6,6 +6,10 @@ import MostPopularCard from "../components/Card-Home/MostPopularCard";
 import RecommendCard from "../components/Card-Home/RecommendCard";
 import Nav from "../components/Nav";
 
+// import Login from '../pages/auth/Login.jsx'
+// import Register from '../pages/auth/Register.jsx'
+
+
 const Home = () => {
   const [gameData, setGameData] = useState(null);
   useEffect(() => {
@@ -28,4 +32,5 @@ const Home = () => {
     </div>
   );
 };
+
 export default Home;

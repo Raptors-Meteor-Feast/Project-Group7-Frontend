@@ -12,6 +12,7 @@ import CardDetail from './components/Card-Detail/CardDetail';
 import CheckOut from './pages/CheckOut';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import { CartProvider } from './components/Checkout/CartContext';
 
 
 const router = createBrowserRouter([
@@ -39,8 +40,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <CartProvider>
     <NextUIProvider>
       <RouterProvider router={router} />
     </NextUIProvider>
+    </CartProvider>
   </StrictMode>
 );

@@ -4,8 +4,12 @@ import { useParams } from "react-router-dom";
 import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
+
 import Footer from "../Footer/Footer";
 import ModalCheckOut from "../Checkout/ModalButtonCheckOut/ModalCheckOut";
+import { useCart } from "../Checkout/CartContext";
+import { useNavigate } from "react-router-dom";
+
 
 const data = gamedata;
 const system = gamesystem;
@@ -35,6 +39,7 @@ const CardDetail = () => {
     return <p>Card not found</p>;
   }
 
+
   const handleBuyNowClick = (game) => {
     setSelectedGame(game);
     setModalOpen(true);
@@ -52,39 +57,55 @@ const CardDetail = () => {
       // const updatedCart = [...prev, item];
       return updatedCart;
     });
+
+  const {addToCart, buyNow} = useCart();  // Import the addToCart function from context
+  const navigate = useNavigate(); // สำหรับเปลี่ยนหน้า
+
+  const handleAddToCart = () => {
+    addToCart(card.id);  // ส่ง id ของสินค้าไปยัง CartContext
+  };
+
+  const handleBuyNow = () => {
+    buyNow(card); // Replace the cart with the selected item
+    navigate("/checkout"); // Navigate to the checkout page
   };
 
   return (
     <div>
-      <Nav cartItem={cart} />
-      <div className=" bg-slate-300 px-[300px] pt-[32px] pb-[120px]">
-        <div className="pb-[40px]">
-          <h1 className="font-bold text-[28px]">{card.title}</h1>
-          <div className="py-5">
-            <img
-              className="h-[800px] w-full rounded-xl "
-              src={card.pictureaddress}
-              alt={card.title}
-            />
-            <p className="pt-4">{card.short_description}</p>
-          </div>
-          <div className="flex justify-end gap-3">
-            <Button className="py-3 px-7 bg-slate-100 text-xl">
-              THB {card.price}
-            </Button>
-            <Button
-              className="py-3 px-7 text-xl"
-              color="primary"
-              onClick={() => handleBuyNowClick(card)}
-            >
-              Buy Now
-            </Button>
-            <Button
-              className="py-3 px-7 bg-gray-600 text-white text-xl"
-              onClick={() => handleClick(card)}
-            >
-              Add To Cart
-            </Button>
+    <Nav />
+    <div className=" bg-slate-300 px-[300px] pt-[32px] pb-[120px]">
+      <div className="pb-[40px]">
+        <h1 className="font-bold text-[28px]">{card.title}</h1>
+        <div className="py-5">
+          <img
+            className="h-[800px] w-full rounded-xl "
+            src={card.pictureaddress}
+            alt={card.title}
+          />
+          <p className="pt-4">{card.short_description}</p>
+        </div>
+        <div className="flex justify-end gap-3">
+          <Button className="py-3 px-7 bg-slate-100 text-xl">
+            THB {card.price}
+          </Button>
+          <Button className="py-3 px-7 text-xl" color="primary" onClick={handleBuyNow}>
+            Buy Now
+          </Button>
+          <Button className="py-3 px-7 bg-gray-600 text-white text-xl" onClick={handleAddToCart}>
+            Add To Cart
+          </Button>
+        </div>
+      </div>
+      <div>
+        <div className="pb-10">
+          <h2 className="font-bold text-[28px]">{card.title}</h2>
+          <p>{card.full_description}</p>
+          <div className="flex justify-start gap-3 pt-5">
+            <a className="underline cursor-pointer">{card.categories[0]}</a>
+            <a className="underline cursor-pointer">{card.categories[1]}</a>
+            <a className="underline cursor-pointer">{card.categories[2]}</a>
+            <a className="underline cursor-pointer">{card.categories[3]}</a>
+            <a className="underline cursor-pointer">{card.categories[4]}</a>
           </div>
         </div>
         <div>

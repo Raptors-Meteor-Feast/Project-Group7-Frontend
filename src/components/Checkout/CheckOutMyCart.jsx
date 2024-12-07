@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ModalCheckOut from "./ModalButtonCheckOut/ModalCheckOut";
 
+
 export default function CheckOutMyCart({ totalPrice }) {
   // const totalPrice = mockGameData.reduce((sum, item) => sum + item.price, 0);
 
