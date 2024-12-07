@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Input, Button } from "@nextui-org/react";
 import { Link } from 'react-router-dom';
 import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
@@ -66,13 +66,8 @@ const Login = () => {
         e.preventDefault(); // Prevent page reload on form submit
         setFormSubmitted(true); // Mark that the form has been submitted
 
-        if (!email || !password) {
-            // If email or password is empty, stop execution
-            return;
-        }
-
-        if (isEmailInvalid || isPasswordInvalid) {
-            // If email or password is invalid, stop execution
+        if (!email || !password || isEmailInvalid || isPasswordInvalid) {
+            // If any field is invalid, show an error message
             return;
         }
 
@@ -81,11 +76,24 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/user/login", 
-            {
-                email,
-                password,
-            });
+                "http://localhost:4000/api/user/login",
+                {
+                    email,
+                    password,
+                }
+            );
+
+            const token = response.data.token; // Extract the token from the response
+
+            // Store the token in localStorage for future use (such as for authentication)
+            localStorage.setItem("authToken", token); // Save the token in localStorage
+
+            // If login is successful, show a success message
+            alert("Successfully Logged In!");
+
+            // Redirect to home page
+            navigate("/");
+
         } catch (error) {
             console.error(error);
             alert("Login failed. Please try again."); // If login fails, show an error message
@@ -94,18 +102,19 @@ const Login = () => {
             setLoading(false); // Set loading state to false
         }
 
-        // If validation passes
-
-        alert("Successfully logged in!");
-
-        // Navigate to home page
-        navigate("/");
-
         // Reset the form
         setEmail("");
         setPassword("");
         setFormSubmitted(false);
     };
+
+    // Check if token exists in localStorage and navigate if logged in
+    useEffect(() => {
+        const token = localStorage.getItem("authToken");
+        if (token) {
+            navigate("/"); // Redirect to home page if token is present
+        }
+    }, [navigate]);
 
     return (
         <div className="flex justify-center items-center bg-neutral-950 min-h-screen">
