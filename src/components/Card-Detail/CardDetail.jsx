@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
 import Footer from "../Footer/Footer";
+import ModalCheckOut from "../Checkout/ModalButtonCheckOut/ModalCheckOut";
 
 const data = gamedata;
 const system = gamesystem;
@@ -12,7 +13,9 @@ const system = gamesystem;
 const CardDetail = () => {
   const { id } = useParams();
 
-  const [cart, setCart] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedGame, setSelectedGame] = useState(null);
 
   const card = data.find((item) => item.id === parseInt(id));
   const cardsystem = system.find((item) => item.id === parseInt(id));
@@ -32,9 +35,21 @@ const CardDetail = () => {
     return <p>Card not found</p>;
   }
 
+  const handleBuyNowClick = (game) => {
+    setSelectedGame(game);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedGame(null);
+  };
+
   const handleClick = (item) => {
     setCart((prev) => {
-      const updatedCart = [...prev, item];
+      const updatedCart = prev ? [...prev, item] : [item];
+      localStorage.setItem("cartList", JSON.stringify(updatedCart));
+      // const updatedCart = [...prev, item];
       return updatedCart;
     });
   };
@@ -57,7 +72,11 @@ const CardDetail = () => {
             <Button className="py-3 px-7 bg-slate-100 text-xl">
               THB {card.price}
             </Button>
-            <Button className="py-3 px-7 text-xl" color="primary">
+            <Button
+              className="py-3 px-7 text-xl"
+              color="primary"
+              onClick={() => handleBuyNowClick(card)}
+            >
               Buy Now
             </Button>
             <Button
@@ -69,6 +88,15 @@ const CardDetail = () => {
           </div>
         </div>
         <div>
+          {isModalOpen && selectedGame && (
+            <ModalCheckOut
+              game={selectedGame}
+              totalPrice={selectedGame.price}
+              isModalOpen={isModalOpen}
+              setModalOpen={setModalOpen}
+              onClose={handleCloseModal}
+            />
+          )}
           <div className="pb-10">
             <h2 className="font-bold text-[28px]">{card.title}</h2>
             <p>{card.full_description}</p>
