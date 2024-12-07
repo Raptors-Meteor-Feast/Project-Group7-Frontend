@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Input, Button } from "@nextui-org/react";
 import { Link } from 'react-router-dom';
 import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
@@ -76,15 +76,17 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/user/login", 
-            {
-                email,
-                password,
-            });
+                "http://localhost:4000/api/user/login",
+                {
+                    email,
+                    password,
+                }
+            );
 
-            const token = response.data; // Extract the token from the response
-            localStorage.setItem("authToken", token); // Store the token in local storage
+            const token = response.data.token; // Extract the token from the response
 
+            // Store the token in localStorage for future use (such as for authentication)
+            localStorage.setItem("authToken", token); // Save the token in localStorage
 
             // If login is successful, show a success message
             alert("Successfully Logged In!");
@@ -105,6 +107,14 @@ const Login = () => {
         setPassword("");
         setFormSubmitted(false);
     };
+
+    // Check if token exists in localStorage and navigate if logged in
+    useEffect(() => {
+        const token = localStorage.getItem("authToken");
+        if (token) {
+            navigate("/"); // Redirect to home page if token is present
+        }
+    }, [navigate]);
 
     return (
         <div className="flex justify-center items-center bg-neutral-950 min-h-screen">
