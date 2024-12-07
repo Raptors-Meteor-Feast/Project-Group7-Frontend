@@ -48,28 +48,28 @@ export default function Nav() {
     }, [logIn]); // จะทำงานเมื่อ logIn เปลี่ยน
 
     // ฟังก์ชันล็อกอิน
-    const handleLogIn = async () => {
-        try {
-            const response = await axios.post("http://localhost:4000/api/user/login", { email, password });
-            const token = response.data.token; // สมมติว่า token มาจาก response
+    // const handleLogIn = async () => {
+    //     try {
+    //         const response = await axios.post("http://localhost:4000/api/user/login", { email, password });
+    //         const token = response.data.token; // สมมติว่า token มาจาก response
 
-            if (token) {
-                // แปลง token เป็น string ก่อนเก็บ
-                if (typeof token !== "string") {
-                    localStorage.setItem("authToken", JSON.stringify(token)); // แปลง token เป็น string
-                } else {
-                    localStorage.setItem("authToken", token); // เก็บ token เป็นสตริง
-                }
-                setLogIn(true);
-                alert("Logged in successfully!");
-            } else {
-                alert("Login failed: No token received.");
-            }
-        } catch (error) {
-            console.error("Login error:", error);
-            alert("Login failed: " + (error.response?.data?.message || "An error occurred."));
-        }
-    };
+    //         if (token) {
+    //             // แปลง token เป็น string ก่อนเก็บ
+    //             if (typeof token !== "string") {
+    //                 localStorage.setItem("authToken", JSON.stringify(token)); // แปลง token เป็น string
+    //             } else {
+    //                 localStorage.setItem("authToken", token); // เก็บ token เป็นสตริง
+    //             }
+    //             setLogIn(true);
+    //             alert("Logged in successfully!");
+    //         } else {
+    //             alert("Login failed: No token received.");
+    //         }
+    //     } catch (error) {
+    //         console.error("Login error:", error);
+    //         alert("Login failed: " + (error.response?.data?.message || "An error occurred."));
+    //     }
+    // };
 
     // ฟังก์ชันล็อกเอาต์
     const handleLogout = () => {
