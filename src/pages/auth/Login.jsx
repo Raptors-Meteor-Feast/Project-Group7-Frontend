@@ -6,7 +6,7 @@ import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
 import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import "./login.css";
+import "./auth.css";
 
 const Login = () => {
     const navigate = useNavigate(); // Hook for navigation
@@ -120,19 +120,21 @@ const Login = () => {
         <div className="flex justify-center items-center bg-neutral-950 min-h-screen">
             <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
                 {/* Project logo */}
-                <div className="flex justify-center items-center w-full mb-4">
+
+                <Link to="/" className="flex justify-center items-center w-full mb-4">
                     <img
                         className="w-1/2 sm:w-[60%] hover:scale-110 transition duration-300 ease-in-out"
                         src="Images/ProjectLogo/WebLogo.svg"
                         alt="logo"
                     />
-                </div>
+                </Link>
+
 
                 {/* Sign-in page header */}
                 <h1 className="text-lg sm:text-xl font-bold mb-4 hover:scale-110 transition duration-300 ease-in-out">Sign In</h1>
 
                 {/* Login form */}
-                <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full max-w-xs">
                     {/* Email field */}
                     <Input
                         type="email"

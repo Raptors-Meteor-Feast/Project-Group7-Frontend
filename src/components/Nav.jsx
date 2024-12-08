@@ -149,7 +149,7 @@ export default function Nav() {
                                         </Link>
                                     </DropdownItem>
                                     <DropdownItem key="register">
-                                    <Link to="/register" className="text-blue-600 font-bold">
+                                        <Link to="/register" className="text-blue-600 font-bold">
                                             Register
                                         </Link>
                                     </DropdownItem>

@@ -12,7 +12,10 @@ import CardDetail from './components/Card-Detail/CardDetail';
 import CheckOut from './pages/CheckOut';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import ForgotPassword from './pages/auth/ForgotPassword';
+import ResetPassword from './pages/auth/ResetPassword';
 import { CartProvider } from './components/Checkout/CartContext';
+
 
 
 const router = createBrowserRouter([
@@ -35,6 +38,14 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPassword />,
   },
 ]);
 

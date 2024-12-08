@@ -7,7 +7,7 @@ import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import { GiDinosaurRex } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import "./login.css";
+import "./auth.css";
 
 const Login = () => {
     const navigate = useNavigate(); // For navigation
@@ -140,16 +140,18 @@ const Login = () => {
     return (
         <div className='flex justify-center items-center bg-neutral-950 min-h-screen'>
             <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
-                <div className='flex justify-center items-center'>
+
+                <Link to="/" className="flex justify-center items-center w-full mb-4">
                     <img
-                        className='w-1/3 sm:w-[60%] hover:animate-spin'
+                        className="w-1/2 sm:w-[60%] hover:scale-110 transition duration-300 ease-in-out"
                         src="Images/ProjectLogo/WebLogo.svg"
-                        alt="logo" />
-                </div>
+                        alt="logo"
+                    />
+                </Link>
 
                 <h1 className="text-sm sm:text-base font-bold mb-4 hover:animate-bounce">Create Account</h1>
 
-                <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
+                <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full max-w-xs'>
 
                     <div className='flex gap-4'>
                         <Input
