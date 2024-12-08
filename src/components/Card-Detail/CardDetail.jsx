@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Nav from "../Nav";
 import { useParams } from "react-router-dom";
 import { Button } from "@nextui-org/button";
@@ -152,4 +152,6 @@ const CardDetail = () => {
 };
 
 export default CardDetail;
+
+
 
