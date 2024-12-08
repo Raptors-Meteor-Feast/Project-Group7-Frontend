@@ -14,6 +14,8 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import ResetPassword from './pages/auth/ResetPassword';
+import { CartProvider } from './components/Checkout/CartContext';
+
 
 
 const router = createBrowserRouter([
@@ -49,8 +51,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <CartProvider>
     <NextUIProvider>
       <RouterProvider router={router} />
     </NextUIProvider>
+    </CartProvider>
   </StrictMode>
 );

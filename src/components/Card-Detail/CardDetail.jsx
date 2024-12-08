@@ -4,7 +4,11 @@ import { useParams } from "react-router-dom";
 import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
+
 import Footer from "../Footer/Footer";
+import ModalCheckOut from "../Checkout/ModalButtonCheckOut/ModalCheckOut";
+import { useCart } from "../Checkout/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const data = gamedata;
 const system = gamesystem;
@@ -12,7 +16,8 @@ const system = gamesystem;
 const CardDetail = () => {
   const { id } = useParams();
 
-  const [cart, setCart] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedGame, setSelectedGame] = useState(null);
 
   const card = data.find((item) => item.id === parseInt(id));
   const cardsystem = system.find((item) => item.id === parseInt(id));
@@ -21,33 +26,55 @@ const CardDetail = () => {
     const cartList = localStorage.getItem("cartList");
 
     if (cartList) {
-      setCart((prev) => {
-        const updateGameData = [...JSON.parse(cartList)];
-        return updateGameData;
-      });
+      setCart(JSON.parse(cartList));
     }
   }, []);
+
+  // useEffect(() => {
+  //   const cartList = localStorage.getItem("cartList");
+  //   if (cartList) {
+  //     setGameData((prev) => {
+  //       const updateGameData = [...JSON.parse(cartList)];
+  //       return updateGameData;
+  //     });
+  //   }
+  // }, []);
 
   if (!card) {
     return <p>Card not found</p>;
   }
 
-  const handleClick = (item) => {
-    setCart((prev) => {
-      const updatedCart = [...prev, item];
-      return updatedCart;
-    });
+  const { addToCart, buyNow } = useCart(); // Import the addToCart function from context
+  const navigate = useNavigate(); // For navigation to checkout
+
+  const handleAddToCart = () => {
+    addToCart(card.id);  // Pass the id of the selected game to CartContext
+  };
+
+  const handleBuyNow = () => {
+    buyNow(card); // Replace the cart with the selected item
+    navigate("/checkout"); // Navigate to the checkout page
+  };
+
+  // const handleBuyNowClick = (game) => {
+  //   setSelectedGame(game);
+  //   setIsModalOpen(true);
+  // };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedGame(null);
   };
 
   return (
     <div>
-      <Nav cartItem={cart} />
-      <div className=" bg-slate-300 px-[300px] pt-[32px] pb-[120px]">
+      <Nav />
+      <div className="bg-slate-300 px-[300px] pt-[32px] pb-[120px]">
         <div className="pb-[40px]">
           <h1 className="font-bold text-[28px]">{card.title}</h1>
           <div className="py-5">
             <img
-              className="h-[800px] w-full rounded-xl "
+              className="h-[800px] w-full rounded-xl"
               src={card.pictureaddress}
               alt={card.title}
             />
@@ -57,13 +84,10 @@ const CardDetail = () => {
             <Button className="py-3 px-7 bg-slate-100 text-xl">
               THB {card.price}
             </Button>
-            <Button className="py-3 px-7 text-xl" color="primary">
+            <Button className="py-3 px-7 text-xl" color="primary" onClick={handleBuyNow}>
               Buy Now
             </Button>
-            <Button
-              className="py-3 px-7 bg-gray-600 text-white text-xl"
-              onClick={() => handleClick(card)}
-            >
+            <Button className="py-3 px-7 bg-gray-600 text-white text-xl" onClick={handleAddToCart}>
               Add To Cart
             </Button>
           </div>
@@ -73,75 +97,44 @@ const CardDetail = () => {
             <h2 className="font-bold text-[28px]">{card.title}</h2>
             <p>{card.full_description}</p>
             <div className="flex justify-start gap-3 pt-5">
-              <a className="underline cursor-pointer">{card.categories[0]}</a>
-              <a className="underline cursor-pointer">{card.categories[1]}</a>
-              <a className="underline cursor-pointer">{card.categories[2]}</a>
-              <a className="underline cursor-pointer">{card.categories[3]}</a>
-              <a className="underline cursor-pointer">{card.categories[4]}</a>
+              {card.categories.map((category, index) => (
+                <a key={index} className="underline cursor-pointer">{category}</a>
+              ))}
             </div>
           </div>
+
+          {isModalOpen && selectedGame && (
+            <ModalCheckOut
+              game={selectedGame}
+              totalPrice={selectedGame.price}
+              isModalOpen={isModalOpen}
+              setModalOpen={setIsModalOpen}
+              onClose={handleCloseModal}
+            />
+          )}
+
           <div>
-            <h2 className="font-bold text-[28px] pb-8">
-              {card.title} System Requirement
-            </h2>
+            <h2 className="font-bold text-[28px] pb-8">{card.title} System Requirement</h2>
             <div className="flex flex-col p-11 gap-5 bg-white rounded-xl">
               <p className="font-bold text-xl">{cardsystem.operater}</p>
               <div className="flex w-full">
                 <div className="flex flex-col gap-3 w-[50%]">
                   <p className="font-bold">Minimum</p>
-                  <div>
-                    <p className="text-default-400">Os Version</p>
-                    <p className="font-semibold">
-                      {cardsystem.minimum.osversion}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-default-400">CPU</p>
-                    <p className="font-semibold">{cardsystem.minimum.cpu}</p>
-                  </div>
-                  <div>
-                    <p className="text-default-400">Memory</p>
-                    <p className="font-semibold">{cardsystem.minimum.memory}</p>
-                  </div>
-                  <div>
-                    <p className="text-default-400">GPU</p>
-                    <p className="font-semibold">{cardsystem.minimum.gpu}</p>
-                  </div>
-                  <div>
-                    <p className="text-default-400">Storage</p>
-                    <p className="font-semibold">
-                      {cardsystem.minimum.storage}
-                    </p>
-                  </div>
+                  {Object.entries(cardsystem.minimum).map(([key, value]) => (
+                    <div key={key}>
+                      <p className="text-default-400">{key}</p>
+                      <p className="font-semibold">{value}</p>
+                    </div>
+                  ))}
                 </div>
                 <div className="flex flex-col gap-3 w-[50%]">
                   <p className="font-bold">Recommended</p>
-                  <div>
-                    <p className="text-default-400">Os Version</p>
-                    <p className="font-semibold">
-                      {cardsystem.recomend.osversion}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-default-400">CPU</p>
-                    <p className="font-semibold">{cardsystem.recomend.cpu}</p>
-                  </div>
-                  <div>
-                    <p className="text-default-400">Memory</p>
-                    <p className="font-semibold">
-                      {cardsystem.recomend.memory}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-default-400">GPU</p>
-                    <p className="font-semibold">{cardsystem.recomend.gpu}</p>
-                  </div>
-                  <div>
-                    <p className="text-default-400">Storage</p>
-                    <p className="font-semibold">
-                      {cardsystem.recomend.storage}
-                    </p>
-                  </div>
+                  {Object.entries(cardsystem.recomend).map(([key, value]) => (
+                    <div key={key}>
+                      <p className="text-default-400">{key}</p>
+                      <p className="font-semibold">{value}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div>
@@ -153,11 +146,10 @@ const CardDetail = () => {
           </div>
         </div>
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };
 
 export default CardDetail;
+
