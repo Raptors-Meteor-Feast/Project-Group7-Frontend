@@ -28,6 +28,5 @@ export default function MyCart({name, category, image, price, onRemove}) {
 
         </div>
       </div>
-    </div>
   );
 }

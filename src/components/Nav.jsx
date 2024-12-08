@@ -21,10 +21,11 @@ export default function Nav() {
                 const parsedToken = JSON.parse(token); // แปลงเป็นอ็อบเจ็กต์
                 setLogIn(!!parsedToken); // ตรวจสอบว่ามี token หรือไม่
             } catch (error) {
+                console.log(error)
                 // ถ้าไม่สามารถแปลงได้ ก็ถือว่า token เป็นสตริงปกติ
                 setLogIn(true);
             }
-        }
+        } 
     }, []);
 
     // ดึงข้อมูลผู้ใช้จาก backend เมื่อ logIn เป็น true
@@ -93,16 +94,11 @@ export default function Nav() {
                 <div className="flex items-center ml-36">
                     <Link to="/">
                         <img
-                            src="../src/Images/NavIcon/Gr-Logo-7.svg"
-                            alt="Raptor-Logo"
-                            className="w-[55px] h-auto object-cover mr-2"
+                        src={Gr7Logo}
+                        alt="Raptor-Logo"
+                        className="w-[55px] h-auto object-cover mr-2"
                         />
                     </Link>
-                    <img
-                    src={Gr7Logo}
-                    alt="Raptor-Logo"
-                    className="w-[55px] h-auto object-cover mr-2"
-                    />
                     <p className="hidden sm:block font-bold text-orange-500 text-[18px]">Raptors Meteor Feast</p>
                 </div>
                 <div className="flex items-center gap-5">
@@ -131,32 +127,6 @@ export default function Nav() {
                     <p className="text-orange-500 font-bold text-[18px]">Cart</p>
                     <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link>
                 </div>
-                {/* Login / Logout Dropdown */}
-                {!logIn ? (
-                    <div className="mr-36">
-                    <Dropdown placement="bottom-end">
-                        <DropdownTrigger>
-                        <Avatar
-                            isBordered
-                            as="button"
-                            className="transition-transform"
-                            color="secondary"
-                            name="Guest"
-                            size="md"
-                            src={UserIcon}
-                            aria-label="Sign In"
-                        />
-                        </DropdownTrigger>
-                        <DropdownMenu aria-label="Profile Actions" variant="flat">
-                        <DropdownItem key="sign_in" onClick={handleLogIn}>Sign In</DropdownItem>
-                        <DropdownItem key="log_in">Log In</DropdownItem>
-                        <DropdownItem key="settings">Settings</DropdownItem>
-                        <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-                        </DropdownMenu>
-                    </Dropdown>
-                    </div>
-
-                    {/* Login / Logout Dropdown */}
                     {!logIn ? (
                         <div className="mr-36">
                             <Dropdown placement="bottom-end">
@@ -168,7 +138,7 @@ export default function Nav() {
                                         color="secondary"
                                         name="Guest"
                                         size="md"
-                                        src="../src/Images/NavIcon/user.png"
+                                        src={UserIcon}
                                         aria-label="Sign In"
                                     />
                                 </DropdownTrigger>
@@ -214,14 +184,13 @@ export default function Nav() {
                         <DropdownItem key="system">System</DropdownItem>
                         <DropdownItem key="configurations">Configurations</DropdownItem>
                         <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-                        <DropdownItem key="logout" color="danger" onClick={handleLogIn}>
+                        <DropdownItem key="logout" color="danger" onClick={handleLogout}>
                             Log Out
                         </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                     </div>
                     )}
-
                 </div>
             </div>
         </div>
