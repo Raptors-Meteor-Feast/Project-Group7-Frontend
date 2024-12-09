@@ -53,33 +53,33 @@ const MostPopularCard = ({ name }) => {
                 </div>
             </div>
             <div className='gap-[22px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5'>
-                {currentData.map(items => (
+                {currentData.map(game => (
                     <Card 
-                        shadow="sm" key={items._id} 
+                        shadow="sm" key={game._id} 
                         isPressable
-                        onPress={() => handleCardClick(items._id)} 
-                        className='drop-shadow-md hover:bg-gray-300 '>
+                        onPress={() => handleCardClick(game._id)} 
+                        className='drop-shadow-md hover:bg-gray-300 transition-transform transform duration-300 ease-in-out'>
                         <CardBody className="overflow-visible p-0">
                             <Image
                                 shadow="sm"
                                 radius="lg"
                                 width="100%"
                                 isBlurred
-                                alt={items.title}
+                                alt={game.title}
                                 className="w-full object-cover h-[230px]"
-                                src={items.images[0]}
+                                src={game.images[0]}
                             />
                         </CardBody>
                         <CardFooter className="text-small flex flex-col justify-start items-start">
                             <div className='flex justify-start gap-2'>
-                                {items.categories.slice(0, 2).map((category, index) => (
+                                {game.categories.slice(0, 2).map((category, index) => (
                                     <p key={index} className="text-[12px] text-default-700">{category}</p>
                                 ))}
                             </div>
-                                <b className='text-[16px] text-gray-800 text-ellipsis whitespace-nowrap overflow-hidden w-[100%] text-start'>{items.title}</b>
-                            {items.price === 0 ? 
+                                <b className='text-[16px] text-gray-800 text-ellipsis whitespace-nowrap overflow-hidden w-[100%] text-start'>{game.title}</b>
+                                {game.price === 0 ? 
                                 (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :
-                                (<p className="text-[12px] text-default-500">THB <span>{items.price}</span></p>)
+                                (<p className="text-[12px] text-default-500">THB <span>{game.price}</span></p>)
                             }
                         </CardFooter>
                     </Card>
