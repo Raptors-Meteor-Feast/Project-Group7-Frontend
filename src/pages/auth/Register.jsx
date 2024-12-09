@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Input, Button, Checkbox } from "@nextui-org/react";
-import { EyeFilledIcon } from "../../../public/LogoLogin/EyeFilledIcon";
-import { EyeSlashFilledIcon } from "../../../public/LogoLogin/EyeSlashFilledIcon";
-import { MailIcon } from "../../../public/Logologin/Maillcon";
+// import { EyeFilledIcon } from "../../../public/LogoLogin/EyeFilledIcon";
+// import { EyeSlashFilledIcon } from "../../../public/LogoLogin/EyeSlashFilledIcon";
+// import { MailIcon } from "../../../public/Logologin/Maillcon";
 import { GiDinosaurRex } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -199,9 +199,9 @@ const Login = () => {
                         placeholder="Email Address"
                         value={email}
                         className="w-full"
-                        endContent={
-                            <MailIcon className="text-2xl text-default-400 pointer-events-none" />
-                        }
+                        // endContent={
+                        //     <MailIcon className="text-2xl text-default-400 pointer-events-none" />
+                        // }
                         errorMessage={isEmailInvalid ? "Please enter a valid email." : ""}
                         onChange={(e) => setEmail(e.target.value)}
                     />
@@ -229,11 +229,11 @@ const Login = () => {
                                 type="button"
                                 onClick={toggleVisibility}
                             >
-                                {isVisible ? (
+                                {/* {isVisible ? (
                                     <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
                                 ) : (
                                     <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                                )}
+                                )} */}
                             </button>
                         }
                         onChange={(e) => setPassword(e.target.value)}
@@ -262,11 +262,11 @@ const Login = () => {
                                 type="button"
                                 onClick={toggleVisibility}
                             >
-                                {isVisible ? (
+                                {/* {isVisible ? (
                                     <EyeSlashFilledIcon className="text-xl text-default-400 pointer-events-none" />
                                 ) : (
                                     <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                                )}
+                                )} */}
                             </button>
                         }
                         onChange={(e) => setConfirmPassword(e.target.value)}
