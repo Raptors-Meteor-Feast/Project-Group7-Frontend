@@ -2,7 +2,7 @@ import { IoTrashOutline } from "react-icons/io5";
 
 export default function MyCart({name, category, image, price, onRemove}) {
   return (
-    <div>
+    <div className="flex justify-center">
         <div className="flex justify-between w-[873px] h-[196px] p-[24px] bg-neutral-600 rounded-lg mb-8">
             <div className="flex gap-5">
                 <div>

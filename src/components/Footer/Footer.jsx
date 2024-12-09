@@ -10,7 +10,7 @@ export default function Footer() {
     <div className="flex justify-between items-center bg-blue-900 py-5 px-20">
 
     <p className="font-semibold text-white">Copyright &copy; 2024 Raptors Meteor Feast. All Rights Reserved.</p>
-    <div className="flex items-center gap-2">
+    <div className="hidden md:flex items-center gap-2">
         <p className="font-semibold text-white">We Accept: </p>
         <img className="w-[60px] h-auto object-cover" src={PaypalLogo} alt="paypal icon" />
         <img className="w-[60px] h-auto object-cover" src={VisaLogo} alt="visa icon" />

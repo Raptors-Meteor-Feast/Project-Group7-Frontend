@@ -72,8 +72,8 @@ export default function CheckOut() {
         <div>
             <Nav />
             <div className="bg-neutral-900 min-h-screen text-white p-2">
-                <h1 className="mb-5 text-[24px] font-bold mx-48">My Cart</h1>
-                <div className="flex justify-evenly">
+                <h1 className="mb-5 text-[24px] font-bold mx-48 text-center md:text-left">My Cart</h1>
+                <div className="flex-wrap md:flex justify-evenly">
                     <div>
                         {cart.length > 0 ? (
                             cart.map((item) => (
@@ -87,15 +87,24 @@ export default function CheckOut() {
                                 />
                             ))
                         ) : (
-                            <p className="text-[20px] font-semibold">Your cart is empty</p>
+                            <p className="text-[20px] font-semibold text-center">Your cart is empty</p>
                         )}
+                        {cart.length > 0 && (
+                    <button className="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px] h-[40px] mt-5 mb-10 mx-auto md:mx-0" onClick={() => clearCart()}>
+                        <IoTrashOutline size={20} style={{ color: 'white' }} /> Clear Cart
+                    </button>
+                    )}
                     </div>
-                    <div>
+                    <div className="flex justify-center mt-20 md:mt-0">
                         <CheckOutMyCart totalPrice={totalPrice} />
                     </div>
                 </div>
-                <button className="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px] h-[40px] mt-5 mx-48" onClick={() => clearCart()}> 
-                <IoTrashOutline size={20} style={{ color: 'white' }} /> Clear Cart</button>
+                {/* ปุ่ม Clear Cart จะแสดงเฉพาะเมื่อมีสินค้าในตะกร้า */}
+                {/* {cart.length > 0 && (
+                    <button className="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px] h-[40px] mt-5 mx-48" onClick={() => clearCart()}>
+                        <IoTrashOutline size={20} style={{ color: 'white' }} /> Clear Cart
+                    </button>
+                )} */}
             </div>
             <Footer />
         </div>
