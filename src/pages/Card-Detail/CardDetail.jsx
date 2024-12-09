@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Nav from "../Nav";
+import Nav from "../../components/Nav";
 import { useParams } from "react-router-dom";
 import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
+import CarouselImage from "./Sub-component/CaroselImage";
 
-import Footer from "../Footer/Footer";
-import ModalCheckOut from "../Checkout/ModalButtonCheckOut/ModalCheckOut";
-import { useCart } from "../Checkout/CartContext";
+import Footer from "../../components/Footer/Footer";
+import ModalCheckOut from "../../components/Checkout/ModalButtonCheckOut/ModalCheckOut";
+import { useCart } from "../../components/Checkout/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const data = gamedata;
@@ -73,11 +74,7 @@ const CardDetail = () => {
         <div className="pb-[40px]">
           <h1 className="font-bold text-[28px]">{card.title}</h1>
           <div className="py-5">
-            <img
-              className="h-[800px] w-full rounded-xl"
-              src={card.pictureaddress}
-              alt={card.title}
-            />
+            <CarouselImage gameId={id} />
             <p className="pt-4">{card.short_description}</p>
           </div>
           <div className="flex justify-end gap-3">
@@ -152,4 +149,3 @@ const CardDetail = () => {
 };
 
 export default CardDetail;
-
