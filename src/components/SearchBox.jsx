@@ -1,5 +1,5 @@
 import { Input } from "@nextui-org/react";
-import { SearchIcon } from "../Images/NavIcon/SearchIcon.jsx";
+import { SearchIcon } from "../../public/NavIcon/SearchIcon.jsx";
 import { useEffect, useState } from "react";
 import gamedata from '../Data/gamedata.json'
 import { Link } from "react-router-dom";
@@ -17,6 +17,7 @@ export default function SearchBox() {
 
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         if(search !== "") {
             const newData = gamedata.filter(data => {
                 return data.title.toLowerCase().includes(search.toLowerCase())
