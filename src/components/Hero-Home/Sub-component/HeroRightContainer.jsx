@@ -18,30 +18,30 @@ const HeroRightContainer = ({ name, setSelectedId, randomData }) => {
     <div className='w-full text-white h-[570px]'>
       {name !== "" ? (<h2 className='mb-5 text-[28px] font-bold'>{name}</h2>) : (<></>)}
       <div className='gap-[12px] grid grid-rows-5 grid-cols-1'>
-        {randomData.map(items => (
+        {randomData.map(game => (
           <motion.div
-            key={items._id}
+            key={game._id}
             initial={{ width: '100%' }} 
             animate={{
-              width: expandedCardId === items._id ? 'calc(100% + 100px)' : '100%',
-              x: expandedCardId === items._id ? '-100px' : '0', 
+              width: expandedCardId === game._id ? 'calc(100% + 100px)' : '100%',
+              x: expandedCardId === game._id ? '-100px' : '0', 
             }}
             transition={{ duration: 0.5 }}
             style={{
               position: 'relative',
-              zIndex: expandedCardId === items._id ? 10 : 1,
+              zIndex: expandedCardId === game._id ? 10 : 1,
             }}
           >
             <Card
               shadow="sm"
               isPressable
-              onPress={() => handleCardClick(items._id)}
+              onPress={() => handleCardClick(game._id)}
               className="drop-shadow-md hover:bg-gray-300"
               style={{
-                width: expandedCardId === items._id ? 'calc(100% + 100px)' : '100%',
+                width: expandedCardId === game._id ? 'calc(100% + 100px)' : '100%',
                 position: 'relative',
                 transition: 'width 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.3s ease',
-                boxShadow: expandedCardId === items._id ? '10px 0px 15px rgba(96, 16, 146, 0.9)' : 'none',
+                boxShadow: expandedCardId === game._id ? '10px 0px 15px rgba(96, 16, 146, 0.9)' : 'none',
               }}
             >
               <CardBody className="overflow-visible p-3 text-small flex flex-row justify-start items-center text-ellipsis">
@@ -50,15 +50,15 @@ const HeroRightContainer = ({ name, setSelectedId, randomData }) => {
                   radius="lg"
                   width="100%"
                   isBlurred
-                  alt={items.title}
+                  alt={game.title}
                   className="object-cover h-[80px] w-[80px]"
-                  src={items.images[0]}
+                  src={game.images[0]}
                 />
                 <div className='flex flex-col justify-start items-start pl-2'>
-                  <b className='text-[16px] text-gray-800 text-ellipsis whitespace-nowrap overflow-hidden w-[100%] text-start'>{items.title}</b>
-                  {items.price === 0 ? 
+                  <b className='text-[16px] text-gray-800 text-ellipsis whitespace-nowrap overflow-hidden w-[100%] text-start'>{game.title}</b>
+                  {game.price === 0 ? 
                     (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :
-                    (<p className="text-[12px] text-default-500">THB <span>{items.price}</span></p>)
+                    (<p className="text-[12px] text-default-500">THB <span>{game.price}</span></p>)
                   }                    
                 </div>
               </CardBody>
