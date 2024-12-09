@@ -7,4 +7,5 @@ export default defineConfig({
     port: 5173,
   },
   plugins: [react()],
+  base: '/', // หรือ path ที่ตรงกับ subpath ที่ Vercel ใช้
 })
