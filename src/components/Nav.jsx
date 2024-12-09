@@ -65,18 +65,18 @@ export default function Nav() {
             <div className="flex justify-between items-center py-[24px]">
                 {/* Logo and Brand Name */}
                 <div className="flex items-center ml-36">
-                    <Link to="/" className="flex justify-center items-center">
+                    <Link to="/" className="flex justify-center items-center"> 
                         <img
                             src={Gr7Logo}
                             alt="Raptor-Logo"
                             className="w-[55px] h-auto object-cover mr-2"
                         />
-                        <p className="hidden sm:block font-bold text-orange-500 text-[18px]">Raptors Meteor Feast</p>
+                        <p className="hidden md:block font-bold text-orange-500 text-[18px]">Raptors Meteor Feast</p>
                     </Link>
                 </div>
                 <div className="flex items-center gap-5">
                     {/* Search Input */}
-                    <div>
+                    <div className="hidden md:block" >
                         <SearchBox />
                     </div>
                 
