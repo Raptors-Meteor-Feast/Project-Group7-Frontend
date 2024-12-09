@@ -1,7 +1,7 @@
 import { Input, Button } from "@nextui-org/react";
 import { useState, useMemo } from "react";
-// import { EyeFilledIcon } from "../../../public/LogoLogin/EyeFilledIcon";
-// import { EyeSlashFilledIcon } from "../../../public/LogoLogin/EyeSlashFilledIcon";
+// import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon.jsx";
+// import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon.jsx";
 import "./auth.css";
 import { Link } from "react-router-dom";
 
