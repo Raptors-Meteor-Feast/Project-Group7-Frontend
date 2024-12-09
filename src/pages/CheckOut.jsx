@@ -4,6 +4,7 @@ import { useCart } from "../components/Checkout/CartContext";
 import CheckOutMyCart from "../components/Checkout/CheckOutMyCart";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
+import { IoTrashOutline } from "react-icons/io5";
 
 // export default function CheckOut() {
 //   const [gameData, setGameData] = useState(null);
@@ -64,7 +65,7 @@ import Footer from "../components/Footer/Footer";
 
 
 export default function CheckOut() {
-    const { cart, removeFromCart } = useCart();
+    const { cart, removeFromCart, clearCart } = useCart();
     const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     return (
@@ -93,6 +94,8 @@ export default function CheckOut() {
                         <CheckOutMyCart totalPrice={totalPrice} />
                     </div>
                 </div>
+                <button className="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px] h-[40px] mt-5 mx-48" onClick={() => clearCart()}> 
+                <IoTrashOutline size={20} style={{ color: 'white' }} /> Clear Cart</button>
             </div>
             <Footer />
         </div>
