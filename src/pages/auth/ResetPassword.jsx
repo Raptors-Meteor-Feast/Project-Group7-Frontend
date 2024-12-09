@@ -1,7 +1,7 @@
 import { Input, Button } from "@nextui-org/react";
 import { useState, useMemo } from "react";
-// import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon.jsx";
-// import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon.jsx";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa6";
 import "./auth.css";
 import { Link } from "react-router-dom";
 
@@ -111,11 +111,11 @@ const ResetPassword = () => {
                                 type="button"
                                 onClick={toggleVisibility}
                             >
-                                {/* {isVisible ? (
-                                    <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                                {isVisible ? (
+                                    <FaEyeSlash className="text-xl text-default-400 pointer-events-none" />
                                 ) : (
-                                    <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                                )} */}
+                                    <FaEye className="text-xl text-default-400 pointer-events-none" />
+                                )}
                             </button>
                         }
                         onChange={(e) => setPassword(e.target.value)}
@@ -146,11 +146,11 @@ const ResetPassword = () => {
                                 type="button"
                                 onClick={toggleVisibility}
                             >
-                                {/* {isVisible ? (
-                                    <EyeSlashFilledIcon className="text-xl text-default-400 pointer-events-none" />
+                                {isVisible ? (
+                                    <FaEyeSlash className="text-xl text-default-400 pointer-events-none" />
                                 ) : (
-                                    <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                                )} */}
+                                    <FaEye className="text-xl text-default-400 pointer-events-none" />
+                                )}
                             </button>
                         }
                         onChange={(e) => setConfirmPassword(e.target.value)}
