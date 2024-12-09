@@ -83,9 +83,9 @@ export default function Nav() {
                 </div>
                 <div className="flex items-center justify-between">
                     {/* Cart Section */}
-                    <div className="flex items-center gap-4 w-[] mr-8">
+                    <div className="flex items-center gap-4 mr-8">
                         <div>
-                            <ul className="flex gap-7 mr-8 font-bold items-center">
+                            <ul className="flex gap-7 mr-2 font-bold items-center">
                                 <li>
                                     <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
                                 </li>
