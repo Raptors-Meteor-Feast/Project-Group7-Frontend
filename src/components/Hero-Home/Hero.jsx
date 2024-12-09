@@ -4,7 +4,7 @@ import CarouselBanner from './Sub-component/CarouselBanner';
 import api from "../../Instance";
 
 const Hero = () => {
-  const [randomData, setRandomData] = useState([]);
+  const [gameData, setGameData] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Hero = () => {
           .sort(() => 0.5 - Math.random())
           .slice(0, 5);
 
-        setRandomData(randomData);
+          setGameData(randomData);
         setSelectedId(randomData[0]?._id || null);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -30,10 +30,10 @@ const Hero = () => {
   return (
     <div className='w-full px-[135px] flex py-10 bg-gray-900'>
       <div className='w-[70%]'>
-        <CarouselBanner selectedId={selectedId} initialData={randomData[0]} />
+        <CarouselBanner selectedId={selectedId} initialData={gameData[0]} />
       </div>
       <div className='w-[30%] pl-[24px]'>
-        <HeroRightContainer name="" setSelectedId={setSelectedId} randomData={randomData} />
+        <HeroRightContainer name="" setSelectedId={setSelectedId} randomData={gameData} />
       </div>
     </div>
   );

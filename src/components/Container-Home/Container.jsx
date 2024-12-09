@@ -11,8 +11,8 @@ const Container = ({ name }) => {
         const fetchData = async () => {
             try {
                 const response = await api.get("/game");
-                const fetchedData = response.data.game;
-                const randomData = [...fetchedData]
+                const data = response.data.game;
+                const randomData = [...data]
                     .sort(() => 0.5 - Math.random())
                     .slice(0, 5);
                 setGameData(randomData);
