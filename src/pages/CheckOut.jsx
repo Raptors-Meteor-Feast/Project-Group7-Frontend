@@ -99,12 +99,6 @@ export default function CheckOut() {
                         <CheckOutMyCart totalPrice={totalPrice} />
                     </div>
                 </div>
-                {/* ปุ่ม Clear Cart จะแสดงเฉพาะเมื่อมีสินค้าในตะกร้า */}
-                {/* {cart.length > 0 && (
-                    <button className="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px] h-[40px] mt-5 mx-48" onClick={() => clearCart()}>
-                        <IoTrashOutline size={20} style={{ color: 'white' }} /> Clear Cart
-                    </button>
-                )} */}
             </div>
             <Footer />
         </div>
