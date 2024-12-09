@@ -1,9 +1,7 @@
 import { Input, Button } from "@nextui-org/react";
 import { useState, useMemo } from "react";
-// import { EyeFilledIcon } from "../../../public/LogoLogin/EyeFilledIcon";
-// import { EyeSlashFilledIcon } from "../../../public/LogoLogin/EyeSlashFilledIcon";
-import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon.jsx";
-import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon.jsx";
+// import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon.jsx";
+// import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon.jsx";
 import "./auth.css";
 import { Link } from "react-router-dom";
 
@@ -113,11 +111,11 @@ const ResetPassword = () => {
                                 type="button"
                                 onClick={toggleVisibility}
                             >
-                                {isVisible ? (
+                                {/* {isVisible ? (
                                     <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
                                 ) : (
                                     <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                                )}
+                                )} */}
                             </button>
                         }
                         onChange={(e) => setPassword(e.target.value)}
@@ -148,11 +146,11 @@ const ResetPassword = () => {
                                 type="button"
                                 onClick={toggleVisibility}
                             >
-                                {isVisible ? (
+                                {/* {isVisible ? (
                                     <EyeSlashFilledIcon className="text-xl text-default-400 pointer-events-none" />
                                 ) : (
                                     <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                                )}
+                                )} */}
                             </button>
                         }
                         onChange={(e) => setConfirmPassword(e.target.value)}

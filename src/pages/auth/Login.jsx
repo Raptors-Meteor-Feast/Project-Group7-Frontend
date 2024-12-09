@@ -1,12 +1,9 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Input, Button } from "@nextui-org/react";
 import { Link } from 'react-router-dom';
-// import { EyeFilledIcon } from "../../../public/LogoLogin/EyeFilledIcon";
-// import { EyeSlashFilledIcon } from "../../../public/LogoLogin/EyeSlashFilledIcon";
-// import { MailIcon } from '../../../public/Logologin/Maillcon';
-import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
-import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
-import { MailIcon } from '../../assets/LogoLogin/Maillcon';
+// import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
+// import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
+// import { MailIcon } from '../../assets/LogoLogin/Maillcon';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./auth.css";
@@ -156,9 +153,9 @@ const Login = () => {
                                 "!cursor-text",
                             ],
                         }}
-                        endContent={
-                            <MailIcon className="text-xl text-default-400 pointer-events-none" />
-                        }
+                        // endContent={
+                        //     <MailIcon className="text-xl text-default-400 pointer-events-none" />
+                        // }
                         onChange={(e) => setEmail(e.target.value)} // Save user input to state
                     />
 
@@ -186,11 +183,11 @@ const Login = () => {
                                 type="button"
                                 onClick={toggleVisibility} // Function to toggle password visibility
                             >
-                                {isVisible ? (
+                                {/* {isVisible ? (
                                     <EyeSlashFilledIcon className="text-xl text-default-400 pointer-events-none" />
                                 ) : (
                                     <EyeFilledIcon className="text-xl text-default-400 pointer-events-none" />
-                                )}
+                                )} */}
                             </button>
                         }
                         onChange={(e) => setPassword(e.target.value)} // Save user input to state
