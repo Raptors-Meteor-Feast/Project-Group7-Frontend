@@ -1,9 +1,9 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Input, Button, Checkbox } from "@nextui-org/react";
-import { EyeFilledIcon } from "../../assets/LogoLogin/EyeFilledIcon";
-import { EyeSlashFilledIcon } from "../../assets/LogoLogin/EyeSlashFilledIcon";
-import { MailIcon } from '../../assets/LogoLogin/Maillcon';
+import { EyeFilledIcon } from "../../../public/LogoLogin/EyeFilledIcon";
+import { EyeSlashFilledIcon } from "../../../public/LogoLogin/EyeSlashFilledIcon";
+import { MailIcon } from "../../../public/Logologin/Maillcon";
 import { GiDinosaurRex } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import axios from 'axios';
