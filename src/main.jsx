@@ -8,8 +8,9 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Home from './pages/Home';
-import CardDetail from './components/Card-Detail/CardDetail';
+import CardDetail from './pages/Card-Detail/CardDetail';
 import CheckOut from './pages/CheckOut';
+import AllGame from './pages/AllGame';
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/checkout",
     element: <CheckOut />,
+  },
+  {
+    path: "/allgame",
+    element: <AllGame />,
   }
 ]);
 

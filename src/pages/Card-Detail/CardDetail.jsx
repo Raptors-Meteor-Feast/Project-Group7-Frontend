@@ -1,10 +1,10 @@
 import React from "react";
-import Nav from '../Nav';
+import Nav from '../../components/Nav';
 import { useParams } from "react-router-dom";
 import { Button } from "@nextui-org/button";
 import gamedata from "../../Data/gamedata.json";
 import gamesystem from "../../Data/gamesystem.json";
-import Footer from '../Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 import CarouselImage from "./Sub-component/CaroselImage";
 
 const data = gamedata;

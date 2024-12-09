@@ -17,45 +17,38 @@ export default function Nav() {
             <div className="flex justify-between items-center py-[24px]">
 
                 {/* Logo and Brand Name */}
-                <div className="flex items-center ml-36">
+                <Link to='/' className="flex items-center ml-36">
                     <img
                     src="../src/Images/NavIcon/Gr-Logo-7.svg"
                     alt="Raptor-Logo"
                     className="w-[55px] h-auto object-cover mr-2"
+                    
                     />
 
-                    <p className="hidden sm:block font-bold text-orange-500 text-[18px]">Raptors Meteor Feast</p>
+                    <p className="hidden sm:block font-bold text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Raptors Meteor Feast</p>
 
-                </div>
+                </Link>
 
-                <div className="flex items-center gap-5">
+                <div className="flex items-center">
                 {/* Search Input */}
                 <div>
                     <SearchBox />
                 </div>
 
                 {/* Navigation Links */}
-                <div>
-                    <ul className="flex gap-7 mr-8 font-bold items-center">
-                        <li>
 
-                            <Link to="/" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
-                        </li>
-                        <li>
-                            <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">News</Link>
-
-                        </li>
-                    </ul>
-                </div>
                 </div>
 
                 <div className="flex items-center justify-between">
                 {/* Cart Section */}
                 <div className="flex items-center gap-4 w-[] mr-8">
-
+                    <div>
+                        <ul className="flex gap-7 mr-8 font-bold items-center">
+                            <li>
+                                <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
+                            </li>
+                        </ul>
+                    </div>
                     <p className="text-orange-500 font-bold text-[18px]">Cart</p>
                     <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">0</button></Link>
 
