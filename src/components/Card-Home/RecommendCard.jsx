@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardBody, Image, CardFooter, Button } from "@nextui-org/react";
 import { useNavigate } from 'react-router-dom';
-import gamedata from "../../Data/gamedata.json";
+import api from "../../Instance";
 
 const RecommendCard = ({ name }) => {
     const navigate = useNavigate();
@@ -10,8 +10,18 @@ const RecommendCard = ({ name }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        const shuffledData = [...gamedata].sort(() => 0.5 - Math.random());
-        setRandomData(shuffledData);
+        const fetchGameData = async () => {
+            try {
+                const response = await api.get("/game");
+                const data = response.data.game;
+                const shuffledData = [...data].sort(() => 0.5 - Math.random());
+                setRandomData(shuffledData);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchGameData();
     }, []);
 
     const handleNext = () => {
@@ -23,7 +33,7 @@ const RecommendCard = ({ name }) => {
     };
 
     const handleCardClick = (id) => {
-        navigate(`/card/${id}`);
+        navigate(`/game/${id}`);
     };
 
     return (
@@ -39,9 +49,9 @@ const RecommendCard = ({ name }) => {
                 {randomData.slice(currentIndex, currentIndex + itemsPerPage).map(item => (
                     <Card 
                         shadow="md" 
-                        key={item.id} 
+                        key={item._id} 
                         isPressable
-                        onPress={() => handleCardClick(item.id)}
+                        onPress={() => handleCardClick(item._id)}
                         className='drop-shadow-md hover:bg-gray-300 transition-transform transform duration-300 ease-in-out'
                     >
                         <CardBody className="overflow-visible p-0">
@@ -52,17 +62,16 @@ const RecommendCard = ({ name }) => {
                                 isBlurred
                                 alt={item.title}
                                 className="w-full object-cover h-[230px]"
-                                src={item.pictureaddress}
+                                src={item.images[0]}
                             />
                         </CardBody>
                         <CardFooter className="text-small flex flex-col justify-start items-start">
                             <div className='flex justify-start gap-2'>
-                                <p className="text-[12px] text-default-700">{item.categories[0]}</p>
-                                <p className="text-[12px] text-default-700">{item.categories[1]}</p>
+                                {item.categories.slice(0, 2).map((category, index) => (
+                                    <p key={index} className="text-[12px] text-default-700">{category}</p>
+                                ))}
                             </div>
-                            <b className={`text-${item.title.length >= 25 ? '15' : '16'} text-gray-800`}>
-                                {item.title}
-                            </b>
+                            <b className='text-[16px] text-gray-800 text-ellipsis whitespace-nowrap overflow-hidden w-[100%] text-start'>{item.title}</b>
                             {item.price === 0 ? 
                                 (<p className="text-[12px] text-default-800"><span>Free to Play</span></p>) :
                                 (<p className="text-[12px] text-default-800">THB <span>{item.price}</span></p>)

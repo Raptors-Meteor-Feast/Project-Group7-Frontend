@@ -1,29 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardBody, Image, CardFooter, Button } from "@nextui-org/react";
 import { useNavigate } from 'react-router-dom';
-import gamedata from "../../Data/gamedata.json";
+import api from "../../Instance";
 
 const MostPopularCard = ({ name }) => {
     const navigate = useNavigate();
-
-    const sortedData = [...gamedata].sort((a, b) => b.rating - a.rating);
-    const itemsPerPage = 5;
+    const [gameData, setGameData] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
+    const itemsPerPage = 5;
 
+    useEffect(() => {
+        const fetchGameData = async () => {
+            try {
+                const response = await api.get("/game");
+                const data = response.data.game;
+                setGameData(data.sort((a, b) => b.rating - a.rating));
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchGameData();
+    }, []);
+
+    // ถัดไป
     const handleNext = () => {
-        setStartIndex((prevIndex) => (prevIndex + itemsPerPage) % sortedData.length);
+        setStartIndex((prevIndex) => (prevIndex + itemsPerPage) % gameData.length);
     };
 
+    // ย้อนกลับ
     const handlePrev = () => {
-        setStartIndex((prevIndex) => 
-            (prevIndex - itemsPerPage + sortedData.length) % sortedData.length
+        setStartIndex((prevIndex) =>
+            (prevIndex - itemsPerPage + gameData.length) % gameData.length
         );
     };
 
-    const currentData = sortedData.slice(startIndex, startIndex + itemsPerPage);
+    // เลือกข้อมูลที่จะใช้แสดง
+    const currentData = gameData.slice(startIndex, startIndex + itemsPerPage);
 
+    // ไปยังหน้าเกม
     const handleCardClick = (id) => {
-        navigate(`/card/${id}`);
+        navigate(`/game/${id}`);
     };
 
     return (
@@ -38,9 +55,9 @@ const MostPopularCard = ({ name }) => {
             <div className='gap-[22px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5'>
                 {currentData.map(items => (
                     <Card 
-                        shadow="sm" key={items.id} 
+                        shadow="sm" key={items._id} 
                         isPressable
-                        onPress={() => handleCardClick(items.id)} 
+                        onPress={() => handleCardClick(items._id)} 
                         className='drop-shadow-md hover:bg-gray-300 '>
                         <CardBody className="overflow-visible p-0">
                             <Image
@@ -50,18 +67,16 @@ const MostPopularCard = ({ name }) => {
                                 isBlurred
                                 alt={items.title}
                                 className="w-full object-cover h-[230px]"
-                                src={items.pictureaddress}
+                                src={items.images[0]}
                             />
                         </CardBody>
                         <CardFooter className="text-small flex flex-col justify-start items-start">
                             <div className='flex justify-start gap-2'>
-                                <p className="text-[12px] text-default-700">{items.categories[0]}</p>
-                                <p className="text-[12px] text-default-700">{items.categories[1]}</p>
+                                {items.categories.slice(0, 2).map((category, index) => (
+                                    <p key={index} className="text-[12px] text-default-700">{category}</p>
+                                ))}
                             </div>
-                            {items.title.length >= 25 ? 
-                                (<b className='text-[15px] text-gray-800'>{items.title}</b>) :
-                                (<b className='text-[16px] text-gray-800'>{items.title}</b>)
-                            }
+                                <b className='text-[16px] text-gray-800 text-ellipsis whitespace-nowrap overflow-hidden w-[100%] text-start'>{items.title}</b>
                             {items.price === 0 ? 
                                 (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :
                                 (<p className="text-[12px] text-default-500">THB <span>{items.price}</span></p>)

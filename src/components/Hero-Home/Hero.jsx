@@ -1,17 +1,31 @@
-import { React, useState, useMemo } from 'react';
+import { React, useState, useMemo, useEffect } from 'react';
 import HeroRightContainer from "./Sub-component/HeroRightContainer";
 import CarouselBanner from './Sub-component/CarouselBanner';
-import gamedata from "../../Data/gamedata.json";
+import api from "../../Instance";
 
 const Hero = () => {
+  const [randomData, setRandomData] = useState([]);
+  const [selectedId, setSelectedId] = useState(null);
 
-  const randomData = useMemo(() => {
-    return [...gamedata]
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 5);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get('/game');
+        const data = response.data.game;
+
+        const randomData = data
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 5);
+
+        setRandomData(randomData);
+        setSelectedId(randomData[0]?._id || null);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
-
-  const [selectedId, setSelectedId] = useState(randomData[0]?.id || null);
 
   return (
     <div className='w-full px-[135px] flex py-10 bg-gray-900'>

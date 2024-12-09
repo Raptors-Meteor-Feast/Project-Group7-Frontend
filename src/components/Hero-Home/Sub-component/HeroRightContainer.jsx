@@ -20,31 +20,31 @@ const HeroRightContainer = ({ name, setSelectedId, randomData }) => {
       <div className='gap-[12px] grid grid-rows-5 grid-cols-1'>
         {randomData.map(items => (
           <motion.div
-            key={items.id}
+            key={items._id}
             initial={{ width: '100%' }} 
             animate={{
-              width: expandedCardId === items.id ? 'calc(100% + 100px)' : '100%',
-              x: expandedCardId === items.id ? '-100px' : '0', 
+              width: expandedCardId === items._id ? 'calc(100% + 100px)' : '100%',
+              x: expandedCardId === items._id ? '-100px' : '0', 
             }}
             transition={{ duration: 0.5 }}
             style={{
               position: 'relative',
-              zIndex: expandedCardId === items.id ? 10 : 1,
+              zIndex: expandedCardId === items._id ? 10 : 1,
             }}
           >
             <Card
               shadow="sm"
               isPressable
-              onPress={() => handleCardClick(items.id)}
+              onPress={() => handleCardClick(items._id)}
               className="drop-shadow-md hover:bg-gray-300"
               style={{
-                width: expandedCardId === items.id ? 'calc(100% + 100px)' : '100%', // Dynamically adjust width
+                width: expandedCardId === items._id ? 'calc(100% + 100px)' : '100%',
                 position: 'relative',
-                transition: 'width 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.3s ease', // Smooth transition for width, movement, and box-shadow
-                boxShadow: expandedCardId === items.id ? '10px 0px 15px rgba(96, 16, 146, 0.9)' : 'none', // Blue shadow on the right side
+                transition: 'width 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.3s ease',
+                boxShadow: expandedCardId === items._id ? '10px 0px 15px rgba(96, 16, 146, 0.9)' : 'none',
               }}
             >
-              <CardBody className="overflow-visible p-3 text-small flex flex-row justify-start items-center">
+              <CardBody className="overflow-visible p-3 text-small flex flex-row justify-start items-center text-ellipsis">
                 <Image
                   shadow="sm"
                   radius="lg"
@@ -52,10 +52,10 @@ const HeroRightContainer = ({ name, setSelectedId, randomData }) => {
                   isBlurred
                   alt={items.title}
                   className="object-cover h-[80px] w-[80px]"
-                  src={items.pictureaddress}
+                  src={items.images[0]}
                 />
                 <div className='flex flex-col justify-start items-start pl-2'>
-                  <b className='text-[16px] text-gray-800'>{items.title}</b>
+                  <b className='text-[16px] text-gray-800 text-ellipsis whitespace-nowrap overflow-hidden w-[100%] text-start'>{items.title}</b>
                   {items.price === 0 ? 
                     (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :
                     (<p className="text-[12px] text-default-500">THB <span>{items.price}</span></p>)

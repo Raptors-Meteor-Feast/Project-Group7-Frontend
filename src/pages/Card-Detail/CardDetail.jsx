@@ -1,66 +1,56 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Nav from "../../components/Nav";
 import { useParams } from "react-router-dom";
 import { Button } from "@nextui-org/button";
-import gamedata from "../../Data/gamedata.json";
-import gamesystem from "../../Data/gamesystem.json";
 import CarouselImage from "./Sub-component/CaroselImage";
-
 import Footer from "../../components/Footer/Footer";
 import ModalCheckOut from "../../components/Checkout/ModalButtonCheckOut/ModalCheckOut";
 import { useCart } from "../../components/Checkout/CartContext";
 import { useNavigate } from "react-router-dom";
-
-const data = gamedata;
-const system = gamesystem;
+import api from "../../Instance"
 
 const CardDetail = () => {
   const { id } = useParams();
-
+  const [card, setCard] = useState(null);
+  const [cardsystem, setCardSystem] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
 
-  const card = data.find((item) => item.id === parseInt(id));
-  const cardsystem = system.find((item) => item.id === parseInt(id));
+  const { addToCart, buyNow } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const cartList = localStorage.getItem("cartList");
+    // ดึงข้อมูลจาก JSON
+    const fetchGameData = async () => {
+      try {
+        const gameResponse = await api.get(`/game/${id}`);
 
-    if (cartList) {
-      setCart(JSON.parse(cartList));
-    }
-  }, []);
+        const gameData = gameResponse.data.game
+        const systemData = gameResponse.data.system
 
-  // useEffect(() => {
-  //   const cartList = localStorage.getItem("cartList");
-  //   if (cartList) {
-  //     setGameData((prev) => {
-  //       const updateGameData = [...JSON.parse(cartList)];
-  //       return updateGameData;
-  //     });
-  //   }
-  // }, []);
+        setCard(gameData);
+        setCardSystem(systemData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-  if (!card) {
-    return <p>Card not found</p>;
+    fetchGameData();
+  }, [id]);
+
+  if (!card || !cardsystem) {
+    return <p>Loading...</p>;
   }
 
-  const { addToCart, buyNow } = useCart(); // Import the addToCart function from context
-  const navigate = useNavigate(); // For navigation to checkout
-
   const handleAddToCart = () => {
-    addToCart(card.id);  // Pass the id of the selected game to CartContext
+    addToCart(card._id);
   };
 
   const handleBuyNow = () => {
-    buyNow(card); // Replace the cart with the selected item
-    navigate("/checkout"); // Navigate to the checkout page
+    buyNow(card);
+    navigate("/checkout");
   };
-
-  // const handleBuyNowClick = (game) => {
-  //   setSelectedGame(game);
-  //   setIsModalOpen(true);
-  // };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -75,7 +65,7 @@ const CardDetail = () => {
           <h1 className="font-bold text-[28px]">{card.title}</h1>
           <div className="py-5">
             <CarouselImage gameId={id} />
-            <p className="pt-4">{card.short_description}</p>
+            <p className="pt-4">{card.mainContent}</p>
           </div>
           <div className="flex justify-end gap-3">
             <Button className="py-3 px-7 bg-slate-100 text-xl">
@@ -92,7 +82,7 @@ const CardDetail = () => {
         <div>
           <div className="pb-10">
             <h2 className="font-bold text-[28px]">{card.title}</h2>
-            <p>{card.full_description}</p>
+            <p>{card.subContent}</p>
             <div className="flex justify-start gap-3 pt-5">
               {card.categories.map((category, index) => (
                 <a key={index} className="underline cursor-pointer">{category}</a>
@@ -113,11 +103,13 @@ const CardDetail = () => {
           <div>
             <h2 className="font-bold text-[28px] pb-8">{card.title} System Requirement</h2>
             <div className="flex flex-col p-11 gap-5 bg-white rounded-xl">
-              <p className="font-bold text-xl">{cardsystem.operater}</p>
+              <p className="font-bold text-xl">{cardsystem.operator}</p>
               <div className="flex w-full">
                 <div className="flex flex-col gap-3 w-[50%]">
                   <p className="font-bold">Minimum</p>
-                  {Object.entries(cardsystem.minimum).map(([key, value]) => (
+                  {Object.entries(cardsystem.minimum)
+                  .filter(([key]) => key !== "_id")
+                  .map(([key, value]) => (
                     <div key={key}>
                       <p className="text-default-400">{key}</p>
                       <p className="font-semibold">{value}</p>
@@ -126,7 +118,9 @@ const CardDetail = () => {
                 </div>
                 <div className="flex flex-col gap-3 w-[50%]">
                   <p className="font-bold">Recommended</p>
-                  {Object.entries(cardsystem.recomend).map(([key, value]) => (
+                  {Object.entries(cardsystem.recommended)
+                  .filter(([key]) => key !== "_id")
+                  .map(([key, value]) => (
                     <div key={key}>
                       <p className="text-default-400">{key}</p>
                       <p className="font-semibold">{value}</p>
@@ -136,9 +130,15 @@ const CardDetail = () => {
               </div>
               <div>
                 <p className="text-default-400">Languages Supported</p>
-                <p className="font-semibold">{cardsystem.language}</p>
+                  {Object.entries(cardsystem.language)
+                  .filter(([key]) => key !== "_id")
+                  .map(([key, value]) => (
+                    <div key={key}>
+                      <p className="text-default-500">{key}</p>
+                      <p className="font-semibold">{value}</p>
+                    </div>
+                  ))}
               </div>
-              <p>{cardsystem.text}</p>
             </div>
           </div>
         </div>
