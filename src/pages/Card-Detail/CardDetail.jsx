@@ -114,17 +114,19 @@ const CardDetail = () => {
                     </div>
                   ))}
                 </div>
-                <div className="flex flex-col gap-3 w-[50%]">
-                  <p className="font-bold">Recommended</p>
-                  {Object.entries(gameDataSystem.recommended)
-                  .filter(([key]) => key !== "_id")
-                  .map(([key, value]) => (
-                    <div key={key}>
-                      <p className="text-default-400">{key}</p>
-                      <p className="font-semibold">{value}</p>
-                    </div>
-                  ))}
-                </div>
+                {!(gameDataSystem.recommended.memory === 0) && (
+                  <div className="flex flex-col gap-3 w-[50%]">
+                    <p className="font-bold">Recommended</p>
+                    {Object.entries(gameDataSystem.recommended)
+                      .filter(([key]) => key !== "_id")
+                      .map(([key, value]) => (
+                        <div key={key}>
+                          <p className="text-default-400">{key}</p>
+                          <p className="font-semibold">{value}</p>
+                        </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <div>
                 <p className="text-default-400">Languages Supported</p>
