@@ -26,6 +26,10 @@ const CardDetail = () => {
 
         const gameData = gameResponse.data.game
         const systemData = gameResponse.data.system
+    if (cartList) {
+     setCart(JSON.parse(cartList));
+    }
+  }, []);
 
         setGameData(gameData);
         setGameDataSystem(systemData);
@@ -69,10 +73,17 @@ const CardDetail = () => {
             <Button className="py-3 px-7 bg-slate-100 text-xl">
               THB {gameData.price}
             </Button>
-            <Button className="py-3 px-7 text-xl" color="primary" onClick={handleBuyNow}>
+            <Button
+              className="py-3 px-7 text-xl"
+              color="primary"
+              onClick={handleBuyNow}
+            >
               Buy Now
             </Button>
-            <Button className="py-3 px-7 bg-gray-600 text-white text-xl" onClick={handleAddToCart}>
+            <Button
+              className="py-3 px-7 bg-gray-600 text-white text-xl"
+              onClick={handleAddToCart}
+            >
               Add To Cart
             </Button>
           </div>

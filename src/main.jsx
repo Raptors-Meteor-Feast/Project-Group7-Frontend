@@ -1,3 +1,4 @@
+import NewsContent from "./components/News/NewsContent";
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
@@ -54,6 +55,8 @@ const router = createBrowserRouter([
     element: <AllGame />,
   },
   {
+    path: "/news/:newsId",
+    element: <NewsContent />,
     path: "/verify-email/:token",
     element: <VerifyEmail />,
   },
