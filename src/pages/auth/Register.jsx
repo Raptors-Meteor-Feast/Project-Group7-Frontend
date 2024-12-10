@@ -89,7 +89,7 @@ const Register = () => {
             );
 
             toast.success('Successfully Registered!, Please check your email to verify your account.');
-            navigate('/login');
+            setTimeout(() => navigate('/login'), 5000);
         } catch (error) {
             console.error(error);
             toast.error('Server error or invalid credentials, please try again later.');
