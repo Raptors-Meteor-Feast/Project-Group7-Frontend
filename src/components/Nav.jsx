@@ -4,9 +4,10 @@ import SearchBox from "./SearchBox";
 import Gr7Logo from "/NavIcon/Gr7Logo.svg";
 import UserIcon from "/NavIcon/user.png";
 import { Link } from "react-router-dom";
-import axios from "axios"; // เพิ่ม axios
+import axios from "axios";
 import { useCart } from "../components/Checkout/CartContext";
-
+import { toast, ToastContainer } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Nav() {
     const [logIn, setLogIn] = useState(false); // เก็บสถานะการล็อกอิน
@@ -48,13 +49,12 @@ export default function Nav() {
         fetchUserData();
     }, [logIn, userData]);
 
-
     // ฟังก์ชันล็อกเอาต์
     const handleLogout = () => {
         localStorage.removeItem("authToken"); // ลบ token ออกจาก localStorage
         setLogIn(false); // เปลี่ยนสถานะเป็นล็อกเอาต์
         setUserData(null); // ล้างข้อมูลผู้ใช้
-        alert("You have been logged out.");
+        toast.success("You have been logged out."); // Show success toast notification
     };
 
     const { cart } = useCart();
@@ -79,7 +79,6 @@ export default function Nav() {
                     <div>
                         <SearchBox />
                     </div>
-                
                 </div>
                 <div className="flex items-center justify-between">
                     {/* Cart Section */}
@@ -160,6 +159,7 @@ export default function Nav() {
                     )}
                 </div>
             </div>
+            <ToastContainer /> {/* Add the ToastContainer to your component */}
         </div>
     );
 }
