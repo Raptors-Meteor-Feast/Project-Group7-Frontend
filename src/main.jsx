@@ -16,6 +16,7 @@ import ForgotPassword from './pages/auth/ForgotPassword';
 import ResetPassword from './pages/auth/ResetPassword';
 import { CartProvider } from './components/Checkout/CartContext';
 import AllGame from "./pages/AllGame"
+import VerifyEmail from './pages/auth/VerifyEmail';
 
 
 
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "/browse",
     element: <AllGame />,
+  },
+  {
+    path: "/verify-email/:token",
+    element: <VerifyEmail />,
   },
 ]);
 
