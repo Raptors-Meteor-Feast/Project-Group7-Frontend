@@ -7,15 +7,13 @@ export default function CardNews() {
   const navigate = useNavigate();
   const [startIndex, setStartIndex] = useState(0);
   const [newsData, setNewsData] = useState([]);
-  // const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get("http://localhost:4000/api/news")
       .then((res) => {
         console.log(res.data); // debugging
-        // Set user to res.data.user if it's an array, else set to an empty array
+        // Set news to res.data.news if it's an array, else set to an empty array
         setNewsData(Array.isArray(res.data.data) ? res.data.data : []);
       })
       .catch((err) => console.log(err));
@@ -37,17 +35,13 @@ export default function CardNews() {
   const currentData = newsData.slice(startIndex, startIndex + itemsPerPage);
   console.log(currentData);
 
-  // const handleCardClick = (id) => {
-  //   navigate(`/card/${id}`);
-  // };
+  const handleClick = (_id) => {
+    navigate(`/news/${_id}`);
+  };
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (error) {
-  //   return <div>Error: {error}</div>;
-  // }
+  if (!newsData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -75,7 +69,7 @@ export default function CardNews() {
               key={index}
               shadow="sm"
               isPressable
-              onPress={() => handleCardClick(item._id)}
+              onClick={() => handleClick(item._id)}
               className="drop-shadow-md hover:bg-gray-300 "
             >
               <CardBody className="overflow-visible p-0">
@@ -91,7 +85,7 @@ export default function CardNews() {
               </CardBody>
               <CardFooter className="text-small flex flex-col justify-start items-start">
                 <div className="flex flex-col text-left gap-3 px-3">
-                  <p className="h-[40px] text-[20px] font-bold text-default-700 items-center">
+                  <p className="h-[44px] text-[20px] font-bold text-default-700 items-center">
                     {item.newsHeading}
                   </p>
                   <p className="text-[16px] line-clamp-3 text-default-700">

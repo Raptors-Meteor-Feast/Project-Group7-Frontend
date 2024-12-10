@@ -26,9 +26,9 @@ const CardDetail = () => {
   useEffect(() => {
     const cartList = localStorage.getItem("cartList");
 
-    if (cartList) {
-      setCart(JSON.parse(cartList));
-    }
+    // if (cartList) {
+    //   setCart(JSON.parse(cartList));
+    // }
   }, []);
 
   // useEffect(() => {
@@ -49,7 +49,7 @@ const CardDetail = () => {
   const navigate = useNavigate(); // For navigation to checkout
 
   const handleAddToCart = () => {
-    addToCart(card.id);  // Pass the id of the selected game to CartContext
+    addToCart(card.id); // Pass the id of the selected game to CartContext
   };
 
   const handleBuyNow = () => {
@@ -81,10 +81,17 @@ const CardDetail = () => {
             <Button className="py-3 px-7 bg-slate-100 text-xl">
               THB {card.price}
             </Button>
-            <Button className="py-3 px-7 text-xl" color="primary" onClick={handleBuyNow}>
+            <Button
+              className="py-3 px-7 text-xl"
+              color="primary"
+              onClick={handleBuyNow}
+            >
               Buy Now
             </Button>
-            <Button className="py-3 px-7 bg-gray-600 text-white text-xl" onClick={handleAddToCart}>
+            <Button
+              className="py-3 px-7 bg-gray-600 text-white text-xl"
+              onClick={handleAddToCart}
+            >
               Add To Cart
             </Button>
           </div>
@@ -95,7 +102,9 @@ const CardDetail = () => {
             <p>{card.full_description}</p>
             <div className="flex justify-start gap-3 pt-5">
               {card.categories.map((category, index) => (
-                <a key={index} className="underline cursor-pointer">{category}</a>
+                <a key={index} className="underline cursor-pointer">
+                  {category}
+                </a>
               ))}
             </div>
           </div>
@@ -111,7 +120,9 @@ const CardDetail = () => {
           )}
 
           <div>
-            <h2 className="font-bold text-[28px] pb-8">{card.title} System Requirement</h2>
+            <h2 className="font-bold text-[28px] pb-8">
+              {card.title} System Requirement
+            </h2>
             <div className="flex flex-col p-11 gap-5 bg-white rounded-xl">
               <p className="font-bold text-xl">{cardsystem.operater}</p>
               <div className="flex w-full">
