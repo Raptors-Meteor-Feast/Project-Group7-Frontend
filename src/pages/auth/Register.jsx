@@ -1,146 +1,116 @@
 import { useState, useMemo } from 'react';
-import { useNavigate } from "react-router-dom";
-import { Input, Button, Checkbox } from "@nextui-org/react";
-import { IoMdMail } from "react-icons/io";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa6";
-import { GiDinosaurRex } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { Input, Button, Checkbox } from '@nextui-org/react';
+import { IoMdMail } from 'react-icons/io';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { GiDinosaurRex } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import "./auth.css";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './auth.css';
 
-const Login = () => {
-    const navigate = useNavigate(); // For navigation
+const Register = () => {
+    const navigate = useNavigate();
+    const [isVisible, setIsVisible] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [displayName, setDisplayName] = useState('');
+    const [isAgreed, setIsAgreed] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    // State management to store the values of each form field
-    const [isVisible, setIsVisible] = useState(false);  // Toggle visibility for password input
-    const [email, setEmail] = useState("");  // Stores the user's email
-    const [password, setPassword] = useState("");  // Stores the user's password
-    const [confirmPassword, setConfirmPassword] = useState("");  // Stores the confirmation password
-    const [firstName, setFirstName] = useState("");  // Stores the user's first name
-    const [lastName, setLastName] = useState("");  // Stores the user's last name
-    const [displayName, setDisplayName] = useState("");  // Stores the display name
-    const [isAgreed, setIsAgreed] = useState(false);  // Checks if the user agrees to terms
-    const [formSubmitted, setFormSubmitted] = useState(false);  // Tracks if the form has been submitted
-    const [loading, setLoading] = useState(false); // Tracks if the form is loading
-
-    // Toggle function to show or hide the password
     const toggleVisibility = () => setIsVisible(!isVisible);
 
-    // Error messages for required fields
-    const getFisrtNameErrorMessage = () => {
-        if (!firstName && formSubmitted) return "First Name is required";  // If no first name is provided after submit, show error
-        return "";
-    };
-
-    const getLastNameErrorMessage = () => {
-        if (!lastName && formSubmitted) return "Last Name is required";  // If no last name is provided after submit, show error
-        return "";
-    };
-
-    const getDisplayNameErrorMessage = () => {
-        if (!displayName && formSubmitted) return "Display Name is required";  // If no display name is provided after submit, show error
-        return "";
-    };
-
-    // Email validation using regular expression (regex) to check valid email format
     const validateEmail = (email) => {
-        return email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);  // Checks if email matches standard format
+        return email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
     };
 
-    // Memoized function to check if email is invalid
     const isEmailInvalid = useMemo(() => {
-        if (!formSubmitted && email === "") return false;  // Don't check email if the form hasn't been submitted yet
-        return !validateEmail(email);  // Check if email is valid
+        if (!formSubmitted && email === '') return false;
+        return !validateEmail(email);
     }, [email, formSubmitted]);
 
-    // Password validation function
     const validatePassword = (password) => {
-        const hasMinLength = password.length >= 8;  // Password must be at least 8 characters
-        const hasLowercase = /[a-z]/.test(password);  // Must contain lowercase letters
-        const hasUppercase = /[A-Z]/.test(password);  // Must contain uppercase letters
-        const hasNumber = /\d/.test(password);  // Must contain numbers
-        const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password);  // Must contain special characters
-        return hasMinLength && hasLowercase && hasUppercase && hasNumber && hasSymbol;  // Return true if all conditions are met
+        const hasMinLength = password.length >= 8;
+        const hasLowercase = /[a-z]/.test(password);
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasNumber = /\d/.test(password);
+        const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+        return hasMinLength && hasLowercase && hasUppercase && hasNumber && hasSymbol;
     };
 
-    // Memoized function to check if password is invalid
     const isPasswordInvalid = useMemo(() => {
-        if (!formSubmitted && password === "") return false;  // Don't check password if the form hasn't been submitted yet
-        return !validatePassword(password);  // Check if password meets requirements
+        if (!formSubmitted && password === '') return false;
+        return !validatePassword(password);
     }, [password, formSubmitted]);
 
-    // Password error message generator
     const getPasswordErrorMessage = () => {
-        if (!password && formSubmitted) return "Password is required";  // If password is empty after form submit, show error
+        if (!password && formSubmitted) return 'Password is required';
         if (password && !validatePassword(password)) {
-            return "Password must contain at least 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character";  // Detailed error message for invalid password
+            return 'Password must contain at least 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character';
         }
-        return "";
+        return '';
     };
 
-    // Confirm password validation
     const getConfirmPasswordErrorMessage = () => {
         if (formSubmitted) {
             if (!confirmPassword) {
-                return "Confirm Password is required";  // If confirm password is empty after form submit, show error
+                return 'Confirm Password is required';
             }
             if (confirmPassword !== password) {
-                return "Passwords do not match";  // If passwords don't match, show error
+                return 'Passwords do not match';
             }
         }
-        return "";
+        return '';
     };
 
+    const baseURL = import.meta.env.VITE_API_BASE_URL;
 
-    // Handle form submission
     const handleSubmit = async (e) => {
-        e.preventDefault();  // Prevents default form submission behavior
+        e.preventDefault();
 
-        setFormSubmitted(true);  // Mark that the form has been submitted
+        setFormSubmitted(true);
 
-        // Check if all fields are filled and valid
         if (!email || isEmailInvalid || !password || isPasswordInvalid || password !== confirmPassword || !firstName || !lastName || !displayName || !isAgreed) {
-            alert("Error: Please fill in all fields correctly.");  // If any field is invalid, show an error message
+            toast.error('Please fill in all fields correctly.');
             return;
         }
 
-        setLoading(true); // Set loading state to true
+        setLoading(true);
 
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/user/register",// Send a POST request to the registration endpoint
+                `${baseURL}/user/register`,
                 { firstName, lastName, displayName, email, password }
             );
 
-            // If all fields are valid, show a success message with the registered email and password
-            alert("Successfully Registered!");
-
-            // Redirect to login page
-            navigate("/login");
-
+            toast.success('Successfully Registered!, Please check your email to verify your account.');
+            setTimeout(() => navigate('/login'), 5000);
         } catch (error) {
             console.error(error);
-            alert("Registration failed. Please try again.");  // If registration fails, show an error message
+            toast.error('Server error or invalid credentials, please try again later.');
         } finally {
-            setLoading(false); // Set loading state to false
+            setLoading(false);
         }
 
-        // Clear the form after submission to reset the fields
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setFirstName("");
-        setLastName("");
-        setDisplayName("");
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+        setFirstName('');
+        setLastName('');
+        setDisplayName('');
         setIsAgreed(false);
-        setFormSubmitted(false);  // Reset the form submission state
+        setFormSubmitted(false);
     };
 
     return (
         <div className='flex justify-center items-center bg-neutral-950 min-h-screen'>
+            <ToastContainer />
             <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
-
                 <Link to="/" className="flex justify-center items-center w-full mb-4">
                     <img
                         className="w-1/2 sm:w-[60%] hover:scale-110 transition duration-300 ease-in-out"
@@ -162,7 +132,7 @@ const Login = () => {
                             value={firstName}
                             className="w-full"
                             onChange={(e) => setFirstName(e.target.value)}
-                            errorMessage={getFisrtNameErrorMessage()}
+                            errorMessage={formSubmitted && !firstName ? 'First Name is required' : ''}
                         />
 
                         <Input
@@ -173,7 +143,7 @@ const Login = () => {
                             value={lastName}
                             className="w-full"
                             onChange={(e) => setLastName(e.target.value)}
-                            errorMessage={getLastNameErrorMessage()}
+                            errorMessage={formSubmitted && !lastName ? 'Last Name is required' : ''}
                         />
 
                     </div>
@@ -189,7 +159,7 @@ const Login = () => {
                             <GiDinosaurRex className="text-xl text-default-400 pointer-events-none" />
                         }
                         onChange={(e) => setDisplayName(e.target.value)}
-                        errorMessage={getDisplayNameErrorMessage()}
+                        errorMessage={formSubmitted && !displayName ? 'Display Name is required' : ''}
                     />
 
                     <Input
@@ -202,16 +172,15 @@ const Login = () => {
                         endContent={
                             <IoMdMail className="text-2xl text-default-400 pointer-events-none" />
                         }
-                        errorMessage={isEmailInvalid ? "Please enter a valid email." : ""}
+                        errorMessage={isEmailInvalid ? 'Please enter a valid email.' : ''}
                         onChange={(e) => setEmail(e.target.value)}
                     />
 
                     <Input
-                        type={isVisible ? "text" : "password"}
+                        type={isVisible ? 'text' : 'password'}
                         variant="bordered"
                         value={password}
                         isInvalid={isPasswordInvalid}
-                        errorMessage={getPasswordErrorMessage()}
                         placeholder="Enter your password"
                         classNames={{
                             input: ["bg-transparent"],
@@ -237,14 +206,14 @@ const Login = () => {
                             </button>
                         }
                         onChange={(e) => setPassword(e.target.value)}
+                        errorMessage={getPasswordErrorMessage()}
                     />
 
                     <Input
-                        type={isVisible ? "text" : "password"}
+                        type={isVisible ? 'text' : 'password'}
                         variant="bordered"
                         value={confirmPassword}
                         isInvalid={confirmPassword !== password && formSubmitted}
-                        errorMessage={getConfirmPasswordErrorMessage()}
                         placeholder="Confirm your password"
                         classNames={{
                             input: ["bg-transparent"],
@@ -270,6 +239,7 @@ const Login = () => {
                             </button>
                         }
                         onChange={(e) => setConfirmPassword(e.target.value)}
+                        errorMessage={getConfirmPasswordErrorMessage()}
                     />
 
                     <div className='flex w-full text-sm gap-1'>
@@ -300,9 +270,8 @@ const Login = () => {
                 <Link to="#" className='underline text-primary text-sm hover:underline hover:text-red-500'>Privacy Policy</Link>
             </div>
         </div>
-
     );
 };
 
-export default Login;
+export default Register;
 

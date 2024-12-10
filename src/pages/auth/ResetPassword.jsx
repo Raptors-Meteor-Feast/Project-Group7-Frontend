@@ -1,95 +1,108 @@
 import { Input, Button } from "@nextui-org/react";
+import { useParams } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import "./auth.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ResetPassword = () => {
-    const [password, setPassword] = useState("");  // Stores the user's password
-    const [confirmPassword, setConfirmPassword] = useState("");  // Stores the confirmation password
-    const [formSubmitted, setFormSubmitted] = useState(false);  // Tracks if the form has been submitted
-    const [isVisible, setIsVisible] = useState(false);  // Toggle visibility for password input
+    const { token } = useParams();
+    const [newPassword, setNewPassword] = useState("");
+    const [confirmNewPassword, setConfirmNewPassword] = useState("");
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     const toggleVisibility = () => setIsVisible(!isVisible);
 
-    const validatePassword = (password) => {
-        const hasMinLength = password.length >= 8;  // Password must be at least 8 characters
-        const hasLowercase = /[a-z]/.test(password);  // Must contain lowercase letters
-        const hasUppercase = /[A-Z]/.test(password);  // Must contain uppercase letters
-        const hasNumber = /\d/.test(password);  // Must contain numbers
-        const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password);  // Must contain special characters
-        return hasMinLength && hasLowercase && hasUppercase && hasNumber && hasSymbol;  // Return true if all conditions are met
-    };
+    const validatePassword = (password) =>
+        password.length >= 8 &&
+        /[a-z]/.test(password) &&
+        /[A-Z]/.test(password) &&
+        /\d/.test(password) &&
+        /[!@#$%^&*(),.?":{}|<>]/.test(password);
 
-    // Memoized function to check if password is invalid
     const isPasswordInvalid = useMemo(() => {
-        if (!formSubmitted && password === "") return false;  // Don't check password if the form hasn't been submitted yet
-        return !validatePassword(password);  // Check if password meets requirements
-    }, [password, formSubmitted]);
+        if (!formSubmitted && !newPassword) return false;
+        return !validatePassword(newPassword);
+    }, [newPassword, formSubmitted]);
 
-    // Password error message generator
     const getPasswordErrorMessage = () => {
-        if (!password && formSubmitted) return "Password is required";  // If password is empty after form submit, show error
-        if (password && !validatePassword(password)) {
-            return "Password must contain at least 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character";  // Detailed error message for invalid password
+        if (!newPassword && formSubmitted) return "Password is required";
+        if (isPasswordInvalid) {
+            return "Password must contain at least 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character";
         }
         return "";
     };
 
-    // Confirm password validation
     const getConfirmPasswordErrorMessage = () => {
         if (formSubmitted) {
-            if (!confirmPassword) {
-                return "Confirm Password is required";  // If confirm password is empty after form submit, show error
+            if (!confirmNewPassword) {
+                return "Confirm Password is required";
             }
-            if (confirmPassword !== password) {
-                return "Passwords do not match";  // If passwords don't match, show error
+            if (confirmNewPassword !== newPassword) {
+                return "Passwords do not match";
             }
         }
         return "";
     };
 
+    const handleResetPassword = async (e) => {
+        e.preventDefault();
 
-    // Handle form submission
-    const handleSubmit = async (e) => {
-        e.preventDefault();  // Prevents default form submission behavior
+        setFormSubmitted(true);
 
-        setFormSubmitted(true);  // Mark that the form has been submitted
-
-        // Check if all fields are filled and valid
-        if (!password || isPasswordInvalid || password !== confirmPassword) {
-            alert("Error: Please fill in all fields correctly.");  // If any field is invalid, show an error message
+        if (!newPassword || isPasswordInvalid || newPassword !== confirmNewPassword) {
+            toast.error("Please fill in all fields correctly.");
             return;
         }
 
-        // Clear the form after submission to reset the fields
-
-        setPassword("");
-        setConfirmPassword("");
-        setFormSubmitted(false);  // Reset the form submission state
+        try {
+            const response = await axios.put(
+                `${import.meta.env.VITE_API_BASE_URL}/user/reset-password/${token}`,
+                { newPassword }
+            );
+            toast.success(response.data.message);
+        } catch (error) {
+            console.error("Error resetting password:", error);
+            toast.error(
+                error.response?.data?.message || "Server error, please try again later"
+            );
+        }
     };
 
     return (
-
-        <div className='flex justify-center items-center bg-neutral-950 min-h-screen'>
+        <div className="flex justify-center items-center bg-neutral-950 min-h-screen">
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
-
                 <Link to="/" className="flex justify-center items-center w-full mb-4">
                     <img
                         className="w-1/2 sm:w-[60%] hover:scale-110 transition duration-300 ease-in-out"
-                        src="Images/ProjectLogo/WebLogo.svg"
+                        src="/Images/ProjectLogo/WebLogo.svg"
                         alt="logo"
                     />
                 </Link>
 
-                <form onSubmit={handleSubmit}
-                    className='flex flex-col gap-4 w-full pt-4 pb-4 max-w-xs'>
-
+                <form onSubmit={handleResetPassword}
+                    className="flex flex-col gap-4 w-full pt-4 pb-4 max-w-xs">
                     <Input
                         type={isVisible ? "text" : "password"}
                         variant="bordered"
-                        value={password}
+                        value={newPassword}
                         isInvalid={isPasswordInvalid}
                         label="New Password"
                         labelPlacement="outside"
@@ -118,16 +131,16 @@ const ResetPassword = () => {
                                 )}
                             </button>
                         }
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => setNewPassword(e.target.value)}
                     />
 
                     <Input
                         type={isVisible ? "text" : "password"}
                         variant="bordered"
-                        value={confirmPassword}
-                        label="Confirm Password"
+                        value={confirmNewPassword}
+                        label="Confirm New Password"
                         labelPlacement="outside"
-                        isInvalid={confirmPassword !== password && formSubmitted}
+                        isInvalid={confirmNewPassword !== newPassword && formSubmitted}
                         errorMessage={getConfirmPasswordErrorMessage()}
                         placeholder="Confirm your password"
                         classNames={{
@@ -153,9 +166,8 @@ const ResetPassword = () => {
                                 )}
                             </button>
                         }
-                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        onChange={(e) => setConfirmNewPassword(e.target.value)}
                     />
-
 
                     <Button
                         type="submit"
@@ -164,14 +176,10 @@ const ResetPassword = () => {
                     >
                         Confirm
                     </Button>
-
                 </form>
             </div>
         </div>
-
-
-
-
     );
-}
+};
+
 export default ResetPassword;

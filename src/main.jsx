@@ -1,7 +1,7 @@
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import {NextUIProvider} from '@nextui-org/react'
+import { NextUIProvider } from '@nextui-org/react'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -16,6 +16,7 @@ import ForgotPassword from './pages/auth/ForgotPassword';
 import ResetPassword from './pages/auth/ResetPassword';
 import { CartProvider } from './components/Checkout/CartContext';
 import AllGame from "./pages/AllGame"
+import VerifyEmail from './pages/auth/VerifyEmail';
 
 
 
@@ -45,21 +46,25 @@ const router = createBrowserRouter([
     element: <ForgotPassword />,
   },
   {
-    path: "/reset-password",
+    path: "/reset-password/:token",
     element: <ResetPassword />,
   },
   {
     path: "/browse",
     element: <AllGame />,
   },
+  {
+    path: "/verify-email/:token",
+    element: <VerifyEmail />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <CartProvider>
-    <NextUIProvider>
-      <RouterProvider router={router} />
-    </NextUIProvider>
+      <NextUIProvider>
+        <RouterProvider router={router} />
+      </NextUIProvider>
     </CartProvider>
   </StrictMode>
 );

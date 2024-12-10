@@ -11,14 +11,18 @@ export const CartProvider = ({ children }) => {
         const item = gamedata.find(game => game.id === id);
         if (!item) return;  // ถ้าไม่พบสินค้า ให้หยุดทำงาน
 
-        setCart(prevCart => {
-            const existingItem = prevCart.find(cartItem => cartItem.id === id);
-            if (existingItem) {
-                return prevCart.map(cartItem =>
-                    cartItem.id === id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem);
-            }
-            return [...prevCart, { ...item, quantity: 1 }];
-        });
+        // เช็คว่าเกมนี้เคยถูกเพิ่มลงตะกร้าหรือยัง
+        const existingItem = cart.find(cartItem => cartItem.id === id);
+
+        if (existingItem) {
+            alert('The game has been added to the cart.'); // แจ้งเตือนเมื่อเกมถูกเพิ่มซ้ำ
+            return;
+        }
+
+        setCart(prevCart => [
+            ...prevCart,
+            { ...item, quantity: 1 },
+        ]);
     };
 
     const removeFromCart = (id) => {
@@ -29,8 +33,13 @@ export const CartProvider = ({ children }) => {
         setCart([{ ...item, quantity: 1 }]); // Replace cart with the current item
     };
 
+    // ฟังก์ชันใหม่สำหรับเคลียร์ตะกร้า
+    const clearCart = () => {
+        setCart([]); // รีเซ็ต cart ให้เป็นอาเรย์ว่าง
+    };
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart , buyNow}}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart , buyNow, clearCart}}>
             {children}
         </CartContext.Provider>
     );

@@ -74,7 +74,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
-                          src="public/Images/Banklogo/promptpay.svg"
+                          src="/Images/Banklogo/promptpay.svg"
                           width={70}
                           height={50}
                           alt="Promptpay"
@@ -105,7 +105,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
-                          src="public/Images/Banklogo/scb.svg"
+                          src="/Images/Banklogo/scb.svg"
                           width={70}
                           height={50}
                           alt="SCB"
@@ -131,7 +131,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
-                          src="public/Images/Banklogo/bay.svg"
+                          src="/Images/Banklogo/bay.svg"
                           width={70}
                           height={50}
                           alt="Krungsri"
@@ -157,7 +157,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
-                          src="public/Images/Banklogo/kbank.svg"
+                          src="/Images/Banklogo/kbank.svg"
                           width={70}
                           height={50}
                           alt="Kbank"
@@ -188,7 +188,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
-                          src="./Images/Banklogo/mastercard.svg"
+                          src="/Images/Banklogo/mastercard.svg"
                           width={70}
                           height={50}
                           alt="CreditCard"
@@ -214,7 +214,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
-                          src="./Images/Banklogo/paypal.png"
+                          src="/Images/Banklogo/paypal.png"
                           width={70}
                           height={50}
                           alt="PayPal"
