@@ -2,117 +2,92 @@ import { useState, useMemo, useEffect } from 'react';
 import { Input, Button } from "@nextui-org/react";
 import { Link } from 'react-router-dom';
 import { IoMdMail } from "react-icons/io";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa6";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./auth.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const navigate = useNavigate(); // Hook for navigation
+    const navigate = useNavigate();
 
-    // State management for storing input values and controlling display
-    const [isVisible, setIsVisible] = useState(false); // State to control password visibility (show/hide)
-    const [email, setEmail] = useState(""); // State to store the email input
-    const [password, setPassword] = useState(""); // State to store the password input
-    const [formSubmitted, setFormSubmitted] = useState(false); // Tracks whether the form has been submitted
-    const [loading, setLoading] = useState(false); // Tracks whether the form is loading
+    const [isVisible, setIsVisible] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
-    // Function to toggle password visibility
-    const toggleVisibility = () => setIsVisible(!isVisible);
-
-    // Function to validate the entered email
     const validateEmail = (email) => {
-        // Check if the email matches the standard email format
-        return email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+        return email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
     };
 
-    // Check if the entered email is valid or not
     const isEmailInvalid = useMemo(() => {
-        if (!formSubmitted && email === "") return false; // If the form is not submitted or the email is empty, consider it valid
-        return !validateEmail(email); // If it does not match the format, consider it invalid
-    }, [email, formSubmitted]);
+        if (!isFormSubmitted && email === "") return false;
+        return !validateEmail(email);
+    }, [email, isFormSubmitted]);
 
-    // Function to validate the entered password
     const validatePassword = (password) => {
-        const hasMinLength = password.length >= 8; // Check if password is at least 8 characters long
-        const hasLowercase = /[a-z]/.test(password); // Check if password contains a lowercase letter
-        const hasUppercase = /[A-Z]/.test(password); // Check if password contains an uppercase letter
-        const hasNumber = /\d/.test(password); // Check if password contains a number
-        const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password); // Check if password contains a special character
-
-        // Password must meet all the above criteria
+        const hasMinLength = password.length >= 8;
+        const hasLowercase = /[a-z]/.test(password);
+        const hasUppercase = /[A-Z]/.test(password);
+        const hasNumber = /\d/.test(password);
+        const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password);
         return hasMinLength && hasLowercase && hasUppercase && hasNumber && hasSymbol;
     };
 
-    // Check if the entered password is valid or not
     const isPasswordInvalid = useMemo(() => {
-        if (!formSubmitted && password === "") return false; // If the form is not submitted or the password is empty, consider it valid
-        return !validatePassword(password); // If it does not meet the criteria, consider it invalid
-    }, [password, formSubmitted]);
+        if (!isFormSubmitted && password === "") return false;
+        return !validatePassword(password);
+    }, [password, isFormSubmitted]);
 
-    // Function to get the error message for invalid password
     const getPasswordErrorMessage = () => {
-        if (!password && formSubmitted) return "Password is required"; // If no password is entered after form submission, show an error
+        if (!password && isFormSubmitted) return "Password is required";
         if (password && !validatePassword(password)) {
-            // If password is invalid, show a message with password requirements
             return "Password must contain at least 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character";
         }
-        return ""; // If password is valid, no error message
+        return "";
     };
 
-    // Function to handle form submission
-    const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent page reload on form submit
-        setFormSubmitted(true); // Mark that the form has been submitted
+    const baseURL = import.meta.env.VITE_API_BASE_URL;
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setIsFormSubmitted(true);
 
         if (!email || !password || isEmailInvalid || isPasswordInvalid) {
-            // If any field is invalid, show an error message
+            toast.error("Please check your email or password and try again!");
             return;
         }
 
-        // Set loading state to true
-        setLoading(true); // Set loading state to true
+        setIsLoading(true);
 
         try {
-            const response = await axios.post(
-                "http://localhost:4000/api/user/login",
-                {
-                    email,
-                    password,
-                }
-            );
+            const response = await axios.post(`${baseURL}/user/login`, { email, password });
 
-            const token = response.data.token; // Extract the token from the response
+            const token = response.data.token;
 
-            // Store the token in localStorage for future use (such as for authentication)
-            localStorage.setItem("authToken", token); // Save the token in localStorage
+            localStorage.setItem("authToken", token);
 
-            // If login is successful, show a success message
-            alert("Successfully Logged In!");
-
-            // Redirect to home page
+            toast.success("Successfully Logged In!");
             navigate("/");
 
         } catch (error) {
             console.error(error);
-            alert("Login failed. Please try again."); // If login fails, show an error message
+            toast.error("Server error or invalid credentials, please try again later.");
         } finally {
-            // Set loading state to false
-            setLoading(false); // Set loading state to false
+            setIsLoading(false);
         }
 
-        // Reset the form
         setEmail("");
         setPassword("");
-        setFormSubmitted(false);
+        setIsFormSubmitted(false);
     };
 
-    // Check if token exists in localStorage and navigate if logged in
     useEffect(() => {
         const token = localStorage.getItem("authToken");
         if (token) {
-            navigate("/"); // Redirect to home page if token is present
+            navigate("/");
         }
     }, [navigate]);
 
@@ -132,6 +107,7 @@ const Login = () => {
 
                 {/* Sign-in page header */}
                 <h1 className="text-lg sm:text-xl font-bold mb-4 hover:scale-110 transition duration-300 ease-in-out">Sign In</h1>
+
 
                 {/* Login form */}
                 <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full max-w-xs">
@@ -156,8 +132,9 @@ const Login = () => {
                         endContent={
                             <IoMdMail className="text-xl text-default-400 pointer-events-none" />
                         }
-                        onChange={(e) => setEmail(e.target.value)} // Save user input to state
+                        onChange={(event) => setEmail(event.target.value)} // Save user input to state
                     />
+
 
                     {/* Password field */}
                     <Input
@@ -181,7 +158,7 @@ const Login = () => {
                             <button
                                 className="focus:outline-none"
                                 type="button"
-                                onClick={toggleVisibility} // Function to toggle password visibility
+                                onClick={() => setIsVisible(!isVisible)} // Function to toggle password visibility
                             >
                                 {isVisible ? (
                                     <FaEyeSlash className="text-xl text-default-400 pointer-events-none" />
@@ -190,8 +167,9 @@ const Login = () => {
                                 )}
                             </button>
                         }
-                        onChange={(e) => setPassword(e.target.value)} // Save user input to state
+                        onChange={(event) => setPassword(event.target.value)} // Save user input to state
                     />
+
 
                     {/* Link to reset password */}
                     <div className="flex justify-start w-full">
@@ -205,6 +183,7 @@ const Login = () => {
                         </Button>
                     </div>
 
+
                     {/* Submit button */}
                     <Button
                         type="submit"
@@ -214,12 +193,14 @@ const Login = () => {
                         Sign in
                     </Button>
 
+
                     {/* Divider text */}
                     <div className="flex items-center gap-2 my-4">
                         <div className="flex-grow border-t border-white/20"></div>
                         <p className="text-xs text-white/60">or sign in with</p>
                         <div className="flex-grow border-t border-white/20"></div>
                     </div>
+
 
                     {/* Other buttons */}
                     <div>
@@ -242,6 +223,7 @@ const Login = () => {
                         </Button>
                     </div>
                 </form>
+                <ToastContainer />
             </div>
         </div>
     );
