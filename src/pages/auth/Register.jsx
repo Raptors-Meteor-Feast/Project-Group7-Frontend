@@ -88,7 +88,7 @@ const Register = () => {
                 { firstName, lastName, displayName, email, password }
             );
 
-            toast.success('Successfully Registered!');
+            toast.success('Successfully Registered!, Please check your email to verify your account.');
             navigate('/login');
         } catch (error) {
             console.error(error);

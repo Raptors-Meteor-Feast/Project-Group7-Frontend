@@ -92,6 +92,10 @@ const ForgotPasswordPage = () => {
                     <Link to="/reset-password/:token" className="w-full mt-4 text-blue-200">
                         For Test Don`t Click Reset Password
                     </Link>
+
+                    <Link to="/verify-email/:token" className="w-full mt-4 text-blue-500">
+                        For Test Don`t Click Verify Email
+                    </Link>
                 </Form>
                 <ToastContainer />
             </div>
