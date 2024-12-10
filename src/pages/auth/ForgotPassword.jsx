@@ -3,46 +3,55 @@ import { Button, Form, Input } from "@nextui-org/react";
 import "./auth.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ForgotPasswordPage = () => {
     const [email, setEmail] = useState("");
     const [showError, setShowError] = useState(false);
 
-    // ฟังก์ชันตรวจสอบรูปแบบอีเมล
     const isValidEmail = (email) =>
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // Regular Expression สำหรับตรวจสอบอีเมล
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    // ฟังก์ชันจัดการการส่งคำขอรีเซ็ตรหัสผ่าน
     const handleForgotPassword = async (event) => {
-        event.preventDefault(); // ป้องกันการ Refresh หน้า
-        // ตรวจสอบรูปแบบอีเมล
+        event.preventDefault();
         if (!isValidEmail(email)) {
-            setShowError(true); // แสดงข้อผิดพลาดถ้าอีเมลไม่ถูกต้อง
-            alert("Invalid email format"); // แจ้งผู้ใช้ว่ารูปแบบอีเมลไม่ถูกต้อง
+            setShowError(true);
+            toast.error("Invalid email format", {
+                position: "top-center",
+                autoClose: 3000,
+            });
             return;
         }
 
         try {
-            // ส่งคำขอ POST ไปยัง API พร้อมอีเมลที่ผู้ใช้กรอก
             const response = await axios.post(
                 `${import.meta.env.VITE_API_BASE_URL}/user/forgot-password`,
                 { email }
             );
-            alert(response.data.message); // แจ้งข้อความจากเซิร์ฟเวอร์เมื่อสำเร็จ
-            setShowError(false); // ปิดข้อความข้อผิดพลาด
+            toast.success(response.data.message, {
+                position: "top-center",
+                autoClose: 3000,
+            });
+            setShowError(false);
         } catch (error) {
-            // ตรวจสอบประเภทข้อผิดพลาด
             if (error.response) {
-                // ข้อผิดพลาดจากฝั่งเซิร์ฟเวอร์
-                alert(error.response.data.message || "Server error");
+                toast.error(error.response.data.message || "Server error", {
+                    position: "top-center",
+                    autoClose: 3000,
+                });
             } else if (error.request) {
-                // ไม่สามารถเชื่อมต่อกับ API ได้
-                alert("Network error, please try again later");
+                toast.error("Network error, please try again later", {
+                    position: "top-center",
+                    autoClose: 3000,
+                });
             } else {
-                // ข้อผิดพลาดที่ไม่คาดคิด
-                alert("Unexpected error occurred");
+                toast.error("Unexpected error occurred", {
+                    position: "top-center",
+                    autoClose: 3000,
+                });
             }
-            setShowError(true); // แสดงข้อความข้อผิดพลาด
+            setShowError(true);
         }
     };
 
@@ -56,7 +65,6 @@ const ForgotPasswordPage = () => {
                         alt="logo"
                     />
                 </Link>
-
                 <Form
                     className="w-full pt-2 pb-4 max-w-xs "
                     validationBehavior="native"
@@ -74,7 +82,6 @@ const ForgotPasswordPage = () => {
                         value={email}
                         onValueChange={setEmail}
                     />
-
                     <Button
                         type="submit"
                         color="primary"
@@ -82,17 +89,14 @@ const ForgotPasswordPage = () => {
                     >
                         Submit
                     </Button>
-
                     <Link to="/reset-password/:token" className="w-full mt-4 text-blue-200">
                         For Test Don`t Click Reset Password
                     </Link>
                 </Form>
-
-
+                <ToastContainer />
             </div>
         </div>
     );
 };
 
 export default ForgotPasswordPage;
-

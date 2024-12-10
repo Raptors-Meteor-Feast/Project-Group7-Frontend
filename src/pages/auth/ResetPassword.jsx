@@ -6,6 +6,8 @@ import { FaEyeSlash } from "react-icons/fa6";
 import "./auth.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ResetPassword = () => {
     const { token } = useParams();
@@ -48,14 +50,13 @@ const ResetPassword = () => {
         return "";
     };
 
-
     const handleResetPassword = async (e) => {
         e.preventDefault();
 
         setFormSubmitted(true);
 
         if (!newPassword || isPasswordInvalid || newPassword !== confirmNewPassword) {
-            alert("Error: Please fill in all fields correctly.");
+            toast.error("Please fill in all fields correctly.");
             return;
         }
 
@@ -64,19 +65,30 @@ const ResetPassword = () => {
                 `${import.meta.env.VITE_API_BASE_URL}/user/reset-password/${token}`,
                 { newPassword }
             );
-            alert(response.data.message);
+            toast.success(response.data.message);
         } catch (error) {
             console.error("Error resetting password:", error);
-            alert(error.response?.data?.message || "Something went wrong");
+            toast.error(
+                error.response?.data?.message || "Server error, please try again later"
+            );
         }
     };
 
-
     return (
-
         <div className="flex justify-center items-center bg-neutral-950 min-h-screen">
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
-
                 <Link to="/" className="flex justify-center items-center w-full mb-4">
                     <img
                         className="w-1/2 sm:w-[60%] hover:scale-110 transition duration-300 ease-in-out"
@@ -87,7 +99,6 @@ const ResetPassword = () => {
 
                 <form onSubmit={handleResetPassword}
                     className="flex flex-col gap-4 w-full pt-4 pb-4 max-w-xs">
-
                     <Input
                         type={isVisible ? "text" : "password"}
                         variant="bordered"
@@ -165,14 +176,10 @@ const ResetPassword = () => {
                     >
                         Confirm
                     </Button>
-
                 </form>
             </div>
         </div>
-
-
-
     );
-}
-export default ResetPassword;
+};
 
+export default ResetPassword;
