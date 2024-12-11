@@ -7,7 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import ModalCheckOut from "../../components/Checkout/ModalButtonCheckOut/ModalCheckOut";
 import { useCart } from "../../components/Checkout/CartContext";
 import { useNavigate } from "react-router-dom";
-import api from "../../Instance"
+import api from "../../Instance";
 
 const CardDetail = () => {
   const { id } = useParams();
@@ -24,13 +24,11 @@ const CardDetail = () => {
       try {
         const gameResponse = await api.get(`/game/${id}`);
 
-        const gameData = gameResponse.data.game
-        const systemData = gameResponse.data.system
-    if (cartList) {
-     setCart(JSON.parse(cartList));
-    }
-  }, []);
-
+        const gameData = gameResponse.data.game;
+        const systemData = gameResponse.data.system;
+        if (cartList) {
+          setCart(JSON.parse(cartList));
+        }
         setGameData(gameData);
         setGameDataSystem(systemData);
       } catch (error) {
@@ -94,7 +92,9 @@ const CardDetail = () => {
             <p>{gameData.subContent}</p>
             <div className="flex justify-start gap-3 pt-5">
               {gameData.categories.map((category, index) => (
-                <a key={index} className="underline cursor-pointer">{category}</a>
+                <a key={index} className="underline cursor-pointer">
+                  {category}
+                </a>
               ))}
             </div>
           </div>
@@ -110,20 +110,22 @@ const CardDetail = () => {
           )}
 
           <div>
-            <h2 className="font-bold text-[24px] pb-4">{gameDataSystem.title} System Requirement</h2>
+            <h2 className="font-bold text-[24px] pb-4">
+              {gameDataSystem.title} System Requirement
+            </h2>
             <div className="flex flex-col p-11 gap-5 bg-white rounded-xl">
               <p className="font-bold text-xl">{gameDataSystem.operator}</p>
               <div className="flex w-full">
                 <div className="flex flex-col gap-3 w-[50%]">
                   <p className="font-bold">Minimum</p>
                   {Object.entries(gameDataSystem.minimum)
-                  .filter(([key]) => key !== "_id")
-                  .map(([key, value]) => (
-                    <div key={key}>
-                      <p className="text-default-400">{key}</p>
-                      <p className="font-semibold">{value}</p>
-                    </div>
-                  ))}
+                    .filter(([key]) => key !== "_id")
+                    .map(([key, value]) => (
+                      <div key={key}>
+                        <p className="text-default-400">{key}</p>
+                        <p className="font-semibold">{value}</p>
+                      </div>
+                    ))}
                 </div>
                 {!(gameDataSystem.recommended.memory === 0) && (
                   <div className="flex flex-col gap-3 w-[50%]">
@@ -135,13 +137,13 @@ const CardDetail = () => {
                           <p className="text-default-400">{key}</p>
                           <p className="font-semibold">{value}</p>
                         </div>
-                    ))}
+                      ))}
                   </div>
                 )}
               </div>
               <div>
                 <p className="text-default-400">Languages Supported</p>
-                  {Object.entries(gameDataSystem.language)
+                {Object.entries(gameDataSystem.language)
                   .filter(([key]) => key !== "_id")
                   .map(([key, value]) => (
                     <div key={key}>

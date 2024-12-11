@@ -31,10 +31,10 @@ export default function NewsContent() {
         </div>
         <div className="py-5 pt-5">
           <p className="font-bold text-2xl">{content.newsHeading}</p>
-          <p>{content.date}</p>
+          <p className="text-default-700">{content.date}</p>
         </div>
         <div>
-          <p>By {content.newsContributor}</p>
+          <p className="text-default-700">By {content.newsContributor}</p>
         </div>
         <div className="flex flex-col gap-4 pt-4">
           <p>{content.newsContent}</p>

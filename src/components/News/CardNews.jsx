@@ -85,7 +85,7 @@ export default function CardNews() {
               </CardBody>
               <CardFooter className="text-small flex flex-col justify-start items-start">
                 <div className="flex flex-col text-left gap-3 px-3">
-                  <p className="h-[44px] text-[20px] font-bold text-default-700 items-center">
+                  <p className="h-[40px] text-[18px] font-bold text-default-700 items-center">
                     {item.newsHeading}
                   </p>
                   <p className="text-[16px] line-clamp-3 text-default-700">
