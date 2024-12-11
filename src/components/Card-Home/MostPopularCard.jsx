@@ -52,13 +52,13 @@ const MostPopularCard = ({ name }) => {
                     <Button onClick={handleNext} className="px-5 py-1 bg-gray-700 text-white rounded-full">→</Button>
                 </div>
             </div>
-            <div className='gap-[22px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5'>
+            <div className='gap-[22px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 '>
                 {currentData.map(game => (
                     <Card 
                         shadow="sm" key={game._id} 
                         isPressable
                         onPress={() => handleCardClick(game._id)} 
-                        className='drop-shadow-md hover:bg-gray-300 transition-transform transform duration-300 ease-in-out'>
+                        className='drop-shadow-md hover:bg-gray-300 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]'>
                         <CardBody className="overflow-visible p-0">
                             <Image
                                 shadow="sm"

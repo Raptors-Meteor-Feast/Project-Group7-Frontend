@@ -41,7 +41,7 @@ const HeroRightContainer = ({ name, setSelectedId, randomData, selectedId }) => 
                 width: expandedCardId === game._id ? 'calc(100% + 100px)' : '100%',
                 position: 'relative',
                 transition: 'width 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.3s ease',
-                boxShadow: expandedCardId === game._id ? '10px 0px 15px rgba(96, 16, 146, 0.9)' : 'none',
+                boxShadow: expandedCardId === game._id ? '0 0 10px white, 0 0 20px white' : 'none',
               }}
             >
               <CardBody className="overflow-visible p-3 text-small flex flex-row justify-start items-center text-ellipsis">
