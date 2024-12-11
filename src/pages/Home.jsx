@@ -5,8 +5,7 @@ import Footer from "../components/Footer/Footer";
 import MostPopularCard from "../components/Card-Home/MostPopularCard";
 import RecommendCard from "../components/Card-Home/RecommendCard";
 import Nav from "../components/Nav";
-
-
+import CardNews from "../components/News/cardNews";
 
 const Home = () => {
   const [gameData, setGameData] = useState(null);
@@ -19,6 +18,7 @@ const Home = () => {
       });
     }
   }, []);
+
   return (
     <div>
       <Nav cartItem={gameData} />
@@ -26,6 +26,7 @@ const Home = () => {
       <RecommendCard name="Recommend For You" />
       <MostPopularCard name="Most Popular" />
       <BoxThreeContainer />
+      <CardNews />
       <Footer />
     </div>
   );
