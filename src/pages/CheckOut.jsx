@@ -10,7 +10,7 @@ import { IoTrashOutline } from "react-icons/io5";
 export default function CheckOut() {
     const { cart, removeFromCart, clearCart } = useCart();
     const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    console.log(totalPrice)
+    
     return (
         <div>
             <Nav />

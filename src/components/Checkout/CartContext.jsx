@@ -37,11 +37,11 @@ export const CartProvider = ({ children }) => {
                     { headers: { Authorization: `Bearer ${token}` } }, 
                 );
                 const processedData = Object.entries(response.data.cartData).map(([key, value]) => {
-                    return { id: key, ...value };
+                    // return { id: key, ...value };
+                    return { id: key, ...value ,quantity: value.quantity || 1};
+
                 });
                 setCart(processedData); // ตั้งค่า cart ด้วยข้อมูลที่ดึงมา
-                
-                console.log("res",response)
             } catch (error) {
                 setError(error);
             } finally {
@@ -60,13 +60,15 @@ export const CartProvider = ({ children }) => {
         }
         try {
             const item = gameData.find((game) => game._id === gameDatas._id);
-            console.log(item)
             if (!item) {
                 alert("Game not found.");
                 return;
             }
     
-            const existingItem = cart.find((cartItem) => cartItem._id === gameDatas._id);
+            const existingItem = cart.find(
+                (cartItem) => cartItem.id === gameDatas._id || cartItem.gameId === gameDatas._id  
+            );
+
             if (existingItem) {
                 alert( `${gameDatas.title} has already been added to the cart.`);
                 return;
@@ -88,7 +90,7 @@ export const CartProvider = ({ children }) => {
             
             // ตรวจสอบสถานะการตอบกลับจาก API
             if (response.status === 200) {
-                setCart((prevCart) => [...prevCart, { ...item, quantity: 1 }]);
+                // setCart((prevCart) => [...prevCart, { ...item, quantity: 1 }]);
                 setSuccess(!success);
                 // แจ้งเตือนเมื่อเพิ่มสำเร็จ
             alert(`${gameDatas.title} has been added to the cart.`);
@@ -118,7 +120,7 @@ export const CartProvider = ({ children }) => {
     
             // ตรวจสอบสถานะการตอบกลับจาก API
             if (response.status === 200) {
-                setCart([{ ...item, quantity: 1 }]); // ตั้งค่า cart ใหม่
+                // setCart([{ ...item, quantity: 1 }]); // ตั้งค่า cart ใหม่
             } else {
                 console.error("Failed to checkout.");
             }
@@ -130,7 +132,6 @@ export const CartProvider = ({ children }) => {
 
     
     const removeFromCart = async (id) => {
-        console.log("context"+id)
         const token = localStorage.getItem("authToken");
         if (!token) {
             alert("Please log in to remove items from the cart.");
@@ -148,7 +149,7 @@ export const CartProvider = ({ children }) => {
     
             if (response.status === 200) {
                 // อัปเดต state ของ cart ทันที
-                setCart((prevCart) => prevCart.filter((item) => item._id !== id));
+                // setCart((prevCart) => prevCart.filter((item) => item._id !== id));
                 setSuccess(!success);
                 alert("Game removed from cart successfully.");
             } else {
