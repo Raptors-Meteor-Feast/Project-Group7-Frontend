@@ -69,7 +69,7 @@ const GenresCard = ({ setSelectedCategory }) => {
                 {categories.slice(startIndex, startIndex + itemsPerPage).map((category) => (
                     <Button
                         key={category}
-                        className="relative bg-gray-700 rounded-lg p-1 shadow-lg flex-shrink-0 w-[30%] h-[250px] cursor-pointer transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_cyan,_0_0_20px_cyan,_0_0_30px_cyan,_0_0_40px_cyan]"
+                        className="relative bg-gray-700 rounded-lg p-1 shadow-lg flex-shrink-0 w-[30%] h-[250px] cursor-pointer transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_cyan,_0_0_20px_cyan]"
                         onClick={() => handleCategoryClick(category)}
                     >
                         <h3 className="absolute top-2 left-[50%] -translate-x-1/2 text-white text-lg font-semibold text-center whitespace-nowrap">
