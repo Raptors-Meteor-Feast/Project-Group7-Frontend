@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Modal,
   ModalContent,
@@ -9,8 +9,30 @@ import {
   Radio,
 } from "@nextui-org/react";
 import ModalCheckOutSucceed from "./ModalCheckOutSucceed";
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';  // Import toastify
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 
-const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
+
+// เข้าถึง API URL จากไฟล์ .env
+const API_URL = import.meta.env.VITE_API_BASE_URL;
+
+const createOrder = async (orderData) => {
+  try {
+    // ส่งคำขอ POST ไปที่ Backend
+    const response = await axios.post(`${API_URL}/orders`, orderData);
+    return response.data; // ส่งข้อมูลที่ได้รับกลับไป
+  } catch (error) {
+    console.error("Error creating order:", error);
+    throw error.response?.data || "Something went wrong"; // ถ้ามี error ให้แสดงข้อความ
+  }
+};
+
+const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, userData, gameId, }) => {
+
+  
+  console.log(userData);
+  console.log(gameId);
   const [paymentMethod, setPaymentMethod] = useState("");
   const [promptpay, setPromptpay] = useState(false);
   const [kbank, setKbank] = useState(false);
@@ -18,6 +40,9 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
   const [krungsri, setKrungsri] = useState(false);
   const [creditcard, setCreditCard] = useState(false);
   const [paypal, setPaypal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+
 
   const handlePaymentMethodChange = (event) => {
     setPaymentMethod(event.target.value);
@@ -30,9 +55,44 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
   };
 
   const isDisabled = paymentMethod === "";
+  const handleSubmitOrder = async () => {
+    setIsLoading(true); // เริ่มแสดงสถานะ Loading
+
+    // ตรวจสอบว่ามีการเลือกวิธีการชำระเงินหรือยัง
+    if (!paymentMethod) {
+      toast.error("กรุณาเลือกวิธีการชำระเงิน"); // แสดงข้อความแจ้งเตือนผู้ใช้
+      setIsLoading(false); // หยุดสถานะ Loading
+      return; // ยกเลิกการดำเนินการคำสั่งซื้อ
+    }
+
+    try {
+      const orderData = {
+        userId: userData?.id || "defaultUserId", // ใช้ userId จาก userData หรือค่าดีฟอลต์
+        gameId: gameId || "defaultGameId", // ใช้ gameId จาก props หรือค่าดีฟอลต์
+        amount: totalPrice,
+        paymentMethod,
+      };
+      console.log("Order Data to be sent:", orderData); // Debug ข้อมูลที่จะส่ง
+
+
+
+      const response = await createOrder(orderData); // เรียก API เพื่อสร้างคำสั่งซื้อ
+      console.log("Order created successfully:", response); // ตรวจสอบผลลัพธ์ที่ได้
+
+      setModalOpen(false); // ปิด Modal
+      toast.success("คำสั่งซื้อสำเร็จ!"); // แจ้งเตือนความสำเร็จ
+    } catch (error) {
+      console.error("Error creating order:", error); // แสดงข้อผิดพลาดใน Console
+      toast.error("ไม่สามารถดำเนินการคำสั่งซื้อได้"); // แจ้งเตือนผู้ใช้
+    } finally {
+      setIsLoading(false); // หยุดสถานะ Loading ไม่ว่าจะสำเร็จหรือผิดพลาด
+    }
+  };
+
 
   return (
     <>
+     <ToastContainer />
       <Button
         onPress={() => setModalOpen(true)}
         color="primary"
@@ -45,7 +105,6 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
         isOpen={isModalOpen}
         onClose={() => {
           setModalOpen(false);
-          // if (onClose) onClose();
         }}
         size="5xl"
         className="bg-zinc-900 text-white"
@@ -203,7 +262,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {paypal && (
                         <div className="p-2 text-white">
-                          8888-8888-8888-8888
+                          {`paypal@user.com`}
                         </div>
                       )}
                     </Radio>
@@ -225,7 +284,8 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   <p className="font-semibold">Subtotal:</p>
                   <p>THB {totalPrice}</p>
                 </div>
-                <ModalCheckOutSucceed disabled={isDisabled} />
+                <ModalCheckOutSucceed disabled={isDisabled} onSubmitOrder={handleSubmitOrder}
+                />
               </div>
             </div>
           </ModalBody>
