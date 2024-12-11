@@ -9,7 +9,20 @@ export const CartProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [gameData, setGameData] = useState([]);
+    const [success, setSuccess] = useState(false);
     
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/game`);
+                setGameData(response.data.game);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        fetchData();
+    }, []);
+
 
     useEffect(() => {
         const fetchCartItems = async () => {
@@ -20,16 +33,15 @@ export const CartProvider = ({ children }) => {
             }
 
             try {
-                const response = await axios.get(
-                    "http://localhost:4000/api/checkout",
-                    { headers: { Authorization: `Bearer ${token}` } },
-                    
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/checkout`,
+                    { headers: { Authorization: `Bearer ${token}` } }, 
                 );
                 const processedData = Object.entries(response.data.cartData).map(([key, value]) => {
                     return { id: key, ...value };
                 });
                 setCart(processedData); // ตั้งค่า cart ด้วยข้อมูลที่ดึงมา
-                // console.log("sunday",response.data)
+                
+                console.log("res",response)
             } catch (error) {
                 setError(error);
             } finally {
@@ -38,40 +50,48 @@ export const CartProvider = ({ children }) => {
         };
 
         fetchCartItems();
-    }, []);
+    }, [success]);
 
     const addToCart = async (gameDatas) => {
-        console.log(gameDatas)
         const token = localStorage.getItem("authToken");
         if (!token) {
             alert("Please log in to add items to the cart.");
             return;
         }
-    
         try {
-            const item = gameData.find((game) => game._id === gameId);
+            const item = gameData.find((game) => game._id === gameDatas._id);
             console.log(item)
             if (!item) {
                 alert("Game not found.");
                 return;
             }
     
-            const existingItem = cart.find((cartItem) => cartItem._id === gameId);
+            const existingItem = cart.find((cartItem) => cartItem._id === gameDatas._id);
             if (existingItem) {
-                alert("The game has already been added to the cart.");
+                alert( `${gameDatas.title} has already been added to the cart.`);
                 return;
             }
     
+            const value = {
+                gameId: gameDatas._id,
+                title: gameDatas.title,
+                categories: gameDatas.categories,
+                price: gameDatas.price,
+                images: gameDatas.images
+            };
+    
             // เรียก API เพื่อเพิ่มข้อมูลลง backend
             const response = await axios.post(
-                "http://localhost:4000/api/checkout/add",
-                { headers: { Authorization: `Bearer ${token}` } },
-                { gameId, title, categories, price, images }
+                `${import.meta.env.VITE_API_BASE_URL}/checkout/add`,value,
+                { headers: { Authorization: `Bearer ${token}` } }
             );
-    
+            
             // ตรวจสอบสถานะการตอบกลับจาก API
             if (response.status === 200) {
                 setCart((prevCart) => [...prevCart, { ...item, quantity: 1 }]);
+                setSuccess(!success);
+                // แจ้งเตือนเมื่อเพิ่มสำเร็จ
+            alert(`${gameDatas.title} has been added to the cart.`);
             } else {
                 console.error("Failed to add item to cart.");
             }
@@ -91,7 +111,7 @@ export const CartProvider = ({ children }) => {
         try {
             // เรียก API เพื่อดำเนินการ checkout
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL}/cart/checkout`,
+                `${import.meta.env.VITE_API_BASE_URL}/checkout`,
                 { gameId: item.id },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -108,13 +128,66 @@ export const CartProvider = ({ children }) => {
     };
 
 
-    const removeFromCart = (id) => {
-        setCart(prevCart => prevCart.filter(item => item._id !== id));
+    
+    const removeFromCart = async (id) => {
+        console.log("context"+id)
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            alert("Please log in to remove items from the cart.");
+            return;
+        }
+    
+        try {
+            const response = await axios.delete(
+                `${import.meta.env.VITE_API_BASE_URL}/checkout/delete`,
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                    data: { gameId: id, userId: localStorage.getItem("userId") },
+                }
+            );
+    
+            if (response.status === 200) {
+                // อัปเดต state ของ cart ทันที
+                setCart((prevCart) => prevCart.filter((item) => item._id !== id));
+                setSuccess(!success);
+                alert("Game removed from cart successfully.");
+            } else {
+                alert("Failed to remove the game from cart.");
+            }
+        } catch (error) {
+            console.error("Error removing game from cart:", error);
+        }
     };
 
-    const clearCart = () => {
-        setCart([]); // เคลียร์ตะกร้า
+    
+    
+    
+
+    const clearCart = async () => {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            alert("Please log in to clear the cart.");
+            return;
+        }
+    
+        try {
+            const response = await axios.patch(
+                `${import.meta.env.VITE_API_BASE_URL}/checkout/clear`,
+                { userId: localStorage.getItem("userId") },
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+    
+            if (response.status === 200) {
+                setCart([]); // เคลียร์ตะกร้าใน frontend
+                alert("Cart cleared successfully.");
+            } else {
+                alert("Failed to clear the cart.");
+            }
+        } catch (error) {
+            console.error("Error clearing the cart:", error);
+        }
     };
+
 
     return (
         <CartContext.Provider value={{ cart, removeFromCart, clearCart, loading, error, addToCart, buyNow }}>

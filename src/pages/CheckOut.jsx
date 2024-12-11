@@ -2,7 +2,6 @@ import Nav from "../components/Nav";
 import MyCart from "../components/Checkout/MyCart";
 import { useCart } from "../components/Checkout/CartContext";
 import CheckOutMyCart from "../components/Checkout/CheckOutMyCart";
-import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import { IoTrashOutline } from "react-icons/io5";
 
@@ -10,10 +9,8 @@ import { IoTrashOutline } from "react-icons/io5";
 
 export default function CheckOut() {
     const { cart, removeFromCart, clearCart } = useCart();
-    console.log("bank",cart)
-    // const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    
-    // const [cartData, setCartData] = useState([cart.cartData]) 
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    console.log(totalPrice)
     return (
         <div>
             <Nav />
@@ -24,12 +21,12 @@ export default function CheckOut() {
                         { cart.length > 0 ? (
                             cart.map((item) => (
                                 <MyCart
-                                    key={item.id? item.id:""}
-                                    name={item.title? item.title:""}
-                                    image={item.images? item.images:""}
-                                    price={item.price? item.price:""}
-                                    category={item.categories? item.categories:""}
-                                    onRemove={() => removeFromCart(item?.id)}
+                                    key={item.id}
+                                    name={item.title}
+                                    image={item.images[0]}
+                                    price={item.price}
+                                    category={item.categories}
+                                    onRemove={() => removeFromCart(item.id)}
                                 />
                             ))
                         ) : (
@@ -42,7 +39,7 @@ export default function CheckOut() {
                     )}
                     </div>
                     <div className="flex justify-center mt-20 md:mt-0">
-                        {/* <CheckOutMyCart totalPrice={totalPrice} /> */}
+                        <CheckOutMyCart totalPrice={totalPrice} />
                     </div>
                 </div>
             </div>

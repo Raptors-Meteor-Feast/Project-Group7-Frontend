@@ -48,9 +48,7 @@ const CardDetail = () => {
   }
 
   const handleAddToCart = () => {
-    // addToCart(gameData._id, gameData.title, gameData.price, gameData.categories, gameImages );
     addToCart(gameData);
-    console.log("handleAddToCart", gameData._id)
   };
   
 
