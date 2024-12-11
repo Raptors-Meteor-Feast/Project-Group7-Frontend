@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/card/:id",
+    path: "/game/:id",
     element: <CardDetail />,
   },
   {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     element: <ResetPassword />,
   },
   {
-    path: "/allgame",
+    path: "/browse",
     element: <AllGame />,
   },
   {

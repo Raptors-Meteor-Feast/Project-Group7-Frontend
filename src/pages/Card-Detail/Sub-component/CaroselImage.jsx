@@ -1,112 +1,116 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
-import gamedata from "../../../Data/gamedata.json";
+import api from "../../../Instance";
 
 function CarouselImage({ gameId }) {
-  const [current, setCurrent] = useState(0);
-  const [mainContent, setMainContent] = useState({
-    title: "",
-    imgUrl: "",
-  });
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [gameImages, setGameImages] = useState([]);  // เก็บภาพทั้งหมด
   const thumbnailContainerRef = useRef(null);
 
-  const gameData = gamedata.find((game) => game.id === parseInt(gameId));
-
   useEffect(() => {
-    if (gameData) {
-      setMainContent({
-        title: gameData.title,
-        imgUrl: gameData.pictureaddress,
-      });
-      setSelectedImageIndex(null);
-    }
-  }, [gameData]);
+    const fetchData = async () => {
+      try {
+        const response = await api.get(`game/${gameId}`);
+        const images = response.data?.game?.images || [];
+        setGameImages(images);
+        setCurrentIndex(0);  // เริ่มต้นที่ภาพแรก
+      } catch (error) {
+        console.error("Error fetching game images:", error);
+      }
+    };
+    fetchData();
+  }, [gameId]);
 
   useEffect(() => {
     const container = thumbnailContainerRef.current;
-    const selectedThumbnail = container?.children[selectedImageIndex];
+    const selectedThumbnail = container?.children[currentIndex];
     if (container && selectedThumbnail) {
       const offsetLeft =
         selectedThumbnail.offsetLeft - container.offsetWidth / 2 + selectedThumbnail.offsetWidth / 2;
       container.scrollTo({ left: offsetLeft, behavior: "smooth" });
     }
-  }, [selectedImageIndex]);
+  }, [currentIndex]);
 
   const previousSlide = () => {
-    const newCurrent = current === 0 ? gameData.exampicture.length - 1 : current - 1;
-    setCurrent(newCurrent);
-    setSelectedImageIndex(newCurrent);
-    setMainContent({
-      ...mainContent,
-      imgUrl: gameData.exampicture[newCurrent],
-    });
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? gameImages.length - 1 : prevIndex - 1
+    );
   };
 
   const nextSlide = () => {
-    const newCurrent = current === gameData.exampicture.length - 1 ? 0 : current + 1;
-    setCurrent(newCurrent);
-    setSelectedImageIndex(newCurrent);
-    setMainContent({
-      ...mainContent,
-      imgUrl: gameData.exampicture[newCurrent],
-    });
+    setCurrentIndex((prevIndex) =>
+      prevIndex === gameImages.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   const handleThumbnailClick = (index) => {
-    setSelectedImageIndex(index);
-    setCurrent(index);
-    setMainContent({
-      ...mainContent,
-      imgUrl: gameData.exampicture[index],
-    });
+    setCurrentIndex(index);
   };
+
+  if (gameImages.length === 0) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
-      <div className="overflow-hidden relative rounded-xl">
+      {/* Section สำหรับภาพหลัก */}
+      <div className="relative overflow-hidden rounded-xl group">
         <motion.div
-          key={mainContent.imgUrl}
+          key={currentIndex}
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 50 }}
           transition={{ duration: 0.5 }}
-          className="flex transition ease-out duration-400"
+          className="relative"
         >
-          <img src={mainContent.imgUrl} alt="Main Image" />
+          <img
+            src={gameImages[currentIndex]}
+            alt={`Image ${currentIndex + 1}`}
+            className="w-full h-auto"
+          />
+          {/* เงาด้านซ้าย */}
+          <div
+            className="absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-800 ease-in-out cursor-pointer"
+            onClick={previousSlide} // เพิ่ม onClick เพื่อเปลี่ยนภาพ
+          ></div>
+          {/* เงาด้านขวา */}
+          <div
+            className="absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-800 ease-in-out cursor-pointer"
+            onClick={nextSlide} // เพิ่ม onClick เพื่อเปลี่ยนภาพ
+          ></div>
         </motion.div>
-
-        <div className="absolute top-0 h-full w-full flex justify-between items-center text-white px-4">
-          <button onClick={previousSlide}>
+        <div className="absolute top-0 h-full w-full flex justify-between items-center text-white px-4 pointer-events-none">
+          <button onClick={previousSlide} className="pointer-events-auto">
             <IoIosArrowBack size={50} />
           </button>
-          <button onClick={nextSlide}>
+          <button onClick={nextSlide} className="pointer-events-auto">
             <IoIosArrowForward size={50} />
           </button>
         </div>
       </div>
 
-      <div className="overflow-hidden">
+      {/* Section สำหรับ Thumbnail */}
+      <div className="overflow-hidden pt-6">
         <div
           ref={thumbnailContainerRef}
-          className="flex overflow-x-auto pt-6 gap-4 justify-center"
+          className="flex overflow-x-auto gap-4 justify-center"
         >
-          {gameData.exampicture.map((item, index) => (
+          {gameImages.map((image, index) => (
             <div
               key={index}
+              className={`relative w-[160px] h-[108px] rounded-lg cursor-pointer ${
+                currentIndex === index ? "border-2 border-blue-500" : "opacity-60"
+              }`}
               onClick={() => handleThumbnailClick(index)}
-              className="hover:cursor-pointer"
             >
               <img
-                src={item}
-                width={160}
-                height={108}
-                className={`rounded-lg h-full ${
-                  selectedImageIndex === index ? "border-2 border-blue-500" : "opacity-60"
-                }`}
+                src={image}
                 alt={`Thumbnail ${index + 1}`}
+                className="w-full h-full object-cover rounded-lg"
               />
+              {currentIndex === index && (
+                <div className="absolute inset-0 border-2 border-blue-500 rounded-lg"></div>
+              )}
             </div>
           ))}
         </div>
