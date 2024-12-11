@@ -11,7 +11,7 @@ import { useCart } from "../components/Checkout/CartContext";
 export default function Nav() {
     const [logIn, setLogIn] = useState(false); // เก็บสถานะการล็อกอิน
     const [userData, setUserData] = useState(null); // เก็บข้อมูลผู้ใช้จาก backend
-    console.log("User Data:", userData);
+    // console.log("User Data:", userData);
 
     // ตรวจสอบ token เมื่อโหลดหน้าเว็บ
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function Nav() {
                 const parsedToken = JSON.parse(token); // แปลงเป็นอ็อบเจ็กต์
                 setLogIn(!!parsedToken); // ตรวจสอบว่ามี token หรือไม่
             } catch (error) {
-                console.log(error)
+                // console.log(error)
                 // ถ้าไม่สามารถแปลงได้ ก็ถือว่า token เป็นสตริงปกติ
                 setLogIn(true);
             }
@@ -58,8 +58,8 @@ export default function Nav() {
     };
 
     const { cart } = useCart();
-    const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
-
+    // const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+    
     return (
         <div className="bg-neutral-900 sticky top-0 w-full z-50">
             <div className="flex justify-between items-center py-[24px]">
@@ -92,7 +92,7 @@ export default function Nav() {
                             </ul>
                         </div>
                         <p className="text-orange-500 font-bold text-[18px]">Cart</p>
-                        <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link>
+                        {/* <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link> */}
                     </div>
                     {!logIn ? (
                         <div className="mr-36">

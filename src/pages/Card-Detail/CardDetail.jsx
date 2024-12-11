@@ -19,6 +19,8 @@ const CardDetail = () => {
   const { addToCart, buyNow } = useCart();
   const navigate = useNavigate();
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [gameImages, setGameImages] = useState([]); 
   useEffect(() => {
     const fetchGameData = async () => {
       try {
@@ -26,6 +28,9 @@ const CardDetail = () => {
 
         const gameData = gameResponse.data.game
         const systemData = gameResponse.data.system
+        const images = gameResponse.data?.game?.images || [];
+        setGameImages(images);
+        setCurrentIndex(0);  // เริ่มต้นที่ภาพแรก
 
         setGameData(gameData);
         setGameDataSystem(systemData);
@@ -37,18 +42,23 @@ const CardDetail = () => {
     fetchGameData();
   }, [id]);
 
+  
   if (!gameData || !gameDataSystem) {
     return <p>Loading...</p>;
   }
 
   const handleAddToCart = () => {
-    addToCart(gameData._id);
+    // addToCart(gameData._id, gameData.title, gameData.price, gameData.categories, gameImages );
+    addToCart(gameData);
+    console.log("handleAddToCart", gameData._id)
   };
+  
 
   const handleBuyNow = () => {
     buyNow(gameData);
     navigate("/checkout");
   };
+
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -62,7 +72,7 @@ const CardDetail = () => {
         <div className="pb-[40px]">
           <h1 className="font-bold text-[28px]">{gameData.title}</h1>
           <div className="py-5">
-            <CarouselImage gameId={id} />
+            <CarouselImage currentIndex={ currentIndex}  gameImages={ gameImages } setCurrentIndex={ setCurrentIndex } setGameImages={ setGameImages }/>
             <p className="pt-4">{gameData.mainContent}</p>
           </div>
           <div className="flex justify-end gap-3">
