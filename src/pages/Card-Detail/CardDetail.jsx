@@ -38,7 +38,6 @@ const CardDetail = () => {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchGameData();
   }, [id]);
 
