@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 import MostPopularCard from "../components/Card-Home/MostPopularCard";
 import RecommendCard from "../components/Card-Home/RecommendCard";
 import Nav from "../components/Nav";
-import CardNews from "../components/News/cardNews";
+import CardNews from "../components/News/CardNews.jsx";
 
 const Home = () => {
   const [gameData, setGameData] = useState(null);
