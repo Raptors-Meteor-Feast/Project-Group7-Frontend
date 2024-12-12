@@ -53,7 +53,7 @@ const CardDetail = () => {
   const handleBuyNow = () => {
     buyNow(gameData);
     navigate("/login");
-    navigate("/checkout");    
+    navigate("/checkout");  
   };
 
 
