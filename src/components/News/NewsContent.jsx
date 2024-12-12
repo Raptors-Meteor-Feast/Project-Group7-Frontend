@@ -25,16 +25,16 @@ export default function NewsContent() {
   return (
     <div>
       <Nav />
-      <div className=" px-[300px] pt-[32px] pb-[120px]">
+      <div className=" px-[300px] pt-[32px] pb-[120px] bg-neutral-900 text-white">
         <div className="pt-5">
           <img src={content.newsImageUrl} alt={content.newsHeading} />
         </div>
         <div className="py-5 pt-5">
           <p className="font-bold text-2xl">{content.newsHeading}</p>
-          <p className="text-default-700">{content.date}</p>
+          <p className="text-white">{content.date}</p>
         </div>
         <div>
-          <p className="text-default-700">By {content.newsContributor}</p>
+          <p className="text-white">By {content.newsContributor}</p>
         </div>
         <div className="flex flex-col gap-4 pt-4">
           <p>{content.newsContent}</p>
