@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 import { useCart } from '../CartContext';
 
 
+
 // เข้าถึง API URL จากไฟล์ .env
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -31,7 +32,7 @@ const createOrder = async (orderData) => {
 };
 
 const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
-  const { cart, setCart } = useCart();  // เข้าถึงข้อมูลและฟังก์ชันการจัดการตะกร้า
+  const { cart, setCart, clearCart } = useCart();  // เข้าถึงข้อมูลและฟังก์ชันการจัดการตะกร้า
   const [paymentMethod, setPaymentMethod] = useState("");
   const [promptpay, setPromptpay] = useState(false);
   const [kbank, setKbank] = useState(false);
@@ -41,9 +42,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
   const [paypal, setPaypal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [logIn, setLogIn] = useState(false);
-
   const [userData, setUserData] = useState(null);  // เก็บข้อมูลผู้ใช้จาก backend
-
 
 
   const handlePaymentMethodChange = (event) => {
@@ -57,76 +56,72 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    if (token) {
+    const fetchData = async () => {
+      const token = localStorage.getItem("authToken");
+
+      if (!token) {
+        setLogIn(false);
+        return;
+      }
+
       try {
         const parsedToken = JSON.parse(atob(token.split(".")[1]));
         setLogIn(!!parsedToken);
-      } catch (error) {
-        console.error("Invalid token:", error);
-        setLogIn(false);
-        localStorage.removeItem("authToken");
-      }
-    }
-  }, []);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      if (logIn && !userData) {
-        try {
-          const token = localStorage.getItem("authToken");
+        if (parsedToken && !userData) {
           const response = await axios.get(`${API_URL}/user/data`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           setUserData(response.data);
-        } catch (error) {
-          console.error("Error fetching user data:", error);
-          toast.error(error.response?.data?.message || "เกิดข้อผิดพลาด");
-          setLogIn(false);
-          localStorage.removeItem("authToken");
         }
+      } catch (error) {
+        console.error("Error processing token or fetching data:", error);
+        localStorage.removeItem("authToken");
+        setLogIn(false);
       }
     };
 
-    fetchUserData();
-  }, [logIn, userData]);
+    fetchData();
+  }, [userData]);
 
 
   const isDisabled = paymentMethod === "";
 
   const handleSubmitOrder = async () => {
     setIsLoading(true);
-  
+    const token = localStorage.getItem("authToken");
+
     if (!paymentMethod || !cart.length) {
       toast.error("กรุณากรอกข้อมูลให้ครบถ้วน");
       setIsLoading(false);
       return;
     }
-  
-    if (!userData || !userData.id) {  // ตรวจสอบว่ามี userId หรือไม่
+
+    if (!userData) {  // ตรวจสอบว่ามี userId หรือไม่
       toast.error("ข้อมูลผู้ใช้ไม่ถูกต้อง");
       setIsLoading(false);
       return;
     }
-  
+
     try {
       const amount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
       const gameId = cart[0].gameId;  // เลือก gameId ตัวแรกจาก cart
-  
+
       const orderData = {
-        userId: userData.id,  // ใช้ userId จากข้อมูลผู้ใช้
         gameId: gameId,
         amount: amount,
         paymentMethod,
       };
-  
-      const response = await createOrder(orderData);
-      console.log("Order created successfully:", response);
-      setModalOpen(false);
-      toast.success("คำสั่งซื้อสำเร็จ!");
-  
-      // เคลียร์ตะกร้าหลังจากทำการสั่งซื้อสำเร็จ
-      setCart([]);  // รีเซ็ตตะกร้าให้ว่างเปล่า
+
+      const response = await axios.post(`${API_URL}/orders`, orderData,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      console.log('responseresponse', response);
+
+      clearCart(); // เคลียร์ตะกร้าโดยไม่ปิด Modal
+
+      toast.success("คำสั่งซื้อสำเร็จ!"); // แสดงข้อความสำเร็จ
     } catch (error) {
       console.error("Error creating order:", error);
       toast.error("ไม่สามารถดำเนินการคำสั่งซื้อได้");
@@ -134,7 +129,6 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
       setIsLoading(false);
     }
   };
-  
 
   return (
     <>
