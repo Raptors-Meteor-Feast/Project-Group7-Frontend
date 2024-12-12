@@ -2,7 +2,6 @@ import { useState } from "react";
 import ModalCheckOut from "./ModalButtonCheckOut/ModalCheckOut";
 
 
-
 export default function CheckOutMyCart({ totalPrice }) {
 
   const [isModalOpen, setModalOpen] = useState(false);
@@ -32,9 +31,6 @@ export default function CheckOutMyCart({ totalPrice }) {
           <p className="font-semibold">Subtotal:</p>
           <p>THB {totalPrice}</p>
         </div>
-
-        {/* <button className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-2 rounded-xl w-[265px]"
-          onClick={handleCheckout}> Check Out </button> */}
 
         <ModalCheckOut
           totalPrice={totalPrice}
