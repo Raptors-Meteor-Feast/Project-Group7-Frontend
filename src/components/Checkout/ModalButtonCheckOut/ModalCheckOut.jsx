@@ -12,6 +12,7 @@ import ModalCheckOutSucceed from "./ModalCheckOutSucceed";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';  // Import toastify
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
+import { useCart } from '../CartContext';
 
 
 // เข้าถึง API URL จากไฟล์ .env
@@ -29,8 +30,8 @@ const createOrder = async (orderData) => {
   }
 };
 
-const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, gameId }) => {
-
+const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
+  const { cart, setCart } = useCart();  // เข้าถึงข้อมูลและฟังก์ชันการจัดการตะกร้า
   const [paymentMethod, setPaymentMethod] = useState("");
   const [promptpay, setPromptpay] = useState(false);
   const [kbank, setKbank] = useState(false);
@@ -40,7 +41,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, gameId }) => {
   const [paypal, setPaypal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [logIn, setLogIn] = useState(false);
-  
+
   const [userData, setUserData] = useState(null);  // เก็บข้อมูลผู้ใช้จาก backend
 
 
@@ -92,28 +93,40 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, gameId }) => {
 
 
   const isDisabled = paymentMethod === "";
+
   const handleSubmitOrder = async () => {
     setIsLoading(true);
-
-    if (!userData?.id || !gameId || !totalPrice || !paymentMethod) {
+  
+    if (!paymentMethod || !cart.length) {
       toast.error("กรุณากรอกข้อมูลให้ครบถ้วน");
       setIsLoading(false);
       return;
     }
-
+  
+    if (!userData || !userData.id) {  // ตรวจสอบว่ามี userId หรือไม่
+      toast.error("ข้อมูลผู้ใช้ไม่ถูกต้อง");
+      setIsLoading(false);
+      return;
+    }
+  
     try {
+      const amount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      const gameId = cart[0].gameId;  // เลือก gameId ตัวแรกจาก cart
+  
       const orderData = {
-        userId: userData.id,
+        userId: userData.id,  // ใช้ userId จากข้อมูลผู้ใช้
         gameId: gameId,
-        amount: totalPrice,
+        amount: amount,
         paymentMethod,
       };
-
-      console.log(orderData);
+  
       const response = await createOrder(orderData);
       console.log("Order created successfully:", response);
       setModalOpen(false);
       toast.success("คำสั่งซื้อสำเร็จ!");
+  
+      // เคลียร์ตะกร้าหลังจากทำการสั่งซื้อสำเร็จ
+      setCart([]);  // รีเซ็ตตะกร้าให้ว่างเปล่า
     } catch (error) {
       console.error("Error creating order:", error);
       toast.error("ไม่สามารถดำเนินการคำสั่งซื้อได้");
@@ -121,6 +134,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, gameId }) => {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <>
