@@ -9,6 +9,7 @@ import { useCart } from "../components/Checkout/CartContext";
 import { toast, ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 
+
 export default function Nav() {
     const [logIn, setLogIn] = useState(false); // เก็บสถานะการล็อกอิน
     const [userData, setUserData] = useState(null); // เก็บข้อมูลผู้ใช้จาก backend
@@ -57,7 +58,7 @@ export default function Nav() {
     };
 
     const { cart } = useCart();
-    const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+    const cartCount = cart.length;
 
     return (
         <div className="bg-neutral-900 sticky top-0 w-full z-50">
@@ -88,7 +89,7 @@ export default function Nav() {
                         <div>
                             <ul className="flex gap-7 mr-2 font-bold items-center">
                                 <li>
-                                    <Link to="#" className="hidden sm:block font-bold text-white text-[18px] transition-all duration-500 
+                                    <Link to="/browse" className="hidden sm:block font-bold text-white text-[18px] transition-all duration-500 
                                     hover:[text-shadow:_0_0_10px_#ff9900,_0_0_20px_#ff6600,_0_0_30px_#ff3300,_0_0_40px_#ff0000]
                                     hover:text-black"
                                     >Browse</Link>

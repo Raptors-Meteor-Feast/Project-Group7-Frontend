@@ -40,7 +40,7 @@ const Container = ({ name }) => {
                         key={game._id}
                         isPressable
                         onPress={() => handleCardClick(game._id)}
-                        className="drop-shadow-md hover:bg-gray-300 transition-transform transform duration-300 ease-in-out">
+                        className="drop-shadow-md hover:bg-gray-300 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white,_0_0_30px_white,_0_0_40px_white]">
                         <CardBody className="overflow-visible p-3 text-small flex flex-row justify-start items-center">
                             <Image
                                 shadow="sm"

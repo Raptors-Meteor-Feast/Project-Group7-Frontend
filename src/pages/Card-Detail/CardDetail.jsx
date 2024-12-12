@@ -7,7 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import ModalCheckOut from "../../components/Checkout/ModalButtonCheckOut/ModalCheckOut";
 import { useCart } from "../../components/Checkout/CartContext";
 import { useNavigate } from "react-router-dom";
-import api from "../../Instance"
+import api from "../../Instance";
 
 const CardDetail = () => {
   const { id } = useParams();
@@ -19,36 +19,41 @@ const CardDetail = () => {
   const { addToCart, buyNow } = useCart();
   const navigate = useNavigate();
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [gameImages, setGameImages] = useState([]); 
   useEffect(() => {
     const fetchGameData = async () => {
       try {
         const gameResponse = await api.get(`/game/${id}`);
-
         const gameData = gameResponse.data.game
         const systemData = gameResponse.data.system
-
+        const images = gameResponse.data?.game?.images || [];
+        setGameImages(images);
+        setCurrentIndex(0);  // เริ่มต้นที่ภาพแรก
         setGameData(gameData);
         setGameDataSystem(systemData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchGameData();
   }, [id]);
 
+  
   if (!gameData || !gameDataSystem) {
     return <p>Loading...</p>;
   }
 
   const handleAddToCart = () => {
-    addToCart(gameData._id);
+    addToCart(gameData);
   };
+  
 
   const handleBuyNow = () => {
     buyNow(gameData);
     navigate("/checkout");
   };
+
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -58,21 +63,28 @@ const CardDetail = () => {
   return (
     <div>
       <Nav />
-      <div className="bg-slate-300 px-[300px] pt-[32px] pb-[120px]">
+      <div className="bg-neutral-900 px-[300px] pt-[32px] pb-[120px] text-white">
         <div className="pb-[40px]">
           <h1 className="font-bold text-[28px]">{gameData.title}</h1>
           <div className="py-5">
-            <CarouselImage gameId={id} />
+            <CarouselImage currentIndex={ currentIndex}  gameImages={ gameImages } setCurrentIndex={ setCurrentIndex } setGameImages={ setGameImages }/>
             <p className="pt-4">{gameData.mainContent}</p>
           </div>
           <div className="flex justify-end gap-3">
             <Button className="py-3 px-7 bg-slate-100 text-xl">
               THB {gameData.price}
             </Button>
-            <Button className="py-3 px-7 text-xl" color="primary" onClick={handleBuyNow}>
+            <Button
+              className="py-3 px-7 text-xl"
+              color="primary"
+              onClick={handleBuyNow}
+            >
               Buy Now
             </Button>
-            <Button className="py-3 px-7 bg-gray-600 text-white text-xl" onClick={handleAddToCart}>
+            <Button
+              className="py-3 px-7 bg-gray-600 text-white text-xl"
+              onClick={handleAddToCart}
+            >
               Add To Cart
             </Button>
           </div>
@@ -83,7 +95,9 @@ const CardDetail = () => {
             <p>{gameData.subContent}</p>
             <div className="flex justify-start gap-3 pt-5">
               {gameData.categories.map((category, index) => (
-                <a key={index} className="underline cursor-pointer">{category}</a>
+                <a key={index} className="underline cursor-pointer">
+                  {category}
+                </a>
               ))}
             </div>
           </div>
@@ -99,20 +113,22 @@ const CardDetail = () => {
           )}
 
           <div>
-            <h2 className="font-bold text-[24px] pb-4">{gameDataSystem.title} System Requirement</h2>
-            <div className="flex flex-col p-11 gap-5 bg-white rounded-xl">
+            <h2 className="font-bold text-[24px] pb-4">
+              {gameDataSystem.title} System Requirement
+            </h2>
+            <div className="flex flex-col p-11 gap-5 bg-[#252525] rounded-xl">
               <p className="font-bold text-xl">{gameDataSystem.operator}</p>
               <div className="flex w-full">
                 <div className="flex flex-col gap-3 w-[50%]">
                   <p className="font-bold">Minimum</p>
                   {Object.entries(gameDataSystem.minimum)
-                  .filter(([key]) => key !== "_id")
-                  .map(([key, value]) => (
-                    <div key={key}>
-                      <p className="text-default-400">{key}</p>
-                      <p className="font-semibold">{value}</p>
-                    </div>
-                  ))}
+                    .filter(([key]) => key !== "_id")
+                    .map(([key, value]) => (
+                      <div key={key}>
+                        <p className="text-default-400">{key}</p>
+                        <p className="font-semibold">{value}</p>
+                      </div>
+                    ))}
                 </div>
                 {!(gameDataSystem.recommended.memory === 0) && (
                   <div className="flex flex-col gap-3 w-[50%]">
@@ -124,13 +140,13 @@ const CardDetail = () => {
                           <p className="text-default-400">{key}</p>
                           <p className="font-semibold">{value}</p>
                         </div>
-                    ))}
+                      ))}
                   </div>
                 )}
               </div>
               <div>
                 <p className="text-default-400">Languages Supported</p>
-                  {Object.entries(gameDataSystem.language)
+                {Object.entries(gameDataSystem.language)
                   .filter(([key]) => key !== "_id")
                   .map(([key, value]) => (
                     <div key={key}>

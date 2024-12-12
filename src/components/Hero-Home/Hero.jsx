@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <div className='w-full px-[135px] flex py-10 bg-gray-900'>
+    <div className='w-full px-[135px] flex py-10 bg-neutral-900'>
       <div className='w-[70%]'>
         <CarouselBanner selectedId={selectedId} />
       </div>

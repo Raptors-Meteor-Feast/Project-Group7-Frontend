@@ -7,7 +7,7 @@ import DiscoverLogo from "/NavIcon/discover-logo.png";
 export default function Footer() {
   return (
 
-    <div className="flex justify-between items-center bg-blue-900 py-5 px-20">
+    <div className="flex justify-between items-center bg-[#252525] py-5 px-20">
 
     <p className="font-semibold text-white">Copyright &copy; 2024 Raptors Meteor Feast. All Rights Reserved.</p>
     <div className="hidden md:flex items-center gap-2">

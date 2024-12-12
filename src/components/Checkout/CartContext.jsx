@@ -1,49 +1,198 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import gamedata from '../../Data/gamedata.json';
+
 
 const CartContext = createContext();
-
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [gameData, setGameData] = useState([]);
+    const [success, setSuccess] = useState(false);
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/game`);
+                setGameData(response.data.game);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        fetchData();
+    }, []);
 
-    const addToCart = (id) => {
-        const item = gamedata.find(game => game.id === id);
-        if (!item) return;  // ถ้าไม่พบสินค้า ให้หยุดทำงาน
 
-        // เช็คว่าเกมนี้เคยถูกเพิ่มลงตะกร้าหรือยัง
-        const existingItem = cart.find(cartItem => cartItem.id === id);
+    useEffect(() => {
+        const fetchCartItems = async () => {
+            const token = localStorage.getItem("authToken");
+            if (!token) {
+                setLoading(false);
+                return;
+            }
 
-        if (existingItem) {
-            alert('The game has been added to the cart.'); // แจ้งเตือนเมื่อเกมถูกเพิ่มซ้ำ
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/checkout`,
+                    { headers: { Authorization: `Bearer ${token}` } }, 
+                );
+                const processedData = Object.entries(response.data.cartData).map(([key, value]) => {
+                    return { id: key, ...value ,quantity: value.quantity || 1};
+
+                });
+                setCart(processedData); // ตั้งค่า cart ด้วยข้อมูลที่ดึงมา
+            } catch (error) {
+                setError(error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCartItems();
+    }, [success]);
+
+    const addToCart = async (gameDatas) => {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            toast.warning("Please log in to add items to the cart.", { autoClose: 2500 });
             return;
         }
+        try {
+            const item = gameData.find((game) => game._id === gameDatas._id);
+            if (!item) {
+                toast.warning("Game not found.", { autoClose: 2500 });
+                return;
+            }
+    
+            const existingItem = cart.find(
+                (cartItem) => cartItem.id === gameDatas._id || cartItem.gameId === gameDatas._id  
+            );
 
-        setCart(prevCart => [
-            ...prevCart,
-            { ...item, quantity: 1 },
-        ]);
+            if (existingItem) {
+                toast.info(( `${gameDatas.title} has already been added to the cart.`), { autoClose: 2500 });
+                return;
+            }
+    
+            const value = {
+                gameId: gameDatas._id,
+                title: gameDatas.title,
+                categories: gameDatas.categories,
+                price: gameDatas.price,
+                images: gameDatas.images
+            };
+    
+            // เรียก API เพื่อเพิ่มข้อมูลลง backend
+            const response = await axios.post(
+                `${import.meta.env.VITE_API_BASE_URL}/checkout/add`,value,
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+            
+            // ตรวจสอบสถานะการตอบกลับจาก API
+            if (response.status === 200) {
+                setSuccess(!success);
+                // แจ้งเตือนเมื่อเพิ่มสำเร็จ
+                toast.success((`${gameDatas.title} has been added to the cart.`), { autoClose: 2500 });
+            } else {
+                console.error("Failed to add item to cart.");
+            }
+        } catch (error) {
+            console.error("Error adding to cart:", error);
+        }
     };
 
-    const removeFromCart = (id) => {
-        setCart(prevCart => prevCart.filter(item => item.id !== id));
+
+    const buyNow = async (item) => {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            toast.warning("Please log in to add items to the cart.", { autoClose: 2500 });
+            return;
+        }
+    
+        try {
+            // เรียก API เพื่อดำเนินการ checkout
+            const response = await axios.post(
+                `${import.meta.env.VITE_API_BASE_URL}/checkout`,
+                { gameId: item.id },
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+    
+            // ตรวจสอบสถานะการตอบกลับจาก API
+            if (response.status === 200) {
+                // setCart([{ ...item, quantity: 1 }]); // ตั้งค่า cart ใหม่
+            } else {
+                console.error("Failed to checkout.");
+            }
+        } catch (error) {
+            console.error("Error during checkout:", error);
+        }
     };
 
-    const buyNow = (item) => {
-        setCart([{ ...item, quantity: 1 }]); // Replace cart with the current item
+
+    
+    const removeFromCart = async (id) => {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            toast.warning("Please log in to add items to the cart.", { autoClose: 2500 });
+            return;
+        }
+    
+        try {
+            const response = await axios.delete(
+                `${import.meta.env.VITE_API_BASE_URL}/checkout/delete`,
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                    data: { gameId: id, userId: localStorage.getItem("userId") },
+                }
+            );
+    
+            if (response.status === 200) {
+                setSuccess(!success);
+                toast.success("Game removed from cart successfully.", { autoClose: 2500 });
+            } else {
+                toast.warning("Failed to remove the game from cart.", { autoClose: 2500 });
+            }
+        } catch (error) {
+            console.error("Error removing game from cart:", error);
+        }
     };
 
-    // ฟังก์ชันใหม่สำหรับเคลียร์ตะกร้า
-    const clearCart = () => {
-        setCart([]); // รีเซ็ต cart ให้เป็นอาเรย์ว่าง
+    
+    
+    
+
+    const clearCart = async () => {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            toast.warning("Please log in to add items to the cart.", { autoClose: 2500 });
+            return;
+        }
+    
+        try {
+            const response = await axios.patch(
+                `${import.meta.env.VITE_API_BASE_URL}/checkout/clear`,
+                { userId: localStorage.getItem("userId") },
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+    
+            if (response.status === 200) {
+                setCart([]); // เคลียร์ตะกร้าใน frontend
+                toast.success("Cart cleared successfully.", { autoClose: 2500 });
+            } else {
+                toast.warning("Failed to clear the cart.", { autoClose: 2500 });
+            }
+        } catch (error) {
+            console.error("Error clearing the cart:", error);
+        }
     };
 
+    
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart , buyNow, clearCart}}>
+        <CartContext.Provider value={{ cart, removeFromCart, clearCart, loading, error, addToCart, buyNow }}>
             {children}
         </CartContext.Provider>
     );
 };
 
 export const useCart = () => useContext(CartContext);
-

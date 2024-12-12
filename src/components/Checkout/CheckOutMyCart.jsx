@@ -4,7 +4,7 @@ import ModalCheckOut from "./ModalButtonCheckOut/ModalCheckOut";
 
 
 export default function CheckOutMyCart({ totalPrice }) {
-  // const totalPrice = mockGameData.reduce((sum, item) => sum + item.price, 0);
+
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleCheckout = () => {
@@ -33,12 +33,8 @@ export default function CheckOutMyCart({ totalPrice }) {
           <p>THB {totalPrice}</p>
         </div>
 
-        {/* <button
-          className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-2 rounded-xl w-[265px]"
-          onClick={handleCheckout}
-        >
-          Check Out
-        </button> */}
+        {/* <button className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-2 rounded-xl w-[265px]"
+          onClick={handleCheckout}> Check Out </button> */}
 
         <ModalCheckOut
           totalPrice={totalPrice}
