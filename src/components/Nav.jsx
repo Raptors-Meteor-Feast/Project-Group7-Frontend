@@ -89,7 +89,7 @@ export default function Nav() {
                         <div>
                             <ul className="flex gap-7 mr-2 font-bold items-center">
                                 <li>
-                                    <Link to="#" className="hidden sm:block font-bold text-white text-[18px] transition-all duration-500 
+                                    <Link to="/browse" className="hidden sm:block font-bold text-white text-[18px] transition-all duration-500 
                                     hover:[text-shadow:_0_0_10px_#ff9900,_0_0_20px_#ff6600,_0_0_30px_#ff3300,_0_0_40px_#ff0000]
                                     hover:text-black"
                                     >Browse</Link>
