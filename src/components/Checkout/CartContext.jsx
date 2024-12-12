@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -56,13 +56,13 @@ export const CartProvider = ({ children }) => {
     const addToCart = async (gameDatas) => {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            toast.warning("Please log in to add items to the cart.", { autoClose: 2500, theme: "dark" });
+            toast.warning("Please log in to add items to the cart.", { autoClose: 2500 });
             return;
         }
         try {
             const item = gameData.find((game) => game._id === gameDatas._id);
             if (!item) {
-                toast.warning("Game not found.", { autoClose: 2500, theme: "dark" });
+                toast.warning("Game not found.", { autoClose: 2500 });
                 return;
             }
     
@@ -71,7 +71,7 @@ export const CartProvider = ({ children }) => {
             );
 
             if (existingItem) {
-                toast.info(( `${gameDatas.title} has already been added to the cart.`), { autoClose: 2500, theme: "dark" });
+                toast.info(( `${gameDatas.title} has already been added to the cart.`), { autoClose: 2500 });
                 return;
             }
     
@@ -93,7 +93,7 @@ export const CartProvider = ({ children }) => {
             if (response.status === 200) {
                 setSuccess(!success);
                 // แจ้งเตือนเมื่อเพิ่มสำเร็จ
-                toast.success((`${gameDatas.title} has been added to the cart.`), { autoClose: 2500, theme: "dark" });
+                toast.success((`${gameDatas.title} has been added to the cart.`), { autoClose: 2500 });
             } else {
                 console.error("Failed to add item to cart.");
             }
@@ -106,7 +106,7 @@ export const CartProvider = ({ children }) => {
     const buyNow = async (item) => {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            toast.warning("Please log in to add items to the cart.", { autoClose: 2500, theme: "dark" });
+            toast.warning("Please log in to add items to the cart.", { autoClose: 2500 });
             return;
         }
     
@@ -134,7 +134,7 @@ export const CartProvider = ({ children }) => {
     const removeFromCart = async (id) => {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            toast.warning("Please log in to add items to the cart.", { autoClose: 2500, theme: "dark" });
+            toast.warning("Please log in to add items to the cart.", { autoClose: 2500 });
             return;
         }
     
@@ -149,9 +149,9 @@ export const CartProvider = ({ children }) => {
     
             if (response.status === 200) {
                 setSuccess(!success);
-                toast.success("Game removed from cart successfully.", { autoClose: 2500, theme: "dark" });
+                toast.success("Game removed from cart successfully.", { autoClose: 2500 });
             } else {
-                toast.warning("Failed to remove the game from cart.", { autoClose: 2500, theme: "dark" });
+                toast.warning("Failed to remove the game from cart.", { autoClose: 2500 });
             }
         } catch (error) {
             console.error("Error removing game from cart:", error);
@@ -165,7 +165,7 @@ export const CartProvider = ({ children }) => {
     const clearCart = async () => {
         const token = localStorage.getItem("authToken");
         if (!token) {
-            toast.warning("Please log in to add items to the cart.", { autoClose: 2500, theme: "dark" });
+            toast.warning("Please log in to add items to the cart.", { autoClose: 2500 });
             return;
         }
     
@@ -178,9 +178,9 @@ export const CartProvider = ({ children }) => {
     
             if (response.status === 200) {
                 setCart([]); // เคลียร์ตะกร้าใน frontend
-                toast.success("Cart cleared successfully.", { autoClose: 2500, theme: "dark" });
+                toast.success("Cart cleared successfully.", { autoClose: 2500 });
             } else {
-                toast.warning("Failed to clear the cart.", { autoClose: 2500, theme: "dark" });
+                toast.warning("Failed to clear the cart.", { autoClose: 2500 });
             }
         } catch (error) {
             console.error("Error clearing the cart:", error);
@@ -190,7 +190,6 @@ export const CartProvider = ({ children }) => {
     
     return (
         <CartContext.Provider value={{ cart, removeFromCart, clearCart, loading, error, addToCart, buyNow }}>
-            <ToastContainer />
             {children}
         </CartContext.Provider>
     );
