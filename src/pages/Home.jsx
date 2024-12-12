@@ -5,18 +5,26 @@ import Footer from "../components/Footer/Footer";
 import MostPopularCard from "../components/Card-Home/MostPopularCard";
 import RecommendCard from "../components/Card-Home/RecommendCard";
 import Nav from "../components/Nav";
+import axios from "axios";
 import CardNews from "../components/News/CardNews.jsx";
 
 const Home = () => {
-  const [gameData, setGameData] = useState(null);
+  const [gameData, setGameData] = useState([]);
+
+  // useEffect(() => {
+  //   const cartList = localStorage.getItem("cartList");
+  //   if (cartList) {
+  //     setGameData((prev) => {
+  //       const updateGameData = [...JSON.parse(cartList)];
+  //       return updateGameData;
+  //     });
+  //   }
+  // }, []);
+
   useEffect(() => {
-    const cartList = localStorage.getItem("cartList");
-    if (cartList) {
-      setGameData((prev) => {
-        const updateGameData = [...JSON.parse(cartList)];
-        return updateGameData;
-      });
-    }
+    axios.get("http://localhost:4000/api/game")
+      .then((res) => setGameData(res.data.games))
+      .catch((err) => console.error(err));
   }, []);
 
   return (

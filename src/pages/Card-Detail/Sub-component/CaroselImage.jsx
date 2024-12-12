@@ -3,24 +3,9 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
 import api from "../../../Instance";
 
-function CarouselImage({ gameId }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [gameImages, setGameImages] = useState([]);  // เก็บภาพทั้งหมด
+function CarouselImage({ currentIndex, gameImages, setCurrentIndex, setGameImages }) {
   const thumbnailContainerRef = useRef(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await api.get(`game/${gameId}`);
-        const images = response.data?.game?.images || [];
-        setGameImages(images);
-        setCurrentIndex(0);  // เริ่มต้นที่ภาพแรก
-      } catch (error) {
-        console.error("Error fetching game images:", error);
-      }
-    };
-    fetchData();
-  }, [gameId]);
 
   useEffect(() => {
     const container = thumbnailContainerRef.current;

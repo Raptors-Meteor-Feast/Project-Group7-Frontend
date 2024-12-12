@@ -9,10 +9,10 @@ import { useCart } from "../components/Checkout/CartContext";
 import { toast, ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 
+
 export default function Nav() {
     const [logIn, setLogIn] = useState(false); // เก็บสถานะการล็อกอิน
     const [userData, setUserData] = useState(null); // เก็บข้อมูลผู้ใช้จาก backend
-    console.log("User Data:", userData);
 
     // ตรวจสอบ token เมื่อโหลดหน้าเว็บ
     useEffect(() => {
@@ -58,7 +58,7 @@ export default function Nav() {
     };
 
     const { cart } = useCart();
-    const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+    const cartCount = cart.length;
 
     return (
         <div className="bg-neutral-900 sticky top-0 w-full z-50">
