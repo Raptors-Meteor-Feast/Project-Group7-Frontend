@@ -1,8 +1,9 @@
-import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, link } from "@nextui-org/react";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import SearchBox from "./SearchBox";
 import Gr7Logo from "/NavIcon/Gr7Logo.svg";
-import UserIcon from "/NavIcon/user.png";
+// import UserIcon from "/NavIcon/user.png";
+import LoginLogo from "/NavIcon/loginlogo1.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../components/Checkout/CartContext";
@@ -96,8 +97,18 @@ export default function Nav() {
                                 </li>
                             </ul>
                         </div>
-                        <p className="text-orange-500 font-bold text-[18px]">Cart</p>
-                        <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link>
+                        {/* <p className="text-orange-500 font-bold text-[18px]">Cart</p> */}
+                        {/* <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link> */}
+                        {logIn && (
+                            <div className="flex items-center gap-4 mr-8">
+                                <p className="text-orange-500 font-bold text-[18px]">Cart</p>
+                                <Link to="/checkout">
+                                    <button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">
+                                        {cartCount}
+                                    </button>
+                                </Link>
+                            </div>
+                        )}
                     </div>
                     {!logIn ? (
                         <div className="mr-36">
@@ -110,7 +121,7 @@ export default function Nav() {
                                         color="secondary"
                                         name="Guest"
                                         size="md"
-                                        src={UserIcon}
+                                        src={LoginLogo}
                                         aria-label="Sign In"
                                     />
                                 </DropdownTrigger>
