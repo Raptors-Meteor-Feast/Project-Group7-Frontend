@@ -2,6 +2,7 @@ import { useState } from "react";
 import ModalCheckOut from "./ModalButtonCheckOut/ModalCheckOut";
 
 
+
 export default function CheckOutMyCart({ totalPrice }) {
 
   const [isModalOpen, setModalOpen] = useState(false);

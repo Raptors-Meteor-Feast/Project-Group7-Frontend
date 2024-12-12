@@ -8,4 +8,7 @@ export default defineConfig({
   },
   plugins: [react()],
   base: '/', // หรือ path ที่ตรงกับ subpath ที่ Vercel ใช้
+  define: {
+    'process.env': {},  // แก้ไขปัญหา process is not defined
+  },
 })

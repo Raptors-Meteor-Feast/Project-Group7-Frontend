@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Modal,
   ModalContent,
@@ -9,8 +9,28 @@ import {
   Radio,
 } from "@nextui-org/react";
 import ModalCheckOutSucceed from "./ModalCheckOutSucceed";
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';  // Import toastify
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 
-const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
+
+// เข้าถึง API URL จากไฟล์ .env
+const API_URL = import.meta.env.VITE_API_BASE_URL;
+
+const createOrder = async (orderData) => {
+  try {
+    console.log("Sending order data:", orderData);  // ตรวจสอบค่าที่ส่งไป
+    const response = await axios.post(`${API_URL}/orders`, orderData);
+    console.log("Response:", response);  // ตรวจสอบการตอบกลับ
+    return response.data;
+  } catch (error) {
+    console.error("Error creating order:", error);
+    throw error.response?.data || "Something went wrong";
+  }
+};
+
+const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, gameId }) => {
+
   const [paymentMethod, setPaymentMethod] = useState("");
   const [promptpay, setPromptpay] = useState(false);
   const [kbank, setKbank] = useState(false);
@@ -18,6 +38,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
   const [krungsri, setKrungsri] = useState(false);
   const [creditcard, setCreditCard] = useState(false);
   const [paypal, setPaypal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [logIn, setLogIn] = useState(false);
+  
+  const [userData, setUserData] = useState(null);  // เก็บข้อมูลผู้ใช้จาก backend
+
+
 
   const handlePaymentMethodChange = (event) => {
     setPaymentMethod(event.target.value);
@@ -29,10 +55,76 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
     setPaypal(event.target.value === "paypal");
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      try {
+        const parsedToken = JSON.parse(atob(token.split(".")[1]));
+        setLogIn(!!parsedToken);
+      } catch (error) {
+        console.error("Invalid token:", error);
+        setLogIn(false);
+        localStorage.removeItem("authToken");
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (logIn && !userData) {
+        try {
+          const token = localStorage.getItem("authToken");
+          const response = await axios.get(`${API_URL}/user/data`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          setUserData(response.data);
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+          toast.error(error.response?.data?.message || "เกิดข้อผิดพลาด");
+          setLogIn(false);
+          localStorage.removeItem("authToken");
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [logIn, userData]);
+
+
   const isDisabled = paymentMethod === "";
+  const handleSubmitOrder = async () => {
+    setIsLoading(true);
+
+    if (!userData?.id || !gameId || !totalPrice || !paymentMethod) {
+      toast.error("กรุณากรอกข้อมูลให้ครบถ้วน");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const orderData = {
+        userId: userData.id,
+        gameId: gameId,
+        amount: totalPrice,
+        paymentMethod,
+      };
+
+      console.log(orderData);
+      const response = await createOrder(orderData);
+      console.log("Order created successfully:", response);
+      setModalOpen(false);
+      toast.success("คำสั่งซื้อสำเร็จ!");
+    } catch (error) {
+      console.error("Error creating order:", error);
+      toast.error("ไม่สามารถดำเนินการคำสั่งซื้อได้");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
+      <ToastContainer />
       <Button
         onPress={() => setModalOpen(true)}
         color="primary"
@@ -45,7 +137,6 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
         isOpen={isModalOpen}
         onClose={() => {
           setModalOpen(false);
-          // if (onClose) onClose();
         }}
         size="5xl"
         className="bg-zinc-900 text-white"
@@ -71,6 +162,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       value="promptpay"
                       className="hover:scale-105 transition duration-300 ease-in-out"
                       checked={paymentMethod === "promptpay"}
+                      textValue="Promptpay (QR Code)"
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
@@ -181,7 +273,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {creditcard && (
                         <div className="p-2 text-white">
-                          8888-8888-8888-8888
+                          coming soon
                         </div>
                       )}
                     </Radio>
@@ -203,7 +295,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {paypal && (
                         <div className="p-2 text-white">
-                          8888-8888-8888-8888
+                          coming soon
                         </div>
                       )}
                     </Radio>
@@ -225,7 +317,8 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   <p className="font-semibold">Subtotal:</p>
                   <p>THB {totalPrice}</p>
                 </div>
-                <ModalCheckOutSucceed disabled={isDisabled} />
+                <ModalCheckOutSucceed disabled={isDisabled} onSubmitOrder={handleSubmitOrder}
+                />
               </div>
             </div>
           </ModalBody>

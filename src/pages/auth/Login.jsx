@@ -69,6 +69,9 @@ const Login = () => {
 
             localStorage.setItem("authToken", token);
 
+            if (response.data.userId) {
+                setUserId(response.data.userId); // เก็บ userId ที่ได้จาก API
+              }
             toast.success("Successfully Logged In!");
             navigate("/");
 
@@ -169,7 +172,6 @@ const Login = () => {
                         }
                         onChange={(event) => setPassword(event.target.value)} // Save user input to state
                     />
-
 
                     {/* Link to reset password */}
                     <div className="flex justify-start w-full">

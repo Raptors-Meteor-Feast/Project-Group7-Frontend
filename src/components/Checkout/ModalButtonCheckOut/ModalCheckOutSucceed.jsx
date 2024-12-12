@@ -3,9 +3,8 @@ import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure, Inp
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import '../ModalButtonCheckOut/modal.css';
 
-// คอมโพเนนต์ย่อยสำหรับแสดงภาพและปุ่มลบ
+
 const ImagePreview = ({ image, onRemove }) => {
     return (
         <div className="relative">
@@ -22,8 +21,8 @@ const ImagePreview = ({ image, onRemove }) => {
     );
 };
 
-const ModalCheckOutSucceed = ({ disabled }) => {
-    const { isOpen, onOpen, onOpenChange } = useDisclosure();
+const ModalCheckOutSucceed = ({ disabled, onSubmitOrder }) => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
     const [images, setImages] = useState([]);
 
     // ฟังก์ชันเลือกภาพหลายภาพ
@@ -72,10 +71,12 @@ const ModalCheckOutSucceed = ({ disabled }) => {
 
     return (
         <>
-            <Button onPress={onOpen} isDisabled={disabled} color="primary">Purchase</Button>
+            <Button onPress={() => {
+                if (onSubmitOrder) onSubmitOrder(); onOpen();
+            }} isDisabled={disabled} color="primary">Purchase</Button>
             <Modal
                 isOpen={isOpen}
-                onOpenChange={onOpenChange}
+                onOpenChange={onClose}
                 size="5xl"
                 classNames={{
                     backdrop: "bg-black"
