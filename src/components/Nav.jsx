@@ -12,7 +12,6 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Nav() {
     const [logIn, setLogIn] = useState(false); // เก็บสถานะการล็อกอิน
     const [userData, setUserData] = useState(null); // เก็บข้อมูลผู้ใช้จาก backend
-    console.log("User Data:", userData);
 
     // ตรวจสอบ token เมื่อโหลดหน้าเว็บ
     useEffect(() => {

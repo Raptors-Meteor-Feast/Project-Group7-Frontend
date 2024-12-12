@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Modal,
   ModalContent,
@@ -19,20 +19,18 @@ const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const createOrder = async (orderData) => {
   try {
-    // ส่งคำขอ POST ไปที่ Backend
+    console.log("Sending order data:", orderData);  // ตรวจสอบค่าที่ส่งไป
     const response = await axios.post(`${API_URL}/orders`, orderData);
-    return response.data; // ส่งข้อมูลที่ได้รับกลับไป
+    console.log("Response:", response);  // ตรวจสอบการตอบกลับ
+    return response.data;
   } catch (error) {
     console.error("Error creating order:", error);
-    throw error.response?.data || "Something went wrong"; // ถ้ามี error ให้แสดงข้อความ
+    throw error.response?.data || "Something went wrong";
   }
 };
 
-const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, userData, gameId, }) => {
+const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, gameId }) => {
 
-  
-  console.log(userData);
-  console.log(gameId);
   const [paymentMethod, setPaymentMethod] = useState("");
   const [promptpay, setPromptpay] = useState(false);
   const [kbank, setKbank] = useState(false);
@@ -41,6 +39,9 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, userData, gameId
   const [creditcard, setCreditCard] = useState(false);
   const [paypal, setPaypal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [logIn, setLogIn] = useState(false);
+  
+  const [userData, setUserData] = useState(null);  // เก็บข้อมูลผู้ใช้จาก backend
 
 
 
@@ -54,45 +55,76 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, userData, gameId
     setPaypal(event.target.value === "paypal");
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      try {
+        const parsedToken = JSON.parse(atob(token.split(".")[1]));
+        setLogIn(!!parsedToken);
+      } catch (error) {
+        console.error("Invalid token:", error);
+        setLogIn(false);
+        localStorage.removeItem("authToken");
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (logIn && !userData) {
+        try {
+          const token = localStorage.getItem("authToken");
+          const response = await axios.get(`${API_URL}/user/data`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          setUserData(response.data);
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+          toast.error(error.response?.data?.message || "เกิดข้อผิดพลาด");
+          setLogIn(false);
+          localStorage.removeItem("authToken");
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [logIn, userData]);
+
+
   const isDisabled = paymentMethod === "";
   const handleSubmitOrder = async () => {
-    setIsLoading(true); // เริ่มแสดงสถานะ Loading
+    setIsLoading(true);
 
-    // ตรวจสอบว่ามีการเลือกวิธีการชำระเงินหรือยัง
-    if (!paymentMethod) {
-      toast.error("กรุณาเลือกวิธีการชำระเงิน"); // แสดงข้อความแจ้งเตือนผู้ใช้
-      setIsLoading(false); // หยุดสถานะ Loading
-      return; // ยกเลิกการดำเนินการคำสั่งซื้อ
+    if (!userData?.id || !gameId || !totalPrice || !paymentMethod) {
+      toast.error("กรุณากรอกข้อมูลให้ครบถ้วน");
+      setIsLoading(false);
+      return;
     }
 
     try {
       const orderData = {
-        userId: userData?.id || "defaultUserId", // ใช้ userId จาก userData หรือค่าดีฟอลต์
-        gameId: gameId || "defaultGameId", // ใช้ gameId จาก props หรือค่าดีฟอลต์
+        userId: userData.id,
+        gameId: gameId,
         amount: totalPrice,
         paymentMethod,
       };
-      console.log("Order Data to be sent:", orderData); // Debug ข้อมูลที่จะส่ง
 
-
-
-      const response = await createOrder(orderData); // เรียก API เพื่อสร้างคำสั่งซื้อ
-      console.log("Order created successfully:", response); // ตรวจสอบผลลัพธ์ที่ได้
-
-      setModalOpen(false); // ปิด Modal
-      toast.success("คำสั่งซื้อสำเร็จ!"); // แจ้งเตือนความสำเร็จ
+      console.log(orderData);
+      const response = await createOrder(orderData);
+      console.log("Order created successfully:", response);
+      setModalOpen(false);
+      toast.success("คำสั่งซื้อสำเร็จ!");
     } catch (error) {
-      console.error("Error creating order:", error); // แสดงข้อผิดพลาดใน Console
-      toast.error("ไม่สามารถดำเนินการคำสั่งซื้อได้"); // แจ้งเตือนผู้ใช้
+      console.error("Error creating order:", error);
+      toast.error("ไม่สามารถดำเนินการคำสั่งซื้อได้");
     } finally {
-      setIsLoading(false); // หยุดสถานะ Loading ไม่ว่าจะสำเร็จหรือผิดพลาด
+      setIsLoading(false);
     }
   };
 
-
   return (
     <>
-     <ToastContainer />
+      <ToastContainer />
       <Button
         onPress={() => setModalOpen(true)}
         color="primary"
@@ -130,6 +162,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, userData, gameId
                       value="promptpay"
                       className="hover:scale-105 transition duration-300 ease-in-out"
                       checked={paymentMethod === "promptpay"}
+                      textValue="Promptpay (QR Code)"
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
@@ -240,7 +273,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, userData, gameId
                       </div>
                       {creditcard && (
                         <div className="p-2 text-white">
-                          8888-8888-8888-8888
+                          coming soon
                         </div>
                       )}
                     </Radio>
@@ -262,7 +295,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen, userData, gameId
                       </div>
                       {paypal && (
                         <div className="p-2 text-white">
-                          {`paypal@user.com`}
+                          coming soon
                         </div>
                       )}
                     </Radio>
