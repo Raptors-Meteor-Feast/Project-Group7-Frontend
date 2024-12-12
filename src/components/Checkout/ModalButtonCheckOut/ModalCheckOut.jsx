@@ -10,7 +10,7 @@ import {
 } from "@nextui-org/react";
 import ModalCheckOutSucceed from "./ModalCheckOutSucceed";
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';  // Import toastify
+import { toast } from 'react-toastify';  // Import toastify
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 import { useCart } from '../CartContext';
 
@@ -132,13 +132,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
 
   return (
     <>
-      <ToastContainer />
       <Button
         onPress={() => setModalOpen(true)}
-        color="primary"
-        className="w-full"
+        color="danger"
+        className="w-full transform transition-all duration-500 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white] hover:bg-black font-bold"
       >
-        Check Out
+        CHECK OUT
       </Button>
       <Modal
         backdrop="opaque"
@@ -162,64 +161,62 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   value={paymentMethod}
                   onChange={handlePaymentMethodChange}
                 >
-                  <div>
+                  <div className="pb-3">
                     <h1 className="text-[20px] font-bold">PromptPay</h1>
                   </div>
-                  <div>
-                    <Radio
-                      value="promptpay"
-                      className="hover:scale-105 transition duration-300 ease-in-out"
-                      checked={paymentMethod === "promptpay"}
-                      textValue="Promptpay (QR Code)"
-                    >
+                  <div
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center"
+                    style={{
+                      boxShadow: paymentMethod === "promptpay" ? "0 0 10px white, 0 0 20px white" : "none",
+                    }}
+                  >
+                    <Radio value="promptpay" checked={paymentMethod === "promptpay"}>
                       <div className="flex justify-center items-center gap-2">
                         <img
                           src="/Images/Banklogo/promptpay.svg"
                           width={70}
                           height={50}
                           alt="Promptpay"
+                          className="pl-2"
                         />
-                        <p className="font-semibold text-white">
-                          Promptpay (QR Code)
-                        </p>
-                      </div>
-                      {promptpay && (
-                        <div className="p-2 text-white">
-                          9999-9999-9999-9999
+                        <div className="pl-3 h-[50px]">
+                          <p className="font-semibold text-white">Promptpay (QR Code)</p>
+                          {promptpay && <div className="text-white">9999-9999-9999-9999</div>}
                         </div>
-                      )}
+                      </div>
                     </Radio>
                   </div>
                   <div>
-                    <h1 className="text-[20px] font-bold">Internet Banking</h1>
+                    <h1 className="text-[20px] font-bold py-3">Internet Banking</h1>
                   </div>
-                  <div>
-                    <Radio
-                      value="scb"
-                      className="hover:scale-105 transition duration-300 ease-in-out"
-                      checked={paymentMethod === "scb"}
-                    >
+                  <div
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center"
+                    style={{
+                      boxShadow: paymentMethod === "scb" ? "0 0 10px white, 0 0 20px white" : "none",
+                    }}
+                  >
+                    <Radio value="scb" checked={paymentMethod === "scb"}>
                       <div className="flex justify-center items-center gap-2">
                         <img
                           src="/Images/Banklogo/scb.svg"
                           width={70}
                           height={50}
                           alt="SCB"
+                          className="pl-2"
                         />
-                        <p className="font-semibold text-white">SCB</p>
-                      </div>
-                      {scb && (
-                        <div className="p-2 text-white">
-                          8888-8888-8888-8888
+                        <div className="pl-3 h-[50px]">
+                          <p className="font-semibold text-white">SCB</p>
+                          {scb && <div className="text-white">8888-8888-8888-8888</div>}
                         </div>
-                      )}
+                      </div>
                     </Radio>
                   </div>
-                  <div>
-                    <Radio
-                      value="krungsri"
-                      className="hover:scale-105 transition duration-300 ease-in-out"
-                      checked={paymentMethod === "krungsri"}
+                  <div className= 'rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center'
+                    style={{
+                      boxShadow: paymentMethod === "krungsri" ? "0 0 10px white, 0 0 20px white" : "none",
+                    }}                  
+                  >
+                    <Radio value="krungsri" checked={paymentMethod === "krungsri"}
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
@@ -227,21 +224,26 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="Krungsri"
+                          className="pl-2"
                         />
+                        <div className="pl-3 h-[50px]">
                         <p className="font-semibold text-white">Krungsri</p>
-                      </div>
-                      {krungsri && (
-                        <div className="p-2 text-white">
-                          8888-8888-8888-8888
+                        {krungsri && (
+                          <div className=" text-white">
+                            8888-8888-8888-8888
+                          </div>
+                        )}
                         </div>
-                      )}
+                      </div>
+
                     </Radio>
                   </div>
-                  <div>
-                    <Radio
-                      value="kbank"
-                      className="hover:scale-105 transition duration-300 ease-in-out"
-                      checked={paymentMethod === "kbank"}
+                  <div className= 'rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center'
+                    style={{
+                      boxShadow: paymentMethod === "kbank" ? "0 0 10px white, 0 0 20px white" : "none",
+                    }}                    
+                  >
+                    <Radio value="kbank" checked={paymentMethod === "kbank"}
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
@@ -249,26 +251,30 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="Kbank"
+                          className="pl-2"
                         />
+                        <div className="pl-3 h-[50px]">
                         <p className="font-semibold text-white">Kbank</p>
-                      </div>
-                      {kbank && (
-                        <div className="p-2 text-white">
-                          8888-8888-8888-8888
+                        {kbank && (
+                          <div className=" text-white">
+                            8888-8888-8888-8888
+                          </div>
+                        )}
                         </div>
-                      )}
+                      </div>
                     </Radio>
                   </div>
                   <div>
-                    <h1 className="text-[20px] font-bold">
+                    <h1 className="text-[20px] font-bold py-3">
                       Other Payment Methods
                     </h1>
                   </div>
-                  <div>
-                    <Radio
-                      value="creditcard"
-                      className="hover:scale-105 transition duration-300 ease-in-out"
-                      checked={paymentMethod === "creditcard"}
+                  <div className= 'rounded-lg py-2 pl-4 pr-6 h-[90px] bg-neutral-800 flex justify-start item-center'
+                    style={{
+                      boxShadow: paymentMethod === "creditcard" ? "0 0 10px white, 0 0 20px white" : "none",
+                    }}                     
+                  >
+                    <Radio value="creditcard" checked={paymentMethod === "creditcard"}
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
@@ -276,21 +282,25 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="CreditCard"
+                          className="pl-2"
                         />
+                        <div className="pl-3 h-[50px]">
                         <p className="font-semibold text-white">Credit Card</p>
-                      </div>
-                      {creditcard && (
-                        <div className="p-2 text-white">
-                          coming soon
+                        {creditcard && (
+                          <div className=" text-white">
+                            coming soon
+                          </div>
+                        )}                          
                         </div>
-                      )}
+                      </div>
                     </Radio>
                   </div>
-                  <div>
-                    <Radio
-                      value="paypal"
-                      className="hover:scale-105 transition duration-300 ease-in-out"
-                      checked={paymentMethod === "paypal"}
+                  <div className= 'rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center'
+                    style={{
+                      boxShadow: paymentMethod === "paypal" ? "0 0 10px white, 0 0 20px white" : "none",
+                    }}                    
+                  >
+                    <Radio value="paypal" checked={paymentMethod === "paypal"}
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
@@ -298,14 +308,18 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="PayPal"
+                          className="pl-2"
                         />
+                        <div className="pl-3 h-[50px]">
                         <p className="font-semibold text-white">PayPal</p>
-                      </div>
-                      {paypal && (
-                        <div className="p-2 text-white">
-                          coming soon
+                        {paypal && (
+                          <div className=" text-white">
+                            coming soon
+                          </div>
+                        )}                          
                         </div>
-                      )}
+                      </div>
+
                     </Radio>
                   </div>
                 </RadioGroup>
@@ -321,8 +335,8 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   <p>Calculated at Checkout</p>
                 </div>
                 <hr className="w-[265px] border-1 border-black" />
-                <div className="flex justify-between">
-                  <p className="font-semibold">Subtotal:</p>
+                <div className="flex justify-between font-bold text-xl">
+                  <p>TOTAL</p>
                   <p>THB {totalPrice}</p>
                 </div>
                 <ModalCheckOutSucceed disabled={isDisabled} onSubmitOrder={handleSubmitOrder}

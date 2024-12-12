@@ -1,4 +1,4 @@
-import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Button} from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import SearchBox from "./SearchBox";
 import Gr7Logo from "/NavIcon/Gr7Logo.svg";
@@ -7,8 +7,10 @@ import LoginLogo from "/NavIcon/loginlogo1.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../components/Checkout/CartContext";
-import { toast, ToastContainer } from "react-toastify"; 
+import { toast } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
+import { FaCartShopping } from "react-icons/fa6";
+
 
 
 export default function Nav() {
@@ -100,12 +102,12 @@ export default function Nav() {
                         {/* <p className="text-orange-500 font-bold text-[18px]">Cart</p> */}
                         {/* <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link> */}
                         {logIn && (
-                            <div className="flex items-center gap-4 mr-8">
-                                <p className="text-orange-500 font-bold text-[18px]">Cart</p>
+                            <div className="flex items-center gap-2 mr-8">
+                                <p className="text-orange-500 font-bold text-[18px]"><FaCartShopping /></p>
                                 <Link to="/checkout">
-                                    <button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">
+                                    <Button color="warning" className="w-[5px] h-[25px]">
                                         {cartCount}
-                                    </button>
+                                    </Button>
                                 </Link>
                             </div>
                         )}
@@ -176,7 +178,6 @@ export default function Nav() {
                     )}
                 </div>
             </div>
-            <ToastContainer /> {/* Add the ToastContainer to your component */}
         </div>
     );
 }

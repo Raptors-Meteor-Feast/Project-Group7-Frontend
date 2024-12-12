@@ -3,7 +3,9 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { Card, CardBody, Image, CardFooter, Button } from "@nextui-org/react";
 import { useNavigate } from 'react-router-dom';
-import api from "../../Instance";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const MostPopularCard = ({ name }) => {
     const navigate = useNavigate();
@@ -14,7 +16,7 @@ const MostPopularCard = ({ name }) => {
     useEffect(() => {
         const fetchGameData = async () => {
             try {
-                const response = await api.get("/game");
+                const response = await axios.get(`${API_URL}/game`);
                 const data = response.data.game;
                 setGameData(data.sort((a, b) => b.rating - a.rating));
             } catch (error) {

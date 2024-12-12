@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import api from "../../Instance";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const GenresCard = ({ setSelectedCategory }) => {
     const navigate = useNavigate();
@@ -16,7 +18,7 @@ const GenresCard = ({ setSelectedCategory }) => {
 
     const fetchData = async () => {
         try {
-            const response = await api.get("/game");
+            const response = await axios.get(`${API_URL}/game`);
             const games = response.data.game;
             const shuffledData = [...games].sort(() => 0.5 - Math.random());
             setGameData(shuffledData);

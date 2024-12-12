@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
-import api from "../../../Instance";
 
-function CarouselImage({ currentIndex, gameImages, setCurrentIndex, setGameImages }) {
+function CarouselImage({ currentIndex, gameImages, setCurrentIndex }) {
   const thumbnailContainerRef = useRef(null);
 
 

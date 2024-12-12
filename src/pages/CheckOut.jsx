@@ -33,7 +33,7 @@ export default function CheckOut() {
                             <p className="text-[20px] font-semibold text-center">Your cart is empty</p>
                         )}
                         {cart.length > 0 && (
-                    <button className="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px] h-[40px] mt-5 mb-10 mx-auto md:mx-0" onClick={() => clearCart()}>
+                    <button className="bg-red-500 hover:bg-black border-2 hover:border-red-600 active:bg-red-700transform transition-all duration-300 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[170px] h-[40px] mt-5 mb-10 mx-auto md:mx-0" onClick={() => clearCart()}>
                         <IoTrashOutline size={20} style={{ color: 'white' }} /> Clear Cart
                     </button>
                     )}

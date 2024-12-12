@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
-import api from "../../Instance";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Filter({ setSelectedCategory }) {
     const [categories, setCategories] = useState([]);
@@ -14,7 +16,7 @@ function Filter({ setSelectedCategory }) {
     useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await api.get("/game");
+            const response = await axios.get(`${API_URL}/game`);
             const games = response.data.game;
 
             const uniqueCategories = [
