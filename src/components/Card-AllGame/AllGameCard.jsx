@@ -29,7 +29,7 @@ const AllGameCard = ({ selectedCategory }) => {
     : gameData;
 
     return (
-        <div className="gap-[22px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full px-[250px] bg-gray-800 pb-[60px]">
+        <div className="gap-[22px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full px-[250px] bg-neutral-900 pb-[60px]">
             {filteredGames.map((game) => (
                 <Card
                     shadow="md"

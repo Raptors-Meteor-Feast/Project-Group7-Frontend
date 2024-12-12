@@ -57,19 +57,19 @@ const GenresCard = ({ setSelectedCategory }) => {
 
 
     return (
-        <div className="w-full px-[150px] py-10 bg-gray-800">
+        <div className="w-full px-[150px] py-10 bg-neutral-900">
             <div className='flex justify-between pb-2 px-[100px]'>
                 <h2 className='mb-1 text-[28px] font-bold text-white'>RECOMMEND GENRES</h2>
                 <div className="flex justify-end mb-2">
-                    <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-gray-700 text-white rounded-full">←</Button>
-                    <Button onClick={handleNext} className="px-5 py-1 bg-gray-700 text-white rounded-full">→</Button>
+                    <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-[#252525] text-white rounded-full">←</Button>
+                    <Button onClick={handleNext} className="px-5 py-1 bg-[#252525] text-white rounded-full">→</Button>
                 </div>
             </div>            
             <div className="flex flex-wrap gap-6 justify-center">
                 {categories.slice(startIndex, startIndex + itemsPerPage).map((category) => (
                     <Button
                         key={category}
-                        className="relative bg-gray-700 rounded-lg p-1 shadow-lg flex-shrink-0 w-[30%] h-[250px] cursor-pointer transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_cyan,_0_0_20px_cyan]"
+                        className="relative bg-[#252525] rounded-lg p-1 shadow-lg flex-shrink-0 w-[30%] h-[250px] cursor-pointer transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_cyan,_0_0_20px_cyan]"
                         onClick={() => handleCategoryClick(category)}
                     >
                         <h3 className="absolute top-2 left-[50%] -translate-x-1/2 text-white text-lg font-semibold text-center whitespace-nowrap">

@@ -35,7 +35,7 @@ function Filter({ setSelectedCategory }) {
     }, [selectedKeys, setSelectedCategory]);
 
     return (
-        <div className="bg-gray-800 px-[250px] py-5">
+        <div className="bg-neutral-900 px-[250px] py-5">
             <Dropdown>
                 <DropdownTrigger>
                     <Button className="capitalize" variant="bordered">

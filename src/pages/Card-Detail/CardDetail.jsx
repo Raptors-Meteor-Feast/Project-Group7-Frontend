@@ -63,7 +63,7 @@ const CardDetail = () => {
   return (
     <div>
       <Nav />
-      <div className="bg-slate-300 px-[300px] pt-[32px] pb-[120px]">
+      <div className="bg-neutral-900 px-[300px] pt-[32px] pb-[120px] text-white">
         <div className="pb-[40px]">
           <h1 className="font-bold text-[28px]">{gameData.title}</h1>
           <div className="py-5">
@@ -116,7 +116,7 @@ const CardDetail = () => {
             <h2 className="font-bold text-[24px] pb-4">
               {gameDataSystem.title} System Requirement
             </h2>
-            <div className="flex flex-col p-11 gap-5 bg-white rounded-xl">
+            <div className="flex flex-col p-11 gap-5 bg-[#252525] rounded-xl">
               <p className="font-bold text-xl">{gameDataSystem.operator}</p>
               <div className="flex w-full">
                 <div className="flex flex-col gap-3 w-[50%]">

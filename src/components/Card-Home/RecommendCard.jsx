@@ -37,12 +37,12 @@ const RecommendCard = ({ name }) => {
     };
 
     return (
-        <div className='w-full px-[135px] py-10 bg-gray-800'>
+        <div className='w-full px-[135px] py-10 bg-neutral-900'>
             <div className='flex justify-between'>
                 <h2 className='mb-5 text-[28px] font-bold text-white'>{name}</h2>
                 <div className="flex justify-end mb-4">
-                    <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-gray-700 text-white rounded-full">←</Button>
-                    <Button onClick={handleNext} className="px-5 py-1 bg-gray-700 text-white rounded-full">→</Button>
+                    <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-[#252525] text-white rounded-full">←</Button>
+                    <Button onClick={handleNext} className="px-5 py-1 bg-[#252525] text-white rounded-full">→</Button>
                 </div>
             </div>
             <div className='gap-[22px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5'>
