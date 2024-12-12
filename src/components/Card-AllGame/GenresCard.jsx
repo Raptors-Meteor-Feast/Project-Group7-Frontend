@@ -18,7 +18,8 @@ const GenresCard = ({ setSelectedCategory }) => {
         try {
             const response = await api.get("/game");
             const games = response.data.game;
-            setGameData(games);
+            const shuffledData = [...games].sort(() => 0.5 - Math.random());
+            setGameData(shuffledData);
 
             const uniqueCategories = [
                 ...new Set(games.flatMap((game) => game.categories)),
@@ -69,74 +70,74 @@ const GenresCard = ({ setSelectedCategory }) => {
             </div>            
             <div className="flex flex-wrap gap-6 justify-center">
                 {categories.slice(startIndex, startIndex + itemsPerPage).map((category) => (
-                    <Button
-                        key={category}
-                        className="relative bg-[#252525] rounded-lg p-1 shadow-lg flex-shrink-0 w-[30%] h-[250px] cursor-pointer transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_cyan,_0_0_20px_cyan]"
-                        onClick={() => handleCategoryClick(category)}
-                    >
-                        <h3 className="absolute top-2 left-[50%] -translate-x-1/2 text-white text-lg font-semibold text-center whitespace-nowrap">
-                            {category.toUpperCase()}
-                        </h3>
-                        <div className="flex items-center justify-center  h-full">
-                            {gameData
-                                .filter((game) => game.categories.includes(category))
-                                .slice(0, 4) 
-                                .map((game, index) => (
-                                    <motion.div
-                                        key={game._id}
-                                        className={`absolute transition-all duration-300 ${
-                                            index === 0
-                                                ? "z-10 left-[12%] -translate-x-1/2"
-                                                : index === 1
-                                                ? "z-8 left-[27%]"
-                                                : index === 2
-                                                ? "z-6 left-[42%]"
-                                                : "z-4 left-[54%]"
-                                        }`}
-                                        style={{
-                                            zIndex:
-                                                hoveredIndex[category] === index
-                                                    ? 10 
-                                                    : 10 - index * 1,
-                                            transform: `scale(${
-                                                hoveredIndex[category] === index
-                                                    ? 1.1
-                                                    : 1 - index * 0.1
-                                            })`,
-                                            filter:
-                                                hoveredIndex[category] === null
-                                                    ? index === 0
-                                                        ? "brightness(0.5)"
-                                                        : "brightness(0.5)"
-                                                    : hoveredIndex[category] === index
-                                                    ? "brightness(1)"
-                                                    : "brightness(0.5)",
-                                        }}
-                                        onMouseEnter={() => handleHoverEnter(category, index)}
-                                        onMouseLeave={() => handleHoverLeave(category)}
-                                    >
-                                        <Card
-                                            shadow="md"
-                                            isPressable
-                                            className="w-[200px] h-[150px] hover:[box-shadow:_0_0_10px_white,_0_0_20px_white,_0_0_30px_white,_0_0_40px_white] hover:bg-gray-300 transition-transform transform duration-300 ease-in-out"
-                                            onClick={() => handleCardClick(game._id)}
-                                        >
-                                            <CardBody className="overflow-visible p-0">
-                                                <Image
-                                                    shadow="sm"
-                                                    radius="lg"
-                                                    width="100%"
-                                                    isBlurred
-                                                    alt={game.title}
-                                                    className="w-full object-cover h-[150px]"
-                                                    src={game.images[0]}
-                                                />
-                                            </CardBody>
-                                        </Card>
-                                    </motion.div>
-                                ))}
-                        </div>
-                    </Button>
+                <Button
+                    key={category}
+                    className="relative bg-[#252525] rounded-lg p-1 shadow-lg flex-shrink-0 w-[30%] h-[250px] cursor-pointer transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_cyan,_0_0_20px_cyan]"
+                    onClick={() => handleCategoryClick(category)}
+                >
+                    <h3 className="absolute top-2 left-[50%] -translate-x-1/2 text-white text-lg font-semibold text-center whitespace-nowrap">
+                        {category.toUpperCase()}
+                    </h3>
+                    <div className="flex items-center justify-center  h-full">
+                        {gameData
+                            .filter((game) => game.categories.includes(category))
+                            .slice(0, 4) 
+                            .map((game, index) => (
+                            <motion.div
+                                key={game._id}
+                                className={`absolute transition-all duration-300 ${
+                                    index === 0
+                                        ? "z-10 left-[12%] -translate-x-1/2"
+                                        : index === 1
+                                        ? "z-8 left-[27%]"
+                                        : index === 2
+                                        ? "z-6 left-[42%]"
+                                        : "z-4 left-[54%]"
+                                }`}
+                                style={{
+                                    zIndex:
+                                        hoveredIndex[category] === index
+                                            ? 10 
+                                            : 10 - index * 1,
+                                    transform: `scale(${
+                                        hoveredIndex[category] === index
+                                            ? 1.1
+                                            : 1 - index * 0.1
+                                    })`,
+                                    filter:
+                                        hoveredIndex[category] === null
+                                            ? index === 0
+                                                ? "brightness(0.5)"
+                                                : "brightness(0.5)"
+                                            : hoveredIndex[category] === index
+                                            ? "brightness(1)"
+                                            : "brightness(0.5)",
+                                }}
+                                onMouseEnter={() => handleHoverEnter(category, index)}
+                                onMouseLeave={() => handleHoverLeave(category)}
+                            >
+                                <Card
+                                    shadow="md"
+                                    isPressable
+                                    className="w-[200px] h-[150px] hover:[box-shadow:_0_0_10px_white,_0_0_20px_white,_0_0_30px_white,_0_0_40px_white] hover:bg-gray-300 transition-transform transform duration-300 ease-in-out"
+                                    onClick={() => handleCardClick(game._id)}
+                                >
+                                <CardBody className="overflow-visible p-0">
+                                    <Image
+                                        shadow="sm"
+                                        radius="lg"
+                                        width="100%"
+                                        isBlurred
+                                        alt={game.title}
+                                        className="w-full object-cover h-[150px]"
+                                        src={game.images[0]}
+                                    />
+                                </CardBody>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </div>
+                </Button>
                 ))}
             </div>
         </div>
