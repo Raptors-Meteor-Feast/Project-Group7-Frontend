@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./auth.css";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
@@ -225,7 +225,6 @@ const Login = () => {
                         </Button>
                     </div>
                 </form>
-                <ToastContainer />
             </div>
         </div>
     );

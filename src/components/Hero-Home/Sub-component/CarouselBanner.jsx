@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@nextui-org/button";
 import { useNavigate } from "react-router-dom";
-import api from "../../../Instance";
+import { useCart } from "../../Checkout/CartContext";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
+
 
 function CarouselBanner({ selectedId }) {
   const navigate = useNavigate();
   const [selectedData, setSelectedData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [fade, setFade] = useState(true);
+  
+  const { buyNow } = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await api.get("/game");
+        const response = await axios.get(`${API_URL}/game`);
         if (selectedId) {
           const selectedItem = response.data.game.find((item) => item._id === selectedId);
           setSelectedData(selectedItem || null);
@@ -47,6 +55,19 @@ function CarouselBanner({ selectedId }) {
     navigate(`/game/${id}`);
   };
 
+  const BuyNowClick = async () => {
+    const token = localStorage.getItem("authToken");
+    
+    if (!token) {
+      toast.warning("Please sign in to proceed with checkout.", { autoClose: 2500 });
+      navigate("/login");
+      return;
+    }
+  
+    await buyNow(selectedData);
+    navigate("/checkout");
+  };
+
   if (!selectedData) {
     return null;
   }
@@ -76,7 +97,7 @@ function CarouselBanner({ selectedId }) {
             size="large"
             className="px-7 z-30"
             key={selectedData._id}
-            onClick={() => handleCardClick(selectedData._id)}
+            onClick={() => BuyNowClick(selectedData._id)}
           >
             Buy Now
           </Button>

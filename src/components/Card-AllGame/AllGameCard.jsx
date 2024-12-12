@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardBody, Image, CardFooter, Pagination } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
-import api from "../../Instance";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const AllGameCard = ({ selectedCategory }) => {
     const navigate = useNavigate();
@@ -12,7 +14,7 @@ const AllGameCard = ({ selectedCategory }) => {
 
     const fetchData = async () => {
         try {
-            const response = await api.get("/game");
+            const response = await axios.get(`${API_URL}/game`);
             setGameData(response.data.game);
         } catch (error) {
             console.error("Error fetching data:", error);

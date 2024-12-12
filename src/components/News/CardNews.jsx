@@ -95,9 +95,9 @@ export default function CardNews() {
                   </p>
                 </div>
                 <div className="px-3 pt-3">
-                  <button className="text-default-700 underline">
+                  <a className="text-default-500 underline">
                     Readmore
-                  </button>
+                  </a>
                 </div>
               </CardFooter>
             </Card>

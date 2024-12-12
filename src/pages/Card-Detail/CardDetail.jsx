@@ -7,9 +7,12 @@ import Footer from "../../components/Footer/Footer";
 import ModalCheckOut from "../../components/Checkout/ModalButtonCheckOut/ModalCheckOut";
 import { useCart } from "../../components/Checkout/CartContext";
 import { useNavigate } from "react-router-dom";
-import api from "../../Instance";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const CardDetail = () => {
   const { id } = useParams();
@@ -26,7 +29,7 @@ const CardDetail = () => {
   useEffect(() => {
     const fetchGameData = async () => {
       try {
-        const gameResponse = await api.get(`/game/${id}`);
+        const gameResponse = await axios.get(`${API_URL}/game/${id}`);
         const gameData = gameResponse.data.game
         const systemData = gameResponse.data.system
         const images = gameResponse.data?.game?.images || [];
@@ -46,9 +49,18 @@ const CardDetail = () => {
     return <p>Loading...</p>;
   }
 
-  const handleAddToCart = () => {
-    addToCart(gameData);
-    navigate("/login");
+
+
+  const handleAddToCart = async () => {
+    const token = localStorage.getItem("authToken");
+    
+    if (!token) {
+      toast.warning("Please sign in to proceed with checkout.", { autoClose: 2500 });
+      navigate("/login");
+      return;
+    }
+  
+    await addToCart(gameData);
   };
   
 

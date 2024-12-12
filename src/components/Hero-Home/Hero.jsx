@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import HeroRightContainer from "./Sub-component/HeroRightContainer";
 import CarouselBanner from './Sub-component/CarouselBanner';
-import api from "../../Instance";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Hero = () => {
   const [gameData, setGameData] = useState([]);
@@ -11,7 +13,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get('/game');
+        const response = await axios.get(`${API_URL}/game`);
         const data = response.data.game;
 
         const randomData = data

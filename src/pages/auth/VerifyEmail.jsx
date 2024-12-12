@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const VerifyEmail = () => {
@@ -59,7 +59,6 @@ const VerifyEmail = () => {
                 </button>
             </Link>
 
-            <ToastContainer />
         </div>
     );
 };

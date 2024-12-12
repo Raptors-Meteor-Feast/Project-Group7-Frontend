@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { GiDinosaurRex } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './auth.css';
 
@@ -109,7 +109,6 @@ const Register = () => {
 
     return (
         <div className='flex justify-center items-center bg-neutral-950 min-h-screen'>
-            <ToastContainer />
             <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
                 <Link to="/" className="flex justify-center items-center w-full mb-4">
                     <img

@@ -14,6 +14,7 @@ import ResetPassword from "./pages/auth/ResetPassword";
 import { CartProvider } from "./components/Checkout/CartContext";
 import AllGame from "./pages/AllGame";
 import VerifyEmail from "./pages/auth/VerifyEmail";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <ToastContainer />
     <CartProvider>
         <NextUIProvider>
           <RouterProvider router={router} />

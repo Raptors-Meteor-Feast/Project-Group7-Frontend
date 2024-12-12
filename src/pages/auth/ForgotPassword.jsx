@@ -3,7 +3,7 @@ import { Button, Form, Input } from "@nextui-org/react";
 import "./auth.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ForgotPasswordPage = () => {
@@ -97,7 +97,6 @@ const ForgotPasswordPage = () => {
                         For Test Don`t Click Verify Email
                     </Link>
                 </Form>
-                <ToastContainer />
             </div>
         </div>
     );

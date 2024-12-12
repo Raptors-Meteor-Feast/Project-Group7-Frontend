@@ -59,7 +59,8 @@ const ModalCheckOutSucceed = ({ disabled, onSubmitOrder }) => {
 
     return (
         <>
-            <Button onPress={() => { onSubmitOrder && onSubmitOrder(); onOpen(); }} isDisabled={disabled} color="primary">Purchase</Button>
+            <Button onPress={() => { onSubmitOrder && onSubmitOrder(); onOpen(); }} isDisabled={disabled} color="primary"
+                className='hover: transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white] font-bold'>PURCHASE</Button>
             <Modal
                 isOpen={isOpen}
                 onClose={onClose}
