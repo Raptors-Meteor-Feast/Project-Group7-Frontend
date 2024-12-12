@@ -8,6 +8,8 @@ import ModalCheckOut from "../../components/Checkout/ModalButtonCheckOut/ModalCh
 import { useCart } from "../../components/Checkout/CartContext";
 import { useNavigate } from "react-router-dom";
 import api from "../../Instance";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CardDetail = () => {
   const { id } = useParams();
@@ -50,10 +52,17 @@ const CardDetail = () => {
   };
   
 
-  const handleBuyNow = () => {
-    buyNow(gameData);
-    navigate("/login");
-    navigate("/checkout");  
+  const handleBuyNow = async () => {
+    const token = localStorage.getItem("authToken");
+    
+    if (!token) {
+      toast.warning("Please sign in to proceed with checkout.", { autoClose: 2500 });
+      navigate("/login");
+      return;
+    }
+  
+    await buyNow(gameData);
+    navigate("/checkout");
   };
 
 
