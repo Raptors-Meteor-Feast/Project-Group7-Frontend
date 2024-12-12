@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Nav from "../../components/Nav";
 import { useParams } from "react-router-dom";
 import { Button } from "@nextui-org/button";
