@@ -121,7 +121,8 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
       const orderId = response.data.orderId; // ดึง orderId จาก Response
 
       console.log("Order ID:", orderId);
-
+      setOrderId(orderId);
+      
       clearCart(); // เคลียร์ตะกร้าโดยไม่ปิด Modal
 
       toast.success("คำสั่งซื้อสำเร็จ!"); // แสดงข้อความสำเร็จ
