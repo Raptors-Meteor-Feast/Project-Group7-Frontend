@@ -1,4 +1,4 @@
-import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, link } from "@nextui-org/react";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import SearchBox from "./SearchBox";
 import Gr7Logo from "/NavIcon/Gr7Logo.svg";

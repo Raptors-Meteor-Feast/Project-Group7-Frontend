@@ -46,12 +46,14 @@ const CardDetail = () => {
 
   const handleAddToCart = () => {
     addToCart(gameData);
+    navigate("/login");
   };
   
 
   const handleBuyNow = () => {
     buyNow(gameData);
-    navigate("/checkout");
+    navigate("/login");
+    navigate("/checkout");    
   };
 
 
