@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Card, CardBody, Image, Button } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 import api from "../../Instance";
 
 const GenresCard = ({ setSelectedCategory }) => {
@@ -61,8 +63,8 @@ const GenresCard = ({ setSelectedCategory }) => {
             <div className='flex justify-between pb-2 px-[100px]'>
                 <h2 className='mb-1 text-[28px] font-bold text-white'>RECOMMEND GENRES</h2>
                 <div className="flex justify-end mb-2">
-                    <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-[#252525] text-white rounded-full">←</Button>
-                    <Button onClick={handleNext} className="px-5 py-1 bg-[#252525] text-white rounded-full">→</Button>
+                <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-[#252525] text-white rounded-full text-2xl hover:text-3xl"><IoIosArrowBack className='transform transition-all duration-300'/></Button>
+                <Button onClick={handleNext} className="px-5 py-1 bg-[#252525] text-white rounded-full text-2xl hover:text-3xl"><IoIosArrowForward className='transform transition-all duration-300'/></Button>
                 </div>
             </div>            
             <div className="flex flex-wrap gap-6 justify-center">

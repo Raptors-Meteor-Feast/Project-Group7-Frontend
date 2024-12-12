@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardBody, Image, CardFooter, Button } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 import axios from "axios";
 
 export default function CardNews() {
@@ -49,18 +51,8 @@ export default function CardNews() {
         <div className="flex justify-between">
           <h2 className="mb-5 text-[28px] font-bold text-white">News</h2>
           <div className="flex justify-end mb-4">
-            <Button
-              onClick={handlePrev}
-              className="mr-2 px-5 py-1 bg-[#252525] text-white rounded-full"
-            >
-              ←
-            </Button>
-            <Button
-              onClick={handleNext}
-              className="px-5 py-1 bg-[#252525] text-white rounded-full"
-            >
-              →
-            </Button>
+          <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-[#252525] text-white rounded-full text-2xl hover:text-3xl"><IoIosArrowBack className='transform transition-all duration-300'/></Button>
+          <Button onClick={handleNext} className="px-5 py-1 bg-[#252525] text-white rounded-full text-2xl hover:text-3xl"><IoIosArrowForward className='transform transition-all duration-300'/></Button>
           </div>
         </div>
         <div className="gap-[40px] grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
