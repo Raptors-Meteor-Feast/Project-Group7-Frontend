@@ -6,8 +6,8 @@ import api from "../../../Instance";
 function CarouselBanner({ selectedId }) {
   const navigate = useNavigate();
   const [selectedData, setSelectedData] = useState(null);
-
   const [loading, setLoading] = useState(true);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,10 +24,21 @@ function CarouselBanner({ selectedId }) {
         setLoading(false);
       }
     };
-  
+
     fetchData();
   }, [selectedId]);
-  
+
+  //Effect สำหรับเปลี่ยนรูป
+  useEffect(() => {
+    if (selectedData) {
+      setFade(false);
+      const timeout = setTimeout(() => {
+        setFade(true);
+      }, 50);
+      return () => clearTimeout(timeout); // Clear timeout เพื่อป้องกันปัญหา
+    }
+  }, [selectedData]);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -45,7 +56,9 @@ function CarouselBanner({ selectedId }) {
       <img
         src={selectedData.images[0]}
         alt={selectedData.title}
-        className="bg-auto bg-no-repeat rounded-xl w-full h-full object-center transition-opacity duration-300 hover:opacity-70 cursor-pointer"
+        className={`bg-auto bg-no-repeat rounded-xl w-full h-full object-center transition-opacity duration-500 ${
+          fade ? "opacity-100" : "opacity-0"
+        } cursor-pointer`}
         onClick={() => handleCardClick(selectedData._id)}
       />
 

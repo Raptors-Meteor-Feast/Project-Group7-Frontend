@@ -85,11 +85,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {promptpay && (
                         <div className="p-2 text-white">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Sed aliquam unde dolorem, animi rem non nihil
-                          exercitationem quas accusamus veniam voluptatem,
-                          nesciunt voluptatibus deleniti commodi. Optio
-                          molestias mollitia veritatis veniam.
+                          9999-9999-9999-9999
                         </div>
                       )}
                     </Radio>
@@ -114,11 +110,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {scb && (
                         <div className="p-2 text-white">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Sed aliquam unde dolorem, animi rem non nihil
-                          exercitationem quas accusamus veniam voluptatem,
-                          nesciunt voluptatibus deleniti commodi. Optio
-                          molestias mollitia veritatis veniam.
+                          8888-8888-8888-8888
                         </div>
                       )}
                     </Radio>
@@ -140,11 +132,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {krungsri && (
                         <div className="p-2 text-white">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Sed aliquam unde dolorem, animi rem non nihil
-                          exercitationem quas accusamus veniam voluptatem,
-                          nesciunt voluptatibus deleniti commodi. Optio
-                          molestias mollitia veritatis veniam.
+                          8888-8888-8888-8888
                         </div>
                       )}
                     </Radio>
@@ -166,11 +154,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {kbank && (
                         <div className="p-2 text-white">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Sed aliquam unde dolorem, animi rem non nihil
-                          exercitationem quas accusamus veniam voluptatem,
-                          nesciunt voluptatibus deleniti commodi. Optio
-                          molestias mollitia veritatis veniam.
+                          8888-8888-8888-8888
                         </div>
                       )}
                     </Radio>
@@ -197,11 +181,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {creditcard && (
                         <div className="p-2 text-white">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Sed aliquam unde dolorem, animi rem non nihil
-                          exercitationem quas accusamus veniam voluptatem,
-                          nesciunt voluptatibus deleniti commodi. Optio
-                          molestias mollitia veritatis veniam.
+                          8888-8888-8888-8888
                         </div>
                       )}
                     </Radio>
@@ -223,11 +203,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       </div>
                       {paypal && (
                         <div className="p-2 text-white">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Sed aliquam unde dolorem, animi rem non nihil
-                          exercitationem quas accusamus veniam voluptatem,
-                          nesciunt voluptatibus deleniti commodi. Optio
-                          molestias mollitia veritatis veniam.
+                          8888-8888-8888-8888
                         </div>
                       )}
                     </Radio>

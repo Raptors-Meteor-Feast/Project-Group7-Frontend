@@ -1,12 +1,13 @@
-import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, link } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import SearchBox from "./SearchBox";
 import Gr7Logo from "/NavIcon/Gr7Logo.svg";
 import UserIcon from "/NavIcon/user.png";
 import { Link } from "react-router-dom";
-import axios from "axios"; // เพิ่ม axios
+import axios from "axios";
 import { useCart } from "../components/Checkout/CartContext";
-import { calcLength } from "framer-motion";
+import { toast, ToastContainer } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function Nav() {
@@ -48,13 +49,12 @@ export default function Nav() {
         fetchUserData();
     }, [logIn, userData]);
 
-
     // ฟังก์ชันล็อกเอาต์
     const handleLogout = () => {
         localStorage.removeItem("authToken"); // ลบ token ออกจาก localStorage
         setLogIn(false); // เปลี่ยนสถานะเป็นล็อกเอาต์
         setUserData(null); // ล้างข้อมูลผู้ใช้
-        alert("You have been logged out.");
+        toast.success("You have been logged out."); // Show success toast notification
     };
 
     const { cart } = useCart();
@@ -71,7 +71,10 @@ export default function Nav() {
                             alt="Raptor-Logo"
                             className="w-[55px] h-auto object-cover mr-2"
                         />
-                        <p className="hidden md:block font-bold text-orange-500 text-[18px]">Raptors Meteor Feast</p>
+                        <p className="hidden sm:block font-bold text-white text-[18px] transition-all duration-500 
+                            hover:[text-shadow:_0_0_10px_#ff9900,_0_0_20px_#ff6600,_0_0_30px_#ff3300,_0_0_40px_#ff0000]
+                            hover:text-black"
+                        >Raptors Meteor Feast</p>
                     </Link>
                 </div>
                 <div className="flex items-center gap-5">
@@ -79,7 +82,6 @@ export default function Nav() {
                     <div className="hidden md:block" >
                         <SearchBox />
                     </div>
-                
                 </div>
                 <div className="flex items-center justify-between">
                     {/* Cart Section */}
@@ -87,7 +89,10 @@ export default function Nav() {
                         <div>
                             <ul className="flex gap-7 mr-2 font-bold items-center">
                                 <li>
-                                    <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
+                                    <Link to="/browse" className="hidden sm:block font-bold text-white text-[18px] transition-all duration-500 
+                                    hover:[text-shadow:_0_0_10px_#ff9900,_0_0_20px_#ff6600,_0_0_30px_#ff3300,_0_0_40px_#ff0000]
+                                    hover:text-black"
+                                    >Browse</Link>
                                 </li>
                             </ul>
                         </div>
@@ -160,6 +165,7 @@ export default function Nav() {
                     )}
                 </div>
             </div>
+            <ToastContainer /> {/* Add the ToastContainer to your component */}
         </div>
     );
 }
