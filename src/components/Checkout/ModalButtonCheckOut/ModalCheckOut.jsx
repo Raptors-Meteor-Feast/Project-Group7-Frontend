@@ -9,21 +9,19 @@ import {
   Radio,
 } from "@nextui-org/react";
 import ModalCheckOutSucceed from "./ModalCheckOutSucceed";
-import axios from 'axios';
-import { toast } from 'react-toastify';  // Import toastify
-import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
-import { useCart } from '../CartContext';
-
-
+import axios from "axios";
+import { toast } from "react-toastify"; // Import toastify
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import { useCart } from "../CartContext";
 
 // เข้าถึง API URL จากไฟล์ .env
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const createOrder = async (orderData) => {
   try {
-    console.log("Sending order data:", orderData);  // ตรวจสอบค่าที่ส่งไป
+    console.log("Sending order data:", orderData); // ตรวจสอบค่าที่ส่งไป
     const response = await axios.post(`${API_URL}/orders`, orderData);
-    console.log("Response:", response);  // ตรวจสอบการตอบกลับ
+    console.log("Response:", response); // ตรวจสอบการตอบกลับ
     return response.data;
   } catch (error) {
     console.error("Error creating order:", error);
@@ -32,7 +30,7 @@ const createOrder = async (orderData) => {
 };
 
 const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
-  const { cart, setCart, clearCart } = useCart();  // เข้าถึงข้อมูลและฟังก์ชันการจัดการตะกร้า
+  const { cart, setCart, clearCart } = useCart(); // เข้าถึงข้อมูลและฟังก์ชันการจัดการตะกร้า
   const [paymentMethod, setPaymentMethod] = useState("");
   const [promptpay, setPromptpay] = useState(false);
   const [kbank, setKbank] = useState(false);
@@ -42,8 +40,8 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
   const [paypal, setPaypal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [logIn, setLogIn] = useState(false);
-  const [userData, setUserData] = useState(null);  // เก็บข้อมูลผู้ใช้จาก backend
-
+  const [userData, setUserData] = useState(null); // เก็บข้อมูลผู้ใช้จาก backend
+  const [orderId, setOrderId] = useState(null);
 
   const handlePaymentMethodChange = (event) => {
     setPaymentMethod(event.target.value);
@@ -84,7 +82,6 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
     fetchData();
   }, [userData]);
 
-
   const isDisabled = paymentMethod === "";
 
   const handleSubmitOrder = async () => {
@@ -97,15 +94,19 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
       return;
     }
 
-    if (!userData) {  // ตรวจสอบว่ามี userId หรือไม่
+    if (!userData) {
+      // ตรวจสอบว่ามี userId หรือไม่
       toast.error("ข้อมูลผู้ใช้ไม่ถูกต้อง");
       setIsLoading(false);
       return;
     }
 
     try {
-      const amount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-      const gameId = cart[0].gameId;  // เลือก gameId ตัวแรกจาก cart
+      const amount = cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
+      const gameId = cart[0].gameId; // เลือก gameId ตัวแรกจาก cart
 
       const orderData = {
         gameId: gameId,
@@ -113,12 +114,15 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
         paymentMethod,
       };
 
-      const response = await axios.post(`${API_URL}/orders`, orderData,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      const response = await axios.post(`${API_URL}/orders`, orderData, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
-      console.log('responseresponse', response);
+      const orderId = response.data.orderId; // ดึง orderId จาก Response
 
+      console.log("Order ID:", orderId);
+      setOrderId(orderId);
+      
       clearCart(); // เคลียร์ตะกร้าโดยไม่ปิด Modal
 
       toast.success("คำสั่งซื้อสำเร็จ!"); // แสดงข้อความสำเร็จ
@@ -167,10 +171,16 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   <div
                     className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center"
                     style={{
-                      boxShadow: paymentMethod === "promptpay" ? "0 0 10px white, 0 0 20px white" : "none",
+                      boxShadow:
+                        paymentMethod === "promptpay"
+                          ? "0 0 10px white, 0 0 20px white"
+                          : "none",
                     }}
                   >
-                    <Radio value="promptpay" checked={paymentMethod === "promptpay"}>
+                    <Radio
+                      value="promptpay"
+                      checked={paymentMethod === "promptpay"}
+                    >
                       <div className="flex justify-center items-center gap-2">
                         <img
                           src="/Images/Banklogo/promptpay.svg"
@@ -180,19 +190,30 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           className="pl-2"
                         />
                         <div className="pl-3 h-[50px]">
-                          <p className="font-semibold text-white">Promptpay (QR Code)</p>
-                          {promptpay && <div className="text-white">9999-9999-9999-9999</div>}
+                          <p className="font-semibold text-white">
+                            Promptpay (QR Code)
+                          </p>
+                          {promptpay && (
+                            <div className="text-white">
+                              9999-9999-9999-9999
+                            </div>
+                          )}
                         </div>
                       </div>
                     </Radio>
                   </div>
                   <div>
-                    <h1 className="text-[20px] font-bold py-3">Internet Banking</h1>
+                    <h1 className="text-[20px] font-bold py-3">
+                      Internet Banking
+                    </h1>
                   </div>
                   <div
                     className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center"
                     style={{
-                      boxShadow: paymentMethod === "scb" ? "0 0 10px white, 0 0 20px white" : "none",
+                      boxShadow:
+                        paymentMethod === "scb"
+                          ? "0 0 10px white, 0 0 20px white"
+                          : "none",
                     }}
                   >
                     <Radio value="scb" checked={paymentMethod === "scb"}>
@@ -206,17 +227,27 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                         />
                         <div className="pl-3 h-[50px]">
                           <p className="font-semibold text-white">SCB</p>
-                          {scb && <div className="text-white">8888-8888-8888-8888</div>}
+                          {scb && (
+                            <div className="text-white">
+                              8888-8888-8888-8888
+                            </div>
+                          )}
                         </div>
                       </div>
                     </Radio>
                   </div>
-                  <div className= 'rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center'
+                  <div
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center"
                     style={{
-                      boxShadow: paymentMethod === "krungsri" ? "0 0 10px white, 0 0 20px white" : "none",
-                    }}                  
+                      boxShadow:
+                        paymentMethod === "krungsri"
+                          ? "0 0 10px white, 0 0 20px white"
+                          : "none",
+                    }}
                   >
-                    <Radio value="krungsri" checked={paymentMethod === "krungsri"}
+                    <Radio
+                      value="krungsri"
+                      checked={paymentMethod === "krungsri"}
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
@@ -227,24 +258,26 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           className="pl-2"
                         />
                         <div className="pl-3 h-[50px]">
-                        <p className="font-semibold text-white">Krungsri</p>
-                        {krungsri && (
-                          <div className=" text-white">
-                            8888-8888-8888-8888
-                          </div>
-                        )}
+                          <p className="font-semibold text-white">Krungsri</p>
+                          {krungsri && (
+                            <div className=" text-white">
+                              8888-8888-8888-8888
+                            </div>
+                          )}
                         </div>
                       </div>
-
                     </Radio>
                   </div>
-                  <div className= 'rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center'
+                  <div
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center"
                     style={{
-                      boxShadow: paymentMethod === "kbank" ? "0 0 10px white, 0 0 20px white" : "none",
-                    }}                    
+                      boxShadow:
+                        paymentMethod === "kbank"
+                          ? "0 0 10px white, 0 0 20px white"
+                          : "none",
+                    }}
                   >
-                    <Radio value="kbank" checked={paymentMethod === "kbank"}
-                    >
+                    <Radio value="kbank" checked={paymentMethod === "kbank"}>
                       <div className="flex justify-center items-center gap-2">
                         <img
                           src="/Images/Banklogo/kbank.svg"
@@ -254,12 +287,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           className="pl-2"
                         />
                         <div className="pl-3 h-[50px]">
-                        <p className="font-semibold text-white">Kbank</p>
-                        {kbank && (
-                          <div className=" text-white">
-                            8888-8888-8888-8888
-                          </div>
-                        )}
+                          <p className="font-semibold text-white">Kbank</p>
+                          {kbank && (
+                            <div className=" text-white">
+                              8888-8888-8888-8888
+                            </div>
+                          )}
                         </div>
                       </div>
                     </Radio>
@@ -269,12 +302,18 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                       Other Payment Methods
                     </h1>
                   </div>
-                  <div className= 'rounded-lg py-2 pl-4 pr-6 h-[90px] bg-neutral-800 flex justify-start item-center'
+                  <div
+                    className="rounded-lg py-2 pl-4 pr-6 h-[90px] bg-neutral-800 flex justify-start item-center"
                     style={{
-                      boxShadow: paymentMethod === "creditcard" ? "0 0 10px white, 0 0 20px white" : "none",
-                    }}                     
+                      boxShadow:
+                        paymentMethod === "creditcard"
+                          ? "0 0 10px white, 0 0 20px white"
+                          : "none",
+                    }}
                   >
-                    <Radio value="creditcard" checked={paymentMethod === "creditcard"}
+                    <Radio
+                      value="creditcard"
+                      checked={paymentMethod === "creditcard"}
                     >
                       <div className="flex justify-center items-center gap-2">
                         <img
@@ -285,23 +324,26 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           className="pl-2"
                         />
                         <div className="pl-3 h-[50px]">
-                        <p className="font-semibold text-white">Credit Card</p>
-                        {creditcard && (
-                          <div className=" text-white">
-                            coming soon
-                          </div>
-                        )}                          
+                          <p className="font-semibold text-white">
+                            Credit Card
+                          </p>
+                          {creditcard && (
+                            <div className=" text-white">coming soon</div>
+                          )}
                         </div>
                       </div>
                     </Radio>
                   </div>
-                  <div className= 'rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center'
+                  <div
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center"
                     style={{
-                      boxShadow: paymentMethod === "paypal" ? "0 0 10px white, 0 0 20px white" : "none",
-                    }}                    
+                      boxShadow:
+                        paymentMethod === "paypal"
+                          ? "0 0 10px white, 0 0 20px white"
+                          : "none",
+                    }}
                   >
-                    <Radio value="paypal" checked={paymentMethod === "paypal"}
-                    >
+                    <Radio value="paypal" checked={paymentMethod === "paypal"}>
                       <div className="flex justify-center items-center gap-2">
                         <img
                           src="/Images/Banklogo/paypal.png"
@@ -311,15 +353,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           className="pl-2"
                         />
                         <div className="pl-3 h-[50px]">
-                        <p className="font-semibold text-white">PayPal</p>
-                        {paypal && (
-                          <div className=" text-white">
-                            coming soon
-                          </div>
-                        )}                          
+                          <p className="font-semibold text-white">PayPal</p>
+                          {paypal && (
+                            <div className=" text-white">coming soon</div>
+                          )}
                         </div>
                       </div>
-
                     </Radio>
                   </div>
                 </RadioGroup>
@@ -339,7 +378,10 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   <p>TOTAL</p>
                   <p>THB {totalPrice}</p>
                 </div>
-                <ModalCheckOutSucceed disabled={isDisabled} onSubmitOrder={handleSubmitOrder}
+                <ModalCheckOutSucceed
+                  disabled={isDisabled}
+                  onSubmitOrder={handleSubmitOrder}
+                  orderId={orderId}
                 />
               </div>
             </div>
