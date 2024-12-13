@@ -93,7 +93,7 @@ const CardDetail = () => {
             <p className="pt-4">{gameData.mainContent}</p>
           </div>
           <div className="flex justify-end gap-3 pr-10">
-            <Button className="py-3 px-7 bg-slate-100 text-xl hover:bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 transition-all duration-1000 transform hover:scale-105
+            <Button className="py-3 px-7 bg-slate-100 text-xl hover:bg-gradient-to-tr from-violet-500 to-violet-800 via-violet-600 transition-all duration-1000 transform hover:scale-105
               hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]">
               THB {gameData.price}
             </Button>
@@ -108,7 +108,7 @@ const CardDetail = () => {
             </Button>
             <Button
               className="py-3 px-7 text-xl font-bold bg-blue-700 text-white 
-              hover:bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 transition-all duration-1000 transform hover:scale-105
+              hover:bg-gradient-to-tr from-blue-500 to-sky-500 via-white-500 transition-all duration-1000 transform hover:scale-105
               hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]
               hover:text-[#202020]"
               onClick={handleAddToCart}
