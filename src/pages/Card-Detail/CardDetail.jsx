@@ -11,7 +11,6 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
-
 const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const CardDetail = () => {
@@ -93,27 +92,31 @@ const CardDetail = () => {
             <CarouselImage currentIndex={ currentIndex}  gameImages={ gameImages } setCurrentIndex={ setCurrentIndex } setGameImages={ setGameImages }/>
             <p className="pt-4">{gameData.mainContent}</p>
           </div>
-          <div className="flex justify-end gap-3">
+          <div className="flex justify-end gap-3 pr-10">
             <Button className="py-3 px-7 bg-slate-100 text-xl">
               THB {gameData.price}
             </Button>
             <Button
-              className="py-3 px-7 text-xl"
+              className="py-3 px-7 text-xl font-bold bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 text-white shadow-lg hover:from-blue-500 hover:via-teal-500 hover:to-green-500 transition-all duration-1000 transform hover:scale-105
+              hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]
+              hover:text-[#202020]"
               color="primary"
               onClick={handleBuyNow}
             >
-              Buy Now
+              BUY NOW
             </Button>
             <Button
-              className="py-3 px-7 bg-gray-600 text-white text-xl"
+              className="py-3 px-7 text-xl font-bold bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 text-white shadow-lg hover:from-blue-500 hover:via-teal-500 hover:to-green-500 transition-all duration-1000 transform hover:scale-105
+              hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]
+              hover:text-[#202020]"
               onClick={handleAddToCart}
             >
-              Add To Cart
+              ADD TO CART
             </Button>
           </div>
         </div>
         <div>
-          <div className="pb-10">
+          <div className="py-b">
             <h2 className="font-bold text-[28px]">{gameData.title}</h2>
             <p>{gameData.subContent}</p>
             <div className="flex justify-start gap-3 pt-5">
@@ -122,6 +125,16 @@ const CardDetail = () => {
                   {category}
                 </a>
               ))}
+            </div>
+            <div className="flex py-5">
+              <p>Release Date: </p>
+              <div className="pl-2">
+                {new Date(gameData.date).toLocaleDateString("en-Gb", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </div>
             </div>
           </div>
 
