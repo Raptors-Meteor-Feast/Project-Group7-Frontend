@@ -125,7 +125,7 @@ const ModalCheckOutSucceed = ({ disabled, onSubmitOrder, orderId }) => {
                 },
             });
 
-            toast.success("Images uploaded successfully!");
+            toast.success("Receipt uploaded successfully!");
             handleClearImages();
             return response.data;
         } catch (error) {
