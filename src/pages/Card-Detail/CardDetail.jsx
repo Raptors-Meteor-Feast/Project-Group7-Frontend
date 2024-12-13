@@ -24,7 +24,7 @@ const CardDetail = () => {
   const navigate = useNavigate();
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [gameImages, setGameImages] = useState([]); 
+  const [gameImages, setGameImages] = useState([]);
   useEffect(() => {
     const fetchGameData = async () => {
       try {
@@ -43,7 +43,7 @@ const CardDetail = () => {
     fetchGameData();
   }, [id]);
 
-  
+
   if (!gameData || !gameDataSystem) {
     return <p>Loading...</p>;
   }
@@ -52,26 +52,26 @@ const CardDetail = () => {
 
   const handleAddToCart = async () => {
     const token = localStorage.getItem("authToken");
-    
+
     if (!token) {
       toast.warning("Please sign in to proceed with checkout.", { autoClose: 2500 });
       navigate("/login");
       return;
     }
-  
+
     await addToCart(gameData);
   };
-  
+
 
   const handleBuyNow = async () => {
     const token = localStorage.getItem("authToken");
-    
+
     if (!token) {
       toast.warning("Please sign in to proceed with checkout.", { autoClose: 2500 });
       navigate("/login");
       return;
     }
-  
+
     await buyNow(gameData);
     navigate("/checkout");
   };
@@ -89,11 +89,12 @@ const CardDetail = () => {
         <div className="pb-[40px]">
           <h1 className="font-bold text-[28px]">{gameData.title}</h1>
           <div className="py-5">
-            <CarouselImage currentIndex={ currentIndex}  gameImages={ gameImages } setCurrentIndex={ setCurrentIndex } setGameImages={ setGameImages }/>
+            <CarouselImage currentIndex={currentIndex} gameImages={gameImages} setCurrentIndex={setCurrentIndex} setGameImages={setGameImages} />
             <p className="pt-4">{gameData.mainContent}</p>
           </div>
           <div className="flex justify-end gap-3 pr-10">
-            <Button className="py-3 px-7 bg-slate-100 text-xl">
+            <Button className="py-3 px-7 bg-slate-100 text-xl hover:bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 transition-all duration-1000 transform hover:scale-105
+              hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]">
               THB {gameData.price}
             </Button>
             <Button
@@ -106,7 +107,8 @@ const CardDetail = () => {
               BUY NOW
             </Button>
             <Button
-              className="py-3 px-7 text-xl font-bold bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 text-white shadow-lg hover:from-blue-500 hover:via-teal-500 hover:to-green-500 transition-all duration-1000 transform hover:scale-105
+              className="py-3 px-7 text-xl font-bold bg-blue-700 text-white 
+              hover:bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 transition-all duration-1000 transform hover:scale-105
               hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]
               hover:text-[#202020]"
               onClick={handleAddToCart}
