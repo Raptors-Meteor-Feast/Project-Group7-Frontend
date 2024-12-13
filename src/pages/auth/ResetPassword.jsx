@@ -6,7 +6,7 @@ import { FaEyeSlash } from "react-icons/fa6";
 import "./auth.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ResetPassword = () => {
@@ -62,7 +62,7 @@ const ResetPassword = () => {
 
         try {
             const response = await axios.put(
-                `${import.meta.env.VITE_API_BASE_URL}/user/reset-password/${token}`,
+                `${import.meta.env.VITE_API_BASE_URL}/api/user/reset-password/${token}`,
                 { newPassword }
             );
             toast.success(response.data.message);

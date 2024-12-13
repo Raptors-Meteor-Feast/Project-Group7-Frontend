@@ -16,7 +16,7 @@ const MostPopularCard = ({ name }) => {
     useEffect(() => {
         const fetchGameData = async () => {
             try {
-                const response = await axios.get(`${API_URL}/game`);
+                const response = await axios.get(`${API_URL}/api/game`);
                 const data = response.data.game;
                 setGameData(data.sort((a, b) => b.rating - a.rating));
             } catch (error) {

@@ -5,13 +5,13 @@ import Gr7Logo from "/NavIcon/Gr7Logo.svg";
 // import UserIcon from "/NavIcon/user.png";
 import LoginLogo from "/NavIcon/loginlogo1.png";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { useCart } from "../components/Checkout/CartContext";
 import { toast } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 import { FaCartShopping } from "react-icons/fa6";
+import axios from "axios";
 
-
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function Nav() {
     const [logIn, setLogIn] = useState(false); // เก็บสถานะการล็อกอิน
@@ -38,7 +38,7 @@ export default function Nav() {
             if (logIn && !userData) {
                 try {
                     const token = localStorage.getItem("authToken");
-                    const response = await axios.get("http://localhost:4000/api/user/data", {
+                    const response = await axios.get(`${API_URL}/api/user/data`, {
                         headers: { Authorization: `Bearer ${token}` },
                     });
                     setUserData(response.data);

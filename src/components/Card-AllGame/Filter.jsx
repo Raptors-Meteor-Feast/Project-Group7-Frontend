@@ -16,7 +16,7 @@ function Filter({ setSelectedCategory }) {
     useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await axios.get(`${API_URL}/game`);
+            const response = await axios.get(`${API_URL}/api/game`);
             const games = response.data.game;
 
             const uniqueCategories = [

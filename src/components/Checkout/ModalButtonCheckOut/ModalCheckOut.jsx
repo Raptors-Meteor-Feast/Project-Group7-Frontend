@@ -67,7 +67,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
         setLogIn(!!parsedToken);
 
         if (parsedToken && !userData) {
-          const response = await axios.get(`${API_URL}/user/data`, {
+          const response = await axios.get(`${API_URL}/api/user/data`, {
             headers: { Authorization: `Bearer ${token}` },
           });
           setUserData(response.data);
@@ -114,7 +114,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
         paymentMethod,
       };
 
-      const response = await axios.post(`${API_URL}/orders`, orderData, {
+      const response = await axios.post(`${API_URL}/api/orders`, orderData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

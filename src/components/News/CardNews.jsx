@@ -14,7 +14,7 @@ export default function CardNews() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/news`)
+      .get(`${API_URL}/api/news`)
       .then((res) => {
         console.log(res.data); // debugging
         // Set news to res.data.news if it's an array, else set to an empty array

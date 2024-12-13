@@ -21,7 +21,7 @@ const VerifyEmail = () => {
 
             try {
                 const response = await axios.get(
-                    `${import.meta.env.VITE_API_BASE_URL}/user/verify-email/${verificationToken}`
+                    `${import.meta.env.VITE_API_BASE_URL}/api/user/verify-email/${verificationToken}`
                 );
 
                 if (response.status === 200) {

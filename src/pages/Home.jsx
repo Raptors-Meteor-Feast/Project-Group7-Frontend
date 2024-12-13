@@ -5,8 +5,10 @@ import Footer from "../components/Footer/Footer";
 import MostPopularCard from "../components/Card-Home/MostPopularCard";
 import RecommendCard from "../components/Card-Home/RecommendCard";
 import Nav from "../components/Nav";
-import axios from "axios";
 import CardNews from "../components/News/CardNews.jsx";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Home = () => {
   const [gameData, setGameData] = useState([]);
@@ -22,7 +24,7 @@ const Home = () => {
   // }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/game")
+    axios.get(`${API_URL}/api/game`)
       .then((res) => setGameData(res.data.games))
       .catch((err) => console.error(err));
   }, []);

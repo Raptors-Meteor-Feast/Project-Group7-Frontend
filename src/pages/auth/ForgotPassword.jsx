@@ -26,7 +26,7 @@ const ForgotPasswordPage = () => {
 
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL}/user/forgot-password`,
+                `${import.meta.env.VITE_API_BASE_URL}/api/user/forgot-password`,
                 { email }
             );
             toast.success(response.data.message, {
@@ -89,13 +89,6 @@ const ForgotPasswordPage = () => {
                     >
                         Submit
                     </Button>
-                    <Link to="/reset-password/:token" className="w-full mt-4 text-blue-200">
-                        For Test Don`t Click Reset Password
-                    </Link>
-
-                    <Link to="/verify-email/:token" className="w-full mt-4 text-blue-500">
-                        For Test Don`t Click Verify Email
-                    </Link>
                 </Form>
             </div>
         </div>

@@ -21,7 +21,7 @@ function CarouselBanner({ selectedId }) {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`${API_URL}/game`);
+        const response = await axios.get(`${API_URL}/api/game`);
         if (selectedId) {
           const selectedItem = response.data.game.find((item) => item._id === selectedId);
           setSelectedData(selectedItem || null);

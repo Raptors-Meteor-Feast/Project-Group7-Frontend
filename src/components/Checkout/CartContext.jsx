@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/game`);
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/game`);
                 setGameData(response.data.game);
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -37,7 +37,7 @@ export const CartProvider = ({ children }) => {
             }
 
             try {
-                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/checkout`,
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/checkout`,
                     { headers: { Authorization: `Bearer ${token}` } }, 
                 );
                 const processedData = Object.entries(response.data.cartData).map(([key, value]) => {
@@ -87,7 +87,7 @@ export const CartProvider = ({ children }) => {
     
             // เรียก API เพื่อเพิ่มข้อมูลลง backend
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL}/checkout/add`,value,
+                `${import.meta.env.VITE_API_BASE_URL}/api/checkout/add`,value,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             
@@ -158,7 +158,7 @@ export const CartProvider = ({ children }) => {
     
             // เรียก API เพื่อเพิ่มข้อมูลลง backend
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL}/checkout/add`,
+                `${import.meta.env.VITE_API_BASE_URL}/api/checkout/add`,
                 value,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -186,7 +186,7 @@ export const CartProvider = ({ children }) => {
     
         try {
             const response = await axios.delete(
-                `${import.meta.env.VITE_API_BASE_URL}/checkout/delete`,
+                `${import.meta.env.VITE_API_BASE_URL}/api/checkout/delete`,
                 {
                     headers: { Authorization: `Bearer ${token}` },
                     data: { gameId: id, userId: localStorage.getItem("userId") },
@@ -217,7 +217,7 @@ export const CartProvider = ({ children }) => {
     
         try {
             const response = await axios.patch(
-                `${import.meta.env.VITE_API_BASE_URL}/checkout/clear`,
+                `${import.meta.env.VITE_API_BASE_URL}/api/checkout/clear`,
                 { userId: localStorage.getItem("userId") },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

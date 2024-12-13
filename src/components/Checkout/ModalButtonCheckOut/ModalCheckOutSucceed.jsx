@@ -81,7 +81,7 @@ const ModalCheckOutSucceed = ({ disabled, onSubmitOrder, orderId }) => {
             setLogIn(!!parsedToken);
 
             if (parsedToken && !userData) {
-                const response = await axios.get(`${API_URL}/user/data`, {
+                const response = await axios.get(`${API_URL}/api/user/data`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setUserData(response.data);
@@ -118,7 +118,7 @@ const ModalCheckOutSucceed = ({ disabled, onSubmitOrder, orderId }) => {
         });
 
         try {
-            const response = await axios.post(`${API_URL}/orders/${orderId}/receipt`, formData, {
+            const response = await axios.post(`${API_URL}/api/orders/${orderId}/receipt`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "multipart/form-data",

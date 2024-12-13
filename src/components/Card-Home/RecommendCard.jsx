@@ -16,7 +16,7 @@ const RecommendCard = ({ name }) => {
     useEffect(() => {
         const fetchGameData = async () => {
             try {
-                const response = await axios.get(`${API_URL}/game`);
+                const response = await axios.get(`${API_URL}/api/game`);
                 const data = response.data.game;
                 const shuffledData = [...data].sort(() => 0.5 - Math.random());
                 setGameData(shuffledData);

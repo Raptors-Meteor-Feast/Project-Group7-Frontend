@@ -13,7 +13,7 @@ export default function NewsContent() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/news/${newsId}`)
+      .get(`${API_URL}/api/news/${newsId}`)
       .then((res) => {
         setContent(res.data.data);
       })

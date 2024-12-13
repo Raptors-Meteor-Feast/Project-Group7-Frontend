@@ -17,7 +17,7 @@ export default function SearchBox() {
             const fetchSearchResults = async () => {
                 try {
                     // ส่งข้อมูล title ไปใน body แทน
-                    const response = await axios.post((`${import.meta.env.VITE_API_BASE_URL}/game/search`), {
+                    const response = await axios.post((`${import.meta.env.VITE_API_BASE_URL}/api/game/search`), {
                         title: search, // ส่ง title ใน body แทน
                     });
                     setSearchData(Array.isArray(response.data.games) ? response.data.games : []);

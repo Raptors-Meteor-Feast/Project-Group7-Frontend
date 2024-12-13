@@ -13,7 +13,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${API_URL}/game`);
+        const response = await axios.get(`${API_URL}/api/game`);
         const data = response.data.game;
 
         const randomData = data

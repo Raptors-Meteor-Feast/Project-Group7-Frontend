@@ -29,7 +29,7 @@ const CardDetail = () => {
   useEffect(() => {
     const fetchGameData = async () => {
       try {
-        const gameResponse = await axios.get(`${API_URL}/game/${id}`);
+        const gameResponse = await axios.get(`${API_URL}/api/game/${id}`);
         const gameData = gameResponse.data.game
         const systemData = gameResponse.data.system
         const images = gameResponse.data?.game?.images || [];

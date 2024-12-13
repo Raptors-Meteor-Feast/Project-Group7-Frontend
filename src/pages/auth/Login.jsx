@@ -63,7 +63,7 @@ const Login = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.post(`${baseURL}/user/login`, { email, password });
+            const response = await axios.post(`${baseURL}/api/user/login`, { email, password });
 
             const token = response.data.token;
 
