@@ -4,6 +4,8 @@ import Nav from "../Nav";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_BASE_URL;
+
 export default function NewsContent() {
   const { newsId } = useParams();
   const [content, setContent] = useState([]);
@@ -11,7 +13,7 @@ export default function NewsContent() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/news/${newsId}`)
+      .get(`${API_URL}/news/${newsId}`)
       .then((res) => {
         setContent(res.data.data);
       })

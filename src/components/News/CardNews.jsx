@@ -5,6 +5,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_BASE_URL;
+
 export default function CardNews() {
   const navigate = useNavigate();
   const [startIndex, setStartIndex] = useState(0);
@@ -12,7 +14,7 @@ export default function CardNews() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/news")
+      .get(`${API_URL}/news`)
       .then((res) => {
         console.log(res.data); // debugging
         // Set news to res.data.news if it's an array, else set to an empty array
@@ -72,7 +74,7 @@ export default function CardNews() {
               shadow="sm"
               isPressable
               onClick={() => handleClick(item._id)}
-              className="drop-shadow-md hover:bg-gray-300 "
+              className="drop-shadow-md hover:bg-gray-300 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
             >
               <CardBody className="overflow-visible p-0">
                 <Image

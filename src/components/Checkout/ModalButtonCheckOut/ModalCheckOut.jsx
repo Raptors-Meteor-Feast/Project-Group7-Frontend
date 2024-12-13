@@ -170,11 +170,11 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   </div>
                   <div
                     className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center 
-                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105"
                     style={{
                       boxShadow:
                         paymentMethod === "promptpay"
-                          ? "0 0 10px blue, 0 0 20px blue"
+                          ? "0 0 10px white, 0 0 20px white"
                           : "none",
                     }}
                   >
@@ -210,11 +210,11 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   </div>
                   <div
                     className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center
-                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105"
                     style={{
                       boxShadow:
                         paymentMethod === "scb"
-                          ? "0 0 10px violet, 0 0 20px violet"
+                          ? "0 0 10px white, 0 0 20px white"
                           : "none",
                     }}
                   >
@@ -240,11 +240,11 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   </div>
                   <div
                     className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center
-                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105"
                     style={{
                       boxShadow:
                         paymentMethod === "krungsri"
-                          ? "0 0 10px yellow, 0 0 20px yellow"
+                          ? "0 0 10px white, 0 0 20px white"
                           : "none",
                     }}
                   >
@@ -273,11 +273,11 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   </div>
                   <div
                     className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center
-                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105"
                     style={{
                       boxShadow:
                         paymentMethod === "kbank"
-                          ? "0 0 10px green, 0 0 20px green"
+                          ? "0 0 10px white, 0 0 20px white"
                           : "none",
                     }}
                   >
@@ -308,11 +308,11 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   </div>
                   <div
                     className="rounded-lg py-2 pl-4 pr-6 h-[90px] bg-neutral-800 flex justify-start item-center
-                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105"
                     style={{
                       boxShadow:
                         paymentMethod === "creditcard"
-                          ? "0 0 10px orange, 0 0 20px red"
+                          ? "0 0 10px white, 0 0 20px white"
                           : "none",
                     }}
                   >
@@ -341,11 +341,11 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                   </div>
                   <div
                     className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center
-                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105"
                     style={{
                       boxShadow:
                         paymentMethod === "paypal"
-                          ? "0 0 10px white, 0 0 20px blue"
+                          ? "0 0 10px white, 0 0 20px white"
                           : "none",
                     }}
                   >

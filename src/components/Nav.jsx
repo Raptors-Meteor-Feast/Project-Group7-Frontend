@@ -74,8 +74,8 @@ export default function Nav() {
                             alt="Raptor-Logo"
                             className="w-[55px] h-auto object-cover mr-2"
                         />
-                        <p className="hidden sm:block font-bold text-white text-[18px] transition-all duration-500 
-                            hover:[text-shadow:_0_0_10px_#ff9900,_0_0_20px_#ff6600,_0_0_30px_#ff3300,_0_0_40px_#ff0000]
+                        <p className="hidden sm:block font-bold text-white text-[18px] transition-all duration-200 
+                            hover:[text-shadow:_0_0_10px_white,_0_0_20px_white,_0_0_30px_white,_0_0_40px_white]
                             hover:text-black"
                         >Raptors Meteor Feast</p>
                     </Link>
@@ -92,8 +92,8 @@ export default function Nav() {
                         <div>
                             <ul className="flex gap-7 mr-2 font-bold items-center">
                                 <li>
-                                    <Link to="/browse" className="hidden sm:block font-bold text-white text-[18px] transition-all duration-500 
-                                    hover:[text-shadow:_0_0_10px_#ff9900,_0_0_20px_#ff6600,_0_0_30px_#ff3300,_0_0_40px_#ff0000]
+                                    <Link to="/browse" className="hidden sm:block font-bold text-white text-[18px] transition-all duration-200 
+                                    hover:[text-shadow:_0_0_10px_white,_0_0_20px_white,_0_0_30px_white,_0_0_40px_white]
                                     hover:text-black"
                                     >Browse</Link>
                                 </li>

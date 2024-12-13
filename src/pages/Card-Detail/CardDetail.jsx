@@ -34,7 +34,7 @@ const CardDetail = () => {
         const systemData = gameResponse.data.system
         const images = gameResponse.data?.game?.images || [];
         setGameImages(images);
-        setCurrentIndex(0);  // เริ่มต้นที่ภาพแรก
+        setCurrentIndex(0);
         setGameData(gameData);
         setGameDataSystem(systemData);
       } catch (error) {
