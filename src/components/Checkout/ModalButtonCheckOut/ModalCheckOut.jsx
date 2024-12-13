@@ -169,11 +169,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     <h1 className="text-[20px] font-bold">PromptPay</h1>
                   </div>
                   <div
-                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center"
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center 
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
                     style={{
                       boxShadow:
                         paymentMethod === "promptpay"
-                          ? "0 0 10px white, 0 0 20px white"
+                          ? "0 0 10px blue, 0 0 20px blue"
                           : "none",
                     }}
                   >
@@ -187,7 +188,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="Promptpay"
-                          className="pl-2"
+                          className="pl-2 hover:scale-105 transform transition-all duration-300"
                         />
                         <div className="pl-3 h-[50px]">
                           <p className="font-semibold text-white">
@@ -208,11 +209,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     </h1>
                   </div>
                   <div
-                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center"
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start items-center
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
                     style={{
                       boxShadow:
                         paymentMethod === "scb"
-                          ? "0 0 10px white, 0 0 20px white"
+                          ? "0 0 10px violet, 0 0 20px violet"
                           : "none",
                     }}
                   >
@@ -223,7 +225,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="SCB"
-                          className="pl-2"
+                          className="pl-2 hover:scale-105 transform transition-all duration-300"
                         />
                         <div className="pl-3 h-[50px]">
                           <p className="font-semibold text-white">SCB</p>
@@ -237,11 +239,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     </Radio>
                   </div>
                   <div
-                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center"
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
                     style={{
                       boxShadow:
                         paymentMethod === "krungsri"
-                          ? "0 0 10px white, 0 0 20px white"
+                          ? "0 0 10px yellow, 0 0 20px yellow"
                           : "none",
                     }}
                   >
@@ -255,7 +258,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="Krungsri"
-                          className="pl-2"
+                          className="pl-2 hover:scale-105 transform transition-all duration-300"
                         />
                         <div className="pl-3 h-[50px]">
                           <p className="font-semibold text-white">Krungsri</p>
@@ -269,11 +272,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     </Radio>
                   </div>
                   <div
-                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center"
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
                     style={{
                       boxShadow:
                         paymentMethod === "kbank"
-                          ? "0 0 10px white, 0 0 20px white"
+                          ? "0 0 10px green, 0 0 20px green"
                           : "none",
                     }}
                   >
@@ -284,7 +288,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="Kbank"
-                          className="pl-2"
+                          className="pl-2 hover:scale-105 transform transition-all duration-300"
                         />
                         <div className="pl-3 h-[50px]">
                           <p className="font-semibold text-white">Kbank</p>
@@ -303,11 +307,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     </h1>
                   </div>
                   <div
-                    className="rounded-lg py-2 pl-4 pr-6 h-[90px] bg-neutral-800 flex justify-start item-center"
+                    className="rounded-lg py-2 pl-4 pr-6 h-[90px] bg-neutral-800 flex justify-start item-center
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
                     style={{
                       boxShadow:
                         paymentMethod === "creditcard"
-                          ? "0 0 10px white, 0 0 20px white"
+                          ? "0 0 10px orange, 0 0 20px red"
                           : "none",
                     }}
                   >
@@ -321,7 +326,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="CreditCard"
-                          className="pl-2"
+                          className="pl-2 hover:scale-105 transform transition-all duration-300"
                         />
                         <div className="pl-3 h-[50px]">
                           <p className="font-semibold text-white">
@@ -335,11 +340,12 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                     </Radio>
                   </div>
                   <div
-                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center"
+                    className="rounded-lg py-2 pl-4 pr-6 w-[350px] bg-neutral-800 flex justify-start item-center
+                    hover:bg-neutral-900 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]"
                     style={{
                       boxShadow:
                         paymentMethod === "paypal"
-                          ? "0 0 10px white, 0 0 20px white"
+                          ? "0 0 10px white, 0 0 20px blue"
                           : "none",
                     }}
                   >
@@ -350,7 +356,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
                           width={70}
                           height={50}
                           alt="PayPal"
-                          className="pl-2"
+                          className="pl-2 hover:scale-105 transform transition-all duration-300"
                         />
                         <div className="pl-3 h-[50px]">
                           <p className="font-semibold text-white">PayPal</p>
