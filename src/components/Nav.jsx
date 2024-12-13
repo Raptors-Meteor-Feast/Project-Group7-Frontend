@@ -1,17 +1,21 @@
-import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Button} from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import SearchBox from "./SearchBox";
 import Gr7Logo from "/NavIcon/Gr7Logo.svg";
-import UserIcon from "/NavIcon/user.png";
+// import UserIcon from "/NavIcon/user.png";
+import LoginLogo from "/NavIcon/loginlogo1.png";
 import { Link } from "react-router-dom";
-import axios from "axios"; // เพิ่ม axios
+import axios from "axios";
 import { useCart } from "../components/Checkout/CartContext";
+import { toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
+import { FaCartShopping } from "react-icons/fa6";
+
 
 
 export default function Nav() {
     const [logIn, setLogIn] = useState(false); // เก็บสถานะการล็อกอิน
     const [userData, setUserData] = useState(null); // เก็บข้อมูลผู้ใช้จาก backend
-    console.log("User Data:", userData);
 
     // ตรวจสอบ token เมื่อโหลดหน้าเว็บ
     useEffect(() => {
@@ -48,38 +52,39 @@ export default function Nav() {
         fetchUserData();
     }, [logIn, userData]);
 
-
     // ฟังก์ชันล็อกเอาต์
     const handleLogout = () => {
         localStorage.removeItem("authToken"); // ลบ token ออกจาก localStorage
         setLogIn(false); // เปลี่ยนสถานะเป็นล็อกเอาต์
         setUserData(null); // ล้างข้อมูลผู้ใช้
-        alert("You have been logged out.");
+        toast.success("You have been logged out."); // Show success toast notification
     };
 
     const { cart } = useCart();
-    const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+    const cartCount = cart.length;
 
     return (
         <div className="bg-neutral-900 sticky top-0 w-full z-50">
             <div className="flex justify-between items-center py-[24px]">
                 {/* Logo and Brand Name */}
                 <div className="flex items-center ml-36">
-                    <Link to="/" className="flex justify-center items-center">
+                    <Link to="/" className="flex justify-center items-center"> 
                         <img
                             src={Gr7Logo}
                             alt="Raptor-Logo"
                             className="w-[55px] h-auto object-cover mr-2"
                         />
-                        <p className="hidden sm:block font-bold text-orange-500 text-[18px]">Raptors Meteor Feast</p>
+                        <p className="hidden sm:block font-bold text-white text-[18px] transition-all duration-200 
+                            hover:[text-shadow:_0_0_10px_white,_0_0_20px_white,_0_0_30px_white,_0_0_40px_white]
+                            hover:text-black"
+                        >Raptors Meteor Feast</p>
                     </Link>
                 </div>
                 <div className="flex items-center gap-5">
                     {/* Search Input */}
-                    <div>
+                    <div className="hidden md:block" >
                         <SearchBox />
                     </div>
-                
                 </div>
                 <div className="flex items-center justify-between">
                     {/* Cart Section */}
@@ -87,12 +92,25 @@ export default function Nav() {
                         <div>
                             <ul className="flex gap-7 mr-2 font-bold items-center">
                                 <li>
-                                    <Link to="#" className="text-orange-500 hover:text-orange-600 active:text-orange-700 cursor-pointer text-[18px]">Browse</Link>
+                                    <Link to="/browse" className="hidden sm:block font-bold text-white text-[18px] transition-all duration-200 
+                                    hover:[text-shadow:_0_0_10px_white,_0_0_20px_white,_0_0_30px_white,_0_0_40px_white]
+                                    hover:text-black"
+                                    >Browse</Link>
                                 </li>
                             </ul>
                         </div>
-                        <p className="text-orange-500 font-bold text-[18px]">Cart</p>
-                        <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link>
+                        {/* <p className="text-orange-500 font-bold text-[18px]">Cart</p> */}
+                        {/* <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link> */}
+                        {logIn && (
+                            <div className="flex items-center gap-2 mr-8">
+                                <p className="text-orange-500 font-bold text-[18px]"><FaCartShopping /></p>
+                                <Link to="/checkout">
+                                    <Button color="warning" className="w-[5px] h-[25px]">
+                                        {cartCount}
+                                    </Button>
+                                </Link>
+                            </div>
+                        )}
                     </div>
                     {!logIn ? (
                         <div className="mr-36">
@@ -105,7 +123,7 @@ export default function Nav() {
                                         color="secondary"
                                         name="Guest"
                                         size="md"
-                                        src={UserIcon}
+                                        src={LoginLogo}
                                         aria-label="Sign In"
                                     />
                                 </DropdownTrigger>

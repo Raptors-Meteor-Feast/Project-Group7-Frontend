@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./auth.css";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
@@ -69,6 +69,9 @@ const Login = () => {
 
             localStorage.setItem("authToken", token);
 
+            if (response.data.userId) {
+                setUserId(response.data.userId); // เก็บ userId ที่ได้จาก API
+              }
             toast.success("Successfully Logged In!");
             navigate("/");
 
@@ -170,7 +173,6 @@ const Login = () => {
                         onChange={(event) => setPassword(event.target.value)} // Save user input to state
                     />
 
-
                     {/* Link to reset password */}
                     <div className="flex justify-start w-full">
                         <Button
@@ -223,7 +225,6 @@ const Login = () => {
                         </Button>
                     </div>
                 </form>
-                <ToastContainer />
             </div>
         </div>
     );

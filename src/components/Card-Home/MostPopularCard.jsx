@@ -1,70 +1,89 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 import { Card, CardBody, Image, CardFooter, Button } from "@nextui-org/react";
 import { useNavigate } from 'react-router-dom';
-import gamedata from "../../Data/gamedata.json";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const MostPopularCard = ({ name }) => {
     const navigate = useNavigate();
-
-    const sortedData = [...gamedata].sort((a, b) => b.rating - a.rating);
-    const itemsPerPage = 5;
+    const [gameData, setGameData] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
+    const itemsPerPage = 5;
 
+    useEffect(() => {
+        const fetchGameData = async () => {
+            try {
+                const response = await axios.get(`${API_URL}/game`);
+                const data = response.data.game;
+                setGameData(data.sort((a, b) => b.rating - a.rating));
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchGameData();
+    }, []);
+
+    // ถัดไป
     const handleNext = () => {
-        setStartIndex((prevIndex) => (prevIndex + itemsPerPage) % sortedData.length);
+        setStartIndex((prevIndex) => (prevIndex + itemsPerPage) % gameData.length);
     };
 
+    // ย้อนกลับ
     const handlePrev = () => {
-        setStartIndex((prevIndex) => 
-            (prevIndex - itemsPerPage + sortedData.length) % sortedData.length
+        setStartIndex((prevIndex) =>
+            (prevIndex - itemsPerPage + gameData.length) % gameData.length
         );
     };
 
-    const currentData = sortedData.slice(startIndex, startIndex + itemsPerPage);
+    // เลือกข้อมูลที่จะใช้แสดง
+    const currentData = gameData.slice(startIndex, startIndex + itemsPerPage);
 
+    // ไปยังหน้าเกม
     const handleCardClick = (id) => {
-        navigate(`/card/${id}`);
+        navigate(`/game/${id}`);
     };
 
     return (
-        <div className='w-full px-[135px] py-10 bg-gray-800'>
+        <div className='w-full px-[135px] py-10 bg-neutral-900'>
             <div className='flex justify-between'>
                 <h2 className='mb-5 text-[28px] font-bold text-white'>{name}</h2>
                 <div className="flex justify-end mb-4">
-                    <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-gray-700 text-white rounded-full">←</Button>
-                    <Button onClick={handleNext} className="px-5 py-1 bg-gray-700 text-white rounded-full">→</Button>
+                    <Button onClick={handlePrev} className="mr-2 px-5 py-1 bg-[#252525] text-white rounded-full text-2xl hover:text-3xl"><IoIosArrowBack className='transform transition-all duration-300'/></Button>
+                    <Button onClick={handleNext} className="px-5 py-1 bg-[#252525] text-white rounded-full text-2xl hover:text-3xl"><IoIosArrowForward className='transform transition-all duration-300'/></Button>
                 </div>
             </div>
-            <div className='gap-[22px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5'>
-                {currentData.map(items => (
+            <div className='gap-[22px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 '>
+                {currentData.map(game => (
                     <Card 
-                        shadow="sm" key={items.id} 
+                        shadow="sm" key={game._id} 
                         isPressable
-                        onPress={() => handleCardClick(items.id)} 
-                        className='drop-shadow-md hover:bg-gray-300 '>
+                        onPress={() => handleCardClick(game._id)} 
+                        className='drop-shadow-md hover:bg-gray-300 transform transition-all duration-300 hover:scale-105 hover:[box-shadow:_0_0_10px_white,_0_0_20px_white]'>
                         <CardBody className="overflow-visible p-0">
                             <Image
                                 shadow="sm"
                                 radius="lg"
                                 width="100%"
                                 isBlurred
-                                alt={items.title}
+                                alt={game.title}
                                 className="w-full object-cover h-[230px]"
-                                src={items.pictureaddress}
+                                src={game.images[0]}
                             />
                         </CardBody>
                         <CardFooter className="text-small flex flex-col justify-start items-start">
                             <div className='flex justify-start gap-2'>
-                                <p className="text-[12px] text-default-700">{items.categories[0]}</p>
-                                <p className="text-[12px] text-default-700">{items.categories[1]}</p>
+                                {game.categories.slice(0, 2).map((category, index) => (
+                                    <p key={index} className="text-[12px] text-default-700">{category}</p>
+                                ))}
                             </div>
-                            {items.title.length >= 25 ? 
-                                (<b className='text-[15px] text-gray-800'>{items.title}</b>) :
-                                (<b className='text-[16px] text-gray-800'>{items.title}</b>)
-                            }
-                            {items.price === 0 ? 
+                                <b className='text-[16px] text-gray-800 text-ellipsis whitespace-nowrap overflow-hidden w-[100%] text-start'>{game.title}</b>
+                                {game.price === 0 ? 
                                 (<p className="text-[12px] text-default-500"><span>Free to Play</span></p>) :
-                                (<p className="text-[12px] text-default-500">THB <span>{items.price}</span></p>)
+                                (<p className="text-[12px] text-default-500">THB <span>{game.price}</span></p>)
                             }
                         </CardFooter>
                     </Card>

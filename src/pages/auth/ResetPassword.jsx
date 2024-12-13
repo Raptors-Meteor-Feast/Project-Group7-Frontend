@@ -76,18 +76,6 @@ const ResetPassword = () => {
 
     return (
         <div className="flex justify-center items-center bg-neutral-950 min-h-screen">
-            <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
             <div className="flex flex-col items-center gap-2 p-8 rounded-xl text-white bg-neutral-900 w-full max-w-md sm:w-[50%] m-10">
                 <Link to="/" className="flex justify-center items-center w-full mb-4">
                     <img
