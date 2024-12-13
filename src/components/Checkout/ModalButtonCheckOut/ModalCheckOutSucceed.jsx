@@ -208,7 +208,7 @@ const ModalCheckOutSucceed = ({ disabled, onSubmitOrder, orderId }) => {
                                     </Button>
                                     <Link to="/">
                                         <Button onPress={onClose} color="primary" className="w-full">
-                                            Next
+                                            Finish
                                         </Button>
                                     </Link>
                                 </div>
