@@ -122,7 +122,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
 
       console.log("Order ID:", orderId);
       setOrderId(orderId);
-      
+
       clearCart(); // เคลียร์ตะกร้าโดยไม่ปิด Modal
 
       toast.success("คำสั่งซื้อสำเร็จ!"); // แสดงข้อความสำเร็จ
