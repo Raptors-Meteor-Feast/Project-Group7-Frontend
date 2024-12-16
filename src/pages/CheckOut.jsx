@@ -3,7 +3,9 @@ import MyCart from "../components/Checkout/MyCart";
 import { useCart } from "../components/Checkout/CartContext";
 import CheckOutMyCart from "../components/Checkout/CheckOutMyCart";
 import Footer from "../components/Footer/Footer";
-import { IoTrashOutline } from "react-icons/io5";
+import { useState } from "react";
+import UseAnimations from 'react-useanimations';
+import trash2 from 'react-useanimations/lib/trash2';
 
 
 
@@ -11,6 +13,8 @@ export default function CheckOut() {
     const { cart, removeFromCart, clearCart } = useCart();
     const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     
+    const [hovered, setHovered] = useState(false);
+
     return (
         <div>
             <Nav />
@@ -33,8 +37,21 @@ export default function CheckOut() {
                             <p className="text-[20px] font-semibold text-center">Your cart is empty</p>
                         )}
                         {cart.length > 0 && (
-                    <button className="bg-red-500 hover:bg-black border-2 hover:border-red-600 active:bg-red-700transform transition-all duration-300 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[170px] h-[40px] mt-5 mb-10 mx-auto md:mx-0" onClick={() => clearCart()}>
-                        <IoTrashOutline size={20} style={{ color: 'white' }} /> Clear Cart
+                    
+                    <button className="bg-red-500 hover:text-black border-2 hover:border-red-600 active:bg-red-700transform transition-all duration-300 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[170px] h-[40px] mt-5 mb-10 mx-auto md:mx-0" onClick={() => clearCart()}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}
+                    >
+                    <div className='flex justify-evenly items-center gap-2'>
+                        Remove
+                        <UseAnimations
+                                    key={hovered}
+                                    animation={trash2}
+                                    size={24}
+                                    strokeColor={hovered ? 'black' : 'white'}
+                                    autoplay={hovered}
+                                />
+                                </div>
                     </button>
                     )}
                     </div>

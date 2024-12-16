@@ -1,8 +1,12 @@
-import { IoTrashOutline } from "react-icons/io5";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useState } from 'react';
+import UseAnimations from 'react-useanimations';
+import trash2 from 'react-useanimations/lib/trash2';
 
 
 export default function MyCart({ name, category, image, price, onRemove }) {
+
+    const [hovered, setHovered] = useState(false);
+
 
     return (
         <div className="flex justify-center">
@@ -24,9 +28,20 @@ export default function MyCart({ name, category, image, price, onRemove }) {
                 </div>
                 <div className="flex flex-col justify-between items-end">
                     <p className="font-semibold">THB {price}</p>
-                    <button className="bg-red-500 border-2 font-bold hover:text-black hover:border-red-600 active:bg-red-700transform transition-all duration-300 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px]" onClick={onRemove}>
-                        <div className="pl-1">Remove</div>
-                        <DotLottieReact src="https://lottie.host/9e5745c5-2bf3-4810-af49-e530c9c3665f/NGbkXFA3cc.lottie" playOnHover controls mode="bounce"/>
+                    <button className="bg-red-500 border-2 font-bold hover:text-black hover:border-red-600 active:bg-red-700transform transition-all duration-300 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px]" onClick={onRemove}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}                    
+                    >
+                    <div className='flex justify-around items-center'>
+                        Remove
+                        <UseAnimations
+                                    key={hovered}
+                                    animation={trash2}
+                                    size={24}
+                                    strokeColor={hovered ? 'black' : 'white'}
+                                    autoplay={hovered}
+                                />
+                                </div>
                     </button>
                 </div>
             </div>
