@@ -102,14 +102,16 @@ export default function Nav() {
                         {/* <p className="text-orange-500 font-bold text-[18px]">Cart</p> */}
                         {/* <Link to="/checkout"><button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 w-[50px] rounded-xl text-white">{cartCount}</button></Link> */}
                         {logIn && (
-                            <div className="flex items-center gap-2 mr-8">
-                                <p className="text-orange-500 font-bold text-[18px]"><FaCartShopping /></p>
-                                <Link to="/checkout">
-                                    <Button color="warning" className="w-[5px] h-[25px]">
-                                        {cartCount}
-                                    </Button>
-                                </Link>
-                            </div>
+                            <Link to="/checkout" className="flex items-center gap-2 mr-8 relative">
+                                <p className="text-orange-500 font-bold text-[30px] relative">
+                                    <FaCartShopping />
+                                    {cartCount > 0 && (
+                                        <span className="absolute top-[-8px] right-[-8px] bg-red-500 text-white text-[12px] font-bold rounded-full w-[20px] h-[20px] flex items-center justify-center">
+                                            {cartCount}
+                                        </span>
+                                    )}
+                                </p>
+                            </Link>
                         )}
                     </div>
                     {!logIn ? (
