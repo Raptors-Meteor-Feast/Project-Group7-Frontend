@@ -43,7 +43,7 @@ export default function CheckOut() {
                         onMouseLeave={() => setHovered(false)}
                     >
                     <div className='flex justify-evenly items-center gap-2'>
-                        Remove
+                        Remove All
                         <UseAnimations
                                     key={hovered}
                                     animation={trash2}

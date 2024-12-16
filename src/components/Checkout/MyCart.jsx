@@ -28,12 +28,11 @@ export default function MyCart({ name, category, image, price, onRemove }) {
                 </div>
                 <div className="flex flex-col justify-between items-end">
                     <p className="font-semibold">THB {price}</p>
-                    <button className="bg-red-500 border-2 font-bold hover:text-black hover:border-red-600 active:bg-red-700transform transition-all duration-300 text-white p-2 rounded-full flex gap-2 items-center justify-center w-[120px]" onClick={onRemove}
+                    <button className="bg-red-500 border-2 font-bold hover:text-black hover:border-red-600 active:bg-red-700transform transition-all duration-300 text-white rounded-full flex items-center justify-center w-[100%] py-1" onClick={onRemove}
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}                    
                     >
                     <div className='flex justify-around items-center'>
-                        Remove
                         <UseAnimations
                                     key={hovered}
                                     animation={trash2}
