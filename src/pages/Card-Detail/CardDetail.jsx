@@ -92,14 +92,13 @@ const CardDetail = () => {
             <CarouselImage currentIndex={currentIndex} gameImages={gameImages} setCurrentIndex={setCurrentIndex} setGameImages={setGameImages} />
             <p className="pt-4">{gameData.mainContent}</p>
           </div>
-          <div className="flex justify-end gap-3 pr-10">
-            <Button className="py-3 px-7 bg-slate-100 text-xl hover:bg-gradient-to-tr from-violet-500 to-violet-800 via-violet-600 transition-all duration-1000 transform hover:scale-105
-              hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]">
+          <div className="flex justify-end gap-3 pr-10 items-center">
+            <button className="px-7 bg-neutral-900 text-2xl cursor-default h-10">
               THB {gameData.price}
-            </Button>
+            </button>
             <Button
-              className="py-3 px-7 text-xl font-bold bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 text-white shadow-lg hover:from-blue-500 hover:via-teal-500 hover:to-green-500 transition-all duration-1000 transform hover:scale-105
-              hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]
+              className="py-3 px-7 text-xl font-bold bg-gradient-to-tr from-pink-500 to-yellow-500 via-red-500 text-white shadow-lg hover:from-red-500 hover:via-purple-300 hover:to-blue-500 transition-all duration-1000 transform hover:scale-105
+              hover:[box-shadow:_0_0_10px_violet,_0_0_20px_violet,_0_0_30px_violet]
               hover:text-[#202020]"
               color="primary"
               onClick={handleBuyNow}
@@ -108,7 +107,7 @@ const CardDetail = () => {
             </Button>
             <Button
               className="py-3 px-7 text-xl font-bold bg-blue-700 text-white 
-              hover:bg-gradient-to-tr from-blue-500 to-sky-500 via-white-500 transition-all duration-1000 transform hover:scale-105
+              hover:bg-gradient-to-tr from-yellow-500 to-purple-500 via-teal-200 transition-all duration-1000 transform hover:scale-105
               hover:[box-shadow:_0_0_10px_teal,_0_0_20px_teal,_0_0_30px_teal]
               hover:text-[#202020]"
               onClick={handleAddToCart}
