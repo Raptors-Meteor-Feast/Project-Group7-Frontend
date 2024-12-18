@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
+import {
+    Dropdown,
+    DropdownTrigger,
+    DropdownMenu,
+    DropdownItem,
+    Button,
+} from "@nextui-org/react";
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_BASE_URL;
@@ -14,19 +20,19 @@ function Filter({ setSelectedCategory }) {
     }, [selectedKeys]);
 
     useEffect(() => {
-    const fetchData = async () => {
-        try {
-            const response = await axios.get(`${API_URL}/api/game`);
-            const games = response.data.game;
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${API_URL}/api/game`);
+                const games = response.data.game;
 
-            const uniqueCategories = [
-                ...new Set(games.flatMap((game) => game.categories)),
-            ];
-            setCategories(uniqueCategories);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    };
+                const uniqueCategories = [
+                    ...new Set(games.flatMap((game) => game.categories)),
+                ];
+                setCategories(uniqueCategories);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
 
         fetchData();
     }, []);
@@ -36,8 +42,13 @@ function Filter({ setSelectedCategory }) {
         setSelectedCategory(selectedCategory);
     }, [selectedKeys, setSelectedCategory]);
 
+    const handleReset = () => {
+        setSelectedKeys(new Set());
+        setSelectedCategory("");
+    };
+
     return (
-        <div className="bg-neutral-900 px-[250px] py-5">
+        <div className="bg-neutral-900 px-[250px] py-5 flex items-center gap-4">
             <Dropdown>
                 <DropdownTrigger>
                     <Button className="capitalize" variant="bordered">
@@ -51,14 +62,17 @@ function Filter({ setSelectedCategory }) {
                     selectionMode="single"
                     variant="flat"
                     onSelectionChange={setSelectedKeys}
+                    className="max-h-[200px] overflow-y-auto"
                 >
                     {categories.map((category) => (
-                        <DropdownItem key={category}>
-                            {category}
-                        </DropdownItem>
+                        <DropdownItem key={category}>{category}</DropdownItem>
                     ))}
                 </DropdownMenu>
             </Dropdown>
+            
+            <Button variant="ghost" color="danger" onClick={handleReset}>
+                Show All Games
+            </Button>
         </div>
     );
 }
