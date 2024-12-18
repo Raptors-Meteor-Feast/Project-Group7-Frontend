@@ -51,7 +51,7 @@ export default function SearchBox() {
                 />
             </div>
 
-            <div className="flex justify-center relative">
+            {searchData.length > 0 && (<div className="flex justify-center relative">
                 <div className="overflow-auto w-[400px] h-[200px] absolute top-1 left-[48%] -translate-x-1/2 z-10">
                 {Array.isArray(searchData) && searchData.slice(0, 5).map((gameDatas, id) => (
                         <div key={id}>
@@ -76,7 +76,7 @@ export default function SearchBox() {
                         </div>
                     )}
                 </div>
-            </div>
+            </div>)}
         </div>
     );
 }

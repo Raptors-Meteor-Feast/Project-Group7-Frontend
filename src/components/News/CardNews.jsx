@@ -16,7 +16,7 @@ export default function CardNews() {
     axios
       .get(`${API_URL}/api/news`)
       .then((res) => {
-        console.log(res.data); // debugging
+        // console.log(res.data); // debugging
         // Set news to res.data.news if it's an array, else set to an empty array
         setNewsData(Array.isArray(res.data.data) ? res.data.data : []);
       })
@@ -37,7 +37,6 @@ export default function CardNews() {
   };
 
   const currentData = newsData.slice(startIndex, startIndex + itemsPerPage);
-  console.log(currentData);
 
   const handleClick = (_id) => {
     navigate(`/news/${_id}`);
