@@ -9,7 +9,7 @@ const API_URL = import.meta.env.VITE_API_BASE_URL;
 export default function NewsContent() {
   const { newsId } = useParams();
   const [content, setContent] = useState([]);
-  console.log(content);
+  // console.log(content);
 
   useEffect(() => {
     axios

@@ -30,7 +30,7 @@ const ImagePreview = ({ image, onRemove }) => {
 };
 
 const ModalCheckOutSucceed = ({ disabled, onSubmitOrder, orderId }) => {
-    console.log("Received orderId:", orderId);
+    // console.log("Received orderId:", orderId);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [images, setImages] = useState([]);
     const [userData, setUserData] = useState(null);

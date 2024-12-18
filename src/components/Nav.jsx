@@ -25,7 +25,7 @@ export default function Nav() {
                 const parsedToken = JSON.parse(token); // แปลงเป็นอ็อบเจ็กต์
                 setLogIn(!!parsedToken); // ตรวจสอบว่ามี token หรือไม่
             } catch (error) {
-                console.log(error)
+                // console.log(error)
                 // ถ้าไม่สามารถแปลงได้ ก็ถือว่า token เป็นสตริงปกติ
                 setLogIn(true);
             }

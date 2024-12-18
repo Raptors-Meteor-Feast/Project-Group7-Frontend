@@ -19,9 +19,9 @@ const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const createOrder = async (orderData) => {
   try {
-    console.log("Sending order data:", orderData); // ตรวจสอบค่าที่ส่งไป
+    // console.log("Sending order data:", orderData); // ตรวจสอบค่าที่ส่งไป
     const response = await axios.post(`${API_URL}/orders`, orderData);
-    console.log("Response:", response); // ตรวจสอบการตอบกลับ
+    // console.log("Response:", response); // ตรวจสอบการตอบกลับ
     return response.data;
   } catch (error) {
     console.error("Error creating order:", error);
@@ -119,7 +119,7 @@ const ModalCheckOut = ({ totalPrice, isModalOpen, setModalOpen }) => {
 
       const orderId = response.data.orderId;
 
-      console.log("Order ID:", orderId);
+      // console.log("Order ID:", orderId);
       setOrderId(orderId);
 
       clearCart();
